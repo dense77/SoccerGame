@@ -1,22 +1,25 @@
 # SoccerGame
 
-A soccer game project built from scratch.
+A football text-based simulation game. Control matches through button interactions and experience the life of a football manager.
 
-## Features
+## Tech Stack
 
-- 2D top-down soccer gameplay
-- Player movement and ball physics
-- AI opponents
-- Score tracking
+- React 18 + TypeScript
+- Vite
+- Dexie.js (IndexedDB)
 
 ## Getting Started
 
 ```bash
 # Clone the repo
 git clone https://github.com/dense77/SoccerGame.git
+cd SoccerGame
 
-# Run the game
-python main.py
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
 ```
 
 ## License
