@@ -15,7 +15,8 @@ describe('event simulation integration', () => {
     const selection = loadMatchEventSelection(
       client,
       setup,
-      'event-option-tactic-late-push-yes',
+      'pre-match',
+      'event-option-pre-match-rotation-call-yes',
     )
 
     if (!selection) {
@@ -32,7 +33,7 @@ describe('event simulation integration', () => {
 
     const logs = saveRepository.getMatchEventLogsBySnapshotId(selectedMatch.id)
 
-    expect(logs).toHaveLength(1)
+    expect(logs.length).toBeGreaterThanOrEqual(1)
     expect(logs[0].eventTemplateId).toBe(selection.template.id)
     expect(logs[0].optionId).toBe(selection.selectedOptionId)
   })

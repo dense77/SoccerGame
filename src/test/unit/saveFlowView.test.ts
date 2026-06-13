@@ -51,6 +51,7 @@ describe('resolveSaveFlowView', () => {
               mostDroppedPlayer: null,
             },
             playerChanges: [],
+            eventReports: [],
             eventReport: null,
           },
         }),

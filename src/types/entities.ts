@@ -97,11 +97,14 @@ export interface MatchEventModifier {
   contextTags: string[]
 }
 
+export type MatchEventPhaseGroup = 'pre-match' | 'in-match' | 'post-match'
+
 export interface MatchEventSelection {
+  phaseGroup: MatchEventPhaseGroup
   template: EventTemplate
   options: EventOption[]
-  selectedOptionId: string
-  resolvedModifier: MatchEventModifier
+  selectedOptionId: string | null
+  resolvedModifier: MatchEventModifier | null
 }
 
 export interface SaveSlot {
@@ -229,6 +232,7 @@ export interface PlayerStateChange {
 }
 
 export interface PostMatchEventReport {
+  phaseGroup: MatchEventPhaseGroup
   templateId: string
   title: string
   category: string
@@ -260,6 +264,7 @@ export interface PostMatchReport {
     mostDroppedPlayer: string | null
   }
   playerChanges: PlayerStateChange[]
+  eventReports: PostMatchEventReport[]
   eventReport: PostMatchEventReport | null
 }
 

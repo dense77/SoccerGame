@@ -111,11 +111,23 @@ describe('event system', () => {
     const selection = loadMatchEventSelection(
       client,
       setup,
+      'in-match',
       'event-option-tactic-late-push-no',
     )
 
     expect(selection?.template.code).toBe('TACTIC_LATE_PUSH')
     expect(selection?.selectedOptionId).toBe('event-option-tactic-late-push-no')
-    expect(selection?.resolvedModifier.attackDelta).toBe(0)
+    expect(selection?.resolvedModifier?.attackDelta).toBe(0)
+  })
+
+  it('returns an unselected pre-match event until the player makes a choice', async () => {
+    const client = await createTestDatabase()
+    const setup = createSetupStub()
+    const selection = loadMatchEventSelection(client, setup, 'pre-match')
+
+    expect(selection).not.toBeNull()
+    expect(selection?.phaseGroup).toBe('pre-match')
+    expect(selection?.selectedOptionId).toBeNull()
+    expect(selection?.resolvedModifier?.attackDelta).toBe(0)
   })
 })

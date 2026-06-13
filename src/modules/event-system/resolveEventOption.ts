@@ -1,5 +1,13 @@
 import type { EventOption, MatchEventModifier } from '../../types/entities'
 
+export const emptyEventModifier: MatchEventModifier = {
+  attackDelta: 0,
+  defenseDelta: 0,
+  moraleDelta: 0,
+  fitnessDelta: 0,
+  contextTags: [],
+}
+
 export function resolveEventOption(option: EventOption): MatchEventModifier {
   const effect = option.effect
 

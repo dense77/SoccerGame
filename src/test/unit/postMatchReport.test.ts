@@ -96,6 +96,7 @@ function createSnapshot(): MatchSnapshot {
 
 function createEventSelection(): MatchEventSelection {
   return {
+    phaseGroup: 'in-match',
     template: {
       id: 'event-template-1',
       code: 'TACTIC_LATE_PUSH',
@@ -139,7 +140,7 @@ describe('buildPostMatchReport', () => {
       opponentTeamName: 'USA',
       players: createManagedPlayers(),
       nextPlayerStates: createNextStates(),
-      selectedEvent: createEventSelection(),
+      selectedEvents: [createEventSelection()],
     })
 
     expect(report.resultLabel).toBe('win')
@@ -149,6 +150,8 @@ describe('buildPostMatchReport', () => {
     expect(report.fitnessChangeSummary.benchAverageDelta).toBe(-4)
     expect(report.moraleChangeSummary.teamAverageDelta).toBe(4)
     expect(report.eventReport?.optionLabel).toBe('Commit numbers forward')
+    expect(report.eventReports).toHaveLength(1)
+    expect(report.eventReports[0].phaseGroup).toBe('in-match')
     expect(report.playerChanges[0].minutesPlayed).toBe(90)
   })
 })

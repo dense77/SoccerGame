@@ -13,7 +13,7 @@ interface BuildPostMatchReportInput {
   opponentTeamName: string
   players: ManagedPlayer[]
   nextPlayerStates: SavePlayerState[]
-  selectedEvent: MatchEventSelection | null
+  selectedEvents: MatchEventSelection[]
 }
 
 function average(values: number[]): number {
@@ -41,7 +41,6 @@ function resolveResultLabel(teamGoals: number, opponentGoals: number): string {
 }
 
 export function buildPostMatchReport(input: BuildPostMatchReportInput): PostMatchReport {
-  const selectedEvent = input.selectedEvent
   const nextStateByPlayerId = new Map(
     input.nextPlayerStates.map((state) => [state.playerId, state]),
   )
@@ -82,6 +81,21 @@ export function buildPostMatchReport(input: BuildPostMatchReportInput): PostMatc
   const selectedTeamIsHome = input.snapshot.homeTeamId === input.selectedTeamId
   const selectedTeamGoals = selectedTeamIsHome ? input.snapshot.homeScore : input.snapshot.awayScore
   const opponentGoals = selectedTeamIsHome ? input.snapshot.awayScore : input.snapshot.homeScore
+  const eventReports = input.selectedEvents
+    .filter((selection) => selection.selectedOptionId && selection.resolvedModifier)
+    .map((selection) => ({
+      phaseGroup: selection.phaseGroup,
+      templateId: selection.template.id,
+      title: selection.template.title,
+      category: selection.template.category,
+      optionId: selection.selectedOptionId ?? selection.template.id,
+      optionLabel:
+        selection.options.find(
+          (option) => option.id === selection.selectedOptionId,
+        )?.label ?? selection.selectedOptionId ?? selection.template.id,
+      phase: selection.template.triggerPhase,
+      modifier: selection.resolvedModifier!,
+    }))
 
   return {
     snapshotId: input.snapshot.id,
@@ -113,19 +127,7 @@ export function buildPostMatchReport(input: BuildPostMatchReportInput): PostMatc
         mostDroppedPlayer && mostDroppedPlayer.moraleDelta < 0 ? mostDroppedPlayer.playerName : null,
     },
     playerChanges,
-    eventReport: selectedEvent
-      ? {
-          templateId: selectedEvent.template.id,
-          title: selectedEvent.template.title,
-          category: selectedEvent.template.category,
-          optionId: selectedEvent.selectedOptionId,
-          optionLabel:
-            selectedEvent.options.find(
-              (option) => option.id === selectedEvent.selectedOptionId,
-            )?.label ?? selectedEvent.selectedOptionId,
-          phase: selectedEvent.template.triggerPhase,
-          modifier: selectedEvent.resolvedModifier,
-        }
-      : null,
+    eventReports,
+    eventReport: eventReports[0] ?? null,
   }
 }

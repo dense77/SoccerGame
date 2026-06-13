@@ -5,6 +5,7 @@ import { TournamentRepository } from '../../data/repositories/TournamentReposito
 import type { SQLiteDatabaseClient } from '../../data/db/sqlite'
 import type {
   ManagedPlayer,
+  MatchEventModifier,
   MatchEventSelection,
   MatchSimulationInput,
   MatchEventLog,
@@ -13,11 +14,18 @@ import type {
   SavePlayerState,
   SaveTeamState,
 } from '../../types/entities'
+import { loadMatchEventSelection } from '../event-system/loadMatchEventSelection'
 import { loadMatchSetupOverview } from '../team-management/loadMatchSetupOverview'
 import { resolveGroupAdvancement } from '../tournament/resolveGroupAdvancement'
 import { resolveKnockoutFixtures } from '../tournament/resolveKnockoutFixtures'
 import { buildPostMatchReport } from './buildPostMatchReport'
 import { simulateMatch } from './simulateMatch'
+
+function isResolvedEventSelection(
+  eventSelection: MatchEventSelection | null,
+): eventSelection is MatchEventSelection & { resolvedModifier: MatchEventModifier; selectedOptionId: string } {
+  return Boolean(eventSelection?.selectedOptionId && eventSelection.resolvedModifier)
+}
 
 function findFixtureSetup(
   saveSetup: SaveMatchSetup | null,
@@ -163,6 +171,9 @@ export function playCurrentRound(
   )
 
   const selectedMatchSetup = loadMatchSetupOverview(client, saveSlot.id)
+  if (!selectedEvent?.selectedOptionId || !selectedEvent.resolvedModifier) {
+    throw new Error('必须先完成赛前事件选择，才能进入下一步。')
+  }
   const snapshots: MatchSnapshot[] = []
 
   fixtures.forEach((fixture) => {
@@ -256,6 +267,51 @@ export function playCurrentRound(
 
     const homePlayers = toManagedPlayers(homeRoster, homeStates, homeSetup.startingPlayerIds)
     const awayPlayers = toManagedPlayers(awayRoster, awayStates, awaySetup.startingPlayerIds)
+    const selectedTeamSetup =
+      selectedTeam.id === homeTeam.id
+        ? {
+            ...selectedMatchSetup,
+            fixture,
+            team: homeTeam,
+            players: homePlayers,
+            selectedFormation: homeFormation,
+            selectedTactic: homeTactic,
+          }
+        : {
+            ...selectedMatchSetup,
+            fixture,
+            team: awayTeam,
+            players: awayPlayers,
+            selectedFormation: awayFormation,
+            selectedTactic: awayTactic,
+          }
+    const inMatchEvent =
+      selectedTeam.id === homeTeam.id || selectedTeam.id === awayTeam.id
+        ? loadMatchEventSelection(client, selectedTeamSetup, 'in-match')
+        : null
+    const postMatchEvent =
+      selectedTeam.id === homeTeam.id || selectedTeam.id === awayTeam.id
+        ? loadMatchEventSelection(client, selectedTeamSetup, 'post-match')
+        : null
+    const selectedEventModifiers = [selectedEvent, inMatchEvent, postMatchEvent]
+      .filter(isResolvedEventSelection)
+      .map((eventSelection) => eventSelection.resolvedModifier)
+    const combinedModifier = selectedEventModifiers.reduce(
+      (combined, modifier) => ({
+        attackDelta: combined.attackDelta + modifier.attackDelta,
+        defenseDelta: combined.defenseDelta + modifier.defenseDelta,
+        moraleDelta: combined.moraleDelta + modifier.moraleDelta,
+        fitnessDelta: combined.fitnessDelta + modifier.fitnessDelta,
+        contextTags: [...combined.contextTags, ...modifier.contextTags],
+      }),
+      {
+        attackDelta: 0,
+        defenseDelta: 0,
+        moraleDelta: 0,
+        fitnessDelta: 0,
+        contextTags: [] as string[],
+      },
+    )
 
     const input: MatchSimulationInput = {
       saveSlotId: saveSlot.id,
@@ -267,7 +323,7 @@ export function playCurrentRound(
         starters: homePlayers.filter((entry) => entry.isStarter),
         bench: homePlayers.filter((entry) => !entry.isStarter),
         selectedEventModifier:
-          selectedTeam.id === homeTeam.id ? selectedEvent?.resolvedModifier ?? null : null,
+          selectedTeam.id === homeTeam.id ? combinedModifier : null,
       },
       away: {
         team: awayTeam,
@@ -276,7 +332,7 @@ export function playCurrentRound(
         starters: awayPlayers.filter((entry) => entry.isStarter),
         bench: awayPlayers.filter((entry) => !entry.isStarter),
         selectedEventModifier:
-          selectedTeam.id === awayTeam.id ? selectedEvent?.resolvedModifier ?? null : null,
+          selectedTeam.id === awayTeam.id ? combinedModifier : null,
       },
     }
 
@@ -318,8 +374,10 @@ export function playCurrentRound(
             opponentTeamName: selectedTeamIsHome ? awayTeam.shortName : homeTeam.shortName,
             players: selectedTeamPlayers,
             nextPlayerStates: selectedTeamNextStates,
-            selectedEvent:
-              selectedTeamIsHome || selectedTeamIsAway ? selectedEvent : null,
+              selectedEvents:
+              selectedTeamIsHome || selectedTeamIsAway
+                ? [selectedEvent, inMatchEvent, postMatchEvent].filter(isResolvedEventSelection)
+                : [],
           })
         : null
     const snapshot: MatchSnapshot = {
@@ -343,22 +401,21 @@ export function playCurrentRound(
 
     saveRepository.createMatchSnapshot(snapshot)
 
-    if (
-      selectedEvent &&
-      (selectedTeam.id === homeTeam.id || selectedTeam.id === awayTeam.id)
-    ) {
-      const eventLog: MatchEventLog = {
-        id: `${snapshot.id}-${selectedEvent.template.id}-${selectedEvent.selectedOptionId}`,
-        matchSnapshotId: snapshot.id,
-        eventTemplateId: selectedEvent.template.id,
-        optionId: selectedEvent.selectedOptionId,
-        phase: selectedEvent.template.triggerPhase,
-        sequenceNo: 1,
-        resolvedEffect: selectedEvent.resolvedModifier,
-      }
+    ;[selectedEvent, inMatchEvent, postMatchEvent]
+      .filter(isResolvedEventSelection)
+      .forEach((eventSelection, index) => {
+        const eventLog: MatchEventLog = {
+          id: `${snapshot.id}-${eventSelection.template.id}-${eventSelection.selectedOptionId}`,
+          matchSnapshotId: snapshot.id,
+          eventTemplateId: eventSelection.template.id,
+          optionId: eventSelection.selectedOptionId ?? eventSelection.template.id,
+          phase: eventSelection.template.triggerPhase,
+          sequenceNo: index + 1,
+          resolvedEffect: eventSelection.resolvedModifier!,
+        }
 
-      saveRepository.createMatchEventLog(eventLog)
-    }
+        saveRepository.createMatchEventLog(eventLog)
+      })
 
     const homeState = teamStates.get(homeTeam.id)
     const awayState = teamStates.get(awayTeam.id)

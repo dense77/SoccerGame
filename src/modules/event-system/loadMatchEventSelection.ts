@@ -1,8 +1,13 @@
 import { EventRepository } from '../../data/repositories/EventRepository'
 import type { SQLiteDatabaseClient } from '../../data/db/sqlite'
-import type { EventTemplate, MatchEventSelection, MatchSetupOverview } from '../../types/entities'
+import type {
+  EventTemplate,
+  MatchEventPhaseGroup,
+  MatchEventSelection,
+  MatchSetupOverview,
+} from '../../types/entities'
 import { buildMatchEventContext } from './matchEventContext'
-import { resolveEventOption } from './resolveEventOption'
+import { emptyEventModifier, resolveEventOption } from './resolveEventOption'
 
 function matchesRange(
   value: number,
@@ -93,12 +98,24 @@ function templateWeight(
 export function loadMatchEventSelection(
   client: SQLiteDatabaseClient,
   setup: MatchSetupOverview,
+  phaseGroup: MatchEventPhaseGroup,
   preferredOptionId?: string | null,
 ): MatchEventSelection | null {
   const eventRepository = new EventRepository(client)
   const context = buildMatchEventContext(setup)
   const candidateTemplates = eventRepository
     .getAllTemplates()
+    .filter((template) => {
+      if (phaseGroup === 'pre-match') {
+        return template.triggerPhase === 'pre_match'
+      }
+
+      if (phaseGroup === 'in-match') {
+        return template.triggerPhase !== 'pre_match' && template.triggerPhase !== 'post_match'
+      }
+
+      return template.triggerPhase === 'post_match'
+    })
     .filter((template) => templateMatches(template, context))
     .sort((left, right) => templateWeight(right, context) - templateWeight(left, context))
 
@@ -113,12 +130,15 @@ export function loadMatchEventSelection(
   }
 
   const selectedOption =
-    options.find((option) => option.id === preferredOptionId) ?? options[0]
+    typeof preferredOptionId === 'string'
+      ? options.find((option) => option.id === preferredOptionId) ?? null
+      : null
 
   return {
+    phaseGroup,
     template: selectedTemplate,
     options,
-    selectedOptionId: selectedOption.id,
-    resolvedModifier: resolveEventOption(selectedOption),
+    selectedOptionId: selectedOption?.id ?? null,
+    resolvedModifier: selectedOption ? resolveEventOption(selectedOption) : emptyEventModifier,
   }
 }

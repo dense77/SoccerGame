@@ -25,7 +25,7 @@ describe('game data integration', () => {
     expect(groups[0].teamIds).toHaveLength(4)
     expect(groupFixtures).toHaveLength(6)
     expect(knockoutFixtures).toHaveLength(3)
-    expect(events).toHaveLength(4)
+    expect(events).toHaveLength(8)
     expect(options.length).toBeGreaterThan(0)
   })
 
@@ -38,7 +38,7 @@ describe('game data integration', () => {
       formationCount: 2,
       tacticProfileCount: 3,
       fixtureCount: 9,
-      eventTemplateCount: 4,
+      eventTemplateCount: 8,
     })
   })
 })

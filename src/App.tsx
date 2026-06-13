@@ -82,7 +82,7 @@ function App() {
           ? loadMatchSetupOverview(client, latestSaveEntry.saveSlotId)
           : null
         const activeEventSelection = activeMatchSetup
-          ? loadMatchEventSelection(client, activeMatchSetup)
+          ? loadMatchEventSelection(client, activeMatchSetup, 'pre-match')
           : null
 
         if (cancelled) {
@@ -144,6 +144,7 @@ function App() {
     const activeEventSelection = loadMatchEventSelection(
       client,
       activeMatchSetup,
+      'pre-match',
     )
 
     setBootstrapState((currentState) => ({
@@ -169,7 +170,7 @@ function App() {
       ? loadMatchSetupOverview(client, saveSlotId)
       : null
     const activeEventSelection = activeMatchSetup
-      ? loadMatchEventSelection(client, activeMatchSetup)
+      ? loadMatchEventSelection(client, activeMatchSetup, 'pre-match')
       : null
 
     setBootstrapState((currentState) => ({
@@ -266,6 +267,7 @@ function App() {
     const activeEventSelection = loadMatchEventSelection(
       bootstrapState.client,
       activeMatchSetup,
+      'pre-match',
       bootstrapState.activeEventSelection?.selectedOptionId ?? null,
     )
 
@@ -287,14 +289,15 @@ function App() {
     const nextSelection = loadMatchEventSelection(
       bootstrapState.client,
       bootstrapState.activeMatchSetup,
+      'pre-match',
       optionId,
     )
 
     setBootstrapState((currentState) => ({
       ...currentState,
       activeEventSelection: nextSelection,
-      message: nextSelection
-        ? `已选择事件选项：${nextSelection.options.find((option) => option.id === optionId)?.label ?? optionId}。`
+        message: nextSelection
+        ? `已选择事件选项：${nextSelection.options.find((option) => option.id === optionId)?.label ?? optionId}。效果：${formatEventModifierSummary(nextSelection.resolvedModifier)}`
         : currentState.message,
     }))
   }
@@ -303,6 +306,14 @@ function App() {
     const client = bootstrapState.client
 
     if (!client || !bootstrapState.activeSave || !bootstrapState.activeMatchSetup) {
+      return
+    }
+
+    if (!bootstrapState.activeEventSelection?.selectedOptionId || !bootstrapState.activeEventSelection.resolvedModifier) {
+      setBootstrapState((currentState) => ({
+        ...currentState,
+        message: '请先完成赛前事件选择，再进入下一步。',
+      }))
       return
     }
 
@@ -329,7 +340,7 @@ function App() {
         : loadMatchSetupOverview(client, bootstrapState.activeSave.saveSlot.id)
     const refreshedEventSelection =
       refreshedSetup && isSavePlayable(refreshedSave.saveSlot.status)
-        ? loadMatchEventSelection(client, refreshedSetup)
+        ? loadMatchEventSelection(client, refreshedSetup, 'pre-match')
         : null
 
     setBootstrapState((currentState) => ({
@@ -366,6 +377,21 @@ function App() {
   const showDashboard = bootstrapState.activeView === 'dashboard'
   const showPostMatch = bootstrapState.activeView === 'post-match'
   const showSettlement = bootstrapState.activeView === 'settlement'
+
+  function formatEventModifierSummary(modifier: MatchEventSelection['resolvedModifier']): string {
+    if (!modifier) {
+      return '暂无影响'
+    }
+
+    const segments = [
+      `进攻 ${modifier.attackDelta >= 0 ? '+' : ''}${modifier.attackDelta}`,
+      `防守 ${modifier.defenseDelta >= 0 ? '+' : ''}${modifier.defenseDelta}`,
+      `士气 ${modifier.moraleDelta >= 0 ? '+' : ''}${modifier.moraleDelta}`,
+      `体能 ${modifier.fitnessDelta >= 0 ? '+' : ''}${modifier.fitnessDelta}`,
+    ]
+
+    return segments.join(' / ')
+  }
 
   return (
     <div className="container">
@@ -491,7 +517,12 @@ function App() {
               </button>
             )}
             {activeMatchSetup?.validation.isValid && (
-              <button type="button" className="btn btn-compact" onClick={handlePlayCurrentRound}>
+              <button
+                type="button"
+                className="btn btn-compact"
+                onClick={handlePlayCurrentRound}
+                disabled={!activeEventSelection?.selectedOptionId}
+              >
                 模拟当前轮次
               </button>
             )}
@@ -620,6 +651,11 @@ function App() {
                     {activeEventSelection.template.title}（{translateEventCategory(activeEventSelection.template.category)}）
                   </p>
                   <p>{activeEventSelection.template.textTemplate}</p>
+                  <p>
+                    {activeEventSelection.selectedOptionId
+                      ? `当前后果：${formatEventModifierSummary(activeEventSelection.resolvedModifier)}`
+                      : '必须先做出选择，才能进入下一步。'}
+                  </p>
                   <div className="option-list">
                     {activeEventSelection.options.map((option) => (
                       <button
@@ -750,12 +786,15 @@ function App() {
                   <p>士气提升最大：{latestPostMatchReport.moraleChangeSummary.mostBoostedPlayer ?? '无'}</p>
                   <p>士气下滑最多：{latestPostMatchReport.moraleChangeSummary.mostDroppedPlayer ?? '无'}</p>
                 </div>
-                {latestPostMatchReport.eventReport && (
+                {latestPostMatchReport.eventReports.length > 0 && (
                   <div className="flow-card">
-                    <h4>关键事件复盘</h4>
-                    <p>{latestPostMatchReport.eventReport.title}</p>
-                    <p>选择：{latestPostMatchReport.eventReport.optionLabel}</p>
-                    <p>进攻 {latestPostMatchReport.eventReport.modifier.attackDelta >= 0 ? '+' : ''}{latestPostMatchReport.eventReport.modifier.attackDelta}，防守 {latestPostMatchReport.eventReport.modifier.defenseDelta >= 0 ? '+' : ''}{latestPostMatchReport.eventReport.modifier.defenseDelta}，士气 {latestPostMatchReport.eventReport.modifier.moraleDelta >= 0 ? '+' : ''}{latestPostMatchReport.eventReport.modifier.moraleDelta}</p>
+                    <h4>事件后果复盘</h4>
+                    {latestPostMatchReport.eventReports.map((eventReport) => (
+                      <p key={`${eventReport.phaseGroup}-${eventReport.optionId}`}>
+                        {eventReport.phaseGroup === 'pre-match' ? '赛前' : eventReport.phaseGroup === 'in-match' ? '赛中' : '赛后'}
+                        ：{eventReport.title} / {eventReport.optionLabel} / {formatEventModifierSummary(eventReport.modifier)}
+                      </p>
+                    ))}
                   </div>
                 )}
               </div>

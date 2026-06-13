@@ -74,6 +74,7 @@ describe('buildSaveSelectionCardText', () => {
             mostDroppedPlayer: null,
           },
           playerChanges: [],
+          eventReports: [],
           eventReport: null,
         },
       }),
