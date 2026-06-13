@@ -2,8 +2,17 @@ import { SaveRepository } from '../../data/repositories/SaveRepository'
 import { TeamRepository } from '../../data/repositories/TeamRepository'
 import { TournamentRepository } from '../../data/repositories/TournamentRepository'
 import type { SQLiteDatabaseClient } from '../../data/db/sqlite'
-import type { SaveOverview } from '../../types/entities'
+import type { PostMatchReport, SaveOverview } from '../../types/entities'
 import { buildGroupStandings } from '../tournament/buildGroupStandings'
+
+function extractLatestPostMatchReport(saveOverviewMatches: SaveOverview['completedMatches']): PostMatchReport | null {
+  const latestSnapshot = [...saveOverviewMatches]
+    .reverse()
+    .find((snapshot) => snapshot.resultSummary.postMatchReport)
+  const report = latestSnapshot?.resultSummary.postMatchReport
+
+  return report && typeof report === 'object' ? (report as PostMatchReport) : null
+}
 
 export function loadSaveOverview(
   client: SQLiteDatabaseClient,
@@ -36,6 +45,7 @@ export function loadSaveOverview(
     groupStandings: buildGroupStandings(groupTeams, teamStates, saveSlot.selectedTeamId),
     currentFixtures,
     completedMatches,
+    latestPostMatchReport: extractLatestPostMatchReport(completedMatches),
     rosterSize: playerStates.filter((playerState) =>
       playerState.playerId.startsWith(`${saveSlot.selectedTeamId}-player-`),
     ).length,

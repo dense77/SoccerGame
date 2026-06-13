@@ -292,6 +292,7 @@ function App() {
 
   const activeMatchSetup = bootstrapState.activeMatchSetup
   const activeEventSelection = bootstrapState.activeEventSelection
+  const latestPostMatchReport = bootstrapState.activeSave?.latestPostMatchReport ?? null
 
   return (
     <div className="container">
@@ -396,6 +397,50 @@ function App() {
             </ul>
           </section>
 
+          {latestPostMatchReport && (
+            <section className="panel">
+              <h3>Latest Post-match Report</h3>
+              <p>
+                {latestPostMatchReport.teamName} {latestPostMatchReport.scoreline} {latestPostMatchReport.opponentTeamName} |{' '}
+                {latestPostMatchReport.resultLabel.toUpperCase()}
+              </p>
+              <p>
+                Fitness: starters {latestPostMatchReport.fitnessChangeSummary.startersAverageDelta},
+                bench {latestPostMatchReport.fitnessChangeSummary.benchAverageDelta}. Most affected:{' '}
+                {latestPostMatchReport.fitnessChangeSummary.mostAffectedPlayer ?? 'n/a'}.
+              </p>
+              <p>
+                Morale: average {latestPostMatchReport.moraleChangeSummary.teamAverageDelta}. Boosted:{' '}
+                {latestPostMatchReport.moraleChangeSummary.mostBoostedPlayer ?? 'n/a'}, dropped:{' '}
+                {latestPostMatchReport.moraleChangeSummary.mostDroppedPlayer ?? 'n/a'}.
+              </p>
+              {latestPostMatchReport.eventReport && (
+                <div className="feedback-block">
+                  <strong>Event outcome</strong>
+                  <span>
+                    {latestPostMatchReport.eventReport.title} - {latestPostMatchReport.eventReport.optionLabel}
+                  </span>
+                  <span>
+                    Attack {latestPostMatchReport.eventReport.modifier.attackDelta >= 0 ? '+' : ''}
+                    {latestPostMatchReport.eventReport.modifier.attackDelta} / Defense{' '}
+                    {latestPostMatchReport.eventReport.modifier.defenseDelta >= 0 ? '+' : ''}
+                    {latestPostMatchReport.eventReport.modifier.defenseDelta} / Morale{' '}
+                    {latestPostMatchReport.eventReport.modifier.moraleDelta >= 0 ? '+' : ''}
+                    {latestPostMatchReport.eventReport.modifier.moraleDelta}
+                  </span>
+                </div>
+              )}
+              <ul className="compact-list status-shift-list">
+                {latestPostMatchReport.playerChanges.slice(0, 5).map((change) => (
+                  <li key={change.playerId}>
+                    {change.playerName} | Fit {change.fitnessBefore}→{change.fitnessAfter} | Morale{' '}
+                    {change.moraleBefore}→{change.moraleAfter} | {change.isStarter ? 'Starter' : 'Bench'}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
           {activeMatchSetup && (
             <>
               {activeEventSelection && (
@@ -477,7 +522,7 @@ function App() {
                         </strong>
                         <span>
                           {entry.player.primaryPosition} | OVR {entry.player.overallRating} | Fitness{' '}
-                          {entry.state.fitnessValue}
+                          {entry.state.fitnessValue} | Morale {entry.state.moraleValue}
                         </span>
                       </div>
                       <button

@@ -14,6 +14,7 @@ import type {
   SaveTeamState,
 } from '../../types/entities'
 import { loadMatchSetupOverview } from '../team-management/loadMatchSetupOverview'
+import { buildPostMatchReport } from './buildPostMatchReport'
 import { simulateMatch } from './simulateMatch'
 
 function findFixtureSetup(
@@ -88,22 +89,22 @@ function buildTeamMetrics(
 }
 
 function updateSelectedTeamPlayerStates(
-  saveRepository: SaveRepository,
-  saveSlotId: string,
   players: ManagedPlayer[],
   goalDifference: number,
-): void {
-  players.forEach((entry) => {
+): SavePlayerState[] {
+  return players.map((entry) => {
     const minutes = entry.isStarter ? 90 : 0
     const fitnessDrop = entry.isStarter ? 18 : 4
     const moraleShift = goalDifference > 0 ? 4 : goalDifference < 0 ? -4 : 1
 
-    saveRepository.updatePlayerStateMetrics(saveSlotId, entry.player.id, {
+    return {
+      ...entry.state,
+      playerId: entry.player.id,
       fitnessValue: Math.max(entry.state.fitnessValue - fitnessDrop, 35),
       moraleValue: Math.min(Math.max(entry.state.moraleValue + moraleShift, 40), 95),
       lastMatchMinutes: minutes,
       statusTag: entry.state.statusTag,
-    })
+    }
   })
 }
 
@@ -254,6 +255,42 @@ export function playCurrentRound(
 
     const result = simulateMatch(input)
     const completedAt = new Date().toISOString()
+    const selectedTeamIsHome = selectedTeam.id === homeTeam.id
+    const selectedTeamIsAway = selectedTeam.id === awayTeam.id
+    const selectedTeamPlayers = selectedTeamIsHome ? homePlayers : selectedTeamIsAway ? awayPlayers : null
+    const selectedTeamNextStates = selectedTeamPlayers
+      ? updateSelectedTeamPlayerStates(
+          selectedTeamPlayers,
+          selectedTeamIsHome
+            ? result.homeScore - result.awayScore
+            : result.awayScore - result.homeScore,
+        )
+      : null
+    const selectedTeamPostMatchReport =
+      selectedTeamPlayers && selectedTeamNextStates
+        ? buildPostMatchReport({
+            snapshot: {
+              id: `${saveSlot.id}-${fixture.id}`,
+              saveSlotId: saveSlot.id,
+              fixtureId: fixture.id,
+              stage: fixture.stage,
+              homeTeamId: fixture.homeTeamId,
+              awayTeamId: fixture.awayTeamId,
+              homeScore: result.homeScore,
+              awayScore: result.awayScore,
+              resultSummary: result.resultSummary,
+              appliedModifiers: result.appliedModifiers,
+              completedAt: '',
+            },
+            selectedTeamId: selectedTeam.id,
+            selectedTeamName: selectedTeam.shortName,
+            opponentTeamName: selectedTeamIsHome ? awayTeam.shortName : homeTeam.shortName,
+            players: selectedTeamPlayers,
+            nextPlayerStates: selectedTeamNextStates,
+            selectedEvent:
+              selectedTeamIsHome || selectedTeamIsAway ? selectedEvent : null,
+          })
+        : null
     const snapshot: MatchSnapshot = {
       id: `${saveSlot.id}-${fixture.id}`,
       saveSlotId: saveSlot.id,
@@ -263,7 +300,10 @@ export function playCurrentRound(
       awayTeamId: fixture.awayTeamId,
       homeScore: result.homeScore,
       awayScore: result.awayScore,
-      resultSummary: result.resultSummary,
+      resultSummary: {
+        ...result.resultSummary,
+        postMatchReport: selectedTeamPostMatchReport,
+      },
       appliedModifiers: result.appliedModifiers,
       completedAt,
     }
@@ -299,22 +339,16 @@ export function playCurrentRound(
     saveRepository.updateTeamStateMetrics(saveSlot.id, homeTeam.id, nextHomeMetrics)
     saveRepository.updateTeamStateMetrics(saveSlot.id, awayTeam.id, nextAwayMetrics)
 
-    if (selectedTeam.id === homeTeam.id) {
-      updateSelectedTeamPlayerStates(
-        saveRepository,
-        saveSlot.id,
-        homePlayers,
-        result.homeScore - result.awayScore,
-      )
+    if (selectedTeamIsHome && selectedTeamNextStates) {
+      selectedTeamNextStates.forEach((nextState) => {
+        saveRepository.updatePlayerStateMetrics(saveSlot.id, nextState.playerId, nextState)
+      })
     }
 
-    if (selectedTeam.id === awayTeam.id) {
-      updateSelectedTeamPlayerStates(
-        saveRepository,
-        saveSlot.id,
-        awayPlayers,
-        result.awayScore - result.homeScore,
-      )
+    if (selectedTeamIsAway && selectedTeamNextStates) {
+      selectedTeamNextStates.forEach((nextState) => {
+        saveRepository.updatePlayerStateMetrics(saveSlot.id, nextState.playerId, nextState)
+      })
     }
 
     snapshots.push(snapshot)

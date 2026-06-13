@@ -159,6 +159,7 @@ export interface SaveOverview {
   groupStandings: TeamStandingEntry[]
   currentFixtures: MatchFixture[]
   completedMatches: MatchSnapshot[]
+  latestPostMatchReport: PostMatchReport | null
   rosterSize: number
 }
 
@@ -207,6 +208,51 @@ export interface MatchSnapshot {
   resultSummary: Record<string, unknown>
   appliedModifiers: Record<string, unknown>
   completedAt: string
+}
+
+export interface PlayerStateChange {
+  playerId: string
+  playerName: string
+  isStarter: boolean
+  fitnessBefore: number
+  fitnessAfter: number
+  moraleBefore: number
+  moraleAfter: number
+  fitnessDelta: number
+  moraleDelta: number
+  minutesPlayed: number
+}
+
+export interface PostMatchEventReport {
+  templateId: string
+  title: string
+  category: string
+  optionId: string
+  optionLabel: string
+  phase: string
+  modifier: MatchEventModifier
+}
+
+export interface PostMatchReport {
+  snapshotId: string
+  fixtureId: string
+  teamId: string
+  teamName: string
+  opponentTeamName: string
+  scoreline: string
+  resultLabel: string
+  fitnessChangeSummary: {
+    startersAverageDelta: number
+    benchAverageDelta: number
+    mostAffectedPlayer: string | null
+  }
+  moraleChangeSummary: {
+    teamAverageDelta: number
+    mostBoostedPlayer: string | null
+    mostDroppedPlayer: string | null
+  }
+  playerChanges: PlayerStateChange[]
+  eventReport: PostMatchEventReport | null
 }
 
 export interface MatchEventLog {

@@ -14,6 +14,7 @@ describe('save flow integration', () => {
     expect(overview.saveSlot.currentRoundCode).toBe('group-round-1')
     expect(overview.groupStandings).toHaveLength(4)
     expect(overview.currentFixtures).toHaveLength(2)
+    expect(overview.latestPostMatchReport).toBeNull()
     expect(overview.rosterSize).toBe(26)
   })
 })

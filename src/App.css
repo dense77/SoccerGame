@@ -140,6 +140,21 @@
   color: #a01818;
 }
 
+.feedback-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(22, 57, 31, 0.06);
+  color: #21492b;
+}
+
+.status-shift-list {
+  margin-top: 12px;
+}
+
 .squad-list {
   list-style: none;
   margin: 0;

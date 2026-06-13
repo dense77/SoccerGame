@@ -19,5 +19,7 @@ describe('round simulation integration', () => {
     expect(refreshedSave?.currentRoundCode).toBe('group-round-2')
     expect(saveRepository.getMatchSnapshotsBySaveSlotId(saveSlot.id)).toHaveLength(2)
     expect(overview.groupStandings.some((entry) => entry.groupPoints > 0)).toBe(true)
+    expect(overview.latestPostMatchReport?.teamId).toBe('team-arg-sample')
+    expect(overview.latestPostMatchReport?.playerChanges.some((entry) => entry.fitnessDelta < 0)).toBe(true)
   })
 })
