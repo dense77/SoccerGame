@@ -97,6 +97,55 @@ export interface SaveSlot {
   status: string
 }
 
+export interface SaveTeamState {
+  id: string
+  saveSlotId: string
+  teamId: string
+  groupPoints: number
+  goalFor: number
+  goalAgainst: number
+  goalDiff: number
+  wins: number
+  draws: number
+  losses: number
+  isEliminated: boolean
+  currentMoraleMod: number
+  currentFitnessMod: number
+}
+
+export interface SavePlayerState {
+  id: string
+  saveSlotId: string
+  playerId: string
+  statusTag: string
+  fitnessValue: number
+  moraleValue: number
+  yellowCardCount: number
+  injuryFlag: boolean
+  suspensionFlag: boolean
+  lastMatchMinutes: number
+}
+
+export interface TeamStandingEntry {
+  team: Team
+  groupPoints: number
+  goalFor: number
+  goalAgainst: number
+  goalDiff: number
+  wins: number
+  draws: number
+  losses: number
+  isSelectedTeam: boolean
+}
+
+export interface SaveOverview {
+  saveSlot: SaveSlot
+  selectedTeam: Team
+  groupStandings: TeamStandingEntry[]
+  currentFixtures: MatchFixture[]
+  rosterSize: number
+}
+
 export interface DatabaseSummary {
   teamCount: number
   playerCount: number

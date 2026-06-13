@@ -58,4 +58,13 @@ export class TournamentRepository {
       )
       .map(mapFixture)
   }
+
+  getFixturesByRoundCode(roundCode: string): MatchFixture[] {
+    return this.client
+      .query<FixtureRow>(
+        'SELECT * FROM match_fixtures WHERE round_code = ? ORDER BY fixture_order ASC',
+        [roundCode],
+      )
+      .map(mapFixture)
+  }
 }

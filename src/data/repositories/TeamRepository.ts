@@ -83,6 +83,15 @@ export class TeamRepository {
     return row ? mapTeam(row) : null
   }
 
+  getTeamsByGroupCode(groupCode: string): Team[] {
+    return this.client
+      .query<TeamRow>(
+        'SELECT * FROM teams WHERE group_code = ? ORDER BY overall_rating DESC, name ASC',
+        [groupCode],
+      )
+      .map(mapTeam)
+  }
+
   getPlayersByTeamId(teamId: string): Player[] {
     return this.client
       .query<PlayerRow>(
