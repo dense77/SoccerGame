@@ -39,7 +39,7 @@ describe('round simulation integration', () => {
     expect(refreshedSave?.currentRoundCode).toBe('knockout-semi')
     expect(refreshedSave?.status).toBe('active')
     expect(overview.advancement).not.toBeNull()
-    expect(overview.tournamentSummary?.title).toBe('Knockout Stage')
+    expect(overview.tournamentSummary?.title).toBe('淘汰赛阶段')
     expect(overview.tournamentOutcome).toBe('qualified')
     expect(overview.currentFixtures).toHaveLength(2)
     expect(overview.groupStandings.filter((entry) => entry.isQualified)).toHaveLength(2)
@@ -63,7 +63,7 @@ describe('round simulation integration', () => {
     if (refreshedSave?.status === 'active') {
       expect(refreshedSave.currentRoundCode).toBe('knockout-final')
       expect(overview.currentFixtures).toHaveLength(1)
-      expect(overview.tournamentSummary?.title).toBe('Knockout Stage')
+      expect(overview.tournamentSummary?.title).toBe('淘汰赛阶段')
     } else {
       expect(refreshedSave?.status).toBe('eliminated')
       expect(refreshedSave?.currentRoundCode).toBe('tournament-complete')

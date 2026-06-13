@@ -2,6 +2,16 @@ import { useEffect, useState } from 'react'
 
 import './App.css'
 import { createAppDatabase } from './app/createAppDatabase'
+import {
+  translateEventCategory,
+  translatePosition,
+  translateResultLabel,
+  translateRoundCode,
+  translateSaveStatus,
+  translateSelectedTeamOutcome,
+  translateStage,
+  translateTournamentOutcome,
+} from './app/displayText'
 import type { SQLiteDatabaseClient } from './data/db/sqlite'
 import { SaveRepository } from './data/repositories/SaveRepository'
 import { TeamRepository } from './data/repositories/TeamRepository'
@@ -48,7 +58,7 @@ function App() {
     activeSave: null,
     activeMatchSetup: null,
     activeEventSelection: null,
-    message: 'Initializing browser SQLite and loading seed data...',
+    message: '正在初始化浏览器 SQLite 并加载种子数据……',
   })
 
   useEffect(() => {
@@ -85,8 +95,8 @@ function App() {
           activeMatchSetup,
           activeEventSelection,
           message: latestSave
-            ? 'SQLite ready. Existing save restored.'
-            : 'SQLite ready. Choose a national team to start the tournament.',
+            ? 'SQLite 已就绪，已恢复现有存档。'
+            : 'SQLite 已就绪，请选择一支国家队开始世界杯征程。',
         })
       } catch (error) {
         if (cancelled) {
@@ -102,7 +112,7 @@ function App() {
           activeSave: null,
           activeMatchSetup: null,
           activeEventSelection: null,
-          message: error instanceof Error ? error.message : 'Failed to initialize game database.',
+          message: error instanceof Error ? error.message : '游戏数据库初始化失败。',
         })
       }
     }
@@ -133,7 +143,7 @@ function App() {
       activeSave,
       activeMatchSetup,
       activeEventSelection,
-      message: `Career save created for ${activeSave.selectedTeam.shortName}.`,
+      message: `已为 ${activeSave.selectedTeam.shortName} 创建主教练存档。`,
     }))
   }
 
@@ -155,7 +165,7 @@ function App() {
       activeSave,
       activeMatchSetup,
       activeEventSelection,
-      message: `Loaded save for ${activeSave.selectedTeam.shortName}.`,
+      message: `已载入 ${activeSave.selectedTeam.shortName} 的存档。`,
     }))
   }
 
@@ -250,7 +260,7 @@ function App() {
       activeMatchSetup,
       activeEventSelection,
       message: activeMatchSetup.validation.isValid
-        ? 'Pre-match setup saved.'
+        ? '赛前设置已保存。'
         : activeMatchSetup.validation.errors[0],
     }))
   }
@@ -270,7 +280,7 @@ function App() {
       ...currentState,
       activeEventSelection: nextSelection,
       message: nextSelection
-        ? `Selected event option: ${nextSelection.options.find((option) => option.id === optionId)?.label ?? optionId}.`
+        ? `已选择事件选项：${nextSelection.options.find((option) => option.id === optionId)?.label ?? optionId}。`
         : currentState.message,
     }))
   }
@@ -283,7 +293,7 @@ function App() {
     if (!bootstrapState.activeMatchSetup.validation.isValid) {
       setBootstrapState((currentState) => ({
         ...currentState,
-        message: bootstrapState.activeMatchSetup?.validation.errors[0] ?? 'Current setup is invalid.',
+        message: bootstrapState.activeMatchSetup?.validation.errors[0] ?? '当前阵容设置无效。',
       }))
       return
     }
@@ -317,21 +327,21 @@ function App() {
       message:
         !isSavePlayable(refreshedSave.saveSlot.status)
           ? refreshedSave.saveSlot.status === 'champion'
-            ? `${refreshedSave.selectedTeam.shortName} won the World Cup.`
+            ? `${refreshedSave.selectedTeam.shortName} 夺得了世界杯冠军。`
             : refreshedSave.advancement?.selectedTeamOutcome === 'qualified'
-              ? `${refreshedSave.selectedTeam.shortName} reached the knockout stage, but the tournament is already settled.`
-              : `Tournament complete. ${refreshedSave.selectedTeam.shortName} has been eliminated.`
+              ? `${refreshedSave.selectedTeam.shortName} 已打入淘汰赛，但赛事结果已经尘埃落定。`
+              : `赛事结束，${refreshedSave.selectedTeam.shortName} 已被淘汰。`
           : refreshedSave.saveSlot.currentStage === 'knockout'
             ? refreshedSave.saveSlot.currentRoundCode === 'knockout-semi'
-              ? `Knockout semifinal ready. ${refreshedSave.selectedTeam.shortName} is two wins from the title.`
-              : `Knockout final ready. ${refreshedSave.selectedTeam.shortName} will play for the title.`
-          : `Round complete. ${snapshots.length} matches recorded. Next up: ${refreshedSave.saveSlot.currentRoundCode}.`,
+              ? `淘汰赛半决赛已准备就绪，${refreshedSave.selectedTeam.shortName} 距离冠军还差两场胜利。`
+              : `淘汰赛决赛已准备就绪，${refreshedSave.selectedTeam.shortName} 将向冠军发起冲击。`
+          : `本轮完成，已记录 ${snapshots.length} 场比赛。下一轮：${translateRoundCode(refreshedSave.saveSlot.currentRoundCode)}。`,
     }))
   }
 
   const teamNameById = (teamId: string | null): string => {
     const previewTeam = bootstrapState.previewTeams.find((team) => team.id === teamId)
-    return previewTeam?.shortName ?? teamId ?? 'TBD'
+    return previewTeam?.shortName ?? teamId ?? '待定'
   }
 
   const activeMatchSetup = bootstrapState.activeMatchSetup
@@ -347,26 +357,26 @@ function App() {
       {bootstrapState.summary && (
         <div>
           <p>
-            Seed summary: {bootstrapState.summary.teamCount} teams, {bootstrapState.summary.playerCount} players,{' '}
-            {bootstrapState.summary.fixtureCount} fixtures, {bootstrapState.summary.eventTemplateCount} event templates.
+            种子数据概览：{bootstrapState.summary.teamCount} 支球队，{bootstrapState.summary.playerCount} 名球员，
+            {bootstrapState.summary.fixtureCount} 场赛程，{bootstrapState.summary.eventTemplateCount} 个事件模板。
           </p>
           <ul>
             {bootstrapState.previewTeams.map((team) => (
               <li key={team.id}>
-                {team.shortName} ({team.fifaCode}) - overall {team.overallRating}
+                {team.shortName}（{team.fifaCode}）- 综合评分 {team.overallRating}
               </li>
             ))}
           </ul>
         </div>
       )}
 
-      {bootstrapState.status === 'error' && <p>Database bootstrap failed. Check the console for details.</p>}
+      {bootstrapState.status === 'error' && <p>数据库启动失败，请查看控制台日志。</p>}
 
       {bootstrapState.status === 'ready' && !bootstrapState.activeSave && (
         <>
           {bootstrapState.saveSlots.length > 0 && (
             <section className="panel save-list-panel">
-              <h3>Continue Save</h3>
+              <h3>继续游戏</h3>
               <div className="save-list">
                 {bootstrapState.saveSlots.map((saveSlot) => (
                   <button
@@ -375,8 +385,8 @@ function App() {
                     className="option-btn"
                     onClick={() => handleSelectSave(saveSlot.id)}
                   >
-                    {saveSlot.selectedTeamId} | {saveSlot.currentStage} | {saveSlot.currentRoundCode} |{' '}
-                    {saveSlot.status}
+                    {teamNameById(saveSlot.selectedTeamId)} | {translateStage(saveSlot.currentStage)} |{' '}
+                    {translateRoundCode(saveSlot.currentRoundCode)} | {translateSaveStatus(saveSlot.status)}
                   </button>
                 ))}
               </div>
@@ -392,10 +402,10 @@ function App() {
                 onClick={() => handleCreateSave(team.id)}
               >
                 <strong>
-                  {team.shortName} ({team.fifaCode})
+                  {team.shortName}（{team.fifaCode}）
                 </strong>
-                <span>Overall {team.overallRating}</span>
-                <span>Group {team.groupCode}</span>
+                <span>综合评分 {team.overallRating}</span>
+                <span>{team.groupCode} 组</span>
               </button>
             ))}
           </div>
@@ -405,14 +415,14 @@ function App() {
       {bootstrapState.activeSave && (
         <div className="dashboard">
           <section className="panel">
-            <h2>{bootstrapState.activeSave.selectedTeam.shortName} Manager Save</h2>
+            <h2>{bootstrapState.activeSave.selectedTeam.shortName} 主教练存档</h2>
             <p>
-              Stage: {bootstrapState.activeSave.saveSlot.currentStage} | Round:{' '}
-              {bootstrapState.activeSave.saveSlot.currentRoundCode}
+              阶段：{translateStage(bootstrapState.activeSave.saveSlot.currentStage)} | 轮次：
+              {translateRoundCode(bootstrapState.activeSave.saveSlot.currentRoundCode)}
             </p>
-            <p>Status: {bootstrapState.activeSave.saveSlot.status}</p>
-            <p>Tournament outcome: {bootstrapState.activeSave.tournamentOutcome}</p>
-            <p>Roster initialized: {bootstrapState.activeSave.rosterSize} players.</p>
+            <p>状态：{translateSaveStatus(bootstrapState.activeSave.saveSlot.status)}</p>
+            <p>赛事结果：{translateTournamentOutcome(bootstrapState.activeSave.tournamentOutcome)}</p>
+            <p>已初始化球员名单：{bootstrapState.activeSave.rosterSize} 人。</p>
             <button
               type="button"
               className="btn btn-compact btn-secondary"
@@ -422,27 +432,27 @@ function App() {
                   activeSave: null,
                   activeMatchSetup: null,
                   activeEventSelection: null,
-                  message: 'Choose a save to continue or start a new career.',
+                  message: '请选择存档继续，或开始新的世界杯征程。',
                 }))
               }
             >
-              Switch Save / New Game
+              切换存档 / 新游戏
             </button>
             {activeMatchSetup?.validation.isValid && (
               <button type="button" className="btn btn-compact" onClick={handlePlayCurrentRound}>
-                Simulate Current Round
+                模拟当前轮次
               </button>
             )}
           </section>
 
           <section className="panel">
-            <h3>Group Table</h3>
+            <h3>小组积分榜</h3>
             <ul className="compact-list">
               {bootstrapState.activeSave.groupStandings.map((entry) => (
                 <li key={entry.team.id}>
                   <strong>{entry.isSelectedTeam ? `> ${entry.team.shortName}` : entry.team.shortName}</strong>{' '}
-                  {entry.groupPoints} pts | GD {entry.goalDiff} | GF {entry.goalFor} |{' '}
-                  {entry.isQualified ? 'Qualified' : entry.isEliminated ? 'Eliminated' : 'Pending'}
+                  {entry.groupPoints} 分 | 净胜球 {entry.goalDiff} | 进球 {entry.goalFor} |{' '}
+                  {entry.isQualified ? '晋级' : entry.isEliminated ? '淘汰' : '待定'}
                 </li>
               ))}
             </ul>
@@ -450,16 +460,15 @@ function App() {
 
           {bootstrapState.activeSave.advancement && (
             <section className="panel">
-              <h3>Group Advancement</h3>
+              <h3>小组出线情况</h3>
               <p>
-                Group {bootstrapState.activeSave.advancement.groupCode}: qualified{' '}
+                {bootstrapState.activeSave.advancement.groupCode} 组晋级球队：
                 {bootstrapState.activeSave.advancement.qualifiedTeamIds
                   .map((teamId) => teamNameById(teamId))
                   .join(', ')}
               </p>
               <p>
-                Selected team outcome:{' '}
-                {bootstrapState.activeSave.advancement.selectedTeamOutcome.toUpperCase()}
+                所选球队结果：{translateSelectedTeamOutcome(bootstrapState.activeSave.advancement.selectedTeamOutcome)}
               </p>
             </section>
           )}
@@ -472,7 +481,7 @@ function App() {
           )}
 
           <section className="panel">
-            <h3>Current Round Fixtures</h3>
+            <h3>当前轮次赛程</h3>
             <ul className="compact-list">
               {bootstrapState.activeSave.currentFixtures.map((fixture) => {
                 const homeTeam = bootstrapState.previewTeams.find(
@@ -484,7 +493,7 @@ function App() {
 
                 return (
                   <li key={fixture.id}>
-                    {homeTeam?.shortName ?? fixture.homeTeamId} vs {awayTeam?.shortName ?? fixture.awayTeamId}
+                    {homeTeam?.shortName ?? fixture.homeTeamId} 对阵 {awayTeam?.shortName ?? fixture.awayTeamId}
                   </li>
                 )
               })}
@@ -492,9 +501,9 @@ function App() {
           </section>
 
           <section className="panel">
-            <h3>Completed Matches</h3>
+            <h3>已完成比赛</h3>
             <ul className="compact-list">
-              {bootstrapState.activeSave.completedMatches.length === 0 && <li>No matches played yet.</li>}
+              {bootstrapState.activeSave.completedMatches.length === 0 && <li>暂时还没有已完成的比赛。</li>}
               {bootstrapState.activeSave.completedMatches.map((snapshot) => (
                 <li key={snapshot.id}>
                   {teamNameById(snapshot.homeTeamId)} {snapshot.homeScore}:{snapshot.awayScore}{' '}
@@ -506,32 +515,32 @@ function App() {
 
           {latestPostMatchReport && (
             <section className="panel">
-              <h3>Latest Post-match Report</h3>
+              <h3>最新赛后简报</h3>
               <p>
                 {latestPostMatchReport.teamName} {latestPostMatchReport.scoreline} {latestPostMatchReport.opponentTeamName} |{' '}
-                {latestPostMatchReport.resultLabel.toUpperCase()}
+                {translateResultLabel(latestPostMatchReport.resultLabel)}
               </p>
               <p>
-                Fitness: starters {latestPostMatchReport.fitnessChangeSummary.startersAverageDelta},
-                bench {latestPostMatchReport.fitnessChangeSummary.benchAverageDelta}. Most affected:{' '}
-                {latestPostMatchReport.fitnessChangeSummary.mostAffectedPlayer ?? 'n/a'}.
+                体能：首发 {latestPostMatchReport.fitnessChangeSummary.startersAverageDelta}，替补{' '}
+                {latestPostMatchReport.fitnessChangeSummary.benchAverageDelta}。影响最大：
+                {latestPostMatchReport.fitnessChangeSummary.mostAffectedPlayer ?? '无'}。
               </p>
               <p>
-                Morale: average {latestPostMatchReport.moraleChangeSummary.teamAverageDelta}. Boosted:{' '}
-                {latestPostMatchReport.moraleChangeSummary.mostBoostedPlayer ?? 'n/a'}, dropped:{' '}
-                {latestPostMatchReport.moraleChangeSummary.mostDroppedPlayer ?? 'n/a'}.
+                士气：全队平均 {latestPostMatchReport.moraleChangeSummary.teamAverageDelta}。提升最大：
+                {latestPostMatchReport.moraleChangeSummary.mostBoostedPlayer ?? '无'}，下降最多：
+                {latestPostMatchReport.moraleChangeSummary.mostDroppedPlayer ?? '无'}。
               </p>
               {latestPostMatchReport.eventReport && (
                 <div className="feedback-block">
-                  <strong>Event outcome</strong>
+                  <strong>事件结果</strong>
                   <span>
                     {latestPostMatchReport.eventReport.title} - {latestPostMatchReport.eventReport.optionLabel}
                   </span>
                   <span>
-                    Attack {latestPostMatchReport.eventReport.modifier.attackDelta >= 0 ? '+' : ''}
-                    {latestPostMatchReport.eventReport.modifier.attackDelta} / Defense{' '}
+                    进攻 {latestPostMatchReport.eventReport.modifier.attackDelta >= 0 ? '+' : ''}
+                    {latestPostMatchReport.eventReport.modifier.attackDelta} / 防守{' '}
                     {latestPostMatchReport.eventReport.modifier.defenseDelta >= 0 ? '+' : ''}
-                    {latestPostMatchReport.eventReport.modifier.defenseDelta} / Morale{' '}
+                    {latestPostMatchReport.eventReport.modifier.defenseDelta} / 士气{' '}
                     {latestPostMatchReport.eventReport.modifier.moraleDelta >= 0 ? '+' : ''}
                     {latestPostMatchReport.eventReport.modifier.moraleDelta}
                   </span>
@@ -540,8 +549,8 @@ function App() {
               <ul className="compact-list status-shift-list">
                 {latestPostMatchReport.playerChanges.slice(0, 5).map((change) => (
                   <li key={change.playerId}>
-                    {change.playerName} | Fit {change.fitnessBefore}→{change.fitnessAfter} | Morale{' '}
-                    {change.moraleBefore}→{change.moraleAfter} | {change.isStarter ? 'Starter' : 'Bench'}
+                    {change.playerName} | 体能 {change.fitnessBefore}→{change.fitnessAfter} | 士气{' '}
+                    {change.moraleBefore}→{change.moraleAfter} | {change.isStarter ? '首发' : '替补'}
                   </li>
                 ))}
               </ul>
@@ -552,9 +561,9 @@ function App() {
             <>
               {activeEventSelection && (
                 <section className="panel">
-                  <h3>Key Event</h3>
+                  <h3>关键事件</h3>
                   <p>
-                    {activeEventSelection.template.title} ({activeEventSelection.template.category})
+                    {activeEventSelection.template.title}（{translateEventCategory(activeEventSelection.template.category)}）
                   </p>
                   <p>{activeEventSelection.template.textTemplate}</p>
                   <div className="option-list">
@@ -577,10 +586,10 @@ function App() {
               )}
 
               <section className="panel">
-                <h3>Pre-match Setup</h3>
-                <p>Fixture: {teamNameById(activeMatchSetup.fixture.homeTeamId)} vs {teamNameById(activeMatchSetup.fixture.awayTeamId)}</p>
+                <h3>赛前设置</h3>
+                <p>对阵：{teamNameById(activeMatchSetup.fixture.homeTeamId)} 对阵 {teamNameById(activeMatchSetup.fixture.awayTeamId)}</p>
                 <label className="control">
-                  <span>Formation</span>
+                  <span>阵型</span>
                   <select
                     value={activeMatchSetup.selectedFormation.id}
                     onChange={(event) => handleChangeFormation(event.target.value)}
@@ -593,7 +602,7 @@ function App() {
                   </select>
                 </label>
                 <label className="control">
-                  <span>Tactic</span>
+                  <span>战术</span>
                   <select
                     value={activeMatchSetup.selectedTactic.id}
                     onChange={(event) => handleChangeTactic(event.target.value)}
@@ -606,7 +615,7 @@ function App() {
                   </select>
                 </label>
                 <p>
-                  Starters: {activeMatchSetup.players.filter((player) => player.isStarter).length}/
+                  首发人数：{activeMatchSetup.players.filter((player) => player.isStarter).length}/
                   {activeMatchSetup.selectedFormation.slotLayout.length}
                 </p>
                 {!activeMatchSetup.validation.isValid && (
@@ -619,7 +628,7 @@ function App() {
               </section>
 
               <section className="panel">
-                <h3>Squad Management</h3>
+                <h3>阵容管理</h3>
                 <ul className="squad-list">
                   {activeMatchSetup.players.map((entry) => (
                     <li key={entry.player.id} className={entry.isStarter ? 'starter' : 'reserve'}>
@@ -628,8 +637,8 @@ function App() {
                           #{entry.player.shirtNumber} {entry.player.name}
                         </strong>
                         <span>
-                          {entry.player.primaryPosition} | OVR {entry.player.overallRating} | Fitness{' '}
-                          {entry.state.fitnessValue} | Morale {entry.state.moraleValue}
+                          {translatePosition(entry.player.primaryPosition)} | 综合 {entry.player.overallRating} | 体能{' '}
+                          {entry.state.fitnessValue} | 士气 {entry.state.moraleValue}
                         </span>
                       </div>
                       <button
@@ -642,7 +651,7 @@ function App() {
                             activeMatchSetup.selectedFormation.slotLayout.length
                         }
                       >
-                        {entry.isStarter ? 'Move to Bench' : 'Start'}
+                        {entry.isStarter ? '移至替补' : '设为首发'}
                       </button>
                     </li>
                   ))}

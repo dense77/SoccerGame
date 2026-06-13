@@ -40,6 +40,38 @@ describe('database bootstrap', () => {
     expect(playerCount).toBe(104)
   })
 
+  it('refreshes seeded display text when existing seed rows contain older values', async () => {
+    const client = new SQLiteDatabaseClient(new MemoryBinaryStorage())
+    await client.initialize()
+    initializeSchema(client)
+    seedDatabaseIfEmpty(client)
+
+    client.execute("UPDATE teams SET short_name = 'Argentina' WHERE id = 'team-arg-sample'")
+    client.execute("UPDATE players SET name = 'Argentina Player 1' WHERE id = 'team-arg-sample-player-1'")
+    client.execute("UPDATE event_templates SET title = 'Late Push' WHERE id = 'event-tactic-late-push'")
+    client.execute("UPDATE event_options SET label = 'Push the fullbacks higher' WHERE id = 'event-option-tactic-late-push-yes'")
+
+    seedDatabaseIfEmpty(client)
+
+    const team = client.getOne<{ short_name: string }>(
+      "SELECT short_name FROM teams WHERE id = 'team-arg-sample'",
+    )
+    const player = client.getOne<{ name: string }>(
+      "SELECT name FROM players WHERE id = 'team-arg-sample-player-1'",
+    )
+    const eventTemplate = client.getOne<{ title: string }>(
+      "SELECT title FROM event_templates WHERE id = 'event-tactic-late-push'",
+    )
+    const eventOption = client.getOne<{ label: string }>(
+      "SELECT label FROM event_options WHERE id = 'event-option-tactic-late-push-yes'",
+    )
+
+    expect(team?.short_name).toBe('阿根廷')
+    expect(player?.name).toBe('阿根廷1号球员')
+    expect(eventTemplate?.title).toBe('末段强攻')
+    expect(eventOption?.label).toBe('让边后卫大举压上')
+  })
+
   it('enforces unique player constraints within a team roster', async () => {
     const client = new SQLiteDatabaseClient(new MemoryBinaryStorage())
     await client.initialize()

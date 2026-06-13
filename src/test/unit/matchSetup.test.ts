@@ -44,6 +44,6 @@ describe('team management match setup', () => {
     const validation = validateMatchSetup(sampleFormations[0], roster)
 
     expect(validation.isValid).toBe(false)
-    expect(validation.errors).toContain('Starting lineup must include exactly one goalkeeper.')
+    expect(validation.errors).toContain('首发阵容必须恰好包含 1 名门将。')
   })
 })

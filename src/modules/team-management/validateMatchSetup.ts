@@ -8,26 +8,26 @@ export function validateMatchSetup(
   const errors: string[] = []
 
   if (starters.length !== formation.slotLayout.length) {
-    errors.push(`Starting lineup must contain exactly ${formation.slotLayout.length} players.`)
+    errors.push(`首发阵容必须刚好包含 ${formation.slotLayout.length} 名球员。`)
   }
 
   const starterIds = new Set(starters.map((player) => player.player.id))
   if (starterIds.size !== starters.length) {
-    errors.push('Starting lineup contains duplicate players.')
+    errors.push('首发阵容中存在重复球员。')
   }
 
   const suspendedOrInjured = starters.filter(
     (player) => player.state.suspensionFlag || player.state.injuryFlag,
   )
   if (suspendedOrInjured.length > 0) {
-    errors.push('Suspended or injured players cannot be included in the starting lineup.')
+    errors.push('停赛或受伤球员不能进入首发阵容。')
   }
 
   const goalkeeperCount = starters.filter(
     (player) => player.player.primaryPosition === 'GK',
   ).length
   if (goalkeeperCount !== 1) {
-    errors.push('Starting lineup must include exactly one goalkeeper.')
+    errors.push('首发阵容必须恰好包含 1 名门将。')
   }
 
   return {
