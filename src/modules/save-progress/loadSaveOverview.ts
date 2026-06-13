@@ -54,6 +54,12 @@ function localizePostMatchReport(
       ? currentPlayers.get(matchingPlayer.playerId) ?? historicName
       : historicName
   }
+  const normalizedEventReports =
+    Array.isArray(report.eventReports)
+      ? report.eventReports
+      : report.eventReport
+        ? [report.eventReport]
+        : []
 
   return {
     ...report,
@@ -69,7 +75,7 @@ function localizePostMatchReport(
       mostBoostedPlayer: localizeHistoricPlayerName(report.moraleChangeSummary.mostBoostedPlayer),
       mostDroppedPlayer: localizeHistoricPlayerName(report.moraleChangeSummary.mostDroppedPlayer),
     },
-    eventReports: report.eventReports.map((eventReport) => ({
+    eventReports: normalizedEventReports.map((eventReport) => ({
       ...eventReport,
       title: currentTemplates.get(eventReport.templateId)?.title ?? eventReport.title,
       optionLabel: currentOptions.get(eventReport.optionId) ?? eventReport.optionLabel,

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
 import { resolveSaveFlowView } from '../../app/saveFlowView'
-import type { SaveOverview } from '../../types/entities'
+import type { PostMatchReport, SaveOverview } from '../../types/entities'
 
 function createOverview(
   overrides: Partial<Pick<SaveOverview, 'saveSlot' | 'latestPostMatchReport' | 'tournamentOutcome'>> = {},
@@ -20,6 +20,34 @@ function createOverview(
   }
 }
 
+function createLegacyPostMatchReport(): PostMatchReport {
+  return {
+    snapshotId: 'snapshot-1',
+    fixtureId: 'fixture-1',
+    stage: 'group',
+    roundCode: 'group-round-1',
+    knockoutSlot: null,
+    teamId: 'team-arg-sample',
+    teamName: '阿根廷',
+    opponentTeamName: '美国',
+    scoreline: '2-1',
+    resultLabel: 'win',
+    fitnessChangeSummary: {
+      startersAverageDelta: -18,
+      benchAverageDelta: -4,
+      mostAffectedPlayer: '阿根廷1号球员',
+    },
+    moraleChangeSummary: {
+      teamAverageDelta: 4,
+      mostBoostedPlayer: '阿根廷2号球员',
+      mostDroppedPlayer: null,
+    },
+    playerChanges: [],
+    eventReports: [],
+    eventReport: null,
+  }
+}
+
 describe('resolveSaveFlowView', () => {
   it('keeps a newly created save on the dashboard', () => {
     expect(resolveSaveFlowView(createOverview(), 'new-save')).toBe('dashboard')
@@ -29,31 +57,7 @@ describe('resolveSaveFlowView', () => {
     expect(
       resolveSaveFlowView(
         createOverview({
-          latestPostMatchReport: {
-            snapshotId: 'snapshot-1',
-            fixtureId: 'fixture-1',
-            stage: 'group',
-            roundCode: 'group-round-1',
-            knockoutSlot: null,
-            teamId: 'team-arg-sample',
-            teamName: '阿根廷',
-            opponentTeamName: '美国',
-            scoreline: '2-1',
-            resultLabel: 'win',
-            fitnessChangeSummary: {
-              startersAverageDelta: -18,
-              benchAverageDelta: -4,
-              mostAffectedPlayer: '阿根廷1号球员',
-            },
-            moraleChangeSummary: {
-              teamAverageDelta: 4,
-              mostBoostedPlayer: '阿根廷2号球员',
-              mostDroppedPlayer: null,
-            },
-            playerChanges: [],
-            eventReports: [],
-            eventReport: null,
-          },
+          latestPostMatchReport: createLegacyPostMatchReport(),
         }),
         'after-round',
       ),
