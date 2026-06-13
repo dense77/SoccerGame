@@ -6,12 +6,14 @@ import type { SQLiteDatabaseClient } from './data/db/sqlite'
 import { SaveRepository } from './data/repositories/SaveRepository'
 import { TeamRepository } from './data/repositories/TeamRepository'
 import { loadGameDataSummary } from './modules/bootstrap/loadGameDataSummary'
+import { loadMatchEventSelection } from './modules/event-system/loadMatchEventSelection'
 import { playCurrentRound } from './modules/match-engine/playCurrentRound'
 import { createCareerSave } from './modules/save-progress/createCareerSave'
 import { loadSaveOverview } from './modules/save-progress/loadSaveOverview'
 import { loadMatchSetupOverview } from './modules/team-management/loadMatchSetupOverview'
 import type {
   DatabaseSummary,
+  MatchEventSelection,
   MatchSetupOverview,
   SaveMatchSetup,
   SaveOverview,
@@ -25,6 +27,7 @@ interface BootstrapState {
   client: SQLiteDatabaseClient | null
   activeSave: SaveOverview | null
   activeMatchSetup: MatchSetupOverview | null
+  activeEventSelection: MatchEventSelection | null
   message: string
 }
 
@@ -37,6 +40,7 @@ function App() {
     client: null,
     activeSave: null,
     activeMatchSetup: null,
+    activeEventSelection: null,
     message: 'Initializing browser SQLite and loading seed data...',
   })
 
@@ -52,8 +56,11 @@ function App() {
         const summary = loadGameDataSummary(client)
         const latestSave = saveRepository.getLatestSaveSlot()
         const activeSave = latestSave ? loadSaveOverview(client, latestSave.id) : null
-        const activeMatchSetup = latestSave
+        const activeMatchSetup = latestSave?.status === 'active'
           ? loadMatchSetupOverview(client, latestSave.id)
+          : null
+        const activeEventSelection = activeMatchSetup
+          ? loadMatchEventSelection(client, activeMatchSetup)
           : null
 
         if (cancelled) {
@@ -67,6 +74,7 @@ function App() {
           client,
           activeSave,
           activeMatchSetup,
+          activeEventSelection,
           message: latestSave
             ? 'SQLite ready. Existing save restored.'
             : 'SQLite ready. Choose a national team to start the tournament.',
@@ -83,6 +91,7 @@ function App() {
           client: null,
           activeSave: null,
           activeMatchSetup: null,
+          activeEventSelection: null,
           message: error instanceof Error ? error.message : 'Failed to initialize game database.',
         })
       }
@@ -103,11 +112,16 @@ function App() {
     const saveSlot = createCareerSave(bootstrapState.client, teamId)
     const activeSave = loadSaveOverview(bootstrapState.client, saveSlot.id)
     const activeMatchSetup = loadMatchSetupOverview(bootstrapState.client, saveSlot.id)
+    const activeEventSelection = loadMatchEventSelection(
+      bootstrapState.client,
+      activeMatchSetup,
+    )
 
     setBootstrapState((currentState) => ({
       ...currentState,
       activeSave,
       activeMatchSetup,
+      activeEventSelection,
       message: `Career save created for ${activeSave.selectedTeam.shortName}.`,
     }))
   }
@@ -192,13 +206,39 @@ function App() {
       bootstrapState.client,
       bootstrapState.activeSave.saveSlot.id,
     )
+    const activeEventSelection = loadMatchEventSelection(
+      bootstrapState.client,
+      activeMatchSetup,
+      bootstrapState.activeEventSelection?.selectedOptionId ?? null,
+    )
 
     setBootstrapState((currentState) => ({
       ...currentState,
       activeMatchSetup,
+      activeEventSelection,
       message: activeMatchSetup.validation.isValid
         ? 'Pre-match setup saved.'
         : activeMatchSetup.validation.errors[0],
+    }))
+  }
+
+  const handleSelectEventOption = (optionId: string) => {
+    if (!bootstrapState.client || !bootstrapState.activeMatchSetup || !bootstrapState.activeEventSelection) {
+      return
+    }
+
+    const nextSelection = loadMatchEventSelection(
+      bootstrapState.client,
+      bootstrapState.activeMatchSetup,
+      optionId,
+    )
+
+    setBootstrapState((currentState) => ({
+      ...currentState,
+      activeEventSelection: nextSelection,
+      message: nextSelection
+        ? `Selected event option: ${nextSelection.options.find((option) => option.id === optionId)?.label ?? optionId}.`
+        : currentState.message,
     }))
   }
 
@@ -218,6 +258,7 @@ function App() {
     const snapshots = playCurrentRound(
       bootstrapState.client,
       bootstrapState.activeSave.saveSlot.id,
+      bootstrapState.activeEventSelection,
     )
     const refreshedSave = loadSaveOverview(
       bootstrapState.client,
@@ -227,11 +268,16 @@ function App() {
       refreshedSave.saveSlot.currentRoundCode === 'completed'
         ? null
         : loadMatchSetupOverview(bootstrapState.client, bootstrapState.activeSave.saveSlot.id)
+    const refreshedEventSelection =
+      refreshedSetup && refreshedSave.saveSlot.currentRoundCode !== 'completed'
+        ? loadMatchEventSelection(bootstrapState.client, refreshedSetup)
+        : null
 
     setBootstrapState((currentState) => ({
       ...currentState,
       activeSave: refreshedSave,
       activeMatchSetup: refreshedSetup,
+      activeEventSelection: refreshedEventSelection,
       message:
         refreshedSave.saveSlot.currentRoundCode === 'completed'
           ? `Group stage simulation finished. Last round recorded ${snapshots.length} matches.`
@@ -245,6 +291,7 @@ function App() {
   }
 
   const activeMatchSetup = bootstrapState.activeMatchSetup
+  const activeEventSelection = bootstrapState.activeEventSelection
 
   return (
     <div className="container">
@@ -351,6 +398,32 @@ function App() {
 
           {activeMatchSetup && (
             <>
+              {activeEventSelection && (
+                <section className="panel">
+                  <h3>Key Event</h3>
+                  <p>
+                    {activeEventSelection.template.title} ({activeEventSelection.template.category})
+                  </p>
+                  <p>{activeEventSelection.template.textTemplate}</p>
+                  <div className="option-list">
+                    {activeEventSelection.options.map((option) => (
+                      <button
+                        key={option.id}
+                        type="button"
+                        className={
+                          option.id === activeEventSelection.selectedOptionId
+                            ? 'option-btn option-btn-active'
+                            : 'option-btn'
+                        }
+                        onClick={() => handleSelectEventOption(option.id)}
+                      >
+                        {option.label}
+                      </button>
+                    ))}
+                  </div>
+                </section>
+              )}
+
               <section className="panel">
                 <h3>Pre-match Setup</h3>
                 <p>Fixture: {teamNameById(activeMatchSetup.fixture.homeTeamId)} vs {teamNameById(activeMatchSetup.fixture.awayTeamId)}</p>
@@ -436,8 +509,8 @@ function App() {
         <div className="overlay" onClick={() => setShowModal(false)}>
           <div className="modal" onClick={(e) => e.stopPropagation()}>
             <h2>当前实现进度</h2>
-            <p>已完成浏览器 SQLite、选队开局、存档初始化、赛前阵容管理和战术配置。</p>
-            <p>下一步会进入比赛引擎和赛事结果推进。</p>
+            <p>已完成浏览器 SQLite、选队开局、存档初始化、赛前阵容管理、战术配置和基础比赛结算。</p>
+            <p>当前阶段已经接入关键事件选择，下一步会继续丰富事件池和事件链。</p>
             <button className="btn btn-close" onClick={() => setShowModal(false)}>
               关闭
             </button>

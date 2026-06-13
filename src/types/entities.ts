@@ -89,6 +89,21 @@ export interface EventOption {
   sortOrder: number
 }
 
+export interface MatchEventModifier {
+  attackDelta: number
+  defenseDelta: number
+  moraleDelta: number
+  fitnessDelta: number
+  contextTags: string[]
+}
+
+export interface MatchEventSelection {
+  template: EventTemplate
+  options: EventOption[]
+  selectedOptionId: string
+  resolvedModifier: MatchEventModifier
+}
+
 export interface SaveSlot {
   id: string
   selectedTeamId: string
@@ -194,12 +209,23 @@ export interface MatchSnapshot {
   completedAt: string
 }
 
+export interface MatchEventLog {
+  id: string
+  matchSnapshotId: string
+  eventTemplateId: string
+  optionId: string
+  phase: string
+  sequenceNo: number
+  resolvedEffect: MatchEventModifier
+}
+
 export interface MatchSimulationSide {
   team: Team
   formation: Formation
   tactic: TacticProfile
   starters: ManagedPlayer[]
   bench: ManagedPlayer[]
+  selectedEventModifier?: MatchEventModifier | null
 }
 
 export interface MatchSimulationInput {

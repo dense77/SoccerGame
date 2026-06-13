@@ -1,4 +1,6 @@
 import type {
+  MatchEventModifier,
+  MatchEventLog,
   MatchSnapshot,
   SaveMatchSetup,
   SavePlayerState,
@@ -67,6 +69,16 @@ interface MatchSnapshotRow {
   result_summary_json: string
   applied_modifiers_json: string
   completed_at: string
+}
+
+interface MatchEventLogRow {
+  id: string
+  match_snapshot_id: string
+  event_template_id: string
+  option_id: string
+  phase: string
+  sequence_no: number
+  resolved_effect_json: string
 }
 
 function mapSaveSlot(row: SaveSlotRow): SaveSlot {
@@ -138,6 +150,18 @@ function mapMatchSnapshot(row: MatchSnapshotRow): MatchSnapshot {
     resultSummary: JSON.parse(row.result_summary_json) as Record<string, unknown>,
     appliedModifiers: JSON.parse(row.applied_modifiers_json) as Record<string, unknown>,
     completedAt: row.completed_at,
+  }
+}
+
+function mapMatchEventLog(row: MatchEventLogRow): MatchEventLog {
+  return {
+    id: row.id,
+    matchSnapshotId: row.match_snapshot_id,
+    eventTemplateId: row.event_template_id,
+    optionId: row.option_id,
+    phase: row.phase,
+    sequenceNo: row.sequence_no,
+    resolvedEffect: JSON.parse(row.resolved_effect_json) as MatchEventModifier,
   }
 }
 
@@ -409,6 +433,24 @@ export class SaveRepository {
     )
   }
 
+  createMatchEventLog(log: MatchEventLog): void {
+    this.client.execute(
+      `INSERT INTO match_event_logs (
+        id, match_snapshot_id, event_template_id, option_id, phase, sequence_no, resolved_effect_json, created_at
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+      [
+        log.id,
+        log.matchSnapshotId,
+        log.eventTemplateId,
+        log.optionId,
+        log.phase,
+        log.sequenceNo,
+        JSON.stringify(log.resolvedEffect),
+        new Date().toISOString(),
+      ],
+    )
+  }
+
   getMatchSnapshotsBySaveSlotId(saveSlotId: string): MatchSnapshot[] {
     return this.client
       .query<MatchSnapshotRow>(
@@ -416,5 +458,14 @@ export class SaveRepository {
         [saveSlotId],
       )
       .map(mapMatchSnapshot)
+  }
+
+  getMatchEventLogsBySnapshotId(matchSnapshotId: string): MatchEventLog[] {
+    return this.client
+      .query<MatchEventLogRow>(
+        'SELECT * FROM match_event_logs WHERE match_snapshot_id = ? ORDER BY sequence_no ASC',
+        [matchSnapshotId],
+      )
+      .map(mapMatchEventLog)
   }
 }

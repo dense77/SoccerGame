@@ -25,6 +25,22 @@ function computeStarterStrength(starters: ManagedPlayer[]): number {
   )
 }
 
+function applyEventModifier(
+  baseStrength: number,
+  attackDelta: number,
+  defenseDelta: number,
+  moraleDelta: number,
+  fitnessDelta: number,
+): number {
+  return (
+    baseStrength +
+    attackDelta * 1.8 +
+    defenseDelta * 1.1 +
+    moraleDelta * 1.4 +
+    fitnessDelta * 0.9
+  )
+}
+
 function computeFormationModifier(tags: string[]): number {
   if (tags.includes('high_press')) {
     return 1.5
@@ -86,23 +102,35 @@ function deriveScoreline(delta: number, volatility: number): [number, number] {
 
 export function simulateMatch(input: MatchSimulationInput): MatchSimulationOutput {
   const homeStrength =
-    computeStarterStrength(input.home.starters) +
-    computeFormationModifier(input.home.formation.tacticTags) +
-    computeTacticModifier(
-      input.home.tactic.attackBias,
-      input.home.tactic.defensiveLine,
-      input.home.tactic.tempo,
-      input.home.tactic.riskAppetite,
+    applyEventModifier(
+      computeStarterStrength(input.home.starters) +
+        computeFormationModifier(input.home.formation.tacticTags) +
+        computeTacticModifier(
+          input.home.tactic.attackBias,
+          input.home.tactic.defensiveLine,
+          input.home.tactic.tempo,
+          input.home.tactic.riskAppetite,
+        ),
+      input.home.selectedEventModifier?.attackDelta ?? 0,
+      input.home.selectedEventModifier?.defenseDelta ?? 0,
+      input.home.selectedEventModifier?.moraleDelta ?? 0,
+      input.home.selectedEventModifier?.fitnessDelta ?? 0,
     )
 
   const awayStrength =
-    computeStarterStrength(input.away.starters) +
-    computeFormationModifier(input.away.formation.tacticTags) +
-    computeTacticModifier(
-      input.away.tactic.attackBias,
-      input.away.tactic.defensiveLine,
-      input.away.tactic.tempo,
-      input.away.tactic.riskAppetite,
+    applyEventModifier(
+      computeStarterStrength(input.away.starters) +
+        computeFormationModifier(input.away.formation.tacticTags) +
+        computeTacticModifier(
+          input.away.tactic.attackBias,
+          input.away.tactic.defensiveLine,
+          input.away.tactic.tempo,
+          input.away.tactic.riskAppetite,
+        ),
+      input.away.selectedEventModifier?.attackDelta ?? 0,
+      input.away.selectedEventModifier?.defenseDelta ?? 0,
+      input.away.selectedEventModifier?.moraleDelta ?? 0,
+      input.away.selectedEventModifier?.fitnessDelta ?? 0,
     )
 
   const delta = Number((homeStrength - awayStrength).toFixed(2))
@@ -120,6 +148,8 @@ export function simulateMatch(input: MatchSimulationInput): MatchSimulationOutpu
     resultSummary: {
       homeStrength: Number(homeStrength.toFixed(2)),
       awayStrength: Number(awayStrength.toFixed(2)),
+      homeEventTags: input.home.selectedEventModifier?.contextTags ?? [],
+      awayEventTags: input.away.selectedEventModifier?.contextTags ?? [],
       winner:
         homeScore === awayScore
           ? 'draw'

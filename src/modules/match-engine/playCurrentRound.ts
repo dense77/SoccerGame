@@ -5,7 +5,9 @@ import { TournamentRepository } from '../../data/repositories/TournamentReposito
 import type { SQLiteDatabaseClient } from '../../data/db/sqlite'
 import type {
   ManagedPlayer,
+  MatchEventSelection,
   MatchSimulationInput,
+  MatchEventLog,
   MatchSnapshot,
   SaveMatchSetup,
   SavePlayerState,
@@ -108,6 +110,7 @@ function updateSelectedTeamPlayerStates(
 export function playCurrentRound(
   client: SQLiteDatabaseClient,
   saveSlotId: string,
+  selectedEvent: MatchEventSelection | null = null,
 ): MatchSnapshot[] {
   const saveRepository = new SaveRepository(client)
   const teamRepository = new TeamRepository(client)
@@ -235,6 +238,8 @@ export function playCurrentRound(
         tactic: homeTactic,
         starters: homePlayers.filter((entry) => entry.isStarter),
         bench: homePlayers.filter((entry) => !entry.isStarter),
+        selectedEventModifier:
+          selectedTeam.id === homeTeam.id ? selectedEvent?.resolvedModifier ?? null : null,
       },
       away: {
         team: awayTeam,
@@ -242,6 +247,8 @@ export function playCurrentRound(
         tactic: awayTactic,
         starters: awayPlayers.filter((entry) => entry.isStarter),
         bench: awayPlayers.filter((entry) => !entry.isStarter),
+        selectedEventModifier:
+          selectedTeam.id === awayTeam.id ? selectedEvent?.resolvedModifier ?? null : null,
       },
     }
 
@@ -262,6 +269,23 @@ export function playCurrentRound(
     }
 
     saveRepository.createMatchSnapshot(snapshot)
+
+    if (
+      selectedEvent &&
+      (selectedTeam.id === homeTeam.id || selectedTeam.id === awayTeam.id)
+    ) {
+      const eventLog: MatchEventLog = {
+        id: `${snapshot.id}-${selectedEvent.template.id}-${selectedEvent.selectedOptionId}`,
+        matchSnapshotId: snapshot.id,
+        eventTemplateId: selectedEvent.template.id,
+        optionId: selectedEvent.selectedOptionId,
+        phase: selectedEvent.template.triggerPhase,
+        sequenceNo: 1,
+        resolvedEffect: selectedEvent.resolvedModifier,
+      }
+
+      saveRepository.createMatchEventLog(eventLog)
+    }
 
     const homeState = teamStates.get(homeTeam.id)
     const awayState = teamStates.get(awayTeam.id)
