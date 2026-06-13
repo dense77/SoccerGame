@@ -31,6 +31,10 @@ interface BootstrapState {
   message: string
 }
 
+function isSavePlayable(status: string): boolean {
+  return status === 'active'
+}
+
 function App() {
   const [showModal, setShowModal] = useState(false)
   const [bootstrapState, setBootstrapState] = useState<BootstrapState>({
@@ -56,7 +60,7 @@ function App() {
         const summary = loadGameDataSummary(client)
         const latestSave = saveRepository.getLatestSaveSlot()
         const activeSave = latestSave ? loadSaveOverview(client, latestSave.id) : null
-        const activeMatchSetup = latestSave?.status === 'active'
+        const activeMatchSetup = latestSave && isSavePlayable(latestSave.status)
           ? loadMatchSetupOverview(client, latestSave.id)
           : null
         const activeEventSelection = activeMatchSetup
@@ -265,11 +269,11 @@ function App() {
       bootstrapState.activeSave.saveSlot.id,
     )
     const refreshedSetup =
-      refreshedSave.saveSlot.currentRoundCode === 'completed'
+      !isSavePlayable(refreshedSave.saveSlot.status)
         ? null
         : loadMatchSetupOverview(bootstrapState.client, bootstrapState.activeSave.saveSlot.id)
     const refreshedEventSelection =
-      refreshedSetup && refreshedSave.saveSlot.currentRoundCode !== 'completed'
+      refreshedSetup && isSavePlayable(refreshedSave.saveSlot.status)
         ? loadMatchEventSelection(bootstrapState.client, refreshedSetup)
         : null
 
@@ -279,8 +283,10 @@ function App() {
       activeMatchSetup: refreshedSetup,
       activeEventSelection: refreshedEventSelection,
       message:
-        refreshedSave.saveSlot.currentRoundCode === 'completed'
-          ? `Group stage simulation finished. Last round recorded ${snapshots.length} matches.`
+        !isSavePlayable(refreshedSave.saveSlot.status)
+          ? refreshedSave.advancement?.selectedTeamOutcome === 'qualified'
+            ? `Group stage complete. ${refreshedSave.selectedTeam.shortName} advanced from Group ${refreshedSave.selectedTeam.groupCode}.`
+            : `Group stage complete. ${refreshedSave.selectedTeam.shortName} has been eliminated.`
           : `Round complete. ${snapshots.length} matches recorded. Next up: ${refreshedSave.saveSlot.currentRoundCode}.`,
     }))
   }
@@ -344,6 +350,7 @@ function App() {
               Stage: {bootstrapState.activeSave.saveSlot.currentStage} | Round:{' '}
               {bootstrapState.activeSave.saveSlot.currentRoundCode}
             </p>
+            <p>Status: {bootstrapState.activeSave.saveSlot.status}</p>
             <p>Roster initialized: {bootstrapState.activeSave.rosterSize} players.</p>
             {activeMatchSetup?.validation.isValid && (
               <button type="button" className="btn btn-compact" onClick={handlePlayCurrentRound}>
@@ -358,11 +365,28 @@ function App() {
               {bootstrapState.activeSave.groupStandings.map((entry) => (
                 <li key={entry.team.id}>
                   <strong>{entry.isSelectedTeam ? `> ${entry.team.shortName}` : entry.team.shortName}</strong>{' '}
-                  {entry.groupPoints} pts | GD {entry.goalDiff} | GF {entry.goalFor}
+                  {entry.groupPoints} pts | GD {entry.goalDiff} | GF {entry.goalFor} |{' '}
+                  {entry.isQualified ? 'Qualified' : entry.isEliminated ? 'Eliminated' : 'Pending'}
                 </li>
               ))}
             </ul>
           </section>
+
+          {bootstrapState.activeSave.advancement && (
+            <section className="panel">
+              <h3>Group Advancement</h3>
+              <p>
+                Group {bootstrapState.activeSave.advancement.groupCode}: qualified{' '}
+                {bootstrapState.activeSave.advancement.qualifiedTeamIds
+                  .map((teamId) => teamNameById(teamId))
+                  .join(', ')}
+              </p>
+              <p>
+                Selected team outcome:{' '}
+                {bootstrapState.activeSave.advancement.selectedTeamOutcome.toUpperCase()}
+              </p>
+            </section>
+          )}
 
           <section className="panel">
             <h3>Current Round Fixtures</h3>

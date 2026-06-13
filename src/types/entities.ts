@@ -150,6 +150,8 @@ export interface TeamStandingEntry {
   wins: number
   draws: number
   losses: number
+  isQualified: boolean
+  isEliminated: boolean
   isSelectedTeam: boolean
 }
 
@@ -160,6 +162,7 @@ export interface SaveOverview {
   currentFixtures: MatchFixture[]
   completedMatches: MatchSnapshot[]
   latestPostMatchReport: PostMatchReport | null
+  advancement: GroupAdvancementSummary | null
   rosterSize: number
 }
 
@@ -253,6 +256,13 @@ export interface PostMatchReport {
   }
   playerChanges: PlayerStateChange[]
   eventReport: PostMatchEventReport | null
+}
+
+export interface GroupAdvancementSummary {
+  groupCode: string
+  qualifiedTeamIds: string[]
+  eliminatedTeamIds: string[]
+  selectedTeamOutcome: 'qualified' | 'eliminated' | 'pending'
 }
 
 export interface MatchEventLog {

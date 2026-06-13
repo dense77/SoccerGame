@@ -388,6 +388,21 @@ export class SaveRepository {
     )
   }
 
+  updateTeamEliminationState(
+    saveSlotId: string,
+    teamId: string,
+    isEliminated: boolean,
+  ): void {
+    const now = new Date().toISOString()
+
+    this.client.execute(
+      `UPDATE save_team_states
+       SET is_eliminated = ?, updated_at = ?
+       WHERE save_slot_id = ? AND team_id = ?`,
+      [isEliminated ? 1 : 0, now, saveSlotId, teamId],
+    )
+  }
+
   updatePlayerStateMetrics(
     saveSlotId: string,
     playerId: string,

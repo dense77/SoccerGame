@@ -14,6 +14,7 @@ import type {
   SaveTeamState,
 } from '../../types/entities'
 import { loadMatchSetupOverview } from '../team-management/loadMatchSetupOverview'
+import { resolveGroupAdvancement } from '../tournament/resolveGroupAdvancement'
 import { buildPostMatchReport } from './buildPostMatchReport'
 import { simulateMatch } from './simulateMatch'
 
@@ -361,7 +362,10 @@ export function playCurrentRound(
   if (nextRoundCode) {
     saveRepository.updateSaveSlotProgress(saveSlot.id, saveSlot.currentStage, nextRoundCode, 'active')
   } else {
-    saveRepository.updateSaveSlotProgress(saveSlot.id, 'group_complete', 'completed', 'group_complete')
+    const advancement = resolveGroupAdvancement(client, saveSlot.id)
+    const nextStatus = advancement.selectedTeamOutcome === 'qualified' ? 'qualified' : 'eliminated'
+
+    saveRepository.updateSaveSlotProgress(saveSlot.id, 'group', 'group-complete', nextStatus)
   }
 
   return snapshots

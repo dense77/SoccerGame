@@ -22,4 +22,23 @@ describe('round simulation integration', () => {
     expect(overview.latestPostMatchReport?.teamId).toBe('team-arg-sample')
     expect(overview.latestPostMatchReport?.playerChanges.some((entry) => entry.fitnessDelta < 0)).toBe(true)
   })
+
+  it('resolves group advancement after the third round and marks the save outcome', async () => {
+    const client = await createTestDatabase()
+    const saveSlot = createCareerSave(client, 'team-arg-sample')
+
+    playCurrentRound(client, saveSlot.id)
+    playCurrentRound(client, saveSlot.id)
+    playCurrentRound(client, saveSlot.id)
+
+    const saveRepository = new SaveRepository(client)
+    const refreshedSave = saveRepository.getSaveSlotById(saveSlot.id)
+    const overview = loadSaveOverview(client, saveSlot.id)
+
+    expect(refreshedSave?.currentRoundCode).toBe('group-complete')
+    expect(['qualified', 'eliminated']).toContain(refreshedSave?.status)
+    expect(overview.advancement).not.toBeNull()
+    expect(overview.groupStandings.filter((entry) => entry.isQualified)).toHaveLength(2)
+    expect(overview.groupStandings.filter((entry) => entry.isEliminated)).toHaveLength(2)
+  })
 })

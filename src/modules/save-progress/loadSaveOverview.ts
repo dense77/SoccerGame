@@ -14,6 +14,34 @@ function extractLatestPostMatchReport(saveOverviewMatches: SaveOverview['complet
   return report && typeof report === 'object' ? (report as PostMatchReport) : null
 }
 
+function buildAdvancementSummary(
+  groupCode: string,
+  standings: SaveOverview['groupStandings'],
+  completedMatches: SaveOverview['completedMatches'],
+  totalGroupFixtureCount: number,
+): SaveOverview['advancement'] {
+  const completedGroupMatches = completedMatches.filter((snapshot) => snapshot.stage === 'group').length
+
+  if (totalGroupFixtureCount === 0 || completedGroupMatches < totalGroupFixtureCount) {
+    return null
+  }
+
+  const qualifiedTeamIds = standings.filter((entry) => entry.isQualified).map((entry) => entry.team.id)
+  const eliminatedTeamIds = standings.filter((entry) => !entry.isQualified).map((entry) => entry.team.id)
+  const selectedEntry = standings.find((entry) => entry.isSelectedTeam)
+
+  return {
+    groupCode,
+    qualifiedTeamIds,
+    eliminatedTeamIds,
+    selectedTeamOutcome: selectedEntry
+      ? selectedEntry.isQualified
+        ? 'qualified'
+        : 'eliminated'
+      : 'pending',
+  }
+}
+
 export function loadSaveOverview(
   client: SQLiteDatabaseClient,
   saveSlotId: string,
@@ -38,14 +66,25 @@ export function loadSaveOverview(
   const playerStates = saveRepository.getPlayerStatesBySaveSlotId(saveSlot.id)
   const currentFixtures = tournamentRepository.getFixturesByRoundCode(saveSlot.currentRoundCode)
   const completedMatches = saveRepository.getMatchSnapshotsBySaveSlotId(saveSlot.id)
+  const groupFixtures = tournamentRepository.getFixturesByStage('group')
+  const groupStageResolved = completedMatches.filter((snapshot) => snapshot.stage === 'group').length >= groupFixtures.length
+  const groupStandings = buildGroupStandings(groupTeams, teamStates, saveSlot.selectedTeamId, {
+    markQualified: groupStageResolved,
+  })
 
   return {
     saveSlot,
     selectedTeam,
-    groupStandings: buildGroupStandings(groupTeams, teamStates, saveSlot.selectedTeamId),
+    groupStandings,
     currentFixtures,
     completedMatches,
     latestPostMatchReport: extractLatestPostMatchReport(completedMatches),
+    advancement: buildAdvancementSummary(
+      selectedTeam.groupCode,
+      groupStandings,
+      completedMatches,
+      groupFixtures.length,
+    ),
     rosterSize: playerStates.filter((playerState) =>
       playerState.playerId.startsWith(`${saveSlot.selectedTeamId}-player-`),
     ).length,

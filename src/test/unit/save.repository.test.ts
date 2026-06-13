@@ -45,6 +45,7 @@ describe('SaveRepository and save creation', () => {
 
     expect(standings[0].team.id).toBe('team-jpn-sample')
     expect(standings[1].team.id).toBe('team-arg-sample')
+    expect(standings[0].isQualified).toBe(false)
     expect(standings.find((entry) => entry.team.id === 'team-usa-sample')?.isSelectedTeam).toBe(true)
   })
 })

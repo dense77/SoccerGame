@@ -4,6 +4,9 @@ export function buildGroupStandings(
   teams: Team[],
   teamStates: SaveTeamState[],
   selectedTeamId: string,
+  options: {
+    markQualified?: boolean
+  } = {},
 ): TeamStandingEntry[] {
   const stateByTeamId = new Map(teamStates.map((state) => [state.teamId, state]))
 
@@ -24,6 +27,8 @@ export function buildGroupStandings(
         wins: state.wins,
         draws: state.draws,
         losses: state.losses,
+        isQualified: false,
+        isEliminated: state.isEliminated,
         isSelectedTeam: team.id === selectedTeamId,
       }
     })
@@ -42,4 +47,8 @@ export function buildGroupStandings(
 
       return right.team.overallRating - left.team.overallRating
     })
+    .map((entry, index) => ({
+      ...entry,
+      isQualified: options.markQualified === true ? index < 2 : false,
+    }))
 }
