@@ -6,6 +6,7 @@ import type { SQLiteDatabaseClient } from './data/db/sqlite'
 import { SaveRepository } from './data/repositories/SaveRepository'
 import { TeamRepository } from './data/repositories/TeamRepository'
 import { loadGameDataSummary } from './modules/bootstrap/loadGameDataSummary'
+import { playCurrentRound } from './modules/match-engine/playCurrentRound'
 import { createCareerSave } from './modules/save-progress/createCareerSave'
 import { loadSaveOverview } from './modules/save-progress/loadSaveOverview'
 import { loadMatchSetupOverview } from './modules/team-management/loadMatchSetupOverview'
@@ -201,6 +202,43 @@ function App() {
     }))
   }
 
+  const handlePlayCurrentRound = () => {
+    if (!bootstrapState.client || !bootstrapState.activeSave || !bootstrapState.activeMatchSetup) {
+      return
+    }
+
+    if (!bootstrapState.activeMatchSetup.validation.isValid) {
+      setBootstrapState((currentState) => ({
+        ...currentState,
+        message: bootstrapState.activeMatchSetup?.validation.errors[0] ?? 'Current setup is invalid.',
+      }))
+      return
+    }
+
+    const snapshots = playCurrentRound(
+      bootstrapState.client,
+      bootstrapState.activeSave.saveSlot.id,
+    )
+    const refreshedSave = loadSaveOverview(
+      bootstrapState.client,
+      bootstrapState.activeSave.saveSlot.id,
+    )
+    const refreshedSetup =
+      refreshedSave.saveSlot.currentRoundCode === 'completed'
+        ? null
+        : loadMatchSetupOverview(bootstrapState.client, bootstrapState.activeSave.saveSlot.id)
+
+    setBootstrapState((currentState) => ({
+      ...currentState,
+      activeSave: refreshedSave,
+      activeMatchSetup: refreshedSetup,
+      message:
+        refreshedSave.saveSlot.currentRoundCode === 'completed'
+          ? `Group stage simulation finished. Last round recorded ${snapshots.length} matches.`
+          : `Round complete. ${snapshots.length} matches recorded. Next up: ${refreshedSave.saveSlot.currentRoundCode}.`,
+    }))
+  }
+
   const teamNameById = (teamId: string | null): string => {
     const previewTeam = bootstrapState.previewTeams.find((team) => team.id === teamId)
     return previewTeam?.shortName ?? teamId ?? 'TBD'
@@ -259,6 +297,11 @@ function App() {
               {bootstrapState.activeSave.saveSlot.currentRoundCode}
             </p>
             <p>Roster initialized: {bootstrapState.activeSave.rosterSize} players.</p>
+            {activeMatchSetup?.validation.isValid && (
+              <button type="button" className="btn btn-compact" onClick={handlePlayCurrentRound}>
+                Simulate Current Round
+              </button>
+            )}
           </section>
 
           <section className="panel">
@@ -290,6 +333,19 @@ function App() {
                   </li>
                 )
               })}
+            </ul>
+          </section>
+
+          <section className="panel">
+            <h3>Completed Matches</h3>
+            <ul className="compact-list">
+              {bootstrapState.activeSave.completedMatches.length === 0 && <li>No matches played yet.</li>}
+              {bootstrapState.activeSave.completedMatches.map((snapshot) => (
+                <li key={snapshot.id}>
+                  {teamNameById(snapshot.homeTeamId)} {snapshot.homeScore}:{snapshot.awayScore}{' '}
+                  {teamNameById(snapshot.awayTeamId)}
+                </li>
+              ))}
             </ul>
           </section>
 

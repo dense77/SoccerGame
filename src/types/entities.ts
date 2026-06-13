@@ -143,6 +143,7 @@ export interface SaveOverview {
   selectedTeam: Team
   groupStandings: TeamStandingEntry[]
   currentFixtures: MatchFixture[]
+  completedMatches: MatchSnapshot[]
   rosterSize: number
 }
 
@@ -177,6 +178,45 @@ export interface MatchSetupOverview {
   selectedTactic: TacticProfile
   players: ManagedPlayer[]
   validation: MatchSetupValidation
+}
+
+export interface MatchSnapshot {
+  id: string
+  saveSlotId: string
+  fixtureId: string
+  stage: string
+  homeTeamId: string
+  awayTeamId: string
+  homeScore: number
+  awayScore: number
+  resultSummary: Record<string, unknown>
+  appliedModifiers: Record<string, unknown>
+  completedAt: string
+}
+
+export interface MatchSimulationSide {
+  team: Team
+  formation: Formation
+  tactic: TacticProfile
+  starters: ManagedPlayer[]
+  bench: ManagedPlayer[]
+}
+
+export interface MatchSimulationInput {
+  saveSlotId: string
+  fixture: MatchFixture
+  home: MatchSimulationSide
+  away: MatchSimulationSide
+}
+
+export interface MatchSimulationOutput {
+  fixtureId: string
+  homeTeamId: string
+  awayTeamId: string
+  homeScore: number
+  awayScore: number
+  resultSummary: Record<string, unknown>
+  appliedModifiers: Record<string, number>
 }
 
 export interface DatabaseSummary {

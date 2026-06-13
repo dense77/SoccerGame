@@ -67,4 +67,17 @@ export class TournamentRepository {
       )
       .map(mapFixture)
   }
+
+  getRoundCodesByStage(stage: string): string[] {
+    const rows = this.client.query<{ round_code: string }>(
+      `SELECT round_code
+       FROM match_fixtures
+       WHERE stage = ?
+       GROUP BY round_code
+       ORDER BY MIN(fixture_order)`,
+      [stage],
+    )
+
+    return rows.map((row) => row.round_code)
+  }
 }

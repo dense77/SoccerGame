@@ -1,5 +1,10 @@
-import type { SavePlayerState, SaveSlot, SaveTeamState } from '../../types/entities'
-import type { SaveMatchSetup } from '../../types/entities'
+import type {
+  MatchSnapshot,
+  SaveMatchSetup,
+  SavePlayerState,
+  SaveSlot,
+  SaveTeamState,
+} from '../../types/entities'
 import type { SQLiteDatabaseClient } from '../db/sqlite'
 
 interface SaveSlotRow {
@@ -48,6 +53,20 @@ interface SaveMatchSetupRow {
   tactic_profile_id: string
   starting_player_ids_json: string
   bench_player_ids_json: string
+}
+
+interface MatchSnapshotRow {
+  id: string
+  save_slot_id: string
+  fixture_id: string
+  stage: string
+  home_team_id: string
+  away_team_id: string
+  home_score: number
+  away_score: number
+  result_summary_json: string
+  applied_modifiers_json: string
+  completed_at: string
 }
 
 function mapSaveSlot(row: SaveSlotRow): SaveSlot {
@@ -103,6 +122,22 @@ function mapSaveMatchSetup(row: SaveMatchSetupRow): SaveMatchSetup {
     tacticProfileId: row.tactic_profile_id,
     startingPlayerIds: JSON.parse(row.starting_player_ids_json) as string[],
     benchPlayerIds: JSON.parse(row.bench_player_ids_json) as string[],
+  }
+}
+
+function mapMatchSnapshot(row: MatchSnapshotRow): MatchSnapshot {
+  return {
+    id: row.id,
+    saveSlotId: row.save_slot_id,
+    fixtureId: row.fixture_id,
+    stage: row.stage,
+    homeTeamId: row.home_team_id,
+    awayTeamId: row.away_team_id,
+    homeScore: row.home_score,
+    awayScore: row.away_score,
+    resultSummary: JSON.parse(row.result_summary_json) as Record<string, unknown>,
+    appliedModifiers: JSON.parse(row.applied_modifiers_json) as Record<string, unknown>,
+    completedAt: row.completed_at,
   }
 }
 
@@ -219,6 +254,19 @@ export class SaveRepository {
       .map(mapSavePlayerState)
   }
 
+  getPlayerStatesByTeamId(saveSlotId: string, teamId: string): SavePlayerState[] {
+    return this.client
+      .query<SavePlayerStateRow>(
+        `SELECT save_player_states.*
+         FROM save_player_states
+         INNER JOIN players ON players.id = save_player_states.player_id
+         WHERE save_player_states.save_slot_id = ? AND players.team_id = ?
+         ORDER BY players.shirt_number ASC`,
+        [saveSlotId, teamId],
+      )
+      .map(mapSavePlayerState)
+  }
+
   getMatchSetup(saveSlotId: string, fixtureId: string): SaveMatchSetup | null {
     const row = this.client.getOne<SaveMatchSetupRow>(
       `SELECT * FROM save_match_setups
@@ -269,5 +317,104 @@ export class SaveRepository {
         now,
       ],
     )
+  }
+
+  updateSaveSlotProgress(
+    saveSlotId: string,
+    currentStage: string,
+    currentRoundCode: string,
+    status: string,
+  ): void {
+    const now = new Date().toISOString()
+
+    this.client.execute(
+      `UPDATE save_slots
+       SET current_stage = ?, current_round_code = ?, status = ?, updated_at = ?
+       WHERE id = ?`,
+      [currentStage, currentRoundCode, status, now, saveSlotId],
+    )
+  }
+
+  updateTeamStateMetrics(
+    saveSlotId: string,
+    teamId: string,
+    metrics: Pick<
+      SaveTeamState,
+      'groupPoints' | 'goalFor' | 'goalAgainst' | 'goalDiff' | 'wins' | 'draws' | 'losses'
+    >,
+  ): void {
+    const now = new Date().toISOString()
+
+    this.client.execute(
+      `UPDATE save_team_states
+       SET group_points = ?, goal_for = ?, goal_against = ?, goal_diff = ?, wins = ?, draws = ?, losses = ?, updated_at = ?
+       WHERE save_slot_id = ? AND team_id = ?`,
+      [
+        metrics.groupPoints,
+        metrics.goalFor,
+        metrics.goalAgainst,
+        metrics.goalDiff,
+        metrics.wins,
+        metrics.draws,
+        metrics.losses,
+        now,
+        saveSlotId,
+        teamId,
+      ],
+    )
+  }
+
+  updatePlayerStateMetrics(
+    saveSlotId: string,
+    playerId: string,
+    metrics: Pick<SavePlayerState, 'fitnessValue' | 'moraleValue' | 'lastMatchMinutes' | 'statusTag'>,
+  ): void {
+    const now = new Date().toISOString()
+
+    this.client.execute(
+      `UPDATE save_player_states
+       SET fitness_value = ?, morale_value = ?, last_match_minutes = ?, status_tag = ?, updated_at = ?
+       WHERE save_slot_id = ? AND player_id = ?`,
+      [
+        metrics.fitnessValue,
+        metrics.moraleValue,
+        metrics.lastMatchMinutes,
+        metrics.statusTag,
+        now,
+        saveSlotId,
+        playerId,
+      ],
+    )
+  }
+
+  createMatchSnapshot(snapshot: MatchSnapshot): void {
+    this.client.execute(
+      `INSERT INTO match_snapshots (
+        id, save_slot_id, fixture_id, stage, home_team_id, away_team_id,
+        home_score, away_score, result_summary_json, applied_modifiers_json, completed_at
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      [
+        snapshot.id,
+        snapshot.saveSlotId,
+        snapshot.fixtureId,
+        snapshot.stage,
+        snapshot.homeTeamId,
+        snapshot.awayTeamId,
+        snapshot.homeScore,
+        snapshot.awayScore,
+        JSON.stringify(snapshot.resultSummary),
+        JSON.stringify(snapshot.appliedModifiers),
+        snapshot.completedAt,
+      ],
+    )
+  }
+
+  getMatchSnapshotsBySaveSlotId(saveSlotId: string): MatchSnapshot[] {
+    return this.client
+      .query<MatchSnapshotRow>(
+        'SELECT * FROM match_snapshots WHERE save_slot_id = ? ORDER BY completed_at ASC',
+        [saveSlotId],
+      )
+      .map(mapMatchSnapshot)
   }
 }

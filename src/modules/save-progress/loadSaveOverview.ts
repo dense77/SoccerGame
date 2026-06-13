@@ -28,12 +28,14 @@ export function loadSaveOverview(
   const teamStates = saveRepository.getTeamStatesBySaveSlotId(saveSlot.id)
   const playerStates = saveRepository.getPlayerStatesBySaveSlotId(saveSlot.id)
   const currentFixtures = tournamentRepository.getFixturesByRoundCode(saveSlot.currentRoundCode)
+  const completedMatches = saveRepository.getMatchSnapshotsBySaveSlotId(saveSlot.id)
 
   return {
     saveSlot,
     selectedTeam,
     groupStandings: buildGroupStandings(groupTeams, teamStates, saveSlot.selectedTeamId),
     currentFixtures,
+    completedMatches,
     rosterSize: playerStates.filter((playerState) =>
       playerState.playerId.startsWith(`${saveSlot.selectedTeamId}-player-`),
     ).length,
