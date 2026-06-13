@@ -10,6 +10,7 @@ import type {
   TournamentSummary,
 } from '../../types/entities'
 import { buildGroupStandings } from '../tournament/buildGroupStandings'
+import { getQualifiedTeamIdsFromGroupStage } from '../tournament/groupStageResolution'
 import { resolveKnockoutFixtures } from '../tournament/resolveKnockoutFixtures'
 
 function localizePostMatchReport(
@@ -163,6 +164,14 @@ function buildTournamentSummary(
         ? '决赛'
         : latestReport.knockoutSlot === 'semi-1' || latestReport.knockoutSlot === 'semi-2'
           ? '半决赛'
+          : latestReport.knockoutSlot === 'third-place'
+            ? '季军战'
+            : latestReport.roundCode === 'knockout-round-32'
+              ? '三十二强'
+              : latestReport.roundCode === 'knockout-round-16'
+                ? '十六强'
+                : latestReport.roundCode === 'knockout-quarterfinal'
+                  ? '四分之一决赛'
           : '淘汰赛'
 
     return {
@@ -174,7 +183,17 @@ function buildTournamentSummary(
 
   if (saveOverview.saveSlot.currentStage === 'knockout' && saveOverview.saveSlot.status === 'active') {
     const roundLabel =
-      saveOverview.saveSlot.currentRoundCode === 'knockout-semi' ? '半决赛' : '决赛'
+      saveOverview.saveSlot.currentRoundCode === 'knockout-round-32'
+        ? '三十二强'
+        : saveOverview.saveSlot.currentRoundCode === 'knockout-round-16'
+          ? '十六强'
+          : saveOverview.saveSlot.currentRoundCode === 'knockout-quarterfinal'
+            ? '四分之一决赛'
+            : saveOverview.saveSlot.currentRoundCode === 'knockout-semi'
+              ? '半决赛'
+              : saveOverview.saveSlot.currentRoundCode === 'knockout-third-place'
+                ? '季军战'
+                : '决赛'
 
     return {
       title: '淘汰赛阶段',
@@ -218,14 +237,30 @@ export function loadSaveOverview(
   const playerStates = saveRepository.getPlayerStatesBySaveSlotId(saveSlot.id)
   const completedMatches = saveRepository.getMatchSnapshotsBySaveSlotId(saveSlot.id)
   const groupFixtures = tournamentRepository.getFixturesByStage('group')
-  const groupStageResolved = completedMatches.filter((snapshot) => snapshot.stage === 'group').length >= groupFixtures.length
+  const selectedGroupFixtureCount = groupFixtures.filter((fixture) => fixture.groupCode === selectedTeam.groupCode).length
+  const selectedGroupCompletedMatchCount = completedMatches.filter(
+    (snapshot) =>
+      snapshot.stage === 'group' &&
+      groupTeams.some((team) => team.id === snapshot.homeTeamId || team.id === snapshot.awayTeamId),
+  ).length
+  const groupStageResolved = selectedGroupCompletedMatchCount >= selectedGroupFixtureCount
   const groupStandings = buildGroupStandings(groupTeams, teamStates, saveSlot.selectedTeamId, {
-    markQualified: groupStageResolved,
+    markQualified: false,
   })
+  const qualificationResolution = groupStageResolved
+    ? getQualifiedTeamIdsFromGroupStage(client, saveSlot.id)
+    : null
+  const qualifiedTeamIdSet = new Set(qualificationResolution?.allQualifiedTeamIds ?? [])
+  const displayedStandings = groupStandings.map((entry) => ({
+    ...entry,
+    isQualified: groupStageResolved ? qualifiedTeamIdSet.has(entry.team.id) : false,
+  }))
   const currentFixtures =
     saveSlot.currentStage === 'knockout'
       ? resolveKnockoutFixtures(client, saveSlot.id, saveSlot.currentRoundCode)
-      : tournamentRepository.getFixturesByRoundCode(saveSlot.currentRoundCode)
+      : tournamentRepository
+          .getFixturesByRoundCode(saveSlot.currentRoundCode)
+          .filter((fixture) => fixture.groupCode === selectedTeam.groupCode)
   const tournamentOutcome: SaveOverview['tournamentOutcome'] =
     saveSlot.status === 'champion'
       ? 'champion'
@@ -240,15 +275,15 @@ export function loadSaveOverview(
   const overview = {
     saveSlot,
     selectedTeam,
-    groupStandings,
+    groupStandings: displayedStandings,
     currentFixtures,
     completedMatches,
     latestPostMatchReport: extractLatestPostMatchReport(client, completedMatches),
     advancement: buildAdvancementSummary(
       selectedTeam.groupCode,
-      groupStandings,
+      displayedStandings,
       completedMatches,
-      groupFixtures.length,
+      selectedGroupFixtureCount,
     ),
     tournamentOutcome,
     rosterSize: playerStates.filter((playerState) =>

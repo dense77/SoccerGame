@@ -11,6 +11,52 @@ import {
   sampleTournamentGroups,
 } from './sampleData'
 
+const seedVersionKey = 'static_seed_version'
+
+function getAppliedSeedVersion(client: SQLiteDatabaseClient): string | null {
+  const row = client.getOne<{ value: string }>(
+    'SELECT value FROM app_metadata WHERE key = ?',
+    [seedVersionKey],
+  )
+
+  return row?.value ?? null
+}
+
+function setAppliedSeedVersion(client: SQLiteDatabaseClient, version: string): void {
+  const now = new Date().toISOString()
+
+  client.execute(
+    `INSERT INTO app_metadata (key, value, updated_at)
+     VALUES (?, ?, ?)
+     ON CONFLICT(key) DO UPDATE SET
+       value = excluded.value,
+       updated_at = excluded.updated_at`,
+    [seedVersionKey, version, now],
+  )
+}
+
+function clearStaticSeedTables(client: SQLiteDatabaseClient): void {
+  ;[
+    'DELETE FROM match_event_logs',
+    'DELETE FROM match_snapshots',
+    'DELETE FROM save_match_setups',
+    'DELETE FROM save_player_states',
+    'DELETE FROM save_team_states',
+    'DELETE FROM save_slots',
+    'DELETE FROM event_options',
+    'DELETE FROM event_templates',
+    'DELETE FROM match_fixtures',
+    'DELETE FROM tournament_groups',
+    'DELETE FROM team_tactic_profiles',
+    'DELETE FROM tactic_profiles',
+    'DELETE FROM formations',
+    'DELETE FROM players',
+    'DELETE FROM teams',
+  ].forEach((statement) => {
+    client.execute(statement)
+  })
+}
+
 function upsertTeam(client: SQLiteDatabaseClient, timestamp: string, team: typeof sampleTeams[number]): void {
   client.execute(
     `INSERT INTO teams (
@@ -320,10 +366,24 @@ function insertEvents(client: SQLiteDatabaseClient): void {
 }
 
 export function seedDatabaseIfEmpty(client: SQLiteDatabaseClient): void {
-  insertTeams(client)
-  insertPlayers(client)
-  insertFormations(client)
-  insertTactics(client)
-  insertTournamentData(client)
-  insertEvents(client)
+  const seedVersion = getSeedTimestamp()
+  const appliedSeedVersion = getAppliedSeedVersion(client)
+
+  if (appliedSeedVersion === seedVersion) {
+    return
+  }
+
+  client.executeInTransaction(() => {
+    if (appliedSeedVersion !== null) {
+      clearStaticSeedTables(client)
+    }
+
+    insertTeams(client)
+    insertPlayers(client)
+    insertFormations(client)
+    insertTactics(client)
+    insertTournamentData(client)
+    insertEvents(client)
+    setAppliedSeedVersion(client, seedVersion)
+  })
 }

@@ -21,28 +21,28 @@ describe('resolveGroupAdvancement', () => {
       `UPDATE save_team_states
        SET group_points = ?, goal_for = ?, goal_against = ?, goal_diff = ?, wins = ?, draws = ?, losses = ?
        WHERE save_slot_id = ? AND team_id = ?`,
-      [4, 3, 2, 1, 1, 1, 1, saveSlot.id, 'team-jpn-sample'],
+      [4, 3, 2, 1, 1, 1, 1, saveSlot.id, 'team-aut'],
     )
     client.execute(
       `UPDATE save_team_states
        SET group_points = ?, goal_for = ?, goal_against = ?, goal_diff = ?, wins = ?, draws = ?, losses = ?
        WHERE save_slot_id = ? AND team_id = ?`,
-      [3, 2, 4, -2, 1, 0, 2, saveSlot.id, 'team-usa-sample'],
+      [3, 2, 4, -2, 1, 0, 2, saveSlot.id, 'team-alg'],
     )
     client.execute(
       `UPDATE save_team_states
        SET group_points = ?, goal_for = ?, goal_against = ?, goal_diff = ?, wins = ?, draws = ?, losses = ?
        WHERE save_slot_id = ? AND team_id = ?`,
-      [1, 1, 4, -3, 0, 1, 2, saveSlot.id, 'team-sen-sample'],
+      [1, 1, 4, -3, 0, 1, 2, saveSlot.id, 'team-jor'],
     )
 
     const summary = resolveGroupAdvancement(client, saveSlot.id)
     const teamStates = repository.getTeamStatesBySaveSlotId(saveSlot.id)
 
-    expect(summary.qualifiedTeamIds).toEqual(['team-arg-sample', 'team-jpn-sample'])
-    expect(summary.eliminatedTeamIds).toEqual(['team-usa-sample', 'team-sen-sample'])
+    expect(summary.qualifiedTeamIds).toEqual(['team-arg-sample', 'team-aut', 'team-alg'])
+    expect(summary.eliminatedTeamIds).toEqual(['team-jor'])
     expect(summary.selectedTeamOutcome).toBe('qualified')
-    expect(teamStates.find((entry) => entry.teamId === 'team-usa-sample')?.isEliminated).toBe(true)
+    expect(teamStates.find((entry) => entry.teamId === 'team-alg')?.isEliminated).toBe(false)
     expect(teamStates.find((entry) => entry.teamId === 'team-arg-sample')?.isEliminated).toBe(false)
   })
 })

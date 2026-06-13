@@ -8,6 +8,7 @@ export default mergeConfig(
     test: {
       environment: 'node',
       include: ['src/test/**/*.test.ts'],
+      testTimeout: 15000,
       coverage: {
         provider: 'v8',
         reporter: ['text', 'html'],

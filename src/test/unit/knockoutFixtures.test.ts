@@ -19,16 +19,28 @@ describe('resolveKnockoutFixtures', () => {
       `UPDATE save_team_states
        SET group_points = ?, goal_for = ?, goal_against = ?, goal_diff = ?, wins = ?, draws = ?, losses = ?
        WHERE save_slot_id = ? AND team_id = ?`,
-      [4, 3, 2, 1, 1, 1, 1, saveSlot.id, 'team-jpn-sample'],
+      [4, 3, 2, 1, 1, 1, 1, saveSlot.id, 'team-aut'],
+    )
+    client.execute(
+      `UPDATE save_team_states
+       SET group_points = ?, goal_for = ?, goal_against = ?, goal_diff = ?, wins = ?, draws = ?, losses = ?
+       WHERE save_slot_id = ? AND team_id = ?`,
+      [3, 2, 3, -1, 1, 0, 2, saveSlot.id, 'team-alg'],
+    )
+    client.execute(
+      `UPDATE save_team_states
+       SET group_points = ?, goal_for = ?, goal_against = ?, goal_diff = ?, wins = ?, draws = ?, losses = ?
+       WHERE save_slot_id = ? AND team_id = ?`,
+      [1, 1, 5, -4, 0, 1, 2, saveSlot.id, 'team-jor'],
     )
 
-    const fixtures = resolveKnockoutFixtures(client, saveSlot.id, 'knockout-semi')
+    const fixtures = resolveKnockoutFixtures(client, saveSlot.id, 'knockout-round-32')
+    const argentinaFixture = fixtures.find((fixture) => fixture.homeTeamId === 'team-arg-sample')
 
-    expect(fixtures).toHaveLength(2)
-    expect(fixtures[0].homeTeamId).toBe('team-arg-sample')
-    expect(fixtures[0].awayTeamId).toBe('team-sen-sample')
-    expect(fixtures[1].homeTeamId).toBe('team-jpn-sample')
-    expect(fixtures[1].awayTeamId).toBe('team-usa-sample')
+    expect(fixtures).toHaveLength(16)
+    expect(argentinaFixture).not.toBeUndefined()
+    expect(argentinaFixture?.id).toBe('fixture-knockout-86')
+    expect(argentinaFixture?.awayTeamId).toBeTruthy()
   })
 
   it('maps winner dependencies for the knockout final after semifinals are completed', async () => {
@@ -41,12 +53,12 @@ describe('resolveKnockoutFixtures', () => {
         home_score, away_score, result_summary_json, applied_modifiers_json, completed_at
       ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
-        `${saveSlot.id}-fixture-semi-1`,
+        `${saveSlot.id}-fixture-knockout-101`,
         saveSlot.id,
-        'fixture-semi-1',
+        'fixture-knockout-101',
         'knockout',
         'team-arg-sample',
-        'team-sen-sample',
+        'team-aut',
         2,
         1,
         '{}',
@@ -60,12 +72,12 @@ describe('resolveKnockoutFixtures', () => {
         home_score, away_score, result_summary_json, applied_modifiers_json, completed_at
       ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
-        `${saveSlot.id}-fixture-semi-2`,
+        `${saveSlot.id}-fixture-knockout-102`,
         saveSlot.id,
-        'fixture-semi-2',
+        'fixture-knockout-102',
         'knockout',
-        'team-jpn-sample',
-        'team-usa-sample',
+        'team-por',
+        'team-col',
         0,
         1,
         '{}',
@@ -78,6 +90,6 @@ describe('resolveKnockoutFixtures', () => {
 
     expect(fixtures).toHaveLength(1)
     expect(fixtures[0].homeTeamId).toBe('team-arg-sample')
-    expect(fixtures[0].awayTeamId).toBe('team-usa-sample')
+    expect(fixtures[0].awayTeamId).toBe('team-col')
   })
 })

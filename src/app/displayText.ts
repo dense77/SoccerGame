@@ -8,7 +8,11 @@ const roundLabels: Record<string, string> = {
   'group-round-2': '小组赛第 2 轮',
   'group-round-3': '小组赛第 3 轮',
   'group-complete': '小组赛结束',
+  'knockout-round-32': '三十二强',
+  'knockout-round-16': '十六强',
+  'knockout-quarterfinal': '四分之一决赛',
   'knockout-semi': '半决赛',
+  'knockout-third-place': '季军战',
   'knockout-final': '决赛',
   'tournament-complete': '赛事结束',
 }
@@ -42,6 +46,9 @@ const eventCategoryLabels: Record<string, string> = {
 
 const positionLabels: Record<string, string> = {
   GK: '门将',
+  DF: '后卫',
+  MF: '中场',
+  FW: '前锋',
   LB: '左后卫',
   CB: '中后卫',
   RB: '右后卫',

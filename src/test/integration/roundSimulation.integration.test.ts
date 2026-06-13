@@ -114,14 +114,14 @@ describe('round simulation integration', () => {
     const overview = loadSaveOverview(client, saveSlot.id)
 
     expect(refreshedSave?.currentStage).toBe('knockout')
-    expect(refreshedSave?.currentRoundCode).toBe('knockout-semi')
+    expect(refreshedSave?.currentRoundCode).toBe('knockout-round-32')
     expect(refreshedSave?.status).toBe('active')
     expect(overview.advancement).not.toBeNull()
     expect(overview.tournamentSummary?.title).toBe('淘汰赛阶段')
     expect(overview.tournamentOutcome).toBe('qualified')
-    expect(overview.currentFixtures).toHaveLength(2)
-    expect(overview.groupStandings.filter((entry) => entry.isQualified)).toHaveLength(2)
-    expect(overview.groupStandings.filter((entry) => entry.isEliminated)).toHaveLength(2)
+    expect(overview.currentFixtures).toHaveLength(16)
+    expect(overview.groupStandings.filter((entry) => entry.isQualified)).toHaveLength(3)
+    expect(overview.groupStandings.filter((entry) => entry.isEliminated)).toHaveLength(1)
   })
 
   it('settles the selected team after the semifinal round', async () => {
@@ -137,7 +137,7 @@ describe('round simulation integration', () => {
           : 'event-option-pre-match-steady-shape-yes',
       )
     }
-    const semiSnapshots = completeRoundWithAllEvents(
+    const roundOf32Snapshots = completeRoundWithAllEvents(
       client,
       saveSlot.id,
       'event-option-pre-match-steady-shape-yes',
@@ -147,10 +147,10 @@ describe('round simulation integration', () => {
     const refreshedSave = saveRepository.getSaveSlotById(saveSlot.id)
     const overview = loadSaveOverview(client, saveSlot.id)
 
-    expect(semiSnapshots).toHaveLength(2)
+    expect(roundOf32Snapshots).toHaveLength(16)
     if (refreshedSave?.status === 'active') {
-      expect(refreshedSave.currentRoundCode).toBe('knockout-final')
-      expect(overview.currentFixtures).toHaveLength(1)
+      expect(refreshedSave.currentRoundCode).toBe('knockout-round-16')
+      expect(overview.currentFixtures).toHaveLength(8)
       expect(overview.tournamentSummary?.title).toBe('淘汰赛阶段')
     } else {
       expect(refreshedSave?.status).toBe('eliminated')
@@ -172,17 +172,17 @@ describe('round simulation integration', () => {
           : 'event-option-pre-match-steady-shape-yes',
       )
     }
-    const semiSnapshots = completeRoundWithAllEvents(
+    const roundOf32Snapshots = completeRoundWithAllEvents(
       client,
       saveSlot.id,
       'event-option-pre-match-steady-shape-yes',
     )
 
     const saveRepository = new SaveRepository(client)
-    const afterSemi = saveRepository.getSaveSlotById(saveSlot.id)
+    const afterRoundOf32 = saveRepository.getSaveSlotById(saveSlot.id)
 
-    if (afterSemi?.status === 'active') {
-      const finalSnapshots = completeRoundWithAllEvents(
+    if (afterRoundOf32?.status === 'active') {
+      const roundOf16Snapshots = completeRoundWithAllEvents(
         client,
         saveSlot.id,
         'event-option-pre-match-steady-shape-yes',
@@ -190,27 +190,18 @@ describe('round simulation integration', () => {
       const refreshedSave = saveRepository.getSaveSlotById(saveSlot.id)
       const overview = loadSaveOverview(client, saveSlot.id)
 
-      expect(finalSnapshots).toHaveLength(1)
-      expect(refreshedSave?.currentRoundCode).toBe('tournament-complete')
-      expect(['champion', 'eliminated']).toContain(refreshedSave?.status)
-      expect(['champion', 'eliminated']).toContain(overview.tournamentOutcome)
-      expect(overview.tournamentSummary).not.toBeNull()
-      expect(overview.completedMatches).toHaveLength(9)
-
-      if (refreshedSave?.status === 'champion') {
-        expect(overview.tournamentSummary?.tone).toBe('success')
-      } else {
-        expect(overview.tournamentSummary?.tone).toBe('failure')
-      }
-
-      expect(resolveSaveFlowView(overview, 'resume')).toBe('settlement')
+      expect(roundOf16Snapshots).toHaveLength(8)
+      expect(refreshedSave?.status).toBe('active')
+      expect(refreshedSave?.currentRoundCode).toBe('knockout-quarterfinal')
+      expect(overview.currentFixtures).toHaveLength(4)
+      expect(resolveSaveFlowView(overview, 'resume')).toBe('dashboard')
     } else {
       const overview = loadSaveOverview(client, saveSlot.id)
 
-      expect(semiSnapshots).toHaveLength(2)
-      expect(afterSemi?.status).toBe('eliminated')
+      expect(roundOf32Snapshots).toHaveLength(16)
+      expect(afterRoundOf32?.status).toBe('eliminated')
       expect(overview.tournamentSummary?.tone).toBe('failure')
-      expect(overview.completedMatches).toHaveLength(8)
+      expect(overview.completedMatches).toHaveLength(22)
       expect(resolveSaveFlowView(overview, 'resume')).toBe('settlement')
     }
   })

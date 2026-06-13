@@ -2,7 +2,7 @@ import { SaveRepository } from '../../data/repositories/SaveRepository'
 import { TeamRepository } from '../../data/repositories/TeamRepository'
 import type { SQLiteDatabaseClient } from '../../data/db/sqlite'
 import type { GroupAdvancementSummary } from '../../types/entities'
-import { buildGroupStandings } from './buildGroupStandings'
+import { getQualifiedTeamIdsFromGroupStage } from './groupStageResolution'
 
 export function resolveGroupAdvancement(
   client: SQLiteDatabaseClient,
@@ -22,25 +22,29 @@ export function resolveGroupAdvancement(
     throw new Error(`Selected team for save ${saveSlotId} was not found.`)
   }
 
-  const groupTeams = teamRepository.getTeamsByGroupCode(selectedTeam.groupCode)
-  const teamStates = saveRepository.getTeamStatesBySaveSlotId(saveSlot.id)
-  const standings = buildGroupStandings(groupTeams, teamStates, saveSlot.selectedTeamId, {
-    markQualified: true,
-  })
-  const qualifiedTeamIds = standings.slice(0, 2).map((entry) => entry.team.id)
-  const qualifiedTeamIdSet = new Set(qualifiedTeamIds)
-  const eliminatedTeamIds = standings
-    .filter((entry) => !qualifiedTeamIdSet.has(entry.team.id))
+  const groupStageResolution = getQualifiedTeamIdsFromGroupStage(client, saveSlot.id)
+  const selectedGroupStandings = groupStageResolution.groupStandings
+    .find((group) => group.groupCode === selectedTeam.groupCode)?.standings ?? []
+  const globallyQualifiedTeamIds = new Set(groupStageResolution.allQualifiedTeamIds)
+  const qualifiedTeamIds = selectedGroupStandings
+    .filter((entry) => globallyQualifiedTeamIds.has(entry.team.id))
+    .map((entry) => entry.team.id)
+  const eliminatedTeamIds = selectedGroupStandings
+    .filter((entry) => !globallyQualifiedTeamIds.has(entry.team.id))
     .map((entry) => entry.team.id)
 
-  standings.forEach((entry, index) => {
-    saveRepository.updateTeamEliminationState(saveSlot.id, entry.team.id, index >= 2)
+  saveRepository.getTeamStatesBySaveSlotId(saveSlot.id).forEach((state) => {
+    saveRepository.updateTeamEliminationState(
+      saveSlot.id,
+      state.teamId,
+      !globallyQualifiedTeamIds.has(state.teamId),
+    )
   })
 
   return {
     groupCode: selectedTeam.groupCode,
     qualifiedTeamIds,
     eliminatedTeamIds,
-    selectedTeamOutcome: qualifiedTeamIdSet.has(selectedTeam.id) ? 'qualified' : 'eliminated',
+    selectedTeamOutcome: globallyQualifiedTeamIds.has(selectedTeam.id) ? 'qualified' : 'eliminated',
   }
 }

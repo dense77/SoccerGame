@@ -14,8 +14,8 @@ describe('SaveRepository and save creation', () => {
 
     expect(repository.getSaveSlotById(saveSlot.id)).toEqual(saveSlot)
     expect(repository.getLatestSaveSlot()).toEqual(saveSlot)
-    expect(repository.getTeamStatesBySaveSlotId(saveSlot.id)).toHaveLength(4)
-    expect(repository.getPlayerStatesBySaveSlotId(saveSlot.id)).toHaveLength(104)
+    expect(repository.getTeamStatesBySaveSlotId(saveSlot.id)).toHaveLength(48)
+    expect(repository.getPlayerStatesBySaveSlotId(saveSlot.id)).toHaveLength(1248)
   })
 
   it('lists saves in reverse creation order for save selection', async () => {
@@ -41,23 +41,23 @@ describe('SaveRepository and save creation', () => {
       `UPDATE save_team_states
        SET group_points = ?, goal_for = ?, goal_against = ?, goal_diff = ?, wins = ?, draws = ?, losses = ?
        WHERE save_slot_id = ? AND team_id = ?`,
-      [6, 5, 1, 4, 2, 0, 0, saveSlot.id, 'team-jpn-sample'],
+      [6, 5, 1, 4, 2, 0, 0, saveSlot.id, 'team-par'],
     )
     client.execute(
       `UPDATE save_team_states
        SET group_points = ?, goal_for = ?, goal_against = ?, goal_diff = ?, wins = ?, draws = ?, losses = ?
        WHERE save_slot_id = ? AND team_id = ?`,
-      [6, 4, 1, 3, 2, 0, 0, saveSlot.id, 'team-arg-sample'],
+      [6, 4, 1, 3, 2, 0, 0, saveSlot.id, 'team-tur'],
     )
 
     const standings = buildGroupStandings(
-      teamRepository.getTeamsByGroupCode('A'),
+      teamRepository.getTeamsByGroupCode('D'),
       repository.getTeamStatesBySaveSlotId(saveSlot.id),
       saveSlot.selectedTeamId,
     )
 
-    expect(standings[0].team.id).toBe('team-jpn-sample')
-    expect(standings[1].team.id).toBe('team-arg-sample')
+    expect(standings[0].team.id).toBe('team-par')
+    expect(standings[1].team.id).toBe('team-tur')
     expect(standings[0].isQualified).toBe(false)
     expect(standings.find((entry) => entry.team.id === 'team-usa-sample')?.isSelectedTeam).toBe(true)
   })

@@ -2,42 +2,52 @@ import type {
   EventOption,
   EventTemplate,
   Formation,
-  MatchFixture,
-  Player,
   TacticProfile,
-  Team,
-  TournamentGroup,
 } from '../../types/entities'
-
-const seedTimestamp = '2026-06-13T00:00:00.000Z'
-
-interface SeedTeamConfig {
-  id: string
-  name: string
-  shortName: string
-  fifaCode: string
-  overallRating: number
-  goalkeepingRating: number
-  defenseRating: number
-  midfieldRating: number
-  attackRating: number
-  styleTags: string[]
-}
+import {
+  worldCupFixtures,
+  worldCupPlayers,
+  worldCupSeedTimestamp,
+  worldCupTeams,
+  worldCupThirdPlaceCombinationMap,
+  worldCupTournamentGroups,
+} from './worldCupData.generated'
 
 export const sampleFormations: Formation[] = [
   {
     id: 'formation-4-3-3',
     name: '4-3-3',
-    slotLayout: ['GK', 'LB', 'CB', 'CB', 'RB', 'CM', 'CM', 'CM', 'LW', 'RW', 'ST'],
+    slotLayout: ['GK', 'DF', 'DF', 'DF', 'DF', 'MF', 'MF', 'MF', 'FW', 'FW', 'FW'],
     tacticTags: ['wing_play', 'high_press'],
-    recommendedUsage: '适合边路能力强球队的均衡进攻阵型。',
+    recommendedUsage: '边锋资源丰富、希望主动压迫的球队。',
   },
   {
     id: 'formation-4-2-3-1',
     name: '4-2-3-1',
-    slotLayout: ['GK', 'LB', 'CB', 'CB', 'RB', 'DM', 'DM', 'LW', 'AM', 'RW', 'ST'],
+    slotLayout: ['GK', 'DF', 'DF', 'DF', 'DF', 'MF', 'MF', 'MF', 'MF', 'FW', 'FW'],
     tacticTags: ['central_control', 'counter_attack'],
-    recommendedUsage: '适合杯赛节奏的稳健阵型。',
+    recommendedUsage: '杯赛里最稳健的平衡站位。',
+  },
+  {
+    id: 'formation-3-4-3',
+    name: '3-4-3',
+    slotLayout: ['GK', 'DF', 'DF', 'DF', 'MF', 'MF', 'MF', 'MF', 'FW', 'FW', 'FW'],
+    tacticTags: ['wing_play', 'high_press'],
+    recommendedUsage: '三中卫和翼卫体系，适合边路推进能力强的球队。',
+  },
+  {
+    id: 'formation-3-5-2',
+    name: '3-5-2',
+    slotLayout: ['GK', 'DF', 'DF', 'DF', 'MF', 'MF', 'MF', 'MF', 'MF', 'FW', 'FW'],
+    tacticTags: ['central_control', 'compact'],
+    recommendedUsage: '强调中路人数和二点球争夺的务实阵型。',
+  },
+  {
+    id: 'formation-4-4-2',
+    name: '4-4-2',
+    slotLayout: ['GK', 'DF', 'DF', 'DF', 'DF', 'MF', 'MF', 'MF', 'MF', 'FW', 'FW'],
+    tacticTags: ['direct', 'set_piece'],
+    recommendedUsage: '适合防守反击和定位球输出的传统阵型。',
   },
 ]
 
@@ -71,244 +81,11 @@ export const sampleTacticProfiles: TacticProfile[] = [
   },
 ]
 
-const sampleTeamConfigs: SeedTeamConfig[] = [
-  {
-    id: 'team-arg-sample',
-    name: '阿根廷（示例）',
-    shortName: '阿根廷',
-    fifaCode: 'ARG',
-    overallRating: 89,
-    goalkeepingRating: 87,
-    defenseRating: 88,
-    midfieldRating: 90,
-    attackRating: 91,
-    styleTags: ['control', 'central_control'],
-  },
-  {
-    id: 'team-usa-sample',
-    name: '美国（示例）',
-    shortName: '美国',
-    fifaCode: 'USA',
-    overallRating: 82,
-    goalkeepingRating: 82,
-    defenseRating: 80,
-    midfieldRating: 81,
-    attackRating: 84,
-    styleTags: ['high_press', 'wing_play'],
-  },
-  {
-    id: 'team-jpn-sample',
-    name: '日本（示例）',
-    shortName: '日本',
-    fifaCode: 'JPN',
-    overallRating: 81,
-    goalkeepingRating: 80,
-    defenseRating: 82,
-    midfieldRating: 82,
-    attackRating: 80,
-    styleTags: ['compact', 'counter_attack'],
-  },
-  {
-    id: 'team-sen-sample',
-    name: '塞内加尔（示例）',
-    shortName: '塞内加尔',
-    fifaCode: 'SEN',
-    overallRating: 80,
-    goalkeepingRating: 81,
-    defenseRating: 81,
-    midfieldRating: 79,
-    attackRating: 80,
-    styleTags: ['athletic', 'counter_attack'],
-  },
-]
-
-function createPlayers(config: SeedTeamConfig): Player[] {
-  const primaryPositions = [
-    'GK',
-    'LB',
-    'CB',
-    'CB',
-    'RB',
-    'DM',
-    'CM',
-    'AM',
-    'LW',
-    'RW',
-    'ST',
-    'GK',
-    'CB',
-    'CB',
-    'LB',
-    'RB',
-    'DM',
-    'CM',
-    'CM',
-    'LW',
-    'RW',
-    'ST',
-    'ST',
-    'AM',
-    'CM',
-    'CB',
-  ]
-
-  return primaryPositions.map((position, index) => {
-    const shirtNumber = index + 1
-    const depthPenalty = Math.floor(index / 6) * 2
-    const overallRating = Math.max(config.overallRating - depthPenalty - (index > 10 ? 3 : 0), 68)
-
-    return {
-      id: `${config.id}-player-${shirtNumber}`,
-      teamId: config.id,
-      name: `${config.shortName}${shirtNumber}号球员`,
-      shirtNumber,
-      primaryPosition: position,
-      secondaryPositions:
-        position === 'CB'
-          ? ['RB']
-          : position === 'CM'
-            ? ['DM', 'AM']
-            : position === 'LW' || position === 'RW'
-              ? ['AM', 'ST']
-              : [],
-      overallRating,
-      attackRating: Math.max(Math.min(overallRating + (position === 'ST' || position === 'LW' || position === 'RW' ? 4 : 0), 95), 60),
-      defenseRating: Math.max(Math.min(overallRating + (position === 'CB' || position === 'LB' || position === 'RB' || position === 'DM' ? 3 : -4), 92), 55),
-      staminaRating: Math.max(Math.min(overallRating + 1, 94), 60),
-      mentalityRating: Math.max(Math.min(overallRating, 92), 60),
-      positionFitRating: position === 'GK' ? 95 : 88,
-      isCorePlayer: shirtNumber <= 5,
-      statusTag: 'available',
-    }
-  })
-}
-
-export const sampleTeams: Team[] = sampleTeamConfigs.map((config, index) => ({
-  id: config.id,
-  name: config.name,
-  shortName: config.shortName,
-  fifaCode: config.fifaCode,
-  groupCode: 'A',
-  defaultFormationId: index % 2 === 0 ? 'formation-4-3-3' : 'formation-4-2-3-1',
-  styleTags: config.styleTags,
-  overallRating: config.overallRating,
-  goalkeepingRating: config.goalkeepingRating,
-  defenseRating: config.defenseRating,
-  midfieldRating: config.midfieldRating,
-  attackRating: config.attackRating,
-}))
-
-export const samplePlayers: Player[] = sampleTeamConfigs.flatMap(createPlayers)
-
-export const sampleTournamentGroups: TournamentGroup[] = [
-  {
-    id: 'group-a',
-    groupCode: 'A',
-    teamIds: sampleTeams.map((team) => team.id),
-  },
-]
-
-export const sampleFixtures: MatchFixture[] = [
-  {
-    id: 'fixture-a-1',
-    stage: 'group',
-    roundCode: 'group-round-1',
-    groupCode: 'A',
-    homeTeamId: sampleTeams[0].id,
-    awayTeamId: sampleTeams[1].id,
-    fixtureOrder: 1,
-    knockoutSlot: null,
-    dependsOn: [],
-  },
-  {
-    id: 'fixture-a-2',
-    stage: 'group',
-    roundCode: 'group-round-1',
-    groupCode: 'A',
-    homeTeamId: sampleTeams[2].id,
-    awayTeamId: sampleTeams[3].id,
-    fixtureOrder: 2,
-    knockoutSlot: null,
-    dependsOn: [],
-  },
-  {
-    id: 'fixture-a-3',
-    stage: 'group',
-    roundCode: 'group-round-2',
-    groupCode: 'A',
-    homeTeamId: sampleTeams[0].id,
-    awayTeamId: sampleTeams[2].id,
-    fixtureOrder: 3,
-    knockoutSlot: null,
-    dependsOn: [],
-  },
-  {
-    id: 'fixture-a-4',
-    stage: 'group',
-    roundCode: 'group-round-2',
-    groupCode: 'A',
-    homeTeamId: sampleTeams[1].id,
-    awayTeamId: sampleTeams[3].id,
-    fixtureOrder: 4,
-    knockoutSlot: null,
-    dependsOn: [],
-  },
-  {
-    id: 'fixture-a-5',
-    stage: 'group',
-    roundCode: 'group-round-3',
-    groupCode: 'A',
-    homeTeamId: sampleTeams[0].id,
-    awayTeamId: sampleTeams[3].id,
-    fixtureOrder: 5,
-    knockoutSlot: null,
-    dependsOn: [],
-  },
-  {
-    id: 'fixture-a-6',
-    stage: 'group',
-    roundCode: 'group-round-3',
-    groupCode: 'A',
-    homeTeamId: sampleTeams[1].id,
-    awayTeamId: sampleTeams[2].id,
-    fixtureOrder: 6,
-    knockoutSlot: null,
-    dependsOn: [],
-  },
-  {
-    id: 'fixture-semi-1',
-    stage: 'knockout',
-    roundCode: 'knockout-semi',
-    groupCode: null,
-    homeTeamId: null,
-    awayTeamId: null,
-    fixtureOrder: 7,
-    knockoutSlot: 'semi-1',
-    dependsOn: ['A1', 'A4'],
-  },
-  {
-    id: 'fixture-semi-2',
-    stage: 'knockout',
-    roundCode: 'knockout-semi',
-    groupCode: null,
-    homeTeamId: null,
-    awayTeamId: null,
-    fixtureOrder: 8,
-    knockoutSlot: 'semi-2',
-    dependsOn: ['A2', 'A3'],
-  },
-  {
-    id: 'fixture-final-1',
-    stage: 'knockout',
-    roundCode: 'knockout-final',
-    groupCode: null,
-    homeTeamId: null,
-    awayTeamId: null,
-    fixtureOrder: 9,
-    knockoutSlot: 'final',
-    dependsOn: ['W:fixture-semi-1', 'W:fixture-semi-2'],
-  },
-]
+export const sampleTeams = worldCupTeams
+export const samplePlayers = worldCupPlayers
+export const sampleTournamentGroups = worldCupTournamentGroups
+export const sampleFixtures = worldCupFixtures
+export const sampleThirdPlaceCombinationMap = worldCupThirdPlaceCombinationMap
 
 export const sampleEventTemplates: EventTemplate[] = [
   {
@@ -344,7 +121,7 @@ export const sampleEventTemplates: EventTemplate[] = [
     title: '末段强攻',
     triggerPhase: 'late_game',
     triggerCondition: { score_diff_range: [-1, 0], minute_bucket: 'late' },
-    textTemplate: '比赛正在失去控制，你要让两名边后卫进一步压上吗？',
+    textTemplate: '比赛正在失去控制，你要让边后卫进一步压上吗？',
     baseWeight: 8,
     repeatRule: 'once_per_match',
     chainNextCodes: ['SUB_IMPACT_WINGER'],
@@ -383,7 +160,7 @@ export const sampleEventTemplates: EventTemplate[] = [
     title: '裁判施压',
     triggerPhase: 'first_half',
     triggerCondition: { score_diff_range: [-1, 1] },
-    textTemplate: '一次争议越位判罚点燃了替补席情绪，你要去向第四官员施压吗？',
+    textTemplate: '一次争议判罚点燃了替补席情绪，你要去向第四官员施压吗？',
     baseWeight: 5,
     repeatRule: 'repeatable_with_cooldown',
     chainNextCodes: ['TACTIC_LATE_PUSH'],
@@ -470,7 +247,7 @@ export const sampleEventOptions: EventOption[] = [
     id: 'event-option-sub-impact-winger-yes',
     eventTemplateId: 'event-sub-impact-winger',
     optionKey: 'bring_winger',
-    label: '立刻换上边锋',
+    label: '立刻换上冲击手',
     effect: { swap_player: true, modify_attack_bias: 1 },
     sortOrder: 1,
   },
@@ -549,5 +326,5 @@ export const sampleEventOptions: EventOption[] = [
 ]
 
 export function getSeedTimestamp(): string {
-  return seedTimestamp
+  return worldCupSeedTimestamp
 }

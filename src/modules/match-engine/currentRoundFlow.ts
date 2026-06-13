@@ -21,6 +21,7 @@ import type {
   Team,
 } from '../../types/entities'
 import { loadMatchEventSelection } from '../event-system/loadMatchEventSelection'
+import { buildDefaultMatchSetup } from '../team-management/buildDefaultMatchSetup'
 import { loadMatchSetupOverview } from '../team-management/loadMatchSetupOverview'
 import { resolveGroupAdvancement } from '../tournament/resolveGroupAdvancement'
 import { resolveKnockoutFixtures } from '../tournament/resolveKnockoutFixtures'
@@ -64,26 +65,16 @@ function isResolvedEventSelection(
 function findFixtureSetup(
   saveSetup: SaveMatchSetup | null,
   saveSlotId: string,
-  fixtureId: string,
-  teamId: string,
-  defaultFormationId: string,
-  defaultTacticId: string,
-  rosterIds: string[],
+  fixture: MatchFixture,
+  team: Team,
+  roster: ReturnType<TeamRepository['getPlayersByTeamId']>,
+  defaultTactic: TacticProfile,
 ): SaveMatchSetup {
   if (saveSetup) {
     return saveSetup
   }
 
-  return {
-    id: `${saveSlotId}-${fixtureId}-${teamId}`,
-    saveSlotId,
-    fixtureId,
-    teamId,
-    formationId: defaultFormationId,
-    tacticProfileId: defaultTacticId,
-    startingPlayerIds: rosterIds.slice(0, 11),
-    benchPlayerIds: rosterIds.slice(11),
-  }
+  return buildDefaultMatchSetup(saveSlotId, fixture, team, roster, defaultTactic)
 }
 
 function toManagedPlayers(
@@ -152,6 +143,19 @@ function didSelectedTeamWinSnapshot(
   selectedTeamId: string,
 ): boolean {
   return resolveKnockoutWinner(fixture, selectedTeamId) === 'selected'
+}
+
+function getKnockoutAdvanceRoundCode(currentRoundCode: string): string | null {
+  switch (currentRoundCode) {
+    case 'knockout-round-32':
+      return 'knockout-round-16'
+    case 'knockout-round-16':
+      return 'knockout-quarterfinal'
+    case 'knockout-quarterfinal':
+      return 'knockout-semi'
+    default:
+      return null
+  }
 }
 
 function updateSelectedTeamPlayerStates(
@@ -256,11 +260,10 @@ function buildFixtureRoundContext(
       : findFixtureSetup(
           saveRepository.getMatchSetup(saveSlotId, fixture.id),
           saveSlotId,
-          fixture.id,
-          homeTeam.id,
-          homeTeam.defaultFormationId,
-          homeDefaultTactic.id,
-          homeRoster.map((player) => player.id),
+          fixture,
+          homeTeam,
+          homeRoster,
+          homeDefaultTactic,
         )
 
   const awaySetup =
@@ -282,11 +285,10 @@ function buildFixtureRoundContext(
       : findFixtureSetup(
           saveRepository.getMatchSetup(saveSlotId, fixture.id),
           saveSlotId,
-          fixture.id,
-          awayTeam.id,
-          awayTeam.defaultFormationId,
-          awayDefaultTactic.id,
-          awayRoster.map((player) => player.id),
+          fixture,
+          awayTeam,
+          awayRoster,
+          awayDefaultTactic,
         )
 
   const homeFormation = setupRepository.getFormationById(homeSetup.formationId)
@@ -346,7 +348,9 @@ function resolveCurrentRoundContext(
   const fixtures =
     saveSlot.currentStage === 'knockout'
       ? resolveKnockoutFixtures(client, saveSlot.id, saveSlot.currentRoundCode)
-      : tournamentRepository.getFixturesByRoundCode(saveSlot.currentRoundCode)
+      : tournamentRepository
+          .getFixturesByRoundCode(saveSlot.currentRoundCode)
+          .filter((fixture) => fixture.groupCode === selectedTeam.groupCode)
   const teamStates = new Map(
     saveRepository
       .getTeamStatesBySaveSlotId(saveSlot.id)
@@ -664,33 +668,59 @@ export function finalizeCurrentRound(
   const currentRoundIndex = roundCodes.findIndex((roundCode) => roundCode === saveSlot.currentRoundCode)
   const nextRoundCode = roundCodes[currentRoundIndex + 1]
 
-  if (nextRoundCode) {
-    if (saveSlot.currentStage === 'knockout') {
-      const selectedTeamSnapshot = findSelectedTeamSnapshot(simulation.snapshots, saveSlot.selectedTeamId)
-
-      if (!didSelectedTeamWinSnapshot(selectedTeamSnapshot, saveSlot.selectedTeamId)) {
-        saveRepository.updateSaveSlotProgress(
-          saveSlot.id,
-          'knockout',
-          'tournament-complete',
-          'eliminated',
-        )
-      } else {
-        saveRepository.updateSaveSlotProgress(saveSlot.id, saveSlot.currentStage, nextRoundCode, 'active')
-      }
-    } else {
-      saveRepository.updateSaveSlotProgress(saveSlot.id, saveSlot.currentStage, nextRoundCode, 'active')
-    }
+  if (nextRoundCode && saveSlot.currentStage !== 'knockout') {
+    saveRepository.updateSaveSlotProgress(saveSlot.id, saveSlot.currentStage, nextRoundCode, 'active')
   } else if (saveSlot.currentStage === 'group') {
     const advancement = resolveGroupAdvancement(client, saveSlot.id)
 
     if (advancement.selectedTeamOutcome === 'qualified') {
-      saveRepository.updateSaveSlotProgress(saveSlot.id, 'knockout', 'knockout-semi', 'active')
+      saveRepository.updateSaveSlotProgress(saveSlot.id, 'knockout', 'knockout-round-32', 'active')
     } else {
       saveRepository.updateSaveSlotProgress(saveSlot.id, 'group', 'group-complete', 'eliminated')
     }
+  } else if (saveSlot.currentStage === 'knockout') {
+    const selectedTeamSnapshot = findSelectedTeamSnapshot(simulation.snapshots, saveSlot.selectedTeamId)
+    const didSelectedTeamWin = didSelectedTeamWinSnapshot(selectedTeamSnapshot, saveSlot.selectedTeamId)
+
+    if (saveSlot.currentRoundCode === 'knockout-semi') {
+      saveRepository.updateSaveSlotProgress(
+        saveSlot.id,
+        'knockout',
+        didSelectedTeamWin ? 'knockout-final' : 'knockout-third-place',
+        'active',
+      )
+    } else if (saveSlot.currentRoundCode === 'knockout-final') {
+      saveRepository.updateSaveSlotProgress(
+        saveSlot.id,
+        'knockout',
+        'tournament-complete',
+        didSelectedTeamWin ? 'champion' : 'eliminated',
+      )
+    } else if (saveSlot.currentRoundCode === 'knockout-third-place') {
+      saveRepository.updateSaveSlotProgress(
+        saveSlot.id,
+        'knockout',
+        'tournament-complete',
+        'eliminated',
+      )
+    } else if (!didSelectedTeamWin) {
+      saveRepository.updateSaveSlotProgress(
+        saveSlot.id,
+        'knockout',
+        'tournament-complete',
+        'eliminated',
+      )
+    } else {
+      const advanceRoundCode = getKnockoutAdvanceRoundCode(saveSlot.currentRoundCode)
+
+      if (!advanceRoundCode) {
+        throw new Error(`Unsupported knockout round progression: ${saveSlot.currentRoundCode}`)
+      }
+
+      saveRepository.updateSaveSlotProgress(saveSlot.id, 'knockout', advanceRoundCode, 'active')
+    }
   } else {
-    const finalSnapshot = simulation.snapshots[simulation.snapshots.length - 1]
+    const finalSnapshot = simulation.snapshots.find((snapshot) => snapshot.fixtureId === 'fixture-knockout-104')
 
     if (!finalSnapshot) {
       throw new Error('Knockout resolution expected a final snapshot.')

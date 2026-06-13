@@ -87,7 +87,7 @@ function App() {
       try {
         const client = await createAppDatabase()
         const teamRepository = new TeamRepository(client)
-        const previewTeams = teamRepository.getAllTeams().slice(0, 4)
+        const previewTeams = teamRepository.getAllTeams()
         const summary = loadGameDataSummary(client)
         const saveSelectionEntries = loadSaveSelectionEntries(client)
         const latestSaveEntry = saveSelectionEntries[0] ?? null
@@ -498,9 +498,7 @@ function App() {
               ? `${refreshedSave.selectedTeam.shortName} 已打入淘汰赛，但赛事结果已经尘埃落定。`
               : `赛事结束，${refreshedSave.selectedTeam.shortName} 已被淘汰。`
           : refreshedSave.saveSlot.currentStage === 'knockout'
-            ? refreshedSave.saveSlot.currentRoundCode === 'knockout-semi'
-              ? `淘汰赛半决赛已准备就绪，${refreshedSave.selectedTeam.shortName} 距离冠军还差两场胜利。`
-              : `淘汰赛决赛已准备就绪，${refreshedSave.selectedTeam.shortName} 将向冠军发起冲击。`
+            ? `淘汰赛 ${translateRoundCode(refreshedSave.saveSlot.currentRoundCode)} 已准备就绪，${refreshedSave.selectedTeam.shortName} 将继续冲击冠军。`
             : `本轮完成，已记录 ${snapshots.length} 场比赛。下一轮：${translateRoundCode(refreshedSave.saveSlot.currentRoundCode)}。`,
     }))
   }
@@ -552,12 +550,13 @@ function App() {
             {bootstrapState.summary.fixtureCount} 场赛程，{bootstrapState.summary.eventTemplateCount} 个事件模板。
           </p>
           <ul>
-            {bootstrapState.previewTeams.map((team) => (
+            {bootstrapState.previewTeams.slice(0, 8).map((team) => (
               <li key={team.id}>
                 {team.shortName}（{team.fifaCode}）- 综合评分 {team.overallRating}
               </li>
             ))}
           </ul>
+          {bootstrapState.previewTeams.length > 8 && <p>其余球队已载入数据库，可在新游戏列表中查看。</p>}
         </div>
       )}
 

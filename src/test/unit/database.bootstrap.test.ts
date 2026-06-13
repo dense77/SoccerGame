@@ -4,6 +4,7 @@ import { initializeSchema } from '../../data/db/schema'
 import { SQLiteDatabaseClient } from '../../data/db/sqlite'
 import { MemoryBinaryStorage } from '../../data/db/storage'
 import { seedDatabaseIfEmpty } from '../../data/seeds/seedDatabase'
+import { samplePlayers } from '../../data/seeds/sampleData'
 
 describe('database bootstrap', () => {
   it('creates the core tables during schema initialization', async () => {
@@ -36,11 +37,11 @@ describe('database bootstrap', () => {
     const teamCount = client.query<{ total: number }>('SELECT COUNT(*) as total FROM teams')[0].total
     const playerCount = client.query<{ total: number }>('SELECT COUNT(*) as total FROM players')[0].total
 
-    expect(teamCount).toBe(4)
-    expect(playerCount).toBe(104)
+    expect(teamCount).toBe(48)
+    expect(playerCount).toBe(1248)
   })
 
-  it('refreshes seeded display text when existing seed rows contain older values', async () => {
+  it('refreshes seeded display text when the static seed version is reapplied', async () => {
     const client = new SQLiteDatabaseClient(new MemoryBinaryStorage())
     await client.initialize()
     initializeSchema(client)
@@ -50,6 +51,7 @@ describe('database bootstrap', () => {
     client.execute("UPDATE players SET name = 'Argentina Player 1' WHERE id = 'team-arg-sample-player-1'")
     client.execute("UPDATE event_templates SET title = 'Late Push' WHERE id = 'event-tactic-late-push'")
     client.execute("UPDATE event_options SET label = 'Push the fullbacks higher' WHERE id = 'event-option-tactic-late-push-yes'")
+    client.execute("DELETE FROM app_metadata WHERE key = 'static_seed_version'")
 
     seedDatabaseIfEmpty(client)
 
@@ -67,7 +69,9 @@ describe('database bootstrap', () => {
     )
 
     expect(team?.short_name).toBe('阿根廷')
-    expect(player?.name).toBe('阿根廷1号球员')
+    expect(player?.name).toBe(
+      samplePlayers.find((seedPlayer) => seedPlayer.id === 'team-arg-sample-player-1')?.name,
+    )
     expect(eventTemplate?.title).toBe('末段强攻')
     expect(eventOption?.label).toBe('让边后卫大举压上')
   })

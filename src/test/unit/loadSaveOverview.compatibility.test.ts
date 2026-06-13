@@ -12,34 +12,34 @@ describe('loadSaveOverview compatibility', () => {
     const saveRepository = new SaveRepository(client)
 
     saveRepository.createMatchSnapshot({
-      id: `${saveSlot.id}-fixture-a-1`,
+      id: `${saveSlot.id}-fixture-group-j-1`,
       saveSlotId: saveSlot.id,
-      fixtureId: 'fixture-a-1',
+      fixtureId: 'fixture-group-j-1',
       stage: 'group',
       homeTeamId: 'team-arg-sample',
-      awayTeamId: 'team-usa-sample',
+      awayTeamId: 'team-aut',
       homeScore: 2,
       awayScore: 1,
       resultSummary: {
         postMatchReport: {
-          snapshotId: `${saveSlot.id}-fixture-a-1`,
-          fixtureId: 'fixture-a-1',
+          snapshotId: `${saveSlot.id}-fixture-group-j-1`,
+          fixtureId: 'fixture-group-j-1',
           stage: 'group',
           roundCode: 'group-round-1',
           knockoutSlot: null,
           teamId: 'team-arg-sample',
           teamName: '阿根廷',
-          opponentTeamName: '美国',
+          opponentTeamName: '奥地利',
           scoreline: '2-1',
           resultLabel: 'win',
           fitnessChangeSummary: {
             startersAverageDelta: -18,
             benchAverageDelta: -4,
-            mostAffectedPlayer: '阿根廷1号球员',
+            mostAffectedPlayer: 'Juan Musso',
           },
           moraleChangeSummary: {
             teamAverageDelta: 4,
-            mostBoostedPlayer: '阿根廷2号球员',
+            mostBoostedPlayer: 'Cristian Romero',
             mostDroppedPlayer: null,
           },
           playerChanges: [],

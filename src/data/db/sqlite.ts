@@ -17,6 +17,8 @@ async function loadSqlRuntime(): Promise<SqlJsStatic> {
 
 export class SQLiteDatabaseClient {
   private database: Database | null = null
+  private persistSuppressed = 0
+  private hasPendingPersist = false
 
   constructor(private readonly storage: BinaryStorage) {}
 
@@ -34,7 +36,7 @@ export class SQLiteDatabaseClient {
 
   execute(sql: string, params?: BindParams): void {
     this.getDatabase().run(sql, params)
-    this.persist()
+    this.markPersistRequired()
   }
 
   executeBatch(statements: string[]): void {
@@ -42,7 +44,41 @@ export class SQLiteDatabaseClient {
     statements.forEach((statement) => {
       database.run(statement)
     })
-    this.persist()
+    this.markPersistRequired()
+  }
+
+  executeInTransaction<T>(operation: () => T): T {
+    const database = this.getDatabase()
+    const isTopLevelTransaction = this.persistSuppressed === 0
+
+    this.persistSuppressed += 1
+
+    if (isTopLevelTransaction) {
+      database.run('BEGIN;')
+    }
+
+    try {
+      const result = operation()
+
+      if (isTopLevelTransaction) {
+        database.run('COMMIT;')
+      }
+
+      return result
+    } catch (error) {
+      if (isTopLevelTransaction) {
+        database.run('ROLLBACK;')
+      }
+
+      throw error
+    } finally {
+      this.persistSuppressed -= 1
+
+      if (this.persistSuppressed === 0 && this.hasPendingPersist) {
+        this.persist()
+        this.hasPendingPersist = false
+      }
+    }
   }
 
   query<T>(sql: string, params?: BindParams): T[] {
@@ -80,6 +116,15 @@ export class SQLiteDatabaseClient {
     }
 
     return this.database
+  }
+
+  private markPersistRequired(): void {
+    if (this.persistSuppressed > 0) {
+      this.hasPendingPersist = true
+      return
+    }
+
+    this.persist()
   }
 
   private persist(): void {

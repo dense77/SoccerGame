@@ -20,11 +20,11 @@ describe('game data integration', () => {
     const events = eventRepository.getAllTemplates()
     const options = eventRepository.getOptionsByTemplateId(events[0].id)
 
-    expect(teams).toHaveLength(4)
-    expect(groups).toHaveLength(1)
+    expect(teams).toHaveLength(48)
+    expect(groups).toHaveLength(12)
     expect(groups[0].teamIds).toHaveLength(4)
-    expect(groupFixtures).toHaveLength(6)
-    expect(knockoutFixtures).toHaveLength(3)
+    expect(groupFixtures).toHaveLength(72)
+    expect(knockoutFixtures).toHaveLength(32)
     expect(events).toHaveLength(8)
     expect(options.length).toBeGreaterThan(0)
   })
@@ -33,11 +33,11 @@ describe('game data integration', () => {
     const client = await createTestDatabase()
 
     expect(loadGameDataSummary(client)).toEqual({
-      teamCount: 4,
-      playerCount: 104,
-      formationCount: 2,
+      teamCount: 48,
+      playerCount: 1248,
+      formationCount: 5,
       tacticProfileCount: 3,
-      fixtureCount: 9,
+      fixtureCount: 104,
       eventTemplateCount: 8,
     })
   })
