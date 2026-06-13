@@ -2,7 +2,7 @@ import { SaveRepository } from '../../data/repositories/SaveRepository'
 import { TeamRepository } from '../../data/repositories/TeamRepository'
 import { TournamentRepository } from '../../data/repositories/TournamentRepository'
 import type { SQLiteDatabaseClient } from '../../data/db/sqlite'
-import type { PostMatchReport, SaveOverview } from '../../types/entities'
+import type { PostMatchReport, SaveOverview, TournamentSummary } from '../../types/entities'
 import { buildGroupStandings } from '../tournament/buildGroupStandings'
 import { resolveKnockoutFixtures } from '../tournament/resolveKnockoutFixtures'
 
@@ -43,6 +43,59 @@ function buildAdvancementSummary(
   }
 }
 
+function buildTournamentSummary(
+  saveOverview: Pick<
+    SaveOverview,
+    'saveSlot' | 'selectedTeam' | 'latestPostMatchReport' | 'tournamentOutcome'
+  >,
+): TournamentSummary | null {
+  const latestReport = saveOverview.latestPostMatchReport
+
+  if (saveOverview.tournamentOutcome === 'champion' && latestReport) {
+    return {
+      title: 'World Cup Winners',
+      detail: `${saveOverview.selectedTeam.shortName} beat ${latestReport.opponentTeamName} ${latestReport.scoreline} in the final.`,
+      tone: 'success',
+    }
+  }
+
+  if (saveOverview.tournamentOutcome === 'eliminated' && latestReport?.stage === 'knockout') {
+    const stageLabel =
+      latestReport.knockoutSlot === 'final'
+        ? 'the final'
+        : latestReport.knockoutSlot === 'semi-1' || latestReport.knockoutSlot === 'semi-2'
+          ? 'the semifinal'
+          : 'the knockout round'
+
+    return {
+      title: 'Tournament Run Ends',
+      detail: `${saveOverview.selectedTeam.shortName} lost to ${latestReport.opponentTeamName} ${latestReport.scoreline} in ${stageLabel}.`,
+      tone: 'failure',
+    }
+  }
+
+  if (saveOverview.saveSlot.currentStage === 'knockout' && saveOverview.saveSlot.status === 'active') {
+    const roundLabel =
+      saveOverview.saveSlot.currentRoundCode === 'knockout-semi' ? 'semifinal' : 'final'
+
+    return {
+      title: 'Knockout Stage',
+      detail: `${saveOverview.selectedTeam.shortName} are preparing for the ${roundLabel}.`,
+      tone: 'neutral',
+    }
+  }
+
+  if (saveOverview.latestPostMatchReport?.stage === 'group' && saveOverview.tournamentOutcome === 'in_progress') {
+    return {
+      title: 'Group Stage Continues',
+      detail: `${saveOverview.selectedTeam.shortName} remain in the group phase after a ${saveOverview.latestPostMatchReport.resultLabel}.`,
+      tone: 'neutral',
+    }
+  }
+
+  return null
+}
+
 export function loadSaveOverview(
   client: SQLiteDatabaseClient,
   saveSlotId: string,
@@ -75,8 +128,18 @@ export function loadSaveOverview(
     saveSlot.currentStage === 'knockout'
       ? resolveKnockoutFixtures(client, saveSlot.id, saveSlot.currentRoundCode)
       : tournamentRepository.getFixturesByRoundCode(saveSlot.currentRoundCode)
+  const tournamentOutcome: SaveOverview['tournamentOutcome'] =
+    saveSlot.status === 'champion'
+      ? 'champion'
+      : saveSlot.status === 'eliminated'
+        ? 'eliminated'
+        : saveSlot.currentStage === 'knockout' && saveSlot.status === 'active'
+          ? 'qualified'
+          : saveSlot.status === 'qualified'
+            ? 'qualified'
+            : 'in_progress'
 
-  return {
+  const overview = {
     saveSlot,
     selectedTeam,
     groupStandings,
@@ -89,18 +152,14 @@ export function loadSaveOverview(
       completedMatches,
       groupFixtures.length,
     ),
-    tournamentOutcome:
-      saveSlot.status === 'champion'
-        ? 'champion'
-        : saveSlot.status === 'eliminated'
-          ? 'eliminated'
-          : saveSlot.currentStage === 'knockout' && saveSlot.status === 'active'
-            ? 'qualified'
-            : saveSlot.status === 'qualified'
-              ? 'qualified'
-            : 'in_progress',
+    tournamentOutcome,
     rosterSize: playerStates.filter((playerState) =>
       playerState.playerId.startsWith(`${saveSlot.selectedTeamId}-player-`),
     ).length,
+  }
+
+  return {
+    ...overview,
+    tournamentSummary: buildTournamentSummary(overview),
   }
 }

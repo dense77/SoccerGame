@@ -163,6 +163,7 @@ export interface SaveOverview {
   completedMatches: MatchSnapshot[]
   latestPostMatchReport: PostMatchReport | null
   advancement: GroupAdvancementSummary | null
+  tournamentSummary: TournamentSummary | null
   tournamentOutcome: 'in_progress' | 'qualified' | 'eliminated' | 'champion'
   rosterSize: number
 }
@@ -240,6 +241,9 @@ export interface PostMatchEventReport {
 export interface PostMatchReport {
   snapshotId: string
   fixtureId: string
+  stage: string
+  roundCode: string
+  knockoutSlot: string | null
   teamId: string
   teamName: string
   opponentTeamName: string
@@ -264,6 +268,12 @@ export interface GroupAdvancementSummary {
   qualifiedTeamIds: string[]
   eliminatedTeamIds: string[]
   selectedTeamOutcome: 'qualified' | 'eliminated' | 'pending'
+}
+
+export interface TournamentSummary {
+  title: string
+  detail: string
+  tone: 'neutral' | 'success' | 'failure'
 }
 
 export interface MatchEventLog {

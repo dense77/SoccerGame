@@ -39,6 +39,7 @@ describe('round simulation integration', () => {
     expect(refreshedSave?.currentRoundCode).toBe('knockout-semi')
     expect(refreshedSave?.status).toBe('active')
     expect(overview.advancement).not.toBeNull()
+    expect(overview.tournamentSummary?.title).toBe('Knockout Stage')
     expect(overview.tournamentOutcome).toBe('qualified')
     expect(overview.currentFixtures).toHaveLength(2)
     expect(overview.groupStandings.filter((entry) => entry.isQualified)).toHaveLength(2)
@@ -62,9 +63,11 @@ describe('round simulation integration', () => {
     if (refreshedSave?.status === 'active') {
       expect(refreshedSave.currentRoundCode).toBe('knockout-final')
       expect(overview.currentFixtures).toHaveLength(1)
+      expect(overview.tournamentSummary?.title).toBe('Knockout Stage')
     } else {
       expect(refreshedSave?.status).toBe('eliminated')
       expect(refreshedSave?.currentRoundCode).toBe('tournament-complete')
+      expect(overview.tournamentSummary?.tone).toBe('failure')
     }
   })
 
@@ -89,12 +92,20 @@ describe('round simulation integration', () => {
       expect(refreshedSave?.currentRoundCode).toBe('tournament-complete')
       expect(['champion', 'eliminated']).toContain(refreshedSave?.status)
       expect(['champion', 'eliminated']).toContain(overview.tournamentOutcome)
+      expect(overview.tournamentSummary).not.toBeNull()
       expect(overview.completedMatches).toHaveLength(9)
+
+      if (refreshedSave?.status === 'champion') {
+        expect(overview.tournamentSummary?.tone).toBe('success')
+      } else {
+        expect(overview.tournamentSummary?.tone).toBe('failure')
+      }
     } else {
       const overview = loadSaveOverview(client, saveSlot.id)
 
       expect(semiSnapshots).toHaveLength(2)
       expect(afterSemi?.status).toBe('eliminated')
+      expect(overview.tournamentSummary?.tone).toBe('failure')
       expect(overview.completedMatches).toHaveLength(8)
     }
   })

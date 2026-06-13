@@ -86,6 +86,15 @@ export function buildPostMatchReport(input: BuildPostMatchReportInput): PostMatc
   return {
     snapshotId: input.snapshot.id,
     fixtureId: input.snapshot.fixtureId,
+    stage: input.snapshot.stage,
+    roundCode:
+      typeof input.snapshot.resultSummary.roundCode === 'string'
+        ? input.snapshot.resultSummary.roundCode
+        : input.snapshot.fixtureId,
+    knockoutSlot:
+      typeof input.snapshot.resultSummary.knockoutSlot === 'string'
+        ? input.snapshot.resultSummary.knockoutSlot
+        : null,
     teamId: input.selectedTeamId,
     teamName: input.selectedTeamName,
     opponentTeamName: input.opponentTeamName,

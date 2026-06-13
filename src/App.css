@@ -155,6 +155,23 @@
   margin-top: 12px;
 }
 
+.tournament-summary {
+  border-left: 6px solid #247d47;
+}
+
+.tournament-summary-success {
+  background: linear-gradient(135deg, rgba(245, 197, 24, 0.2), rgba(255, 255, 255, 0.92));
+}
+
+.tournament-summary-failure {
+  border-left-color: #a01818;
+  background: linear-gradient(135deg, rgba(160, 24, 24, 0.12), rgba(255, 255, 255, 0.92));
+}
+
+.tournament-summary-neutral {
+  background: linear-gradient(135deg, rgba(36, 125, 71, 0.14), rgba(255, 255, 255, 0.92));
+}
+
 .squad-list {
   list-style: none;
   margin: 0;

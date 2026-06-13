@@ -305,6 +305,7 @@ function App() {
   const activeMatchSetup = bootstrapState.activeMatchSetup
   const activeEventSelection = bootstrapState.activeEventSelection
   const latestPostMatchReport = bootstrapState.activeSave?.latestPostMatchReport ?? null
+  const tournamentSummary = bootstrapState.activeSave?.tournamentSummary ?? null
 
   return (
     <div className="container">
@@ -392,6 +393,13 @@ function App() {
                 Selected team outcome:{' '}
                 {bootstrapState.activeSave.advancement.selectedTeamOutcome.toUpperCase()}
               </p>
+            </section>
+          )}
+
+          {tournamentSummary && (
+            <section className={`panel tournament-summary tournament-summary-${tournamentSummary.tone}`}>
+              <h3>{tournamentSummary.title}</h3>
+              <p>{tournamentSummary.detail}</p>
             </section>
           )}
 

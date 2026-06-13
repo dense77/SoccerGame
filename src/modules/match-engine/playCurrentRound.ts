@@ -305,7 +305,11 @@ export function playCurrentRound(
               awayTeamId: fixture.awayTeamId,
               homeScore: result.homeScore,
               awayScore: result.awayScore,
-              resultSummary: result.resultSummary,
+              resultSummary: {
+                ...result.resultSummary,
+                roundCode: fixture.roundCode,
+                knockoutSlot: fixture.knockoutSlot,
+              },
               appliedModifiers: result.appliedModifiers,
               completedAt: '',
             },
@@ -329,6 +333,8 @@ export function playCurrentRound(
       awayScore: result.awayScore,
       resultSummary: {
         ...result.resultSummary,
+        roundCode: fixture.roundCode,
+        knockoutSlot: fixture.knockoutSlot,
         postMatchReport: selectedTeamPostMatchReport,
       },
       appliedModifiers: result.appliedModifiers,

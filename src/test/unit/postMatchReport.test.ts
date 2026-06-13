@@ -143,6 +143,7 @@ describe('buildPostMatchReport', () => {
     })
 
     expect(report.resultLabel).toBe('win')
+    expect(report.stage).toBe('group')
     expect(report.scoreline).toBe('2-0')
     expect(report.fitnessChangeSummary.startersAverageDelta).toBe(-18)
     expect(report.fitnessChangeSummary.benchAverageDelta).toBe(-4)
