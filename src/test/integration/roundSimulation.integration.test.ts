@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
 import { SaveRepository } from '../../data/repositories/SaveRepository'
+import { resolveSaveFlowView } from '../../app/saveFlowView'
 import { createCareerSave } from '../../modules/save-progress/createCareerSave'
 import { loadSaveOverview } from '../../modules/save-progress/loadSaveOverview'
 import { playCurrentRound } from '../../modules/match-engine/playCurrentRound'
@@ -21,6 +22,7 @@ describe('round simulation integration', () => {
     expect(overview.groupStandings.some((entry) => entry.groupPoints > 0)).toBe(true)
     expect(overview.latestPostMatchReport?.teamId).toBe('team-arg-sample')
     expect(overview.latestPostMatchReport?.playerChanges.some((entry) => entry.fitnessDelta < 0)).toBe(true)
+    expect(resolveSaveFlowView(overview, 'after-round')).toBe('post-match')
   })
 
   it('resolves group advancement after the third round and marks the save outcome', async () => {
@@ -100,6 +102,8 @@ describe('round simulation integration', () => {
       } else {
         expect(overview.tournamentSummary?.tone).toBe('failure')
       }
+
+      expect(resolveSaveFlowView(overview, 'resume')).toBe('settlement')
     } else {
       const overview = loadSaveOverview(client, saveSlot.id)
 
@@ -107,6 +111,7 @@ describe('round simulation integration', () => {
       expect(afterSemi?.status).toBe('eliminated')
       expect(overview.tournamentSummary?.tone).toBe('failure')
       expect(overview.completedMatches).toHaveLength(8)
+      expect(resolveSaveFlowView(overview, 'resume')).toBe('settlement')
     }
   })
 })

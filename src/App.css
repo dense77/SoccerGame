@@ -215,6 +215,60 @@
   color: #21492b;
 }
 
+.flow-panel {
+  grid-column: 1 / -1;
+}
+
+.flow-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.flow-eyebrow {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #247d47;
+}
+
+.flow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.flow-card {
+  border-radius: 14px;
+  background: rgba(22, 57, 31, 0.06);
+  padding: 16px;
+  color: #21492b;
+}
+
+.flow-card h4 {
+  margin: 0 0 10px;
+  color: #16391f;
+}
+
+.flow-card p {
+  margin: 0 0 8px;
+  line-height: 1.5;
+}
+
+.flow-card-full {
+  margin-top: 16px;
+}
+
+.flow-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+}
+
 .status-shift-list {
   margin-top: 12px;
 }

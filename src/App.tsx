@@ -12,6 +12,7 @@ import {
   translateStage,
   translateTournamentOutcome,
 } from './app/displayText'
+import { resolveSaveFlowView, type SaveFlowView } from './app/saveFlowView'
 import { buildSaveSelectionCardText } from './app/saveSelectionText'
 import type { SQLiteDatabaseClient } from './data/db/sqlite'
 import { SaveRepository } from './data/repositories/SaveRepository'
@@ -40,6 +41,7 @@ interface BootstrapState {
   client: SQLiteDatabaseClient | null
   saveSelectionEntries: SaveSelectionEntry[]
   activeSave: SaveOverview | null
+  activeView: SaveFlowView
   activeMatchSetup: MatchSetupOverview | null
   activeEventSelection: MatchEventSelection | null
   message: string
@@ -58,6 +60,7 @@ function App() {
     client: null,
     saveSelectionEntries: [],
     activeSave: null,
+    activeView: 'dashboard',
     activeMatchSetup: null,
     activeEventSelection: null,
     message: '正在初始化浏览器 SQLite 并加载种子数据……',
@@ -93,6 +96,7 @@ function App() {
           client,
           saveSelectionEntries,
           activeSave,
+          activeView: activeSave ? resolveSaveFlowView(activeSave, 'resume') : 'dashboard',
           activeMatchSetup,
           activeEventSelection,
           message: latestSaveEntry
@@ -111,6 +115,7 @@ function App() {
           client: null,
           saveSelectionEntries: [],
           activeSave: null,
+          activeView: 'dashboard',
           activeMatchSetup: null,
           activeEventSelection: null,
           message: error instanceof Error ? error.message : '游戏数据库初始化失败。',
@@ -145,6 +150,7 @@ function App() {
       ...currentState,
       saveSelectionEntries,
       activeSave,
+      activeView: resolveSaveFlowView(activeSave, 'new-save'),
       activeMatchSetup,
       activeEventSelection,
       message: `已为 ${activeSave.selectedTeam.shortName} 创建主教练存档。`,
@@ -169,6 +175,7 @@ function App() {
     setBootstrapState((currentState) => ({
       ...currentState,
       activeSave,
+      activeView: resolveSaveFlowView(activeSave, 'resume'),
       activeMatchSetup,
       activeEventSelection,
       saveSelectionEntries: loadSaveSelectionEntries(client),
@@ -329,6 +336,7 @@ function App() {
       ...currentState,
       saveSelectionEntries: loadSaveSelectionEntries(client),
       activeSave: refreshedSave,
+      activeView: resolveSaveFlowView(refreshedSave, 'after-round'),
       activeMatchSetup: refreshedSetup,
       activeEventSelection: refreshedEventSelection,
       message:
@@ -355,6 +363,9 @@ function App() {
   const activeEventSelection = bootstrapState.activeEventSelection
   const latestPostMatchReport = bootstrapState.activeSave?.latestPostMatchReport ?? null
   const tournamentSummary = bootstrapState.activeSave?.tournamentSummary ?? null
+  const showDashboard = bootstrapState.activeView === 'dashboard'
+  const showPostMatch = bootstrapState.activeView === 'post-match'
+  const showSettlement = bootstrapState.activeView === 'settlement'
 
   return (
     <div className="container">
@@ -456,6 +467,7 @@ function App() {
                 setBootstrapState((currentState) => ({
                   ...currentState,
                   activeSave: null,
+                  activeView: 'dashboard',
                   activeMatchSetup: null,
                   activeEventSelection: null,
                   message: '请选择存档继续，或开始新的世界杯征程。',
@@ -464,6 +476,20 @@ function App() {
             >
               切换存档 / 新游戏
             </button>
+            {!showDashboard && (
+              <button
+                type="button"
+                className="btn btn-compact btn-secondary"
+                onClick={() =>
+                  setBootstrapState((currentState) => ({
+                    ...currentState,
+                    activeView: 'dashboard',
+                  }))
+                }
+              >
+                返回主控台
+              </button>
+            )}
             {activeMatchSetup?.validation.isValid && (
               <button type="button" className="btn btn-compact" onClick={handlePlayCurrentRound}>
                 模拟当前轮次
@@ -471,6 +497,8 @@ function App() {
             )}
           </section>
 
+          {showDashboard && (
+            <>
           <section className="panel">
             <h3>小组积分榜</h3>
             <ul className="compact-list">
@@ -684,6 +712,137 @@ function App() {
                 </ul>
               </section>
             </>
+          )}
+            </>
+          )}
+
+          {showPostMatch && latestPostMatchReport && (
+            <section className="panel flow-panel flow-panel-post-match">
+              <div className="flow-header">
+                <div>
+                  <span className="flow-eyebrow">赛后页面</span>
+                  <h3>{latestPostMatchReport.teamName} {latestPostMatchReport.scoreline} {latestPostMatchReport.opponentTeamName}</h3>
+                  <p>{translateResultLabel(latestPostMatchReport.resultLabel)}，当前阶段为 {translateStage(bootstrapState.activeSave.saveSlot.currentStage)}。</p>
+                </div>
+                <button
+                  type="button"
+                  className="btn btn-compact btn-secondary"
+                  onClick={() =>
+                    setBootstrapState((currentState) => ({
+                      ...currentState,
+                      activeView: 'dashboard',
+                    }))
+                  }
+                >
+                  返回主控台
+                </button>
+              </div>
+              <div className="flow-grid">
+                <div className="flow-card">
+                  <h4>比赛结果</h4>
+                  <p>轮次：{translateRoundCode(latestPostMatchReport.roundCode)}</p>
+                  <p>体能变化：首发 {latestPostMatchReport.fitnessChangeSummary.startersAverageDelta}，替补 {latestPostMatchReport.fitnessChangeSummary.benchAverageDelta}</p>
+                  <p>士气变化：全队平均 {latestPostMatchReport.moraleChangeSummary.teamAverageDelta}</p>
+                </div>
+                <div className="flow-card">
+                  <h4>最受影响球员</h4>
+                  <p>体能消耗最大：{latestPostMatchReport.fitnessChangeSummary.mostAffectedPlayer ?? '无'}</p>
+                  <p>士气提升最大：{latestPostMatchReport.moraleChangeSummary.mostBoostedPlayer ?? '无'}</p>
+                  <p>士气下滑最多：{latestPostMatchReport.moraleChangeSummary.mostDroppedPlayer ?? '无'}</p>
+                </div>
+                {latestPostMatchReport.eventReport && (
+                  <div className="flow-card">
+                    <h4>关键事件复盘</h4>
+                    <p>{latestPostMatchReport.eventReport.title}</p>
+                    <p>选择：{latestPostMatchReport.eventReport.optionLabel}</p>
+                    <p>进攻 {latestPostMatchReport.eventReport.modifier.attackDelta >= 0 ? '+' : ''}{latestPostMatchReport.eventReport.modifier.attackDelta}，防守 {latestPostMatchReport.eventReport.modifier.defenseDelta >= 0 ? '+' : ''}{latestPostMatchReport.eventReport.modifier.defenseDelta}，士气 {latestPostMatchReport.eventReport.modifier.moraleDelta >= 0 ? '+' : ''}{latestPostMatchReport.eventReport.modifier.moraleDelta}</p>
+                  </div>
+                )}
+              </div>
+              <div className="flow-card flow-card-full">
+                <h4>球员变化摘要</h4>
+                <ul className="compact-list status-shift-list">
+                  {latestPostMatchReport.playerChanges.map((change) => (
+                    <li key={change.playerId}>
+                      {change.playerName} | 体能 {change.fitnessBefore}→{change.fitnessAfter} | 士气 {change.moraleBefore}→{change.moraleAfter} | {change.isStarter ? '首发' : '替补'}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="flow-actions">
+                {showSettlement ? null : (
+                  <button
+                    type="button"
+                    className="btn"
+                    onClick={() =>
+                      setBootstrapState((currentState) => ({
+                        ...currentState,
+                        activeView: 'dashboard',
+                      }))
+                    }
+                  >
+                    返回备战下一轮
+                  </button>
+                )}
+              </div>
+            </section>
+          )}
+
+          {showSettlement && tournamentSummary && (
+            <section className={`panel flow-panel flow-panel-settlement tournament-summary tournament-summary-${tournamentSummary.tone}`}>
+              <div className="flow-header">
+                <div>
+                  <span className="flow-eyebrow">赛事结算</span>
+                  <h3>{tournamentSummary.title}</h3>
+                  <p>{tournamentSummary.detail}</p>
+                </div>
+              </div>
+              <div className="flow-grid">
+                <div className="flow-card">
+                  <h4>最终结果</h4>
+                  <p>球队：{bootstrapState.activeSave.selectedTeam.shortName}</p>
+                  <p>结局：{translateTournamentOutcome(bootstrapState.activeSave.tournamentOutcome)}</p>
+                  <p>状态：{translateSaveStatus(bootstrapState.activeSave.saveSlot.status)}</p>
+                </div>
+                <div className="flow-card">
+                  <h4>赛事进程</h4>
+                  <p>阶段：{translateStage(bootstrapState.activeSave.saveSlot.currentStage)}</p>
+                  <p>轮次：{translateRoundCode(bootstrapState.activeSave.saveSlot.currentRoundCode)}</p>
+                  <p>完成比赛：{bootstrapState.activeSave.completedMatches.length} 场</p>
+                </div>
+                {bootstrapState.activeSave.advancement && (
+                  <div className="flow-card">
+                    <h4>小组赛回顾</h4>
+                    <p>{bootstrapState.activeSave.advancement.groupCode} 组晋级：{bootstrapState.activeSave.advancement.qualifiedTeamIds.map((teamId) => teamNameById(teamId)).join('、')}</p>
+                    <p>所选球队结果：{translateSelectedTeamOutcome(bootstrapState.activeSave.advancement.selectedTeamOutcome)}</p>
+                  </div>
+                )}
+              </div>
+              {latestPostMatchReport && (
+                <div className="flow-card flow-card-full">
+                  <h4>最后一场比赛</h4>
+                  <p>{latestPostMatchReport.teamName} {latestPostMatchReport.scoreline} {latestPostMatchReport.opponentTeamName}，结果：{translateResultLabel(latestPostMatchReport.resultLabel)}</p>
+                </div>
+              )}
+              <div className="flow-actions">
+                <button
+                  type="button"
+                  className="btn"
+                  onClick={() =>
+                    setBootstrapState((currentState) => ({
+                      ...currentState,
+                      activeSave: null,
+                      activeView: 'dashboard',
+                      activeMatchSetup: null,
+                      activeEventSelection: null,
+                      message: '赛事结算已查看，请选择存档继续，或开始新的世界杯征程。',
+                    }))
+                  }
+                >
+                  返回存档列表
+                </button>
+              </div>
+            </section>
           )}
         </div>
       )}
