@@ -1,0 +1,107 @@
+export interface Team {
+  id: string
+  name: string
+  shortName: string
+  fifaCode: string
+  groupCode: string
+  defaultFormationId: string
+  styleTags: string[]
+  overallRating: number
+  goalkeepingRating: number
+  defenseRating: number
+  midfieldRating: number
+  attackRating: number
+}
+
+export interface Player {
+  id: string
+  teamId: string
+  name: string
+  shirtNumber: number
+  primaryPosition: string
+  secondaryPositions: string[]
+  overallRating: number
+  attackRating: number
+  defenseRating: number
+  staminaRating: number
+  mentalityRating: number
+  positionFitRating: number
+  isCorePlayer: boolean
+  statusTag: string
+}
+
+export interface Formation {
+  id: string
+  name: string
+  slotLayout: string[]
+  tacticTags: string[]
+  recommendedUsage: string
+}
+
+export interface TacticProfile {
+  id: string
+  name: string
+  attackBias: number
+  defensiveLine: number
+  tempo: number
+  riskAppetite: number
+  eventWeightModifiers: Record<string, number>
+}
+
+export interface TournamentGroup {
+  id: string
+  groupCode: string
+  teamIds: string[]
+}
+
+export interface MatchFixture {
+  id: string
+  stage: string
+  roundCode: string
+  groupCode: string | null
+  homeTeamId: string | null
+  awayTeamId: string | null
+  fixtureOrder: number
+  knockoutSlot: string | null
+  dependsOn: string[]
+}
+
+export interface EventTemplate {
+  id: string
+  code: string
+  category: string
+  title: string
+  triggerPhase: string
+  triggerCondition: Record<string, unknown>
+  textTemplate: string
+  baseWeight: number
+  repeatRule: string
+  chainNextCodes: string[]
+  effectSummary: Record<string, unknown>
+}
+
+export interface EventOption {
+  id: string
+  eventTemplateId: string
+  optionKey: string
+  label: string
+  effect: Record<string, unknown>
+  sortOrder: number
+}
+
+export interface SaveSlot {
+  id: string
+  selectedTeamId: string
+  currentStage: string
+  currentRoundCode: string
+  status: string
+}
+
+export interface DatabaseSummary {
+  teamCount: number
+  playerCount: number
+  formationCount: number
+  tacticProfileCount: number
+  fixtureCount: number
+  eventTemplateCount: number
+}
