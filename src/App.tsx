@@ -12,6 +12,7 @@ import {
   translateStage,
   translateTournamentOutcome,
 } from './app/displayText'
+import { buildSaveSelectionCardText } from './app/saveSelectionText'
 import type { SQLiteDatabaseClient } from './data/db/sqlite'
 import { SaveRepository } from './data/repositories/SaveRepository'
 import { TeamRepository } from './data/repositories/TeamRepository'
@@ -19,14 +20,15 @@ import { loadGameDataSummary } from './modules/bootstrap/loadGameDataSummary'
 import { loadMatchEventSelection } from './modules/event-system/loadMatchEventSelection'
 import { playCurrentRound } from './modules/match-engine/playCurrentRound'
 import { createCareerSave } from './modules/save-progress/createCareerSave'
+import { loadSaveSelectionEntries } from './modules/save-progress/loadSaveSelectionEntries'
 import { loadSaveOverview } from './modules/save-progress/loadSaveOverview'
 import { loadMatchSetupOverview } from './modules/team-management/loadMatchSetupOverview'
 import type {
   DatabaseSummary,
   MatchEventSelection,
   MatchSetupOverview,
-  SaveSlot,
   SaveMatchSetup,
+  SaveSelectionEntry,
   SaveOverview,
   Team,
 } from './types/entities'
@@ -36,7 +38,7 @@ interface BootstrapState {
   summary: DatabaseSummary | null
   previewTeams: Team[]
   client: SQLiteDatabaseClient | null
-  saveSlots: SaveSlot[]
+  saveSelectionEntries: SaveSelectionEntry[]
   activeSave: SaveOverview | null
   activeMatchSetup: MatchSetupOverview | null
   activeEventSelection: MatchEventSelection | null
@@ -54,7 +56,7 @@ function App() {
     summary: null,
     previewTeams: [],
     client: null,
-    saveSlots: [],
+    saveSelectionEntries: [],
     activeSave: null,
     activeMatchSetup: null,
     activeEventSelection: null,
@@ -68,14 +70,13 @@ function App() {
       try {
         const client = await createAppDatabase()
         const teamRepository = new TeamRepository(client)
-        const saveRepository = new SaveRepository(client)
         const previewTeams = teamRepository.getAllTeams().slice(0, 4)
         const summary = loadGameDataSummary(client)
-        const saveSlots = saveRepository.getAllSaveSlots()
-        const latestSave = saveSlots[0] ?? null
-        const activeSave = latestSave ? loadSaveOverview(client, latestSave.id) : null
-        const activeMatchSetup = latestSave && isSavePlayable(latestSave.status)
-          ? loadMatchSetupOverview(client, latestSave.id)
+        const saveSelectionEntries = loadSaveSelectionEntries(client)
+        const latestSaveEntry = saveSelectionEntries[0] ?? null
+        const activeSave = latestSaveEntry ? loadSaveOverview(client, latestSaveEntry.saveSlotId) : null
+        const activeMatchSetup = latestSaveEntry && isSavePlayable(latestSaveEntry.status)
+          ? loadMatchSetupOverview(client, latestSaveEntry.saveSlotId)
           : null
         const activeEventSelection = activeMatchSetup
           ? loadMatchEventSelection(client, activeMatchSetup)
@@ -90,11 +91,11 @@ function App() {
           summary,
           previewTeams,
           client,
-          saveSlots,
+          saveSelectionEntries,
           activeSave,
           activeMatchSetup,
           activeEventSelection,
-          message: latestSave
+          message: latestSaveEntry
             ? 'SQLite 已就绪，已恢复现有存档。'
             : 'SQLite 已就绪，请选择一支国家队开始世界杯征程。',
         })
@@ -108,7 +109,7 @@ function App() {
           summary: null,
           previewTeams: [],
           client: null,
-          saveSlots: [],
+          saveSelectionEntries: [],
           activeSave: null,
           activeMatchSetup: null,
           activeEventSelection: null,
@@ -125,21 +126,24 @@ function App() {
   }, [])
 
   const handleCreateSave = (teamId: string) => {
-    if (!bootstrapState.client) {
+    const client = bootstrapState.client
+
+    if (!client) {
       return
     }
 
-    const saveSlot = createCareerSave(bootstrapState.client, teamId)
-    const activeSave = loadSaveOverview(bootstrapState.client, saveSlot.id)
-    const activeMatchSetup = loadMatchSetupOverview(bootstrapState.client, saveSlot.id)
+    const saveSlot = createCareerSave(client, teamId)
+    const activeSave = loadSaveOverview(client, saveSlot.id)
+    const saveSelectionEntries = loadSaveSelectionEntries(client)
+    const activeMatchSetup = loadMatchSetupOverview(client, saveSlot.id)
     const activeEventSelection = loadMatchEventSelection(
-      bootstrapState.client,
+      client,
       activeMatchSetup,
     )
 
     setBootstrapState((currentState) => ({
       ...currentState,
-      saveSlots: [saveSlot, ...currentState.saveSlots],
+      saveSelectionEntries,
       activeSave,
       activeMatchSetup,
       activeEventSelection,
@@ -148,16 +152,18 @@ function App() {
   }
 
   const handleSelectSave = (saveSlotId: string) => {
-    if (!bootstrapState.client) {
+    const client = bootstrapState.client
+
+    if (!client) {
       return
     }
 
-    const activeSave = loadSaveOverview(bootstrapState.client, saveSlotId)
+    const activeSave = loadSaveOverview(client, saveSlotId)
     const activeMatchSetup = isSavePlayable(activeSave.saveSlot.status)
-      ? loadMatchSetupOverview(bootstrapState.client, saveSlotId)
+      ? loadMatchSetupOverview(client, saveSlotId)
       : null
     const activeEventSelection = activeMatchSetup
-      ? loadMatchEventSelection(bootstrapState.client, activeMatchSetup)
+      ? loadMatchEventSelection(client, activeMatchSetup)
       : null
 
     setBootstrapState((currentState) => ({
@@ -165,6 +171,7 @@ function App() {
       activeSave,
       activeMatchSetup,
       activeEventSelection,
+      saveSelectionEntries: loadSaveSelectionEntries(client),
       message: `已载入 ${activeSave.selectedTeam.shortName} 的存档。`,
     }))
   }
@@ -286,7 +293,9 @@ function App() {
   }
 
   const handlePlayCurrentRound = () => {
-    if (!bootstrapState.client || !bootstrapState.activeSave || !bootstrapState.activeMatchSetup) {
+    const client = bootstrapState.client
+
+    if (!client || !bootstrapState.activeSave || !bootstrapState.activeMatchSetup) {
       return
     }
 
@@ -299,28 +308,26 @@ function App() {
     }
 
     const snapshots = playCurrentRound(
-      bootstrapState.client,
+      client,
       bootstrapState.activeSave.saveSlot.id,
       bootstrapState.activeEventSelection,
     )
     const refreshedSave = loadSaveOverview(
-      bootstrapState.client,
+      client,
       bootstrapState.activeSave.saveSlot.id,
     )
     const refreshedSetup =
       !isSavePlayable(refreshedSave.saveSlot.status)
         ? null
-        : loadMatchSetupOverview(bootstrapState.client, bootstrapState.activeSave.saveSlot.id)
+        : loadMatchSetupOverview(client, bootstrapState.activeSave.saveSlot.id)
     const refreshedEventSelection =
       refreshedSetup && isSavePlayable(refreshedSave.saveSlot.status)
-        ? loadMatchEventSelection(bootstrapState.client, refreshedSetup)
+        ? loadMatchEventSelection(client, refreshedSetup)
         : null
 
     setBootstrapState((currentState) => ({
       ...currentState,
-      saveSlots: currentState.saveSlots.map((entry) =>
-        entry.id === refreshedSave.saveSlot.id ? refreshedSave.saveSlot : entry,
-      ),
+      saveSelectionEntries: loadSaveSelectionEntries(client),
       activeSave: refreshedSave,
       activeMatchSetup: refreshedSetup,
       activeEventSelection: refreshedEventSelection,
@@ -374,41 +381,60 @@ function App() {
 
       {bootstrapState.status === 'ready' && !bootstrapState.activeSave && (
         <>
-          {bootstrapState.saveSlots.length > 0 && (
+          {bootstrapState.saveSelectionEntries.length > 0 && (
             <section className="panel save-list-panel">
-              <h3>继续游戏</h3>
+              <div className="section-heading">
+                <div>
+                  <h3>继续游戏</h3>
+                  <p>继续已有世界杯征程，直接回到最近进度。</p>
+                </div>
+              </div>
               <div className="save-list">
-                {bootstrapState.saveSlots.map((saveSlot) => (
-                  <button
-                    key={saveSlot.id}
-                    type="button"
-                    className="option-btn"
-                    onClick={() => handleSelectSave(saveSlot.id)}
-                  >
-                    {teamNameById(saveSlot.selectedTeamId)} | {translateStage(saveSlot.currentStage)} |{' '}
-                    {translateRoundCode(saveSlot.currentRoundCode)} | {translateSaveStatus(saveSlot.status)}
-                  </button>
-                ))}
+                {bootstrapState.saveSelectionEntries.map((entry) => {
+                  const cardText = buildSaveSelectionCardText(entry)
+
+                  return (
+                    <button
+                      key={entry.saveSlotId}
+                      type="button"
+                      className="save-card"
+                      onClick={() => handleSelectSave(entry.saveSlotId)}
+                    >
+                      <strong className="save-card-title">{cardText.title}</strong>
+                      <span className="save-card-meta">{cardText.meta}</span>
+                      <span className="save-card-progress">{cardText.progress}</span>
+                      <span className="save-card-highlight">{cardText.highlight}</span>
+                    </button>
+                  )
+                })}
               </div>
             </section>
           )}
 
-          <div className="team-grid">
-            {bootstrapState.previewTeams.map((team) => (
-              <button
-                key={team.id}
-                className="team-card"
-                type="button"
-                onClick={() => handleCreateSave(team.id)}
-              >
-                <strong>
-                  {team.shortName}（{team.fifaCode}）
-                </strong>
-                <span>综合评分 {team.overallRating}</span>
-                <span>{team.groupCode} 组</span>
-              </button>
-            ))}
-          </div>
+          <section className="panel save-list-panel">
+            <div className="section-heading">
+              <div>
+                <h3>开始新游戏</h3>
+                <p>选择一支国家队，从小组赛开始冲击冠军。</p>
+              </div>
+            </div>
+            <div className="team-grid">
+              {bootstrapState.previewTeams.map((team) => (
+                <button
+                  key={team.id}
+                  className="team-card"
+                  type="button"
+                  onClick={() => handleCreateSave(team.id)}
+                >
+                  <strong>
+                    {team.shortName}（{team.fifaCode}）
+                  </strong>
+                  <span>综合评分 {team.overallRating}</span>
+                  <span>{team.groupCode} 组</span>
+                </button>
+              ))}
+            </div>
+          </section>
         </>
       )}
 

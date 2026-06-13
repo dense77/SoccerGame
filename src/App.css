@@ -61,9 +61,22 @@
 }
 
 .save-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 10px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.section-heading p {
+  margin: 6px 0 0;
+  color: #45634d;
 }
 
 .team-card,
@@ -83,6 +96,41 @@
   cursor: pointer;
   color: #16391f;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.save-card {
+  border: 1px solid #c8dccf;
+  border-radius: 16px;
+  background: linear-gradient(160deg, #f8fcf9, #ebf5ee);
+  color: #16391f;
+  padding: 18px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.save-card:hover {
+  transform: translateY(-2px);
+  border-color: #247d47;
+  box-shadow: 0 16px 36px rgba(7, 33, 18, 0.18);
+}
+
+.save-card-title {
+  font-size: 18px;
+}
+
+.save-card-meta,
+.save-card-progress,
+.save-card-highlight {
+  color: #21492b;
+  line-height: 1.5;
+}
+
+.save-card-highlight {
+  color: #35553d;
 }
 
 .team-card:hover {

@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 
 import { createCareerSave } from '../../modules/save-progress/createCareerSave'
 import { loadSaveOverview } from '../../modules/save-progress/loadSaveOverview'
+import { loadSaveSelectionEntries } from '../../modules/save-progress/loadSaveSelectionEntries'
 import { createTestDatabase } from '../helpers/createTestDatabase'
 
 describe('save flow integration', () => {
@@ -31,5 +32,19 @@ describe('save flow integration', () => {
     expect(firstOverview.selectedTeam.id).toBe('team-arg-sample')
     expect(secondOverview.selectedTeam.id).toBe('team-usa-sample')
     expect(firstOverview.saveSlot.id).not.toBe(secondOverview.saveSlot.id)
+  })
+
+  it('builds readable save selection entries for the home screen', async () => {
+    const client = await createTestDatabase()
+    createCareerSave(client, 'team-arg-sample')
+    createCareerSave(client, 'team-usa-sample')
+
+    const entries = loadSaveSelectionEntries(client)
+
+    expect(entries).toHaveLength(2)
+    expect(entries[0].selectedTeam.shortName).toBe('美国')
+    expect(entries[0].currentRoundCode).toBe('group-round-1')
+    expect(entries[0].status).toBe('active')
+    expect(entries[0].completedMatchCount).toBe(0)
   })
 })

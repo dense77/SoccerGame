@@ -276,6 +276,18 @@ export interface TournamentSummary {
   tone: 'neutral' | 'success' | 'failure'
 }
 
+export interface SaveSelectionEntry {
+  saveSlotId: string
+  selectedTeam: Team
+  currentStage: string
+  currentRoundCode: string
+  status: string
+  tournamentOutcome: SaveOverview['tournamentOutcome']
+  completedMatchCount: number
+  latestPostMatchReport: PostMatchReport | null
+  tournamentSummary: TournamentSummary | null
+}
+
 export interface MatchEventLog {
   id: string
   matchSnapshotId: string
