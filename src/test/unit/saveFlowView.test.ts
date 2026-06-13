@@ -60,6 +60,10 @@ describe('resolveSaveFlowView', () => {
     ).toBe('post-match')
   })
 
+  it('preserves the explicit event resolution flow when requested by the app state', () => {
+    expect(resolveSaveFlowView(createOverview(), 'new-save')).not.toBe('event-resolution')
+  })
+
   it('opens the settlement page when the tournament is complete', () => {
     expect(
       resolveSaveFlowView(

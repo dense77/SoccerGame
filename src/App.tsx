@@ -19,14 +19,22 @@ import { SaveRepository } from './data/repositories/SaveRepository'
 import { TeamRepository } from './data/repositories/TeamRepository'
 import { loadGameDataSummary } from './modules/bootstrap/loadGameDataSummary'
 import { loadMatchEventSelection } from './modules/event-system/loadMatchEventSelection'
-import { playCurrentRound } from './modules/match-engine/playCurrentRound'
+import {
+  finalizeCurrentRound,
+  prepareCurrentRound,
+  previewCurrentRound,
+  resolveEventSelectionForPhase,
+} from './modules/match-engine/currentRoundFlow'
 import { createCareerSave } from './modules/save-progress/createCareerSave'
 import { loadSaveSelectionEntries } from './modules/save-progress/loadSaveSelectionEntries'
 import { loadSaveOverview } from './modules/save-progress/loadSaveOverview'
 import { loadMatchSetupOverview } from './modules/team-management/loadMatchSetupOverview'
 import type {
+  CurrentRoundEventSelections,
+  CurrentRoundPreview,
   DatabaseSummary,
   MatchEventSelection,
+  MatchEventPhaseGroup,
   MatchSetupOverview,
   SaveMatchSetup,
   SaveSelectionEntry,
@@ -43,7 +51,10 @@ interface BootstrapState {
   activeSave: SaveOverview | null
   activeView: SaveFlowView
   activeMatchSetup: MatchSetupOverview | null
-  activeEventSelection: MatchEventSelection | null
+  activePreMatchEventSelection: MatchEventSelection | null
+  pendingRoundEvents: CurrentRoundEventSelections | null
+  pendingRoundPreview: CurrentRoundPreview | null
+  activeEventPhase: MatchEventPhaseGroup | null
   message: string
 }
 
@@ -59,12 +70,15 @@ function App() {
     previewTeams: [],
     client: null,
     saveSelectionEntries: [],
-    activeSave: null,
-    activeView: 'dashboard',
-    activeMatchSetup: null,
-    activeEventSelection: null,
-    message: '正在初始化浏览器 SQLite 并加载种子数据……',
-  })
+      activeSave: null,
+      activeView: 'dashboard',
+      activeMatchSetup: null,
+      activePreMatchEventSelection: null,
+      pendingRoundEvents: null,
+      pendingRoundPreview: null,
+      activeEventPhase: null,
+      message: '正在初始化浏览器 SQLite 并加载种子数据……',
+    })
 
   useEffect(() => {
     let cancelled = false
@@ -81,7 +95,7 @@ function App() {
         const activeMatchSetup = latestSaveEntry && isSavePlayable(latestSaveEntry.status)
           ? loadMatchSetupOverview(client, latestSaveEntry.saveSlotId)
           : null
-        const activeEventSelection = activeMatchSetup
+        const activePreMatchEventSelection = activeMatchSetup
           ? loadMatchEventSelection(client, activeMatchSetup, 'pre-match')
           : null
 
@@ -98,7 +112,10 @@ function App() {
           activeSave,
           activeView: activeSave ? resolveSaveFlowView(activeSave, 'resume') : 'dashboard',
           activeMatchSetup,
-          activeEventSelection,
+          activePreMatchEventSelection,
+          pendingRoundEvents: null,
+          pendingRoundPreview: null,
+          activeEventPhase: null,
           message: latestSaveEntry
             ? 'SQLite 已就绪，已恢复现有存档。'
             : 'SQLite 已就绪，请选择一支国家队开始世界杯征程。',
@@ -117,7 +134,10 @@ function App() {
           activeSave: null,
           activeView: 'dashboard',
           activeMatchSetup: null,
-          activeEventSelection: null,
+          activePreMatchEventSelection: null,
+          pendingRoundEvents: null,
+          pendingRoundPreview: null,
+          activeEventPhase: null,
           message: error instanceof Error ? error.message : '游戏数据库初始化失败。',
         })
       }
@@ -141,7 +161,7 @@ function App() {
     const activeSave = loadSaveOverview(client, saveSlot.id)
     const saveSelectionEntries = loadSaveSelectionEntries(client)
     const activeMatchSetup = loadMatchSetupOverview(client, saveSlot.id)
-    const activeEventSelection = loadMatchEventSelection(
+    const activePreMatchEventSelection = loadMatchEventSelection(
       client,
       activeMatchSetup,
       'pre-match',
@@ -153,7 +173,10 @@ function App() {
       activeSave,
       activeView: resolveSaveFlowView(activeSave, 'new-save'),
       activeMatchSetup,
-      activeEventSelection,
+      activePreMatchEventSelection,
+      pendingRoundEvents: null,
+      pendingRoundPreview: null,
+      activeEventPhase: null,
       message: `已为 ${activeSave.selectedTeam.shortName} 创建主教练存档。`,
     }))
   }
@@ -169,7 +192,7 @@ function App() {
     const activeMatchSetup = isSavePlayable(activeSave.saveSlot.status)
       ? loadMatchSetupOverview(client, saveSlotId)
       : null
-    const activeEventSelection = activeMatchSetup
+    const activePreMatchEventSelection = activeMatchSetup
       ? loadMatchEventSelection(client, activeMatchSetup, 'pre-match')
       : null
 
@@ -178,7 +201,10 @@ function App() {
       activeSave,
       activeView: resolveSaveFlowView(activeSave, 'resume'),
       activeMatchSetup,
-      activeEventSelection,
+      activePreMatchEventSelection,
+      pendingRoundEvents: null,
+      pendingRoundPreview: null,
+      activeEventPhase: null,
       saveSelectionEntries: loadSaveSelectionEntries(client),
       message: `已载入 ${activeSave.selectedTeam.shortName} 的存档。`,
     }))
@@ -264,25 +290,28 @@ function App() {
       bootstrapState.client,
       bootstrapState.activeSave.saveSlot.id,
     )
-    const activeEventSelection = loadMatchEventSelection(
+    const activePreMatchEventSelection = loadMatchEventSelection(
       bootstrapState.client,
       activeMatchSetup,
       'pre-match',
-      bootstrapState.activeEventSelection?.selectedOptionId ?? null,
+      bootstrapState.activePreMatchEventSelection?.selectedOptionId ?? null,
     )
 
     setBootstrapState((currentState) => ({
       ...currentState,
       activeMatchSetup,
-      activeEventSelection,
+      activePreMatchEventSelection,
+      pendingRoundEvents: null,
+      pendingRoundPreview: null,
+      activeEventPhase: null,
       message: activeMatchSetup.validation.isValid
         ? '赛前设置已保存。'
         : activeMatchSetup.validation.errors[0],
     }))
   }
 
-  const handleSelectEventOption = (optionId: string) => {
-    if (!bootstrapState.client || !bootstrapState.activeMatchSetup || !bootstrapState.activeEventSelection) {
+  const handleSelectPreMatchEventOption = (optionId: string) => {
+    if (!bootstrapState.client || !bootstrapState.activeMatchSetup || !bootstrapState.activePreMatchEventSelection) {
       return
     }
 
@@ -295,8 +324,11 @@ function App() {
 
     setBootstrapState((currentState) => ({
       ...currentState,
-      activeEventSelection: nextSelection,
-        message: nextSelection
+      activePreMatchEventSelection: nextSelection,
+      pendingRoundEvents: null,
+      pendingRoundPreview: null,
+      activeEventPhase: null,
+      message: nextSelection
         ? `已选择事件选项：${nextSelection.options.find((option) => option.id === optionId)?.label ?? optionId}。效果：${formatEventModifierSummary(nextSelection.resolvedModifier)}`
         : currentState.message,
     }))
@@ -309,7 +341,7 @@ function App() {
       return
     }
 
-    if (!bootstrapState.activeEventSelection?.selectedOptionId || !bootstrapState.activeEventSelection.resolvedModifier) {
+    if (!bootstrapState.activePreMatchEventSelection?.selectedOptionId || !bootstrapState.activePreMatchEventSelection.resolvedModifier) {
       setBootstrapState((currentState) => ({
         ...currentState,
         message: '请先完成赛前事件选择，再进入下一步。',
@@ -325,10 +357,115 @@ function App() {
       return
     }
 
-    const snapshots = playCurrentRound(
+    const preparedRound = prepareCurrentRound(
       client,
       bootstrapState.activeSave.saveSlot.id,
-      bootstrapState.activeEventSelection,
+      bootstrapState.activePreMatchEventSelection,
+    )
+    const nextPhase =
+      preparedRound.eventSelections.inMatchEvent
+        ? 'in-match'
+        : preparedRound.eventSelections.postMatchEvent
+          ? 'post-match'
+          : null
+
+    if (!nextPhase) {
+      handleFinalizeRound(preparedRound.eventSelections)
+      return
+    }
+
+    setBootstrapState((currentState) => ({
+      ...currentState,
+      activeView: 'event-resolution',
+      pendingRoundEvents: preparedRound.eventSelections,
+      pendingRoundPreview: preparedRound.preview,
+      activeEventPhase: nextPhase,
+      message: `请先处理${nextPhase === 'in-match' ? '赛中' : '赛后'}关键事件。当前赛果预览：${preparedRound.preview.teamName} ${preparedRound.preview.scoreline} ${preparedRound.preview.opponentTeamName}。`,
+    }))
+  }
+
+  const handleSelectPendingEventOption = (phaseGroup: MatchEventPhaseGroup, optionId: string) => {
+    if (!bootstrapState.client || !bootstrapState.activeMatchSetup || !bootstrapState.activeSave || !bootstrapState.pendingRoundEvents) {
+      return
+    }
+
+    const nextSelection = resolveEventSelectionForPhase(
+      bootstrapState.client,
+      bootstrapState.activeMatchSetup,
+      phaseGroup,
+      optionId,
+    )
+
+    if (!nextSelection) {
+      return
+    }
+
+    const nextEvents: CurrentRoundEventSelections = {
+      ...bootstrapState.pendingRoundEvents,
+      [phaseGroup === 'pre-match'
+        ? 'preMatchEvent'
+        : phaseGroup === 'in-match'
+          ? 'inMatchEvent'
+          : 'postMatchEvent']: nextSelection,
+    }
+    const nextPreview = previewCurrentRound(
+      bootstrapState.client,
+      bootstrapState.activeSave.saveSlot.id,
+      nextEvents,
+    )
+
+    setBootstrapState((currentState) => ({
+      ...currentState,
+      pendingRoundEvents: nextEvents,
+      pendingRoundPreview: nextPreview,
+      message: `已选择${phaseGroup === 'in-match' ? '赛中' : '赛后'}选项：${nextSelection.options.find((option) => option.id === optionId)?.label ?? optionId}。即时后果：${formatEventModifierSummary(nextSelection.resolvedModifier)}。当前赛果预览：${nextPreview.teamName} ${nextPreview.scoreline} ${nextPreview.opponentTeamName}。`,
+    }))
+  }
+
+  const handleAdvanceEventFlow = () => {
+    const pendingEvents = bootstrapState.pendingRoundEvents
+    const activeEventPhase = bootstrapState.activeEventPhase
+
+    if (!pendingEvents || !activeEventPhase) {
+      return
+    }
+
+    const currentSelection =
+      activeEventPhase === 'in-match'
+        ? pendingEvents.inMatchEvent
+        : pendingEvents.postMatchEvent
+
+    if (!currentSelection?.selectedOptionId || !currentSelection.resolvedModifier) {
+      setBootstrapState((currentState) => ({
+        ...currentState,
+        message: `请先完成${activeEventPhase === 'in-match' ? '赛中' : '赛后'}事件选择，再进入下一步。`,
+      }))
+      return
+    }
+
+    if (activeEventPhase === 'in-match' && pendingEvents.postMatchEvent) {
+      setBootstrapState((currentState) => ({
+        ...currentState,
+        activeEventPhase: 'post-match',
+        message: '赛中事件已确认，接下来处理赛后关键事件。',
+      }))
+      return
+    }
+
+    handleFinalizeRound(pendingEvents)
+  }
+
+  const handleFinalizeRound = (eventSelections: CurrentRoundEventSelections) => {
+    const client = bootstrapState.client
+
+    if (!client || !bootstrapState.activeSave) {
+      return
+    }
+
+    const snapshots = finalizeCurrentRound(
+      client,
+      bootstrapState.activeSave.saveSlot.id,
+      eventSelections,
     )
     const refreshedSave = loadSaveOverview(
       client,
@@ -349,7 +486,10 @@ function App() {
       activeSave: refreshedSave,
       activeView: resolveSaveFlowView(refreshedSave, 'after-round'),
       activeMatchSetup: refreshedSetup,
-      activeEventSelection: refreshedEventSelection,
+      activePreMatchEventSelection: refreshedEventSelection,
+      pendingRoundEvents: null,
+      pendingRoundPreview: null,
+      activeEventPhase: null,
       message:
         !isSavePlayable(refreshedSave.saveSlot.status)
           ? refreshedSave.saveSlot.status === 'champion'
@@ -361,7 +501,7 @@ function App() {
             ? refreshedSave.saveSlot.currentRoundCode === 'knockout-semi'
               ? `淘汰赛半决赛已准备就绪，${refreshedSave.selectedTeam.shortName} 距离冠军还差两场胜利。`
               : `淘汰赛决赛已准备就绪，${refreshedSave.selectedTeam.shortName} 将向冠军发起冲击。`
-          : `本轮完成，已记录 ${snapshots.length} 场比赛。下一轮：${translateRoundCode(refreshedSave.saveSlot.currentRoundCode)}。`,
+            : `本轮完成，已记录 ${snapshots.length} 场比赛。下一轮：${translateRoundCode(refreshedSave.saveSlot.currentRoundCode)}。`,
     }))
   }
 
@@ -371,10 +511,17 @@ function App() {
   }
 
   const activeMatchSetup = bootstrapState.activeMatchSetup
-  const activeEventSelection = bootstrapState.activeEventSelection
+  const activePreMatchEventSelection = bootstrapState.activePreMatchEventSelection
+  const activeResolutionEvent =
+    bootstrapState.activeEventPhase === 'in-match'
+      ? bootstrapState.pendingRoundEvents?.inMatchEvent ?? null
+      : bootstrapState.activeEventPhase === 'post-match'
+        ? bootstrapState.pendingRoundEvents?.postMatchEvent ?? null
+        : null
   const latestPostMatchReport = bootstrapState.activeSave?.latestPostMatchReport ?? null
   const tournamentSummary = bootstrapState.activeSave?.tournamentSummary ?? null
   const showDashboard = bootstrapState.activeView === 'dashboard'
+  const showEventResolution = bootstrapState.activeView === 'event-resolution'
   const showPostMatch = bootstrapState.activeView === 'post-match'
   const showSettlement = bootstrapState.activeView === 'settlement'
 
@@ -495,7 +642,10 @@ function App() {
                   activeSave: null,
                   activeView: 'dashboard',
                   activeMatchSetup: null,
-                  activeEventSelection: null,
+                  activePreMatchEventSelection: null,
+                  pendingRoundEvents: null,
+                  pendingRoundPreview: null,
+                  activeEventPhase: null,
                   message: '请选择存档继续，或开始新的世界杯征程。',
                 }))
               }
@@ -521,7 +671,7 @@ function App() {
                 type="button"
                 className="btn btn-compact"
                 onClick={handlePlayCurrentRound}
-                disabled={!activeEventSelection?.selectedOptionId}
+                disabled={!activePreMatchEventSelection?.selectedOptionId}
               >
                 模拟当前轮次
               </button>
@@ -644,29 +794,29 @@ function App() {
 
           {activeMatchSetup && (
             <>
-              {activeEventSelection && (
+              {activePreMatchEventSelection && (
                 <section className="panel">
                   <h3>关键事件</h3>
                   <p>
-                    {activeEventSelection.template.title}（{translateEventCategory(activeEventSelection.template.category)}）
+                    {activePreMatchEventSelection.template.title}（{translateEventCategory(activePreMatchEventSelection.template.category)}）
                   </p>
-                  <p>{activeEventSelection.template.textTemplate}</p>
+                  <p>{activePreMatchEventSelection.template.textTemplate}</p>
                   <p>
-                    {activeEventSelection.selectedOptionId
-                      ? `当前后果：${formatEventModifierSummary(activeEventSelection.resolvedModifier)}`
+                    {activePreMatchEventSelection.selectedOptionId
+                      ? `当前后果：${formatEventModifierSummary(activePreMatchEventSelection.resolvedModifier)}`
                       : '必须先做出选择，才能进入下一步。'}
                   </p>
                   <div className="option-list">
-                    {activeEventSelection.options.map((option) => (
+                    {activePreMatchEventSelection.options.map((option) => (
                       <button
                         key={option.id}
                         type="button"
                         className={
-                          option.id === activeEventSelection.selectedOptionId
+                          option.id === activePreMatchEventSelection.selectedOptionId
                             ? 'option-btn option-btn-active'
                             : 'option-btn'
                         }
-                        onClick={() => handleSelectEventOption(option.id)}
+                        onClick={() => handleSelectPreMatchEventOption(option.id)}
                       >
                         {option.label}
                       </button>
@@ -750,6 +900,68 @@ function App() {
             </>
           )}
             </>
+          )}
+
+          {showEventResolution && activeResolutionEvent && bootstrapState.pendingRoundPreview && (
+            <section className="panel flow-panel flow-panel-post-match">
+              <div className="flow-header">
+                <div>
+                  <span className="flow-eyebrow">
+                    {bootstrapState.activeEventPhase === 'in-match' ? '赛中事件' : '赛后事件'}
+                  </span>
+                  <h3>{activeResolutionEvent.template.title}</h3>
+                  <p>{activeResolutionEvent.template.textTemplate}</p>
+                </div>
+              </div>
+              <div className="flow-grid">
+                <div className="flow-card">
+                  <h4>当前赛果预览</h4>
+                  <p>
+                    {bootstrapState.pendingRoundPreview.teamName} {bootstrapState.pendingRoundPreview.scoreline}{' '}
+                    {bootstrapState.pendingRoundPreview.opponentTeamName}
+                  </p>
+                  <p>结果倾向：{translateResultLabel(bootstrapState.pendingRoundPreview.resultLabel)}</p>
+                  <p>轮次：{translateRoundCode(bootstrapState.pendingRoundPreview.roundCode)}</p>
+                </div>
+                <div className="flow-card">
+                  <h4>事件后果</h4>
+                  <p>
+                    {activeResolutionEvent.selectedOptionId
+                      ? formatEventModifierSummary(activeResolutionEvent.resolvedModifier)
+                      : '必须先做出选择，才能继续。'}
+                  </p>
+                  <p>阶段：{bootstrapState.activeEventPhase === 'in-match' ? '赛中调整' : '赛后处理'}</p>
+                </div>
+              </div>
+              <div className="option-list">
+                {activeResolutionEvent.options.map((option) => (
+                  <button
+                    key={option.id}
+                    type="button"
+                    className={
+                      option.id === activeResolutionEvent.selectedOptionId
+                        ? 'option-btn option-btn-active'
+                        : 'option-btn'
+                    }
+                    onClick={() => handleSelectPendingEventOption(activeResolutionEvent.phaseGroup, option.id)}
+                  >
+                    {option.label}
+                  </button>
+                ))}
+              </div>
+              <div className="flow-actions">
+                <button
+                  type="button"
+                  className="btn"
+                  onClick={handleAdvanceEventFlow}
+                  disabled={!activeResolutionEvent.selectedOptionId}
+                >
+                  {bootstrapState.activeEventPhase === 'in-match' && bootstrapState.pendingRoundEvents?.postMatchEvent
+                    ? '进入赛后事件'
+                    : '确认并完成本轮'}
+                </button>
+              </div>
+            </section>
           )}
 
           {showPostMatch && latestPostMatchReport && (
@@ -873,7 +1085,10 @@ function App() {
                       activeSave: null,
                       activeView: 'dashboard',
                       activeMatchSetup: null,
-                      activeEventSelection: null,
+                      activePreMatchEventSelection: null,
+                      pendingRoundEvents: null,
+                      pendingRoundPreview: null,
+                      activeEventPhase: null,
                       message: '赛事结算已查看，请选择存档继续，或开始新的世界杯征程。',
                     }))
                   }

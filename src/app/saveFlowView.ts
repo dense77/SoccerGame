@@ -1,6 +1,6 @@
 import type { SaveOverview } from '../types/entities'
 
-export type SaveFlowView = 'dashboard' | 'post-match' | 'settlement'
+export type SaveFlowView = 'dashboard' | 'event-resolution' | 'post-match' | 'settlement'
 export type SaveFlowViewContext = 'new-save' | 'resume' | 'after-round'
 
 export function resolveSaveFlowView(

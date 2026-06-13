@@ -107,6 +107,23 @@ export interface MatchEventSelection {
   resolvedModifier: MatchEventModifier | null
 }
 
+export interface CurrentRoundEventSelections {
+  preMatchEvent: MatchEventSelection | null
+  inMatchEvent: MatchEventSelection | null
+  postMatchEvent: MatchEventSelection | null
+}
+
+export interface CurrentRoundPreview {
+  fixtureId: string
+  stage: string
+  roundCode: string
+  teamId: string
+  teamName: string
+  opponentTeamName: string
+  scoreline: string
+  resultLabel: string
+}
+
 export interface SaveSlot {
   id: string
   selectedTeamId: string

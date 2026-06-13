@@ -69,6 +69,11 @@ function localizePostMatchReport(
       mostBoostedPlayer: localizeHistoricPlayerName(report.moraleChangeSummary.mostBoostedPlayer),
       mostDroppedPlayer: localizeHistoricPlayerName(report.moraleChangeSummary.mostDroppedPlayer),
     },
+    eventReports: report.eventReports.map((eventReport) => ({
+      ...eventReport,
+      title: currentTemplates.get(eventReport.templateId)?.title ?? eventReport.title,
+      optionLabel: currentOptions.get(eventReport.optionId) ?? eventReport.optionLabel,
+    })),
     eventReport: report.eventReport
       ? {
           ...report.eventReport,
