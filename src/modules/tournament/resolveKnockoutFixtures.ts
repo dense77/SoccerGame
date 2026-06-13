@@ -33,6 +33,41 @@ function buildPlacementMap(
   return placements
 }
 
+function buildWinnerMap(
+  client: SQLiteDatabaseClient,
+  saveSlotId: string,
+): Map<string, string> {
+  const saveRepository = new SaveRepository(client)
+  const winners = new Map<string, string>()
+
+  saveRepository.getMatchSnapshotsBySaveSlotId(saveSlotId).forEach((snapshot) => {
+    if (snapshot.homeScore > snapshot.awayScore) {
+      winners.set(`W:${snapshot.fixtureId}`, snapshot.homeTeamId)
+      return
+    }
+
+    winners.set(`W:${snapshot.fixtureId}`, snapshot.awayTeamId)
+  })
+
+  return winners
+}
+
+function resolveDependencySource(
+  source: string | undefined,
+  placementMap: Map<string, string>,
+  winnerMap: Map<string, string>,
+): string | null {
+  if (!source) {
+    return null
+  }
+
+  if (source.startsWith('W:')) {
+    return winnerMap.get(source) ?? null
+  }
+
+  return placementMap.get(source) ?? null
+}
+
 export function resolveKnockoutFixtures(
   client: SQLiteDatabaseClient,
   saveSlotId: string,
@@ -40,6 +75,7 @@ export function resolveKnockoutFixtures(
 ): MatchFixture[] {
   const tournamentRepository = new TournamentRepository(client)
   const placementMap = buildPlacementMap(client, saveSlotId)
+  const winnerMap = buildWinnerMap(client, saveSlotId)
 
   return tournamentRepository.getFixturesByRoundCode(roundCode).map((fixture) => {
     if (fixture.dependsOn.length === 0) {
@@ -50,8 +86,8 @@ export function resolveKnockoutFixtures(
 
     return {
       ...fixture,
-      homeTeamId: homeSource ? placementMap.get(homeSource) ?? null : fixture.homeTeamId,
-      awayTeamId: awaySource ? placementMap.get(awaySource) ?? null : fixture.awayTeamId,
+      homeTeamId: resolveDependencySource(homeSource, placementMap, winnerMap) ?? fixture.homeTeamId,
+      awayTeamId: resolveDependencySource(awaySource, placementMap, winnerMap) ?? fixture.awayTeamId,
     }
   })
 }

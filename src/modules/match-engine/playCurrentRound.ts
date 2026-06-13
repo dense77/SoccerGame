@@ -105,6 +105,13 @@ function resolveKnockoutWinner(
   return 'opponent'
 }
 
+function didSelectedTeamWinSnapshot(
+  fixture: MatchSnapshot,
+  selectedTeamId: string,
+): boolean {
+  return resolveKnockoutWinner(fixture, selectedTeamId) === 'selected'
+}
+
 function updateSelectedTeamPlayerStates(
   players: ManagedPlayer[],
   goalDifference: number,
@@ -381,13 +388,35 @@ export function playCurrentRound(
   const nextRoundCode = roundCodes[currentRoundIndex + 1]
 
   if (nextRoundCode) {
-    saveRepository.updateSaveSlotProgress(saveSlot.id, saveSlot.currentStage, nextRoundCode, 'active')
+    if (saveSlot.currentStage === 'knockout') {
+      const selectedTeamSnapshot = snapshots.find(
+        (snapshot) =>
+          snapshot.homeTeamId === saveSlot.selectedTeamId || snapshot.awayTeamId === saveSlot.selectedTeamId,
+      )
+
+      if (!selectedTeamSnapshot) {
+        throw new Error('Selected team knockout fixture was not resolved for the current round.')
+      }
+
+      if (!didSelectedTeamWinSnapshot(selectedTeamSnapshot, saveSlot.selectedTeamId)) {
+        saveRepository.updateSaveSlotProgress(
+          saveSlot.id,
+          'knockout',
+          'tournament-complete',
+          'eliminated',
+        )
+      } else {
+        saveRepository.updateSaveSlotProgress(saveSlot.id, saveSlot.currentStage, nextRoundCode, 'active')
+      }
+    } else {
+      saveRepository.updateSaveSlotProgress(saveSlot.id, saveSlot.currentStage, nextRoundCode, 'active')
+    }
   } else {
     if (saveSlot.currentStage === 'group') {
       const advancement = resolveGroupAdvancement(client, saveSlot.id)
 
       if (advancement.selectedTeamOutcome === 'qualified') {
-        saveRepository.updateSaveSlotProgress(saveSlot.id, 'knockout', 'knockout-final', 'active')
+        saveRepository.updateSaveSlotProgress(saveSlot.id, 'knockout', 'knockout-semi', 'active')
       } else {
         saveRepository.updateSaveSlotProgress(saveSlot.id, 'group', 'group-complete', 'eliminated')
       }

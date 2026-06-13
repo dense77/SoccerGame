@@ -290,7 +290,9 @@ function App() {
               ? `${refreshedSave.selectedTeam.shortName} reached the knockout stage, but the tournament is already settled.`
               : `Tournament complete. ${refreshedSave.selectedTeam.shortName} has been eliminated.`
           : refreshedSave.saveSlot.currentStage === 'knockout'
-            ? `Knockout final ready. ${refreshedSave.selectedTeam.shortName} will play for the title.`
+            ? refreshedSave.saveSlot.currentRoundCode === 'knockout-semi'
+              ? `Knockout semifinal ready. ${refreshedSave.selectedTeam.shortName} is two wins from the title.`
+              : `Knockout final ready. ${refreshedSave.selectedTeam.shortName} will play for the title.`
           : `Round complete. ${snapshots.length} matches recorded. Next up: ${refreshedSave.saveSlot.currentRoundCode}.`,
     }))
   }
@@ -313,7 +315,7 @@ function App() {
         <div>
           <p>
             Seed summary: {bootstrapState.summary.teamCount} teams, {bootstrapState.summary.playerCount} players,{' '}
-            {bootstrapState.summary.fixtureCount} group fixtures, {bootstrapState.summary.eventTemplateCount} event templates.
+            {bootstrapState.summary.fixtureCount} fixtures, {bootstrapState.summary.eventTemplateCount} event templates.
           </p>
           <ul>
             {bootstrapState.previewTeams.map((team) => (
@@ -584,7 +586,7 @@ function App() {
           <div className="modal" onClick={(e) => e.stopPropagation()}>
             <h2>当前实现进度</h2>
             <p>已完成浏览器 SQLite、选队开局、存档初始化、赛前阵容管理、战术配置和基础比赛结算。</p>
-            <p>当前阶段已经接入关键事件选择、小组赛晋级判断和最小淘汰赛骨架，下一步会继续扩展完整淘汰赛树。</p>
+            <p>当前阶段已经接入关键事件选择、小组赛晋级判断和完整样例淘汰赛树，下一步会继续扩展更多赛事数据。</p>
             <button className="btn btn-close" onClick={() => setShowModal(false)}>
               关闭
             </button>
