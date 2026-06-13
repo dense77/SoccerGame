@@ -19,4 +19,17 @@ describe('save flow integration', () => {
     expect(overview.tournamentOutcome).toBe('in_progress')
     expect(overview.rosterSize).toBe(26)
   })
+
+  it('keeps multiple saves available for selection without cross-contamination', async () => {
+    const client = await createTestDatabase()
+    const firstSave = createCareerSave(client, 'team-arg-sample')
+    const secondSave = createCareerSave(client, 'team-usa-sample')
+
+    const firstOverview = loadSaveOverview(client, firstSave.id)
+    const secondOverview = loadSaveOverview(client, secondSave.id)
+
+    expect(firstOverview.selectedTeam.id).toBe('team-arg-sample')
+    expect(secondOverview.selectedTeam.id).toBe('team-usa-sample')
+    expect(firstOverview.saveSlot.id).not.toBe(secondOverview.saveSlot.id)
+  })
 })

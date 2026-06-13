@@ -200,6 +200,14 @@ export class SaveRepository {
     return row ? mapSaveSlot(row) : null
   }
 
+  getAllSaveSlots(): SaveSlot[] {
+    return this.client
+      .query<SaveSlotRow>(
+        'SELECT * FROM save_slots ORDER BY created_at DESC',
+      )
+      .map(mapSaveSlot)
+  }
+
   initializeTeamStates(saveSlotId: string): void {
     const now = new Date().toISOString()
     const teams = this.client.query<{ id: string }>('SELECT id FROM teams ORDER BY id ASC')

@@ -18,6 +18,19 @@ describe('SaveRepository and save creation', () => {
     expect(repository.getPlayerStatesBySaveSlotId(saveSlot.id)).toHaveLength(104)
   })
 
+  it('lists saves in reverse creation order for save selection', async () => {
+    const client = await createTestDatabase()
+    const firstSave = createCareerSave(client, 'team-arg-sample')
+    const secondSave = createCareerSave(client, 'team-usa-sample')
+    const repository = new SaveRepository(client)
+
+    const saves = repository.getAllSaveSlots()
+
+    expect(saves).toHaveLength(2)
+    expect(saves[0].id).toBe(secondSave.id)
+    expect(saves[1].id).toBe(firstSave.id)
+  })
+
   it('sorts group standings by points, goal difference, and goals for', async () => {
     const client = await createTestDatabase()
     const saveSlot = createCareerSave(client, 'team-usa-sample')

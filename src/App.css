@@ -43,11 +43,27 @@
   font-size: 16px;
 }
 
+.btn-secondary {
+  margin-right: 10px;
+  background: #dfe9e2;
+  color: #16391f;
+}
+
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 16px;
   width: min(920px, 100%);
+}
+
+.save-list-panel {
+  width: min(920px, 100%);
+}
+
+.save-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .team-card,

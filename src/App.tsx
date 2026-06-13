@@ -15,6 +15,7 @@ import type {
   DatabaseSummary,
   MatchEventSelection,
   MatchSetupOverview,
+  SaveSlot,
   SaveMatchSetup,
   SaveOverview,
   Team,
@@ -25,6 +26,7 @@ interface BootstrapState {
   summary: DatabaseSummary | null
   previewTeams: Team[]
   client: SQLiteDatabaseClient | null
+  saveSlots: SaveSlot[]
   activeSave: SaveOverview | null
   activeMatchSetup: MatchSetupOverview | null
   activeEventSelection: MatchEventSelection | null
@@ -42,6 +44,7 @@ function App() {
     summary: null,
     previewTeams: [],
     client: null,
+    saveSlots: [],
     activeSave: null,
     activeMatchSetup: null,
     activeEventSelection: null,
@@ -58,7 +61,8 @@ function App() {
         const saveRepository = new SaveRepository(client)
         const previewTeams = teamRepository.getAllTeams().slice(0, 4)
         const summary = loadGameDataSummary(client)
-        const latestSave = saveRepository.getLatestSaveSlot()
+        const saveSlots = saveRepository.getAllSaveSlots()
+        const latestSave = saveSlots[0] ?? null
         const activeSave = latestSave ? loadSaveOverview(client, latestSave.id) : null
         const activeMatchSetup = latestSave && isSavePlayable(latestSave.status)
           ? loadMatchSetupOverview(client, latestSave.id)
@@ -76,6 +80,7 @@ function App() {
           summary,
           previewTeams,
           client,
+          saveSlots,
           activeSave,
           activeMatchSetup,
           activeEventSelection,
@@ -93,6 +98,7 @@ function App() {
           summary: null,
           previewTeams: [],
           client: null,
+          saveSlots: [],
           activeSave: null,
           activeMatchSetup: null,
           activeEventSelection: null,
@@ -123,10 +129,33 @@ function App() {
 
     setBootstrapState((currentState) => ({
       ...currentState,
+      saveSlots: [saveSlot, ...currentState.saveSlots],
       activeSave,
       activeMatchSetup,
       activeEventSelection,
       message: `Career save created for ${activeSave.selectedTeam.shortName}.`,
+    }))
+  }
+
+  const handleSelectSave = (saveSlotId: string) => {
+    if (!bootstrapState.client) {
+      return
+    }
+
+    const activeSave = loadSaveOverview(bootstrapState.client, saveSlotId)
+    const activeMatchSetup = isSavePlayable(activeSave.saveSlot.status)
+      ? loadMatchSetupOverview(bootstrapState.client, saveSlotId)
+      : null
+    const activeEventSelection = activeMatchSetup
+      ? loadMatchEventSelection(bootstrapState.client, activeMatchSetup)
+      : null
+
+    setBootstrapState((currentState) => ({
+      ...currentState,
+      activeSave,
+      activeMatchSetup,
+      activeEventSelection,
+      message: `Loaded save for ${activeSave.selectedTeam.shortName}.`,
     }))
   }
 
@@ -279,6 +308,9 @@ function App() {
 
     setBootstrapState((currentState) => ({
       ...currentState,
+      saveSlots: currentState.saveSlots.map((entry) =>
+        entry.id === refreshedSave.saveSlot.id ? refreshedSave.saveSlot : entry,
+      ),
       activeSave: refreshedSave,
       activeMatchSetup: refreshedSetup,
       activeEventSelection: refreshedEventSelection,
@@ -331,22 +363,43 @@ function App() {
       {bootstrapState.status === 'error' && <p>Database bootstrap failed. Check the console for details.</p>}
 
       {bootstrapState.status === 'ready' && !bootstrapState.activeSave && (
-        <div className="team-grid">
-          {bootstrapState.previewTeams.map((team) => (
-            <button
-              key={team.id}
-              className="team-card"
-              type="button"
-              onClick={() => handleCreateSave(team.id)}
-            >
-              <strong>
-                {team.shortName} ({team.fifaCode})
-              </strong>
-              <span>Overall {team.overallRating}</span>
-              <span>Group {team.groupCode}</span>
-            </button>
-          ))}
-        </div>
+        <>
+          {bootstrapState.saveSlots.length > 0 && (
+            <section className="panel save-list-panel">
+              <h3>Continue Save</h3>
+              <div className="save-list">
+                {bootstrapState.saveSlots.map((saveSlot) => (
+                  <button
+                    key={saveSlot.id}
+                    type="button"
+                    className="option-btn"
+                    onClick={() => handleSelectSave(saveSlot.id)}
+                  >
+                    {saveSlot.selectedTeamId} | {saveSlot.currentStage} | {saveSlot.currentRoundCode} |{' '}
+                    {saveSlot.status}
+                  </button>
+                ))}
+              </div>
+            </section>
+          )}
+
+          <div className="team-grid">
+            {bootstrapState.previewTeams.map((team) => (
+              <button
+                key={team.id}
+                className="team-card"
+                type="button"
+                onClick={() => handleCreateSave(team.id)}
+              >
+                <strong>
+                  {team.shortName} ({team.fifaCode})
+                </strong>
+                <span>Overall {team.overallRating}</span>
+                <span>Group {team.groupCode}</span>
+              </button>
+            ))}
+          </div>
+        </>
       )}
 
       {bootstrapState.activeSave && (
@@ -360,6 +413,21 @@ function App() {
             <p>Status: {bootstrapState.activeSave.saveSlot.status}</p>
             <p>Tournament outcome: {bootstrapState.activeSave.tournamentOutcome}</p>
             <p>Roster initialized: {bootstrapState.activeSave.rosterSize} players.</p>
+            <button
+              type="button"
+              className="btn btn-compact btn-secondary"
+              onClick={() =>
+                setBootstrapState((currentState) => ({
+                  ...currentState,
+                  activeSave: null,
+                  activeMatchSetup: null,
+                  activeEventSelection: null,
+                  message: 'Choose a save to continue or start a new career.',
+                }))
+              }
+            >
+              Switch Save / New Game
+            </button>
             {activeMatchSetup?.validation.isValid && (
               <button type="button" className="btn btn-compact" onClick={handlePlayCurrentRound}>
                 Simulate Current Round
