@@ -5,7 +5,7 @@ import { toMainlandChinesePlayerName } from './playerNameZhCn.mjs'
 const OUTPUT_FILE = path.resolve('src/data/seeds/worldCupData.generated.ts')
 const SQUADS_SOURCE = path.join(process.env.TEMP ?? '', 'wc2026_squads.json')
 const THIRD_PLACE_SOURCE = path.join(process.env.TEMP ?? '', 'wc2026_third_place_table.json')
-const SEED_TIMESTAMP = '2026-06-14T00:00:00.000Z'
+const SEED_TIMESTAMP = '2026-06-14T04:05:00.000Z'
 
 const preservedTeamIds = {
   ARG: 'team-arg-sample',
