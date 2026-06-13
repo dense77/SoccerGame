@@ -1,4 +1,5 @@
 import type { SavePlayerState, SaveSlot, SaveTeamState } from '../../types/entities'
+import type { SaveMatchSetup } from '../../types/entities'
 import type { SQLiteDatabaseClient } from '../db/sqlite'
 
 interface SaveSlotRow {
@@ -36,6 +37,17 @@ interface SavePlayerStateRow {
   injury_flag: number
   suspension_flag: number
   last_match_minutes: number
+}
+
+interface SaveMatchSetupRow {
+  id: string
+  save_slot_id: string
+  fixture_id: string
+  team_id: string
+  formation_id: string
+  tactic_profile_id: string
+  starting_player_ids_json: string
+  bench_player_ids_json: string
 }
 
 function mapSaveSlot(row: SaveSlotRow): SaveSlot {
@@ -78,6 +90,19 @@ function mapSavePlayerState(row: SavePlayerStateRow): SavePlayerState {
     injuryFlag: row.injury_flag === 1,
     suspensionFlag: row.suspension_flag === 1,
     lastMatchMinutes: row.last_match_minutes,
+  }
+}
+
+function mapSaveMatchSetup(row: SaveMatchSetupRow): SaveMatchSetup {
+  return {
+    id: row.id,
+    saveSlotId: row.save_slot_id,
+    fixtureId: row.fixture_id,
+    teamId: row.team_id,
+    formationId: row.formation_id,
+    tacticProfileId: row.tactic_profile_id,
+    startingPlayerIds: JSON.parse(row.starting_player_ids_json) as string[],
+    benchPlayerIds: JSON.parse(row.bench_player_ids_json) as string[],
   }
 }
 
@@ -192,5 +217,57 @@ export class SaveRepository {
         [saveSlotId],
       )
       .map(mapSavePlayerState)
+  }
+
+  getMatchSetup(saveSlotId: string, fixtureId: string): SaveMatchSetup | null {
+    const row = this.client.getOne<SaveMatchSetupRow>(
+      `SELECT * FROM save_match_setups
+       WHERE save_slot_id = ? AND fixture_id = ?
+       LIMIT 1`,
+      [saveSlotId, fixtureId],
+    )
+
+    return row ? mapSaveMatchSetup(row) : null
+  }
+
+  saveMatchSetup(input: SaveMatchSetup): void {
+    const now = new Date().toISOString()
+    const existing = this.getMatchSetup(input.saveSlotId, input.fixtureId)
+
+    if (existing) {
+      this.client.execute(
+        `UPDATE save_match_setups
+         SET formation_id = ?, tactic_profile_id = ?, starting_player_ids_json = ?, bench_player_ids_json = ?, updated_at = ?
+         WHERE save_slot_id = ? AND fixture_id = ?`,
+        [
+          input.formationId,
+          input.tacticProfileId,
+          JSON.stringify(input.startingPlayerIds),
+          JSON.stringify(input.benchPlayerIds),
+          now,
+          input.saveSlotId,
+          input.fixtureId,
+        ],
+      )
+      return
+    }
+
+    this.client.execute(
+      `INSERT INTO save_match_setups (
+        id, save_slot_id, fixture_id, team_id, formation_id, tactic_profile_id,
+        starting_player_ids_json, bench_player_ids_json, updated_at
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      [
+        input.id,
+        input.saveSlotId,
+        input.fixtureId,
+        input.teamId,
+        input.formationId,
+        input.tacticProfileId,
+        JSON.stringify(input.startingPlayerIds),
+        JSON.stringify(input.benchPlayerIds),
+        now,
+      ],
+    )
   }
 }

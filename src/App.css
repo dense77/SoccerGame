@@ -75,6 +75,21 @@
   width: min(920px, 100%);
 }
 
+.control {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 14px;
+  color: #21492b;
+}
+
+.control select {
+  padding: 10px 12px;
+  border: 1px solid #b8d0bf;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
 .panel h2,
 .panel h3 {
   margin-top: 0;
@@ -85,6 +100,58 @@
   margin: 0;
   padding-left: 18px;
   color: #21492b;
+}
+
+.error-list {
+  color: #a01818;
+}
+
+.squad-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.squad-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 14px;
+  border-radius: 12px;
+}
+
+.squad-list li div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #21492b;
+}
+
+.starter {
+  background: rgba(36, 125, 71, 0.12);
+}
+
+.reserve {
+  background: rgba(22, 57, 31, 0.06);
+}
+
+.mini-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 14px;
+  background: #16391f;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.mini-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
 }
 
 /* Modal */

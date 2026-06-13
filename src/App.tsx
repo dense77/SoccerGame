@@ -8,7 +8,14 @@ import { TeamRepository } from './data/repositories/TeamRepository'
 import { loadGameDataSummary } from './modules/bootstrap/loadGameDataSummary'
 import { createCareerSave } from './modules/save-progress/createCareerSave'
 import { loadSaveOverview } from './modules/save-progress/loadSaveOverview'
-import type { DatabaseSummary, SaveOverview, Team } from './types/entities'
+import { loadMatchSetupOverview } from './modules/team-management/loadMatchSetupOverview'
+import type {
+  DatabaseSummary,
+  MatchSetupOverview,
+  SaveMatchSetup,
+  SaveOverview,
+  Team,
+} from './types/entities'
 
 interface BootstrapState {
   status: 'loading' | 'ready' | 'error'
@@ -16,6 +23,7 @@ interface BootstrapState {
   previewTeams: Team[]
   client: SQLiteDatabaseClient | null
   activeSave: SaveOverview | null
+  activeMatchSetup: MatchSetupOverview | null
   message: string
 }
 
@@ -27,6 +35,7 @@ function App() {
     previewTeams: [],
     client: null,
     activeSave: null,
+    activeMatchSetup: null,
     message: 'Initializing browser SQLite and loading seed data...',
   })
 
@@ -42,6 +51,9 @@ function App() {
         const summary = loadGameDataSummary(client)
         const latestSave = saveRepository.getLatestSaveSlot()
         const activeSave = latestSave ? loadSaveOverview(client, latestSave.id) : null
+        const activeMatchSetup = latestSave
+          ? loadMatchSetupOverview(client, latestSave.id)
+          : null
 
         if (cancelled) {
           return
@@ -53,6 +65,7 @@ function App() {
           previewTeams,
           client,
           activeSave,
+          activeMatchSetup,
           message: latestSave
             ? 'SQLite ready. Existing save restored.'
             : 'SQLite ready. Choose a national team to start the tournament.',
@@ -68,6 +81,7 @@ function App() {
           previewTeams: [],
           client: null,
           activeSave: null,
+          activeMatchSetup: null,
           message: error instanceof Error ? error.message : 'Failed to initialize game database.',
         })
       }
@@ -87,13 +101,112 @@ function App() {
 
     const saveSlot = createCareerSave(bootstrapState.client, teamId)
     const activeSave = loadSaveOverview(bootstrapState.client, saveSlot.id)
+    const activeMatchSetup = loadMatchSetupOverview(bootstrapState.client, saveSlot.id)
 
     setBootstrapState((currentState) => ({
       ...currentState,
       activeSave,
+      activeMatchSetup,
       message: `Career save created for ${activeSave.selectedTeam.shortName}.`,
     }))
   }
+
+  const handleToggleStarter = (playerId: string) => {
+    const currentSetup = bootstrapState.activeMatchSetup
+    if (!currentSetup || !bootstrapState.client || !bootstrapState.activeSave) {
+      return
+    }
+
+    const selectedFormation = currentSetup.selectedFormation
+    const starters = currentSetup.players.filter((player) => player.isStarter)
+    const clickedPlayer = currentSetup.players.find((player) => player.player.id === playerId)
+
+    if (!clickedPlayer) {
+      return
+    }
+
+    const nextPlayers = currentSetup.players.map((player) => {
+      if (player.player.id !== playerId) {
+        return player
+      }
+
+      if (!player.isStarter && starters.length >= selectedFormation.slotLayout.length) {
+        return player
+      }
+
+      return {
+        ...player,
+        isStarter: !player.isStarter,
+      }
+    })
+
+    persistMatchSetup(nextPlayers, currentSetup.selectedFormation.id, currentSetup.selectedTactic.id)
+  }
+
+  const handleChangeFormation = (formationId: string) => {
+    const currentSetup = bootstrapState.activeMatchSetup
+    if (!currentSetup) {
+      return
+    }
+
+    persistMatchSetup(currentSetup.players, formationId, currentSetup.selectedTactic.id)
+  }
+
+  const handleChangeTactic = (tacticProfileId: string) => {
+    const currentSetup = bootstrapState.activeMatchSetup
+    if (!currentSetup) {
+      return
+    }
+
+    persistMatchSetup(currentSetup.players, currentSetup.selectedFormation.id, tacticProfileId)
+  }
+
+  const persistMatchSetup = (
+    players: MatchSetupOverview['players'],
+    formationId: string,
+    tacticProfileId: string,
+  ) => {
+    if (!bootstrapState.client || !bootstrapState.activeSave || !bootstrapState.activeMatchSetup) {
+      return
+    }
+
+    const starters = players.filter((player) => player.isStarter).map((player) => player.player.id)
+    const bench = players.filter((player) => !player.isStarter).map((player) => player.player.id)
+
+    const payload: SaveMatchSetup = {
+      id: `${bootstrapState.activeSave.saveSlot.id}-${bootstrapState.activeMatchSetup.fixture.id}-${bootstrapState.activeMatchSetup.team.id}`,
+      saveSlotId: bootstrapState.activeSave.saveSlot.id,
+      fixtureId: bootstrapState.activeMatchSetup.fixture.id,
+      teamId: bootstrapState.activeMatchSetup.team.id,
+      formationId,
+      tacticProfileId,
+      startingPlayerIds: starters,
+      benchPlayerIds: bench,
+    }
+
+    const saveRepository = new SaveRepository(bootstrapState.client)
+    saveRepository.saveMatchSetup(payload)
+
+    const activeMatchSetup = loadMatchSetupOverview(
+      bootstrapState.client,
+      bootstrapState.activeSave.saveSlot.id,
+    )
+
+    setBootstrapState((currentState) => ({
+      ...currentState,
+      activeMatchSetup,
+      message: activeMatchSetup.validation.isValid
+        ? 'Pre-match setup saved.'
+        : activeMatchSetup.validation.errors[0],
+    }))
+  }
+
+  const teamNameById = (teamId: string | null): string => {
+    const previewTeam = bootstrapState.previewTeams.find((team) => team.id === teamId)
+    return previewTeam?.shortName ?? teamId ?? 'TBD'
+  }
+
+  const activeMatchSetup = bootstrapState.activeMatchSetup
 
   return (
     <div className="container">
@@ -179,6 +292,83 @@ function App() {
               })}
             </ul>
           </section>
+
+          {activeMatchSetup && (
+            <>
+              <section className="panel">
+                <h3>Pre-match Setup</h3>
+                <p>Fixture: {teamNameById(activeMatchSetup.fixture.homeTeamId)} vs {teamNameById(activeMatchSetup.fixture.awayTeamId)}</p>
+                <label className="control">
+                  <span>Formation</span>
+                  <select
+                    value={activeMatchSetup.selectedFormation.id}
+                    onChange={(event) => handleChangeFormation(event.target.value)}
+                  >
+                    {activeMatchSetup.formationOptions.map((formation) => (
+                      <option key={formation.id} value={formation.id}>
+                        {formation.name}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+                <label className="control">
+                  <span>Tactic</span>
+                  <select
+                    value={activeMatchSetup.selectedTactic.id}
+                    onChange={(event) => handleChangeTactic(event.target.value)}
+                  >
+                    {activeMatchSetup.tacticOptions.map((tactic) => (
+                      <option key={tactic.id} value={tactic.id}>
+                        {tactic.name}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+                <p>
+                  Starters: {activeMatchSetup.players.filter((player) => player.isStarter).length}/
+                  {activeMatchSetup.selectedFormation.slotLayout.length}
+                </p>
+                {!activeMatchSetup.validation.isValid && (
+                  <ul className="compact-list error-list">
+                    {activeMatchSetup.validation.errors.map((error) => (
+                      <li key={error}>{error}</li>
+                    ))}
+                  </ul>
+                )}
+              </section>
+
+              <section className="panel">
+                <h3>Squad Management</h3>
+                <ul className="squad-list">
+                  {activeMatchSetup.players.map((entry) => (
+                    <li key={entry.player.id} className={entry.isStarter ? 'starter' : 'reserve'}>
+                      <div>
+                        <strong>
+                          #{entry.player.shirtNumber} {entry.player.name}
+                        </strong>
+                        <span>
+                          {entry.player.primaryPosition} | OVR {entry.player.overallRating} | Fitness{' '}
+                          {entry.state.fitnessValue}
+                        </span>
+                      </div>
+                      <button
+                        type="button"
+                        className="mini-btn"
+                        onClick={() => handleToggleStarter(entry.player.id)}
+                        disabled={
+                          !entry.isStarter &&
+                          activeMatchSetup.players.filter((player) => player.isStarter).length >=
+                            activeMatchSetup.selectedFormation.slotLayout.length
+                        }
+                      >
+                        {entry.isStarter ? 'Move to Bench' : 'Start'}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            </>
+          )}
         </div>
       )}
 
@@ -190,8 +380,8 @@ function App() {
         <div className="overlay" onClick={() => setShowModal(false)}>
           <div className="modal" onClick={(e) => e.stopPropagation()}>
             <h2>当前实现进度</h2>
-            <p>已完成浏览器 SQLite、选队开局、存档初始化和小组赛骨架展示。</p>
-            <p>下一步会进入赛前阵容管理和赛事推进逻辑。</p>
+            <p>已完成浏览器 SQLite、选队开局、存档初始化、赛前阵容管理和战术配置。</p>
+            <p>下一步会进入比赛引擎和赛事结果推进。</p>
             <button className="btn btn-close" onClick={() => setShowModal(false)}>
               关闭
             </button>

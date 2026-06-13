@@ -146,6 +146,39 @@ export interface SaveOverview {
   rosterSize: number
 }
 
+export interface SaveMatchSetup {
+  id: string
+  saveSlotId: string
+  fixtureId: string
+  teamId: string
+  formationId: string
+  tacticProfileId: string
+  startingPlayerIds: string[]
+  benchPlayerIds: string[]
+}
+
+export interface ManagedPlayer {
+  player: Player
+  state: SavePlayerState
+  isStarter: boolean
+}
+
+export interface MatchSetupValidation {
+  isValid: boolean
+  errors: string[]
+}
+
+export interface MatchSetupOverview {
+  fixture: MatchFixture
+  team: Team
+  formationOptions: Formation[]
+  tacticOptions: TacticProfile[]
+  selectedFormation: Formation
+  selectedTactic: TacticProfile
+  players: ManagedPlayer[]
+  validation: MatchSetupValidation
+}
+
 export interface DatabaseSummary {
   teamCount: number
   playerCount: number
