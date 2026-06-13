@@ -1,5 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
+import { toMainlandChinesePlayerName } from './playerNameZhCn.mjs'
 
 const OUTPUT_FILE = path.resolve('src/data/seeds/worldCupData.generated.ts')
 const SQUADS_SOURCE = path.join(process.env.TEMP ?? '', 'wc2026_squads.json')
@@ -666,7 +667,8 @@ function createWorldCupData() {
 
     const teamId = buildTeamId(teamEntry.teamName, metadata.code)
     const teamPlayers = teamEntry.players.map((playerFields) => {
-      const name = buildPlayerName(playerFields.name ?? '')
+      const englishName = buildPlayerName(playerFields.name ?? '')
+      const name = toMainlandChinesePlayerName(englishName, teamEntry.teamName)
       const shirtNumber = Number(playerFields.no)
       const position = playerFields.pos ?? 'MF'
       const caps = Number(playerFields.caps ?? 0)
@@ -674,7 +676,7 @@ function createWorldCupData() {
       const club = stripMarkup(playerFields.club ?? '')
       const clubCountryCode = (playerFields.clubnat ?? '').trim().toUpperCase()
       const { age } = parseBirthAge(playerFields.age ?? '')
-      const normalizedName = normalizeName(name)
+      const normalizedName = normalizeName(englishName)
       const clubBonus = computeClubBonus(club, clubCountryCode)
       const capBonus = clamp(caps / 16, 0, 5)
       const goalBonus = computeGoalContributionBonus(position, goals)

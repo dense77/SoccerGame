@@ -825,7 +825,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cze-player-1",
     teamId: "team-cze",
-    name: "Matěj Kovář",
+    name: "马捷伊·科瓦日",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -841,7 +841,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cze-player-2",
     teamId: "team-cze",
-    name: "David Zima",
+    name: "大卫·齐马",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -859,7 +859,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cze-player-3",
     teamId: "team-cze",
-    name: "Tomáš Holeš",
+    name: "托马什·霍莱什",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -877,7 +877,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cze-player-4",
     teamId: "team-cze",
-    name: "Robin Hranáč",
+    name: "罗宾·赫拉纳奇",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -895,7 +895,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cze-player-5",
     teamId: "team-cze",
-    name: "Vladimír Coufal",
+    name: "弗拉基米尔·曹法尔",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -913,7 +913,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cze-player-6",
     teamId: "team-cze",
-    name: "Štěpán Chaloupek",
+    name: "斯捷潘·哈卢佩克",
     shirtNumber: 6,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -931,7 +931,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cze-player-7",
     teamId: "team-cze",
-    name: "Ladislav Krejčí",
+    name: "拉季斯拉夫·克雷伊奇",
     shirtNumber: 7,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -949,7 +949,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cze-player-8",
     teamId: "team-cze",
-    name: "Vladimír Darida",
+    name: "弗拉基米尔·达里达",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -968,7 +968,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cze-player-9",
     teamId: "team-cze",
-    name: "Adam Hložek",
+    name: "亚当·赫洛热克",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -986,7 +986,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cze-player-10",
     teamId: "team-cze",
-    name: "Patrik Schick",
+    name: "帕特里克·希克",
     shirtNumber: 10,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -1004,7 +1004,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cze-player-11",
     teamId: "team-cze",
-    name: "Jan Kuchta",
+    name: "扬·库赫塔",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -1022,7 +1022,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cze-player-12",
     teamId: "team-cze",
-    name: "Lukáš Červ",
+    name: "卢卡什·切尔夫",
     shirtNumber: 12,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -1041,7 +1041,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cze-player-13",
     teamId: "team-cze",
-    name: "Mojmír Chytil",
+    name: "莫伊米尔·希季尔",
     shirtNumber: 13,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -1059,7 +1059,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cze-player-14",
     teamId: "team-cze",
-    name: "David Jurásek",
+    name: "大卫·尤拉塞克",
     shirtNumber: 14,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -1077,7 +1077,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cze-player-15",
     teamId: "team-cze",
-    name: "Pavel Šulc",
+    name: "帕维尔·舒尔茨",
     shirtNumber: 15,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -1095,7 +1095,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cze-player-16",
     teamId: "team-cze",
-    name: "Jindřich Staněk",
+    name: "因德日赫·斯塔涅克",
     shirtNumber: 16,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -1111,7 +1111,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cze-player-17",
     teamId: "team-cze",
-    name: "Lukáš Provod",
+    name: "卢卡什·普罗沃德",
     shirtNumber: 17,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -1130,7 +1130,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cze-player-18",
     teamId: "team-cze",
-    name: "Michal Sadílek",
+    name: "米哈尔·萨迪莱克",
     shirtNumber: 18,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -1149,7 +1149,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cze-player-19",
     teamId: "team-cze",
-    name: "Tomáš Chorý",
+    name: "托马什·霍里",
     shirtNumber: 19,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -1167,7 +1167,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cze-player-20",
     teamId: "team-cze",
-    name: "Jaroslav Zelený",
+    name: "雅罗斯拉夫·泽莱尼",
     shirtNumber: 20,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -1185,7 +1185,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cze-player-21",
     teamId: "team-cze",
-    name: "David Douděra",
+    name: "大卫·杜杰拉",
     shirtNumber: 21,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -1203,7 +1203,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cze-player-22",
     teamId: "team-cze",
-    name: "Tomáš Souček",
+    name: "托马什·绍切克",
     shirtNumber: 22,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -1222,7 +1222,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cze-player-23",
     teamId: "team-cze",
-    name: "Lukáš Horníček",
+    name: "卢卡什·霍尔尼切克",
     shirtNumber: 23,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -1238,7 +1238,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cze-player-24",
     teamId: "team-cze",
-    name: "Alexandr Sojka",
+    name: "亚历山大尔·索伊卡",
     shirtNumber: 24,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -1257,7 +1257,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cze-player-25",
     teamId: "team-cze",
-    name: "Hugo Sochůrek",
+    name: "雨果·索胡雷克",
     shirtNumber: 25,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -1276,7 +1276,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cze-player-26",
     teamId: "team-cze",
-    name: "Denis Višinský",
+    name: "德尼斯·维辛斯基",
     shirtNumber: 26,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -1294,7 +1294,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mex-player-1",
     teamId: "team-mex",
-    name: "Raúl Rangel",
+    name: "劳尔·兰赫尔",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -1310,7 +1310,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mex-player-2",
     teamId: "team-mex",
-    name: "Jorge Sánchez",
+    name: "豪尔赫·桑切斯",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -1328,7 +1328,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mex-player-3",
     teamId: "team-mex",
-    name: "César Montes",
+    name: "塞萨尔·蒙特斯",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -1346,7 +1346,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mex-player-4",
     teamId: "team-mex",
-    name: "Edson Álvarez",
+    name: "埃德松·阿尔瓦雷斯",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -1364,7 +1364,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mex-player-5",
     teamId: "team-mex",
-    name: "Johan Vásquez",
+    name: "约翰·巴斯克斯",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -1382,7 +1382,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mex-player-6",
     teamId: "team-mex",
-    name: "Érik Lira",
+    name: "埃里克·利拉",
     shirtNumber: 6,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -1401,7 +1401,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mex-player-7",
     teamId: "team-mex",
-    name: "Luis Romo",
+    name: "路易斯·罗莫",
     shirtNumber: 7,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -1420,7 +1420,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mex-player-8",
     teamId: "team-mex",
-    name: "Álvaro Fidalgo",
+    name: "阿尔瓦罗·菲达尔戈",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -1439,7 +1439,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mex-player-9",
     teamId: "team-mex",
-    name: "Raúl Jiménez",
+    name: "劳尔·希门尼斯",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -1457,7 +1457,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mex-player-10",
     teamId: "team-mex",
-    name: "Alexis Vega",
+    name: "亚历克西斯·贝加",
     shirtNumber: 10,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -1475,7 +1475,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mex-player-11",
     teamId: "team-mex",
-    name: "Santiago Giménez",
+    name: "圣地亚哥·希门尼斯",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -1493,7 +1493,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mex-player-12",
     teamId: "team-mex",
-    name: "Carlos Acevedo",
+    name: "卡洛斯·阿塞韦多",
     shirtNumber: 12,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -1509,7 +1509,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mex-player-13",
     teamId: "team-mex",
-    name: "Guillermo Ochoa",
+    name: "吉列尔莫·奥乔亚",
     shirtNumber: 13,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -1525,7 +1525,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mex-player-14",
     teamId: "team-mex",
-    name: "Armando González",
+    name: "阿尔姆恩多·冈萨雷斯",
     shirtNumber: 14,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -1543,7 +1543,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mex-player-15",
     teamId: "team-mex",
-    name: "Israel Reyes",
+    name: "伊斯尔阿勒·尔埃斯",
     shirtNumber: 15,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -1561,7 +1561,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mex-player-16",
     teamId: "team-mex",
-    name: "Julián Quiñones",
+    name: "胡利安·基尼奥内斯",
     shirtNumber: 16,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -1579,7 +1579,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mex-player-17",
     teamId: "team-mex",
-    name: "Orbelín Pineda",
+    name: "奥尔贝利恩·皮内达",
     shirtNumber: 17,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -1598,7 +1598,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mex-player-18",
     teamId: "team-mex",
-    name: "Obed Vargas",
+    name: "奥贝德·巴尔加斯",
     shirtNumber: 18,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -1617,7 +1617,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mex-player-19",
     teamId: "team-mex",
-    name: "Gilberto Mora",
+    name: "格伊尔布埃尔托·莫拉",
     shirtNumber: 19,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -1636,7 +1636,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mex-player-20",
     teamId: "team-mex",
-    name: "Mateo Chávez",
+    name: "马特埃·查韦斯",
     shirtNumber: 20,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -1654,7 +1654,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mex-player-21",
     teamId: "team-mex",
-    name: "César Huerta",
+    name: "塞萨尔·哈韦尔塔",
     shirtNumber: 21,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -1672,7 +1672,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mex-player-22",
     teamId: "team-mex",
-    name: "Guillermo Martínez",
+    name: "吉列尔莫·马丁内斯",
     shirtNumber: 22,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -1690,7 +1690,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mex-player-23",
     teamId: "team-mex",
-    name: "Jesús Gallardo",
+    name: "杰苏斯·格尔勒尔多",
     shirtNumber: 23,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -1708,7 +1708,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mex-player-24",
     teamId: "team-mex",
-    name: "Luis Chávez",
+    name: "路易斯·查韦斯",
     shirtNumber: 24,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -1727,7 +1727,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mex-player-25",
     teamId: "team-mex",
-    name: "Roberto Alvarado",
+    name: "罗伯托·阿尔瓦拉多",
     shirtNumber: 25,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -1745,7 +1745,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mex-player-26",
     teamId: "team-mex",
-    name: "Brian Gutiérrez",
+    name: "布赖恩·格乌特伊尔雷兹",
     shirtNumber: 26,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -1764,7 +1764,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-rsa-player-1",
     teamId: "team-rsa",
-    name: "Ronwen Williams",
+    name: "尔奥恩韦恩·威廉斯",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -1780,7 +1780,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-rsa-player-2",
     teamId: "team-rsa",
-    name: "Thabang Matuludi",
+    name: "特布恩格·马图卢迪",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -1798,7 +1798,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-rsa-player-3",
     teamId: "team-rsa",
-    name: "Khulumani Ndamane",
+    name: "克乌卢马尼·恩阿马内",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -1816,7 +1816,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-rsa-player-4",
     teamId: "team-rsa",
-    name: "Teboho Mokoena",
+    name: "特博霍·莫克奥纳",
     shirtNumber: 4,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -1835,7 +1835,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-rsa-player-5",
     teamId: "team-rsa",
-    name: "Thalente Mbatha",
+    name: "特勒埃恩特·姆特哈",
     shirtNumber: 5,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -1854,7 +1854,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-rsa-player-6",
     teamId: "team-rsa",
-    name: "Aubrey Modiba",
+    name: "奥布尔埃·莫迪布",
     shirtNumber: 6,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -1872,7 +1872,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-rsa-player-7",
     teamId: "team-rsa",
-    name: "Oswin Appollis",
+    name: "奥斯维恩·阿普普奥尔利斯",
     shirtNumber: 7,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -1890,7 +1890,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-rsa-player-8",
     teamId: "team-rsa",
-    name: "Tshepang Moremi",
+    name: "特埃普恩格·莫雷米",
     shirtNumber: 8,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -1908,7 +1908,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-rsa-player-9",
     teamId: "team-rsa",
-    name: "Lyle Foster",
+    name: "勒伊莱·夫奥斯特尔",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -1926,7 +1926,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-rsa-player-10",
     teamId: "team-rsa",
-    name: "Relebohile Mofokeng",
+    name: "雷莱博希莱·莫福克埃恩格",
     shirtNumber: 10,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -1944,7 +1944,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-rsa-player-11",
     teamId: "team-rsa",
-    name: "Themba Zwane",
+    name: "特埃姆布·兹内",
     shirtNumber: 11,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -1963,7 +1963,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-rsa-player-12",
     teamId: "team-rsa",
-    name: "Thapelo Maseko",
+    name: "特佩洛·马塞科",
     shirtNumber: 12,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -1981,7 +1981,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-rsa-player-13",
     teamId: "team-rsa",
-    name: "Sphephelo Sithole",
+    name: "斯埃普赫洛·斯伊特霍莱",
     shirtNumber: 13,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -2000,7 +2000,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-rsa-player-14",
     teamId: "team-rsa",
-    name: "Mbekezeli Mbokazi",
+    name: "姆埃凯泽利·姆奥卡齐",
     shirtNumber: 14,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -2018,7 +2018,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-rsa-player-15",
     teamId: "team-rsa",
-    name: "Iqraam Rayners",
+    name: "伊尔阿姆·尔艾恩埃尔斯",
     shirtNumber: 15,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -2036,7 +2036,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-rsa-player-16",
     teamId: "team-rsa",
-    name: "Sipho Chaine",
+    name: "斯伊普霍·克艾内",
     shirtNumber: 16,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -2052,7 +2052,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-rsa-player-17",
     teamId: "team-rsa",
-    name: "Evidence Makgopa",
+    name: "埃维德埃恩塞·姆克戈帕",
     shirtNumber: 17,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -2070,7 +2070,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-rsa-player-18",
     teamId: "team-rsa",
-    name: "Samukele Kabini",
+    name: "萨穆凯莱·卡布伊尼",
     shirtNumber: 18,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -2088,7 +2088,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-rsa-player-19",
     teamId: "team-rsa",
-    name: "Nkosinathi Sibisi",
+    name: "恩奥西恩阿特希·西布伊西",
     shirtNumber: 19,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -2106,7 +2106,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-rsa-player-20",
     teamId: "team-rsa",
-    name: "Khuliso Mudau",
+    name: "克乌利索·穆德奥",
     shirtNumber: 20,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -2124,7 +2124,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-rsa-player-21",
     teamId: "team-rsa",
-    name: "Ime Okon",
+    name: "伊梅·奥科恩",
     shirtNumber: 21,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -2142,7 +2142,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-rsa-player-22",
     teamId: "team-rsa",
-    name: "Ricardo Goss",
+    name: "里卡多·格奥斯斯",
     shirtNumber: 22,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -2158,7 +2158,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-rsa-player-23",
     teamId: "team-rsa",
-    name: "Jayden Adams",
+    name: "贾艾德恩·亚当斯",
     shirtNumber: 23,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -2177,7 +2177,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-rsa-player-24",
     teamId: "team-rsa",
-    name: "Olwethu Makhanya",
+    name: "奥尔瓦埃特胡·姆克哈恩亚",
     shirtNumber: 24,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -2195,7 +2195,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-rsa-player-25",
     teamId: "team-rsa",
-    name: "Kamogelo Sebelebele",
+    name: "卡莫格洛·塞贝莱贝莱",
     shirtNumber: 25,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -2213,7 +2213,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-rsa-player-26",
     teamId: "team-rsa",
-    name: "Bradley Cross",
+    name: "布尔阿德勒埃·克罗奥斯斯",
     shirtNumber: 26,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -2231,7 +2231,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-kor-player-1",
     teamId: "team-kor",
-    name: "Kim Seung-gyu",
+    name: "金承奎",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -2247,7 +2247,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-kor-player-2",
     teamId: "team-kor",
-    name: "Lee Han-beom",
+    name: "李韩范",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -2265,7 +2265,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-kor-player-3",
     teamId: "team-kor",
-    name: "Lee Gi-hyuk",
+    name: "李基赫",
     shirtNumber: 3,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -2284,7 +2284,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-kor-player-4",
     teamId: "team-kor",
-    name: "Kim Min-jae",
+    name: "金玟哉",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -2302,7 +2302,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-kor-player-5",
     teamId: "team-kor",
-    name: "Kim Tae-hyeon",
+    name: "金泰贤",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -2320,7 +2320,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-kor-player-6",
     teamId: "team-kor",
-    name: "Hwang In-beom",
+    name: "黄仁范",
     shirtNumber: 6,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -2339,7 +2339,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-kor-player-7",
     teamId: "team-kor",
-    name: "Son Heung-min",
+    name: "孙兴慜",
     shirtNumber: 7,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -2357,7 +2357,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-kor-player-8",
     teamId: "team-kor",
-    name: "Paik Seung-ho",
+    name: "白昇浩",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -2376,7 +2376,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-kor-player-9",
     teamId: "team-kor",
-    name: "Cho Gue-sung",
+    name: "曹圭成",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -2394,7 +2394,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-kor-player-10",
     teamId: "team-kor",
-    name: "Lee Jae-sung",
+    name: "李在城",
     shirtNumber: 10,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -2413,7 +2413,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-kor-player-11",
     teamId: "team-kor",
-    name: "Hwang Hee-chan",
+    name: "黄喜灿",
     shirtNumber: 11,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -2432,7 +2432,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-kor-player-12",
     teamId: "team-kor",
-    name: "Song Bum-keun",
+    name: "宋范根",
     shirtNumber: 12,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -2448,7 +2448,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-kor-player-13",
     teamId: "team-kor",
-    name: "Lee Tae-seok",
+    name: "李泰锡",
     shirtNumber: 13,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -2466,7 +2466,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-kor-player-14",
     teamId: "team-kor",
-    name: "Cho Wi-je",
+    name: "曹威济",
     shirtNumber: 14,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -2484,7 +2484,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-kor-player-15",
     teamId: "team-kor",
-    name: "Kim Moon-hwan",
+    name: "金纹奂",
     shirtNumber: 15,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -2502,7 +2502,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-kor-player-16",
     teamId: "team-kor",
-    name: "Park Jin-seob",
+    name: "朴镇燮",
     shirtNumber: 16,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -2520,7 +2520,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-kor-player-17",
     teamId: "team-kor",
-    name: "Bae Jun-ho",
+    name: "裴峻浩",
     shirtNumber: 17,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -2539,7 +2539,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-kor-player-18",
     teamId: "team-kor",
-    name: "Oh Hyeon-gyu",
+    name: "吴贤揆",
     shirtNumber: 18,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -2557,7 +2557,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-kor-player-19",
     teamId: "team-kor",
-    name: "Lee Kang-in",
+    name: "李刚仁",
     shirtNumber: 19,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -2576,7 +2576,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-kor-player-20",
     teamId: "team-kor",
-    name: "Yang Hyun-jun",
+    name: "梁贤俊",
     shirtNumber: 20,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -2595,7 +2595,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-kor-player-21",
     teamId: "team-kor",
-    name: "Jo Hyeon-woo",
+    name: "赵贤祐",
     shirtNumber: 21,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -2611,7 +2611,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-kor-player-22",
     teamId: "team-kor",
-    name: "Seol Young-woo",
+    name: "薛英佑",
     shirtNumber: 22,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -2629,7 +2629,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-kor-player-23",
     teamId: "team-kor",
-    name: "Jens Castrop",
+    name: "延斯·卡斯特罗普",
     shirtNumber: 23,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -2647,7 +2647,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-kor-player-24",
     teamId: "team-kor",
-    name: "Kim Jin-gyu",
+    name: "金镇圭",
     shirtNumber: 24,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -2666,7 +2666,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-kor-player-25",
     teamId: "team-kor",
-    name: "Eom Ji-sung",
+    name: "严智星",
     shirtNumber: 25,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -2685,7 +2685,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-kor-player-26",
     teamId: "team-kor",
-    name: "Lee Dong-gyeong",
+    name: "李东炅",
     shirtNumber: 26,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -2704,7 +2704,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bih-player-1",
     teamId: "team-bih",
-    name: "Nikola Vasilj",
+    name: "尼科拉·瓦斯伊尔贾",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -2720,7 +2720,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bih-player-2",
     teamId: "team-bih",
-    name: "Nihad Mujakić",
+    name: "尼哈德·穆贾克奇",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -2738,7 +2738,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bih-player-3",
     teamId: "team-bih",
-    name: "Dennis Hadžikadunić",
+    name: "德埃恩尼斯·哈阿德齐卡杜恩奇",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -2756,7 +2756,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bih-player-4",
     teamId: "team-bih",
-    name: "Tarik Muharemović",
+    name: "塔里克·穆哈雷姆奥维奇",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -2774,7 +2774,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bih-player-5",
     teamId: "team-bih",
-    name: "Sead Kolašinac",
+    name: "斯亚德·科拉西纳克",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -2792,7 +2792,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bih-player-6",
     teamId: "team-bih",
-    name: "Benjamin Tahirović",
+    name: "本杰明·塔希尔奥维奇",
     shirtNumber: 6,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -2811,7 +2811,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bih-player-7",
     teamId: "team-bih",
-    name: "Amar Dedić",
+    name: "阿马尔·德德奇",
     shirtNumber: 7,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -2829,7 +2829,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bih-player-8",
     teamId: "team-bih",
-    name: "Armin Gigović",
+    name: "阿尔米恩·吉格奥维奇",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -2848,7 +2848,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bih-player-9",
     teamId: "team-bih",
-    name: "Samed Baždar",
+    name: "萨梅德·布兹达尔",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -2866,7 +2866,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bih-player-10",
     teamId: "team-bih",
-    name: "Ermedin Demirović",
+    name: "尔梅迪恩·德米尔奥维奇",
     shirtNumber: 10,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -2884,7 +2884,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bih-player-11",
     teamId: "team-bih",
-    name: "Edin Džeko",
+    name: "埃迪恩·德埃科",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -2902,7 +2902,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bih-player-12",
     teamId: "team-bih",
-    name: "Mladen Jurkas",
+    name: "姆德恩·贾乌尔卡斯",
     shirtNumber: 12,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -2918,7 +2918,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bih-player-13",
     teamId: "team-bih",
-    name: "Ivan Bašić",
+    name: "伊万·布斯奇",
     shirtNumber: 13,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -2937,7 +2937,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bih-player-14",
     teamId: "team-bih",
-    name: "Ivan Šunjić",
+    name: "伊万·斯乌恩贾奇",
     shirtNumber: 14,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -2956,7 +2956,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bih-player-15",
     teamId: "team-bih",
-    name: "Amar Memić",
+    name: "阿马尔·梅姆奇",
     shirtNumber: 15,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -2975,7 +2975,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bih-player-16",
     teamId: "team-bih",
-    name: "Amir Hadžiahmetović",
+    name: "阿米尔·哈阿德兹亚梅特奥维奇",
     shirtNumber: 16,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -2994,7 +2994,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bih-player-17",
     teamId: "team-bih",
-    name: "Dženis Burnić",
+    name: "德埃尼斯·布乌尔恩奇",
     shirtNumber: 17,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -3013,7 +3013,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bih-player-18",
     teamId: "team-bih",
-    name: "Nikola Katić",
+    name: "尼科拉·卡特奇",
     shirtNumber: 18,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -3031,7 +3031,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bih-player-19",
     teamId: "team-bih",
-    name: "Kerim Alajbegović",
+    name: "凯里姆·阿勒贝格奥维奇",
     shirtNumber: 19,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -3049,7 +3049,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bih-player-20",
     teamId: "team-bih",
-    name: "Esmir Bajraktarević",
+    name: "埃斯米尔·布尔阿克塔尔耶维奇",
     shirtNumber: 20,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -3067,7 +3067,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bih-player-21",
     teamId: "team-bih",
-    name: "Stjepan Radeljić",
+    name: "斯埃帕恩·拉德埃尔贾奇",
     shirtNumber: 21,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -3085,7 +3085,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bih-player-22",
     teamId: "team-bih",
-    name: "Martin Zlomislić",
+    name: "马丁·兹奥姆伊斯勒奇",
     shirtNumber: 22,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -3101,7 +3101,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bih-player-23",
     teamId: "team-bih",
-    name: "Haris Tabaković",
+    name: "哈里斯·塔布克奥维奇",
     shirtNumber: 23,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -3119,7 +3119,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bih-player-24",
     teamId: "team-bih",
-    name: "Arjan Malić",
+    name: "阿尔贾恩·马勒奇",
     shirtNumber: 24,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -3137,7 +3137,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bih-player-25",
     teamId: "team-bih",
-    name: "Jovo Lukić",
+    name: "若沃·卢克奇",
     shirtNumber: 25,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -3155,7 +3155,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bih-player-26",
     teamId: "team-bih",
-    name: "Ermin Mahmić",
+    name: "尔米恩·姆姆奇",
     shirtNumber: 26,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -3174,7 +3174,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-can-player-1",
     teamId: "team-can",
-    name: "Dayne St. Clair",
+    name: "德艾内·斯特·克勒艾尔",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -3190,7 +3190,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-can-player-2",
     teamId: "team-can",
-    name: "Alistair Johnston",
+    name: "阿勒伊斯特艾尔·贾奥恩奥恩",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -3208,7 +3208,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-can-player-3",
     teamId: "team-can",
-    name: "Alfie Jones",
+    name: "阿尔夫伊·若内斯",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -3226,7 +3226,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-can-player-4",
     teamId: "team-can",
-    name: "Luc de Fougerolles",
+    name: "卢克·德夫乌格尔奥尔莱斯",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -3244,7 +3244,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-can-player-5",
     teamId: "team-can",
-    name: "Joel Waterman",
+    name: "贾奥勒·沃特曼",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -3262,7 +3262,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-can-player-6",
     teamId: "team-can",
-    name: "Mathieu Choinière",
+    name: "姆特哈伊·克瓦恩伊雷",
     shirtNumber: 6,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -3281,7 +3281,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-can-player-7",
     teamId: "team-can",
-    name: "Stephen Eustáquio",
+    name: "斯蒂芬·欧斯塔基奥",
     shirtNumber: 7,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -3300,7 +3300,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-can-player-8",
     teamId: "team-can",
-    name: "Ismaël Koné",
+    name: "伊斯梅尔·科内",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -3319,7 +3319,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-can-player-9",
     teamId: "team-can",
-    name: "Cyle Larin",
+    name: "赛尔·拉林",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -3337,7 +3337,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-can-player-10",
     teamId: "team-can",
-    name: "Jonathan David",
+    name: "乔纳森·戴维",
     shirtNumber: 10,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -3355,7 +3355,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-can-player-11",
     teamId: "team-can",
-    name: "Liam Millar",
+    name: "利亚姆·姆伊尔拉尔",
     shirtNumber: 11,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -3374,7 +3374,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-can-player-12",
     teamId: "team-can",
-    name: "Tani Oluwaseyi",
+    name: "塔尼·奥卢瓦斯埃",
     shirtNumber: 12,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -3392,7 +3392,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-can-player-13",
     teamId: "team-can",
-    name: "Derek Cornelius",
+    name: "德雷克·克奥尔内勒伊斯",
     shirtNumber: 13,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -3410,7 +3410,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-can-player-14",
     teamId: "team-can",
-    name: "Jacob Shaffelburg",
+    name: "雅各布·希阿夫夫埃尔布乌尔格",
     shirtNumber: 14,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -3429,7 +3429,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-can-player-15",
     teamId: "team-can",
-    name: "Moïse Bombito",
+    name: "姆瓦塞·布奥姆布伊托",
     shirtNumber: 15,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -3447,7 +3447,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-can-player-16",
     teamId: "team-can",
-    name: "Maxime Crépeau",
+    name: "马西梅·克罗埃普奥",
     shirtNumber: 16,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -3463,7 +3463,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-can-player-17",
     teamId: "team-can",
-    name: "Tajon Buchanan",
+    name: "塔琼·布坎南",
     shirtNumber: 17,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -3481,7 +3481,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-can-player-18",
     teamId: "team-can",
-    name: "Owen Goodman",
+    name: "奥韦恩·格乌德马恩",
     shirtNumber: 18,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -3497,7 +3497,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-can-player-19",
     teamId: "team-can",
-    name: "Alphonso Davies",
+    name: "阿方索·戴维斯",
     shirtNumber: 19,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -3515,7 +3515,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-can-player-20",
     teamId: "team-can",
-    name: "Ali Ahmed",
+    name: "阿里·艾哈迈德",
     shirtNumber: 20,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -3533,7 +3533,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-can-player-21",
     teamId: "team-can",
-    name: "Jonathan Osorio",
+    name: "乔纳森·奥索尔约",
     shirtNumber: 21,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -3552,7 +3552,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-can-player-22",
     teamId: "team-can",
-    name: "Richie Laryea",
+    name: "尔伊克哈伊·拉尔伊",
     shirtNumber: 22,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -3570,7 +3570,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-can-player-23",
     teamId: "team-can",
-    name: "Niko Sigur",
+    name: "尼科·西格乌尔",
     shirtNumber: 23,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -3588,7 +3588,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-can-player-24",
     teamId: "team-can",
-    name: "Promise David",
+    name: "普罗奥米塞·大卫",
     shirtNumber: 24,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -3606,7 +3606,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-can-player-25",
     teamId: "team-can",
-    name: "Nathan Saliba",
+    name: "内森·萨利巴",
     shirtNumber: 25,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -3625,7 +3625,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-can-player-26",
     teamId: "team-can",
-    name: "Jayden Nelson",
+    name: "贾艾德恩·内勒森",
     shirtNumber: 26,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -3643,7 +3643,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-qat-player-1",
     teamId: "team-qat",
-    name: "Mahmud Abunada",
+    name: "姆穆德·阿布乌纳达",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -3659,7 +3659,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-qat-player-2",
     teamId: "team-qat",
-    name: "Pedro Miguel",
+    name: "佩德罗·米格埃勒",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -3677,7 +3677,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-qat-player-3",
     teamId: "team-qat",
-    name: "Lucas Mendes",
+    name: "卢卡斯·门德斯",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -3695,7 +3695,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-qat-player-4",
     teamId: "team-qat",
-    name: "Issa Laye",
+    name: "伊萨·勒艾",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -3713,7 +3713,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-qat-player-5",
     teamId: "team-qat",
-    name: "Jassem Gaber",
+    name: "贾阿斯塞姆·加贝尔",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -3731,7 +3731,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-qat-player-6",
     teamId: "team-qat",
-    name: "Abdulaziz Hatem",
+    name: "阿布杜拉齐兹·哈特姆",
     shirtNumber: 6,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -3750,7 +3750,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-qat-player-7",
     teamId: "team-qat",
-    name: "Ahmed Alaaeldin",
+    name: "艾哈迈德·阿勒尔迪恩",
     shirtNumber: 7,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -3768,7 +3768,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-qat-player-8",
     teamId: "team-qat",
-    name: "Edmilson Junior",
+    name: "埃德米勒森·朱恩约尔",
     shirtNumber: 8,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -3786,7 +3786,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-qat-player-9",
     teamId: "team-qat",
-    name: "Mohammed Muntari",
+    name: "穆罕默德·姆乌恩塔里",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -3804,7 +3804,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-qat-player-10",
     teamId: "team-qat",
-    name: "Hassan Al-Haydos",
+    name: "哈桑·阿尔哈艾多斯",
     shirtNumber: 10,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -3822,7 +3822,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-qat-player-11",
     teamId: "team-qat",
-    name: "Akram Afif",
+    name: "阿克拉姆·阿菲夫",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -3840,7 +3840,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-qat-player-12",
     teamId: "team-qat",
-    name: "Karim Boudiaf",
+    name: "卡里姆·布乌德亚夫",
     shirtNumber: 12,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -3859,7 +3859,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-qat-player-13",
     teamId: "team-qat",
-    name: "Ayoub Al-Oui",
+    name: "阿布·阿尔维",
     shirtNumber: 13,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -3877,7 +3877,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-qat-player-14",
     teamId: "team-qat",
-    name: "Homam Ahmed",
+    name: "霍马姆·艾哈迈德",
     shirtNumber: 14,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -3895,7 +3895,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-qat-player-15",
     teamId: "team-qat",
-    name: "Yusuf Abdurisag",
+    name: "尤苏夫·阿布杜里萨格",
     shirtNumber: 15,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -3913,7 +3913,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-qat-player-16",
     teamId: "team-qat",
-    name: "Boualem Khoukhi",
+    name: "布乌莱姆·克乌克希",
     shirtNumber: 16,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -3931,7 +3931,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-qat-player-17",
     teamId: "team-qat",
-    name: "Ahmed Al-Ganehi",
+    name: "艾哈迈德·阿尔加内希",
     shirtNumber: 17,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -3950,7 +3950,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-qat-player-18",
     teamId: "team-qat",
-    name: "Sultan Al-Brake",
+    name: "斯乌尔塔恩·阿尔布尔阿凯",
     shirtNumber: 18,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -3968,7 +3968,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-qat-player-19",
     teamId: "team-qat",
-    name: "Almoez Ali",
+    name: "阿尔姆奥兹·阿里",
     shirtNumber: 19,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -3986,7 +3986,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-qat-player-20",
     teamId: "team-qat",
-    name: "Ahmed Fathy",
+    name: "艾哈迈德·夫阿特哈伊",
     shirtNumber: 20,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -4005,7 +4005,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-qat-player-21",
     teamId: "team-qat",
-    name: "Salah Zakaria",
+    name: "萨拉赫·扎卡里亚",
     shirtNumber: 21,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -4021,7 +4021,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-qat-player-22",
     teamId: "team-qat",
-    name: "Meshaal Barsham",
+    name: "姆埃斯哈阿勒·布尔希阿姆",
     shirtNumber: 22,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -4037,7 +4037,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-qat-player-23",
     teamId: "team-qat",
-    name: "Assim Madibo",
+    name: "阿斯西姆·马迪博",
     shirtNumber: 23,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -4056,7 +4056,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-qat-player-24",
     teamId: "team-qat",
-    name: "Tahsin Jamshid",
+    name: "特西恩·贾阿姆希伊德",
     shirtNumber: 24,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -4074,7 +4074,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-qat-player-25",
     teamId: "team-qat",
-    name: "Al-Hashmi Al-Hussain",
+    name: "阿尔哈阿斯哈伊·阿尔哈乌斯斯艾恩",
     shirtNumber: 25,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -4092,7 +4092,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-qat-player-26",
     teamId: "team-qat",
-    name: "Mohamed Manai",
+    name: "穆罕默德·马恩艾",
     shirtNumber: 26,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -4110,7 +4110,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sui-player-1",
     teamId: "team-sui",
-    name: "Gregor Kobel",
+    name: "格拉埃戈尔·科贝勒",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -4126,7 +4126,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sui-player-2",
     teamId: "team-sui",
-    name: "Miro Muheim",
+    name: "米罗·穆哈伊姆",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -4144,7 +4144,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sui-player-3",
     teamId: "team-sui",
-    name: "Silvan Widmer",
+    name: "斯伊尔瓦恩·瓦伊德梅尔",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -4162,7 +4162,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sui-player-4",
     teamId: "team-sui",
-    name: "Nico Elvedi",
+    name: "尼科·埃尔韦迪",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -4180,7 +4180,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sui-player-5",
     teamId: "team-sui",
-    name: "Manuel Akanji",
+    name: "曼努埃尔·阿克恩吉",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -4198,7 +4198,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sui-player-6",
     teamId: "team-sui",
-    name: "Denis Zakaria",
+    name: "德尼·扎卡里亚",
     shirtNumber: 6,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -4217,7 +4217,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sui-player-7",
     teamId: "team-sui",
-    name: "Breel Embolo",
+    name: "布尔伊勒·埃姆博洛",
     shirtNumber: 7,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -4235,7 +4235,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sui-player-8",
     teamId: "team-sui",
-    name: "Remo Freuler",
+    name: "雷莫·弗朗欧莱尔",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -4254,7 +4254,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sui-player-9",
     teamId: "team-sui",
-    name: "Johan Manzambi",
+    name: "约翰·姆恩兹姆布伊",
     shirtNumber: 9,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -4273,7 +4273,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sui-player-10",
     teamId: "team-sui",
-    name: "Granit Xhaka",
+    name: "格拉阿尼特·希阿卡",
     shirtNumber: 10,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -4292,7 +4292,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sui-player-11",
     teamId: "team-sui",
-    name: "Dan Ndoye",
+    name: "达恩·恩瓦",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -4310,7 +4310,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sui-player-12",
     teamId: "team-sui",
-    name: "Yvon Mvogo",
+    name: "伊沃恩·姆奥戈",
     shirtNumber: 12,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -4326,7 +4326,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sui-player-13",
     teamId: "team-sui",
-    name: "Ricardo Rodriguez",
+    name: "里卡多·罗德里格斯",
     shirtNumber: 13,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -4344,7 +4344,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sui-player-14",
     teamId: "team-sui",
-    name: "Ardon Jashari",
+    name: "阿尔多恩·贾阿斯哈里",
     shirtNumber: 14,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -4363,7 +4363,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sui-player-15",
     teamId: "team-sui",
-    name: "Djibril Sow",
+    name: "德伊布里勒·索瓦",
     shirtNumber: 15,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -4382,7 +4382,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sui-player-16",
     teamId: "team-sui",
-    name: "Christian Fassnacht",
+    name: "克里斯蒂安·夫阿斯斯内阿克哈",
     shirtNumber: 16,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -4400,7 +4400,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sui-player-17",
     teamId: "team-sui",
-    name: "Rubén Vargas",
+    name: "鲁本·巴尔加斯",
     shirtNumber: 17,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -4418,7 +4418,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sui-player-18",
     teamId: "team-sui",
-    name: "Eray Cömert",
+    name: "埃尔艾·科姆埃尔特",
     shirtNumber: 18,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -4436,7 +4436,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sui-player-19",
     teamId: "team-sui",
-    name: "Noah Okafor",
+    name: "诺亚·奥卡福尔",
     shirtNumber: 19,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -4454,7 +4454,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sui-player-20",
     teamId: "team-sui",
-    name: "Michel Aebischer",
+    name: "姆伊克赫勒·阿布伊斯克埃尔",
     shirtNumber: 20,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -4473,7 +4473,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sui-player-21",
     teamId: "team-sui",
-    name: "Marvin Keller",
+    name: "姆尔维恩·克埃尔莱尔",
     shirtNumber: 21,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -4489,7 +4489,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sui-player-22",
     teamId: "team-sui",
-    name: "Fabian Rieder",
+    name: "法比安·尔伊德尔",
     shirtNumber: 22,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -4508,7 +4508,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sui-player-23",
     teamId: "team-sui",
-    name: "Zeki Amdouni",
+    name: "泽基·阿姆德乌尼",
     shirtNumber: 23,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -4526,7 +4526,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sui-player-24",
     teamId: "team-sui",
-    name: "Aurèle Amenda",
+    name: "奥雷莱·阿姆埃恩达",
     shirtNumber: 24,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -4544,7 +4544,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sui-player-25",
     teamId: "team-sui",
-    name: "Luca Jaquez",
+    name: "卢卡·贾克埃兹",
     shirtNumber: 25,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -4562,7 +4562,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sui-player-26",
     teamId: "team-sui",
-    name: "Cedric Itten",
+    name: "克埃德尔奇·伊特特恩",
     shirtNumber: 26,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -4580,7 +4580,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bra-player-1",
     teamId: "team-bra",
-    name: "Alisson",
+    name: "阿利松",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -4596,7 +4596,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bra-player-2",
     teamId: "team-bra",
-    name: "Éderson Silva",
+    name: "埃德尔森·席尔瓦",
     shirtNumber: 2,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -4615,7 +4615,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bra-player-3",
     teamId: "team-bra",
-    name: "Gabriel Magalhães",
+    name: "加布里埃尔·马加良斯",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -4633,7 +4633,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bra-player-4",
     teamId: "team-bra",
-    name: "Marquinhos",
+    name: "马尔基尼奥斯",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -4651,7 +4651,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bra-player-5",
     teamId: "team-bra",
-    name: "Casemiro",
+    name: "卡塞米罗",
     shirtNumber: 5,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -4670,7 +4670,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bra-player-6",
     teamId: "team-bra",
-    name: "Alex Sandro",
+    name: "阿莱士·桑德罗",
     shirtNumber: 6,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -4688,7 +4688,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bra-player-7",
     teamId: "team-bra",
-    name: "Vinícius Júnior",
+    name: "维尼修斯·儒尼奥尔",
     shirtNumber: 7,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -4706,7 +4706,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bra-player-8",
     teamId: "team-bra",
-    name: "Bruno Guimarães",
+    name: "布鲁诺·吉马良斯",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -4725,7 +4725,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bra-player-9",
     teamId: "team-bra",
-    name: "Matheus Cunha",
+    name: "马特乌斯·库尼亚",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -4743,7 +4743,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bra-player-10",
     teamId: "team-bra",
-    name: "Neymar",
+    name: "内马尔",
     shirtNumber: 10,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -4761,7 +4761,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bra-player-11",
     teamId: "team-bra",
-    name: "Raphinha",
+    name: "拉菲尼亚",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -4779,7 +4779,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bra-player-12",
     teamId: "team-bra",
-    name: "Weverton",
+    name: "韦弗顿",
     shirtNumber: 12,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -4795,7 +4795,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bra-player-13",
     teamId: "team-bra",
-    name: "Danilo Luiz",
+    name: "达尼洛·路易斯",
     shirtNumber: 13,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -4813,7 +4813,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bra-player-14",
     teamId: "team-bra",
-    name: "Bremer",
+    name: "布尔埃梅尔",
     shirtNumber: 14,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -4831,7 +4831,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bra-player-15",
     teamId: "team-bra",
-    name: "Léo Pereira",
+    name: "莱奥·佩雷拉",
     shirtNumber: 15,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -4849,7 +4849,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bra-player-16",
     teamId: "team-bra",
-    name: "Douglas Santos",
+    name: "道格拉斯·桑托斯",
     shirtNumber: 16,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -4867,7 +4867,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bra-player-17",
     teamId: "team-bra",
-    name: "Fabinho",
+    name: "法比尼奥",
     shirtNumber: 17,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -4886,7 +4886,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bra-player-18",
     teamId: "team-bra",
-    name: "Danilo Santos",
+    name: "达尼洛·桑托斯",
     shirtNumber: 18,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -4905,7 +4905,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bra-player-19",
     teamId: "team-bra",
-    name: "Endrick",
+    name: "恩德里克",
     shirtNumber: 19,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -4923,7 +4923,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bra-player-20",
     teamId: "team-bra",
-    name: "Lucas Paquetá",
+    name: "卢卡斯·帕奎塔",
     shirtNumber: 20,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -4942,7 +4942,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bra-player-21",
     teamId: "team-bra",
-    name: "Luiz Henrique",
+    name: "路易斯·恩里克",
     shirtNumber: 21,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -4960,7 +4960,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bra-player-22",
     teamId: "team-bra",
-    name: "Gabriel Martinelli",
+    name: "加布里埃尔·马丁内利",
     shirtNumber: 22,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -4978,7 +4978,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bra-player-23",
     teamId: "team-bra",
-    name: "Ederson Moraes",
+    name: "埃德尔森·莫尔阿斯",
     shirtNumber: 23,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -4994,7 +4994,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bra-player-24",
     teamId: "team-bra",
-    name: "Roger Ibañez",
+    name: "罗热·伊巴涅斯",
     shirtNumber: 24,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -5012,7 +5012,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bra-player-25",
     teamId: "team-bra",
-    name: "Igor Thiago",
+    name: "伊戈尔·蒂亚戈",
     shirtNumber: 25,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -5030,7 +5030,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bra-player-26",
     teamId: "team-bra",
-    name: "Rayan",
+    name: "拉扬",
     shirtNumber: 26,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -5048,7 +5048,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-hai-player-1",
     teamId: "team-hai",
-    name: "Johny Placide",
+    name: "贾奥恩伊·普勒阿西德",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -5064,7 +5064,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-hai-player-2",
     teamId: "team-hai",
-    name: "Carlens Arcus",
+    name: "克尔勒埃恩斯·阿尔克乌斯",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -5082,7 +5082,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-hai-player-3",
     teamId: "team-hai",
-    name: "Keeto Thermoncy",
+    name: "克伊托·特埃尔姆奥恩克伊",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -5100,7 +5100,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-hai-player-4",
     teamId: "team-hai",
-    name: "Ricardo Adé",
+    name: "里卡多·阿德",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -5118,7 +5118,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-hai-player-5",
     teamId: "team-hai",
-    name: "Hannes Delcroix",
+    name: "哈阿恩内斯·德埃尔克罗瓦希",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -5136,7 +5136,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-hai-player-6",
     teamId: "team-hai",
-    name: "Carl Sainté",
+    name: "克尔勒·斯艾恩特",
     shirtNumber: 6,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -5155,7 +5155,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-hai-player-7",
     teamId: "team-hai",
-    name: "Derrick Etienne Jr.",
+    name: "德埃尔尔伊克克·埃特伊恩内·贾",
     shirtNumber: 7,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -5173,7 +5173,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-hai-player-8",
     teamId: "team-hai",
-    name: "Martin Expérience",
+    name: "马丁·埃克斯佩尔伊恩塞",
     shirtNumber: 8,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -5191,7 +5191,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-hai-player-9",
     teamId: "team-hai",
-    name: "Duckens Nazon",
+    name: "德乌克克埃恩斯·纳佐恩",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -5209,7 +5209,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-hai-player-10",
     teamId: "team-hai",
-    name: "Jean-Ricner Bellegarde",
+    name: "让·尔伊克内尔·布埃尔莱格尔德",
     shirtNumber: 10,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -5228,7 +5228,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-hai-player-11",
     teamId: "team-hai",
-    name: "Louicius Deedson",
+    name: "勒维克伊斯·德伊德森",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -5246,7 +5246,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-hai-player-12",
     teamId: "team-hai",
-    name: "Alexandre Pierre",
+    name: "阿莱希阿恩德拉埃·皮埃尔",
     shirtNumber: 12,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -5262,7 +5262,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-hai-player-13",
     teamId: "team-hai",
-    name: "Duke Lacroix",
+    name: "杜凯·拉克鲁瓦",
     shirtNumber: 13,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -5280,7 +5280,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-hai-player-14",
     teamId: "team-hai",
-    name: "Garven Metusala",
+    name: "格尔韦恩·梅图萨拉",
     shirtNumber: 14,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -5298,7 +5298,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-hai-player-15",
     teamId: "team-hai",
-    name: "Ruben Providence",
+    name: "鲁本·普罗奥维德埃恩塞",
     shirtNumber: 15,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -5316,7 +5316,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-hai-player-16",
     teamId: "team-hai",
-    name: "Lenny Joseph",
+    name: "勒埃恩恩伊·约瑟夫",
     shirtNumber: 16,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -5334,7 +5334,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-hai-player-17",
     teamId: "team-hai",
-    name: "Danley Jean Jacques",
+    name: "德恩勒埃·让·贾阿克克埃斯",
     shirtNumber: 17,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -5353,7 +5353,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-hai-player-18",
     teamId: "team-hai",
-    name: "Wilson Isidor",
+    name: "维勒森·伊西多尔",
     shirtNumber: 18,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -5371,7 +5371,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-hai-player-19",
     teamId: "team-hai",
-    name: "Yassin Fortuné",
+    name: "亚斯西恩·夫奥尔图内",
     shirtNumber: 19,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -5389,7 +5389,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-hai-player-20",
     teamId: "team-hai",
-    name: "Frantzdy Pierrot",
+    name: "弗朗阿恩特伊·普伊尔罗特",
     shirtNumber: 20,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -5407,7 +5407,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-hai-player-21",
     teamId: "team-hai",
-    name: "Josué Casimir",
+    name: "霍苏埃·卡西米尔",
     shirtNumber: 21,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -5425,7 +5425,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-hai-player-22",
     teamId: "team-hai",
-    name: "Jean-Kévin Duverne",
+    name: "让·凯文·杜夫埃尔内",
     shirtNumber: 22,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -5443,7 +5443,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-hai-player-23",
     teamId: "team-hai",
-    name: "Josué Duverger",
+    name: "霍苏埃·杜夫埃尔格尔",
     shirtNumber: 23,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -5459,7 +5459,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-hai-player-24",
     teamId: "team-hai",
-    name: "Wilguens Paugain",
+    name: "瓦伊尔格埃恩斯·普奥格艾恩",
     shirtNumber: 24,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -5477,7 +5477,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-hai-player-25",
     teamId: "team-hai",
-    name: "Dominique Simon",
+    name: "多米尼克埃·西蒙",
     shirtNumber: 25,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -5496,7 +5496,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-hai-player-26",
     teamId: "team-hai",
-    name: "Woodensky Pierre",
+    name: "瓦乌德恩斯基·皮埃尔",
     shirtNumber: 26,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -5515,7 +5515,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mar-player-1",
     teamId: "team-mar",
-    name: "Yassine Bounou",
+    name: "亚辛·布努",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -5531,7 +5531,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mar-player-2",
     teamId: "team-mar",
-    name: "Achraf Hakimi",
+    name: "阿什拉夫·哈基米",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -5549,7 +5549,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mar-player-3",
     teamId: "team-mar",
-    name: "Noussair Mazraoui",
+    name: "努赛尔·马兹拉维",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -5567,7 +5567,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mar-player-4",
     teamId: "team-mar",
-    name: "Sofyan Amrabat",
+    name: "索菲扬·阿姆拉巴特",
     shirtNumber: 4,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -5586,7 +5586,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mar-player-5",
     teamId: "team-mar",
-    name: "Marwane Saâdane",
+    name: "姆尔瓦内·斯达内",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -5604,7 +5604,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mar-player-6",
     teamId: "team-mar",
-    name: "Ayyoub Bouaddi",
+    name: "阿布·布乌德迪",
     shirtNumber: 6,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -5623,7 +5623,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mar-player-7",
     teamId: "team-mar",
-    name: "Chemsdine Talbi",
+    name: "克埃姆斯伊内·塔勒比",
     shirtNumber: 7,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -5642,7 +5642,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mar-player-8",
     teamId: "team-mar",
-    name: "Azzedine Ounahi",
+    name: "阿泽丁·欧纳希",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -5661,7 +5661,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mar-player-9",
     teamId: "team-mar",
-    name: "Soufiane Rahimi",
+    name: "斯乌夫亚内·拉希米",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -5679,7 +5679,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mar-player-10",
     teamId: "team-mar",
-    name: "Brahim Díaz",
+    name: "布尔阿希姆·迪亚斯",
     shirtNumber: 10,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -5697,7 +5697,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mar-player-11",
     teamId: "team-mar",
-    name: "Ismael Saibari",
+    name: "伊斯梅尔·斯艾布里",
     shirtNumber: 11,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -5716,7 +5716,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mar-player-12",
     teamId: "team-mar",
-    name: "Munir Mohamedi",
+    name: "穆尼尔·莫哈梅迪",
     shirtNumber: 12,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -5732,7 +5732,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mar-player-13",
     teamId: "team-mar",
-    name: "Zakaria El Ouahdi",
+    name: "扎卡里亚·埃尔乌迪",
     shirtNumber: 13,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -5750,7 +5750,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mar-player-14",
     teamId: "team-mar",
-    name: "Issa Diop",
+    name: "伊萨·德约普",
     shirtNumber: 14,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -5768,7 +5768,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mar-player-15",
     teamId: "team-mar",
-    name: "Samir El Mourabet",
+    name: "萨米尔·埃尔姆乌拉贝特",
     shirtNumber: 15,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -5787,7 +5787,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mar-player-16",
     teamId: "team-mar",
-    name: "Gessime Yassine",
+    name: "格埃斯西梅·亚辛",
     shirtNumber: 16,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -5806,7 +5806,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mar-player-17",
     teamId: "team-mar",
-    name: "Amine Sbaï",
+    name: "阿明·斯艾",
     shirtNumber: 17,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -5824,7 +5824,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mar-player-18",
     teamId: "team-mar",
-    name: "Chadi Riad",
+    name: "克迪·尔亚德",
     shirtNumber: 18,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -5842,7 +5842,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mar-player-19",
     teamId: "team-mar",
-    name: "Youssef Belammari",
+    name: "优素福·贝勒姆马里",
     shirtNumber: 19,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -5860,7 +5860,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mar-player-20",
     teamId: "team-mar",
-    name: "Ayoub El Kaabi",
+    name: "阿布·埃尔克布伊",
     shirtNumber: 20,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -5878,7 +5878,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mar-player-21",
     teamId: "team-mar",
-    name: "Ayoube Amaimouni",
+    name: "阿贝·阿姆艾姆乌尼",
     shirtNumber: 21,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -5896,7 +5896,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mar-player-22",
     teamId: "team-mar",
-    name: "Ahmed Reda Tagnaouti",
+    name: "艾哈迈德·雷达·特格恩奥蒂",
     shirtNumber: 22,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -5912,7 +5912,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mar-player-23",
     teamId: "team-mar",
-    name: "Bilal El Khannouss",
+    name: "布伊拉勒·埃尔克恩恩乌斯斯",
     shirtNumber: 23,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -5931,7 +5931,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mar-player-24",
     teamId: "team-mar",
-    name: "Neil El Aynaoui",
+    name: "恩伊勒·埃尔艾恩阿",
     shirtNumber: 24,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -5950,7 +5950,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mar-player-25",
     teamId: "team-mar",
-    name: "Redouane Halhal",
+    name: "雷德乌内·哈阿尔哈勒",
     shirtNumber: 25,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -5968,7 +5968,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-mar-player-26",
     teamId: "team-mar",
-    name: "Anass Salah-Eddine",
+    name: "阿恩阿斯斯·萨拉赫·埃德迪内",
     shirtNumber: 26,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -5986,7 +5986,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sco-player-1",
     teamId: "team-sco",
-    name: "Angus Gunn",
+    name: "阿恩格乌斯·格乌恩恩",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -6002,7 +6002,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sco-player-2",
     teamId: "team-sco",
-    name: "Aaron Hickey",
+    name: "阿罗恩·哈伊克克埃",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -6020,7 +6020,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sco-player-3",
     teamId: "team-sco",
-    name: "Andy Robertson",
+    name: "阿恩德伊·罗布埃尔特森",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -6038,7 +6038,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sco-player-4",
     teamId: "team-sco",
-    name: "Scott McTominay",
+    name: "斯科特·姆奥米恩艾",
     shirtNumber: 4,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -6057,7 +6057,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sco-player-5",
     teamId: "team-sco",
-    name: "Grant Hanley",
+    name: "格拉阿恩特·哈阿恩勒埃",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -6075,7 +6075,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sco-player-6",
     teamId: "team-sco",
-    name: "Kieran Tierney",
+    name: "克伊拉恩·特伊尔恩埃",
     shirtNumber: 6,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -6093,7 +6093,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sco-player-7",
     teamId: "team-sco",
-    name: "John McGinn",
+    name: "约翰·姆伊恩恩",
     shirtNumber: 7,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -6112,7 +6112,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sco-player-8",
     teamId: "team-sco",
-    name: "Tyler Fletcher",
+    name: "特伊莱尔·弗勒埃特克埃尔",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -6131,7 +6131,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sco-player-9",
     teamId: "team-sco",
-    name: "Lyndon Dykes",
+    name: "勒伊恩多恩·德伊凯斯",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -6149,7 +6149,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sco-player-10",
     teamId: "team-sco",
-    name: "Ché Adams",
+    name: "克埃·亚当斯",
     shirtNumber: 10,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -6167,7 +6167,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sco-player-11",
     teamId: "team-sco",
-    name: "Ryan Christie",
+    name: "尔亚恩·克伊斯特伊",
     shirtNumber: 11,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -6186,7 +6186,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sco-player-12",
     teamId: "team-sco",
-    name: "Liam Kelly",
+    name: "利亚姆·克埃尔勒伊",
     shirtNumber: 12,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -6202,7 +6202,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sco-player-13",
     teamId: "team-sco",
-    name: "Jack Hendry",
+    name: "贾阿克克·哈埃恩德拉伊",
     shirtNumber: 13,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -6220,7 +6220,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sco-player-14",
     teamId: "team-sco",
-    name: "Ross Stewart",
+    name: "尔奥斯斯·斯特埃瓦尔特",
     shirtNumber: 14,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -6238,7 +6238,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sco-player-15",
     teamId: "team-sco",
-    name: "John Souttar",
+    name: "约翰·苏塔尔",
     shirtNumber: 15,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -6256,7 +6256,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sco-player-16",
     teamId: "team-sco",
-    name: "Dominic Hyam",
+    name: "多米恩奇·哈亚姆",
     shirtNumber: 16,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -6274,7 +6274,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sco-player-17",
     teamId: "team-sco",
-    name: "Ben Gannon-Doak",
+    name: "本格恩诺恩·德奥克",
     shirtNumber: 17,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -6292,7 +6292,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sco-player-18",
     teamId: "team-sco",
-    name: "George Hirst",
+    name: "格埃尔格·哈伊尔斯特",
     shirtNumber: 18,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -6310,7 +6310,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sco-player-19",
     teamId: "team-sco",
-    name: "Lewis Ferguson",
+    name: "莱维斯·夫埃尔格乌森",
     shirtNumber: 19,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -6329,7 +6329,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sco-player-20",
     teamId: "team-sco",
-    name: "Lawrence Shankland",
+    name: "劳伦斯·希阿恩克勒阿恩德",
     shirtNumber: 20,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -6347,7 +6347,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sco-player-21",
     teamId: "team-sco",
-    name: "Craig Gordon",
+    name: "克罗艾格·戈登",
     shirtNumber: 21,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -6363,7 +6363,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sco-player-22",
     teamId: "team-sco",
-    name: "Nathan Patterson",
+    name: "内森·普特特尔森",
     shirtNumber: 22,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -6381,7 +6381,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sco-player-23",
     teamId: "team-sco",
-    name: "Kenny McLean",
+    name: "克埃恩恩伊·姆亚恩",
     shirtNumber: 23,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -6400,7 +6400,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sco-player-24",
     teamId: "team-sco",
-    name: "Anthony Ralston",
+    name: "安东尼·尔阿尔斯特奥恩",
     shirtNumber: 24,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -6418,7 +6418,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sco-player-25",
     teamId: "team-sco",
-    name: "Findlay Curtis",
+    name: "夫伊恩德艾·克乌尔蒂斯",
     shirtNumber: 25,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -6436,7 +6436,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sco-player-26",
     teamId: "team-sco",
-    name: "Scott McKenna",
+    name: "斯科特·姆埃恩纳",
     shirtNumber: 26,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -6454,7 +6454,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aus-player-1",
     teamId: "team-aus",
-    name: "Mathew Ryan",
+    name: "姆特赫瓦·尔亚恩",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -6470,7 +6470,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aus-player-2",
     teamId: "team-aus",
-    name: "Miloš Degenek",
+    name: "米洛斯·德格内克",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -6488,7 +6488,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aus-player-3",
     teamId: "team-aus",
-    name: "Alessandro Circati",
+    name: "亚历山德罗·克伊尔卡蒂",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -6506,7 +6506,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aus-player-4",
     teamId: "team-aus",
-    name: "Jacob Italiano",
+    name: "雅各布·伊塔勒亚诺",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -6524,7 +6524,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aus-player-5",
     teamId: "team-aus",
-    name: "Jordan Bos",
+    name: "乔丹·博斯",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -6542,7 +6542,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aus-player-6",
     teamId: "team-aus",
-    name: "Jason Geria",
+    name: "贾森·格尔亚",
     shirtNumber: 6,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -6560,7 +6560,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aus-player-7",
     teamId: "team-aus",
-    name: "Mathew Leckie",
+    name: "姆特赫瓦·勒埃克克伊",
     shirtNumber: 7,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -6578,7 +6578,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aus-player-8",
     teamId: "team-aus",
-    name: "Connor Metcalfe",
+    name: "克奥恩诺尔·姆埃特克尔费",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -6597,7 +6597,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aus-player-9",
     teamId: "team-aus",
-    name: "Mohamed Touré",
+    name: "穆罕默德·图雷",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -6615,7 +6615,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aus-player-10",
     teamId: "team-aus",
-    name: "Ajdin Hrustic",
+    name: "阿迪恩·哈乌斯特奇",
     shirtNumber: 10,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -6633,7 +6633,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aus-player-11",
     teamId: "team-aus",
-    name: "Awer Mabil",
+    name: "阿韦尔·马布伊勒",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -6651,7 +6651,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aus-player-12",
     teamId: "team-aus",
-    name: "Paul Izzo",
+    name: "保罗·伊兹佐",
     shirtNumber: 12,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -6667,7 +6667,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aus-player-13",
     teamId: "team-aus",
-    name: "Aiden O'Neill",
+    name: "艾德恩·奥恩伊尔勒",
     shirtNumber: 13,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -6686,7 +6686,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aus-player-14",
     teamId: "team-aus",
-    name: "Cammy Devlin",
+    name: "克姆姆伊·德埃利恩",
     shirtNumber: 14,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -6705,7 +6705,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aus-player-15",
     teamId: "team-aus",
-    name: "Kai Trewin",
+    name: "凯·特罗埃维恩",
     shirtNumber: 15,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -6723,7 +6723,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aus-player-16",
     teamId: "team-aus",
-    name: "Aziz Behich",
+    name: "阿齐兹·贝哈奇",
     shirtNumber: 16,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -6741,7 +6741,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aus-player-17",
     teamId: "team-aus",
-    name: "Nestory Irankunda",
+    name: "恩埃斯托尔伊·伊尔阿恩克乌恩达",
     shirtNumber: 17,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -6759,7 +6759,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aus-player-18",
     teamId: "team-aus",
-    name: "Patrick Beach",
+    name: "普特尔伊克克·布亚克哈",
     shirtNumber: 18,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -6775,7 +6775,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aus-player-19",
     teamId: "team-aus",
-    name: "Harry Souttar",
+    name: "哈里·苏塔尔",
     shirtNumber: 19,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -6793,7 +6793,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aus-player-20",
     teamId: "team-aus",
-    name: "Cristian Volpato",
+    name: "克里斯蒂安·夫奥尔帕托",
     shirtNumber: 20,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -6811,7 +6811,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aus-player-21",
     teamId: "team-aus",
-    name: "Cameron Burgess",
+    name: "卡梅罗恩·布乌尔格埃斯斯",
     shirtNumber: 21,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -6829,7 +6829,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aus-player-22",
     teamId: "team-aus",
-    name: "Jackson Irvine",
+    name: "杰克逊·伊尔维内",
     shirtNumber: 22,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -6848,7 +6848,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aus-player-23",
     teamId: "team-aus",
-    name: "Nishan Velupillay",
+    name: "恩伊斯哈恩·韦卢普伊尔勒艾",
     shirtNumber: 23,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -6866,7 +6866,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aus-player-24",
     teamId: "team-aus",
-    name: "Paul Okon-Engstler",
+    name: "保罗·奥科恩·埃恩格埃尔",
     shirtNumber: 24,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -6885,7 +6885,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aus-player-25",
     teamId: "team-aus",
-    name: "Lucas Herrington",
+    name: "卢卡斯·哈埃尔尔伊恩格奥恩",
     shirtNumber: 25,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -6903,7 +6903,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aus-player-26",
     teamId: "team-aus",
-    name: "Tete Yengi",
+    name: "特特·伊恩吉",
     shirtNumber: 26,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -6921,7 +6921,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-par-player-1",
     teamId: "team-par",
-    name: "Gatito Fernández",
+    name: "加蒂托·费尔南德斯",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -6937,7 +6937,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-par-player-2",
     teamId: "team-par",
-    name: "Gustavo Velázquez",
+    name: "古斯塔沃·韦勒兹克埃兹",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -6955,7 +6955,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-par-player-3",
     teamId: "team-par",
-    name: "Omar Alderete",
+    name: "奥马尔·阿尔德雷特",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -6973,7 +6973,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-par-player-4",
     teamId: "team-par",
-    name: "Juan José Cáceres",
+    name: "贾乌恩·何塞·卡塞雷斯",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -6991,7 +6991,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-par-player-5",
     teamId: "team-par",
-    name: "Fabián Balbuena",
+    name: "法比安·布尔布韦纳",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -7009,7 +7009,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-par-player-6",
     teamId: "team-par",
-    name: "Júnior Alonso",
+    name: "朱恩约尔·阿勒奥恩索",
     shirtNumber: 6,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -7027,7 +7027,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-par-player-7",
     teamId: "team-par",
-    name: "Ramón Sosa",
+    name: "拉莫恩·索萨",
     shirtNumber: 7,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -7046,7 +7046,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-par-player-8",
     teamId: "team-par",
-    name: "Diego Gómez",
+    name: "迭戈·戈麦斯",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -7065,7 +7065,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-par-player-9",
     teamId: "team-par",
-    name: "Antonio Sanabria",
+    name: "安东尼奥·萨纳夫里亚",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -7083,7 +7083,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-par-player-10",
     teamId: "team-par",
-    name: "Miguel Almirón",
+    name: "米格埃勒·阿尔米罗恩",
     shirtNumber: 10,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -7102,7 +7102,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-par-player-11",
     teamId: "team-par",
-    name: "Maurício",
+    name: "姆奥里克约",
     shirtNumber: 11,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -7121,7 +7121,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-par-player-12",
     teamId: "team-par",
-    name: "Orlando Gill",
+    name: "奥尔勒恩多·格伊尔勒",
     shirtNumber: 12,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -7137,7 +7137,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-par-player-13",
     teamId: "team-par",
-    name: "José Canale",
+    name: "何塞·卡纳莱",
     shirtNumber: 13,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -7155,7 +7155,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-par-player-14",
     teamId: "team-par",
-    name: "Andrés Cubas",
+    name: "安德烈斯·克乌布斯",
     shirtNumber: 14,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -7174,7 +7174,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-par-player-15",
     teamId: "team-par",
-    name: "Gustavo Gómez",
+    name: "古斯塔沃·戈麦斯",
     shirtNumber: 15,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -7192,7 +7192,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-par-player-16",
     teamId: "team-par",
-    name: "Damián Bobadilla",
+    name: "达姆亚恩·博布德伊尔拉",
     shirtNumber: 16,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -7211,7 +7211,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-par-player-17",
     teamId: "team-par",
-    name: "Kaku",
+    name: "卡库",
     shirtNumber: 17,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -7229,7 +7229,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-par-player-18",
     teamId: "team-par",
-    name: "Álex Arce",
+    name: "亚历克斯·阿尔塞",
     shirtNumber: 18,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -7247,7 +7247,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-par-player-19",
     teamId: "team-par",
-    name: "Julio Enciso",
+    name: "朱勒约·埃恩西索",
     shirtNumber: 19,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -7265,7 +7265,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-par-player-20",
     teamId: "team-par",
-    name: "Braian Ojeda",
+    name: "布尔阿恩·奥杰达",
     shirtNumber: 20,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -7284,7 +7284,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-par-player-21",
     teamId: "team-par",
-    name: "Gabriel Ávalos",
+    name: "格布尔伊勒·阿瓦洛斯",
     shirtNumber: 21,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -7302,7 +7302,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-par-player-22",
     teamId: "team-par",
-    name: "Gastón Olveira",
+    name: "格斯托恩·奥尔夫伊拉",
     shirtNumber: 22,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -7318,7 +7318,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-par-player-23",
     teamId: "team-par",
-    name: "Matías Galarza",
+    name: "马蒂亚斯·加勒尔扎",
     shirtNumber: 23,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -7337,7 +7337,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-par-player-24",
     teamId: "team-par",
-    name: "Gustavo Caballero",
+    name: "古斯塔沃·卡布尔莱罗",
     shirtNumber: 24,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -7356,7 +7356,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-par-player-25",
     teamId: "team-par",
-    name: "Isidro Pitta",
+    name: "伊斯伊德罗·普伊特塔",
     shirtNumber: 25,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -7374,7 +7374,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-par-player-26",
     teamId: "team-par",
-    name: "Alexandro Maidana",
+    name: "阿莱希阿恩德拉奥·姆艾达纳",
     shirtNumber: 26,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -7392,7 +7392,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tur-player-1",
     teamId: "team-tur",
-    name: "Mert Günok",
+    name: "梅尔特·格乌诺克",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -7408,7 +7408,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tur-player-2",
     teamId: "team-tur",
-    name: "Zeki Çelik",
+    name: "泽基·塞利克",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -7426,7 +7426,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tur-player-3",
     teamId: "team-tur",
-    name: "Merih Demiral",
+    name: "梅里哈·德米拉勒",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -7444,7 +7444,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tur-player-4",
     teamId: "team-tur",
-    name: "Çağlar Söyüncü",
+    name: "克格拉尔·斯奥恩克乌",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -7462,7 +7462,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tur-player-5",
     teamId: "team-tur",
-    name: "Salih Özcan",
+    name: "萨利哈·奥兹卡恩",
     shirtNumber: 5,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -7481,7 +7481,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tur-player-6",
     teamId: "team-tur",
-    name: "Orkun Kökçü",
+    name: "奥尔库恩·克奥克克乌",
     shirtNumber: 6,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -7500,7 +7500,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tur-player-7",
     teamId: "team-tur",
-    name: "Kerem Aktürkoğlu",
+    name: "凯雷姆·阿克特乌尔克奥格卢",
     shirtNumber: 7,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -7518,7 +7518,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tur-player-8",
     teamId: "team-tur",
-    name: "Arda Güler",
+    name: "阿尔达·格乌莱尔",
     shirtNumber: 8,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -7536,7 +7536,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tur-player-9",
     teamId: "team-tur",
-    name: "Deniz Gül",
+    name: "德尼兹·格乌勒",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -7554,7 +7554,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tur-player-10",
     teamId: "team-tur",
-    name: "Hakan Çalhanoğlu",
+    name: "哈卡恩·克尔哈恩奥格卢",
     shirtNumber: 10,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -7573,7 +7573,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tur-player-11",
     teamId: "team-tur",
-    name: "Kenan Yıldız",
+    name: "凯纳恩·伊·勒·兹",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -7591,7 +7591,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tur-player-12",
     teamId: "team-tur",
-    name: "Altay Bayındır",
+    name: "阿尔特艾·布艾·恩·尔",
     shirtNumber: 12,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -7607,7 +7607,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tur-player-13",
     teamId: "team-tur",
-    name: "Eren Elmalı",
+    name: "埃雷恩·埃尔马勒",
     shirtNumber: 13,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -7625,7 +7625,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tur-player-14",
     teamId: "team-tur",
-    name: "Abdülkerim Bardakcı",
+    name: "阿布德乌尔凯里姆·布尔德克克",
     shirtNumber: 14,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -7643,7 +7643,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tur-player-15",
     teamId: "team-tur",
-    name: "Ozan Kabak",
+    name: "奥扎恩·卡布克",
     shirtNumber: 15,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -7661,7 +7661,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tur-player-16",
     teamId: "team-tur",
-    name: "İsmail Yüksek",
+    name: "伊斯姆艾勒·伊克塞克",
     shirtNumber: 16,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -7680,7 +7680,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tur-player-17",
     teamId: "team-tur",
-    name: "İrfan Can Kahveci",
+    name: "伊尔法恩·詹·克韦西",
     shirtNumber: 17,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -7698,7 +7698,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tur-player-18",
     teamId: "team-tur",
-    name: "Mert Müldür",
+    name: "梅尔特·姆乌尔杜尔",
     shirtNumber: 18,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -7716,7 +7716,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tur-player-19",
     teamId: "team-tur",
-    name: "Yunus Akgün",
+    name: "尤努斯·阿克格乌恩",
     shirtNumber: 19,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -7734,7 +7734,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tur-player-20",
     teamId: "team-tur",
-    name: "Ferdi Kadıoğlu",
+    name: "夫埃尔迪·卡德·奥格卢",
     shirtNumber: 20,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -7752,7 +7752,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tur-player-21",
     teamId: "team-tur",
-    name: "Barış Alper Yılmaz",
+    name: "布尔·斯·阿尔佩尔·伊·勒兹",
     shirtNumber: 21,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -7770,7 +7770,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tur-player-22",
     teamId: "team-tur",
-    name: "Kaan Ayhan",
+    name: "克恩·艾哈恩",
     shirtNumber: 22,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -7789,7 +7789,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tur-player-23",
     teamId: "team-tur",
-    name: "Uğurcan Çakır",
+    name: "乌格乌尔卡恩·卡克·尔",
     shirtNumber: 23,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -7805,7 +7805,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tur-player-24",
     teamId: "team-tur",
-    name: "Oğuz Aydın",
+    name: "奥格乌兹·艾德·恩",
     shirtNumber: 24,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -7823,7 +7823,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tur-player-25",
     teamId: "team-tur",
-    name: "Samet Akaydin",
+    name: "萨梅特·阿克艾迪恩",
     shirtNumber: 25,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -7841,7 +7841,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tur-player-26",
     teamId: "team-tur",
-    name: "Can Uzun",
+    name: "詹·乌祖恩",
     shirtNumber: 26,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -7859,7 +7859,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-usa-sample-player-1",
     teamId: "team-usa-sample",
-    name: "Matt Turner",
+    name: "马特·特纳",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -7875,7 +7875,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-usa-sample-player-2",
     teamId: "team-usa-sample",
-    name: "Sergiño Dest",
+    name: "塞尔吉尼奥·德斯特",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -7893,7 +7893,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-usa-sample-player-3",
     teamId: "team-usa-sample",
-    name: "Chris Richards",
+    name: "克里斯·尔伊克哈阿尔德",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -7911,7 +7911,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-usa-sample-player-4",
     teamId: "team-usa-sample",
-    name: "Tyler Adams",
+    name: "泰勒·亚当斯",
     shirtNumber: 4,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -7930,7 +7930,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-usa-sample-player-5",
     teamId: "team-usa-sample",
-    name: "Antonee Robinson",
+    name: "阿恩托恩伊·罗宾逊",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -7948,7 +7948,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-usa-sample-player-6",
     teamId: "team-usa-sample",
-    name: "Auston Trusty",
+    name: "奥斯托恩·特罗乌斯特伊",
     shirtNumber: 6,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -7966,7 +7966,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-usa-sample-player-7",
     teamId: "team-usa-sample",
-    name: "Giovanni Reyna",
+    name: "格约夫阿恩尼·尔埃纳",
     shirtNumber: 7,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -7985,7 +7985,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-usa-sample-player-8",
     teamId: "team-usa-sample",
-    name: "Weston McKennie",
+    name: "韦斯顿·麦肯尼",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -8004,7 +8004,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-usa-sample-player-9",
     teamId: "team-usa-sample",
-    name: "Ricardo Pepi",
+    name: "里卡多·佩皮",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -8022,7 +8022,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-usa-sample-player-10",
     teamId: "team-usa-sample",
-    name: "Christian Pulisic",
+    name: "克里斯蒂安·普利希奇",
     shirtNumber: 10,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -8040,7 +8040,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-usa-sample-player-11",
     teamId: "team-usa-sample",
-    name: "Brenden Aaronson",
+    name: "布尔埃恩德恩·阿罗恩森",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -8058,7 +8058,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-usa-sample-player-12",
     teamId: "team-usa-sample",
-    name: "Miles Robinson",
+    name: "米莱斯·罗宾逊",
     shirtNumber: 12,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -8076,7 +8076,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-usa-sample-player-13",
     teamId: "team-usa-sample",
-    name: "Tim Ream",
+    name: "蒂姆·尔亚姆",
     shirtNumber: 13,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -8094,7 +8094,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-usa-sample-player-14",
     teamId: "team-usa-sample",
-    name: "Sebastian Berhalter",
+    name: "塞布斯特亚恩·布埃尔哈阿尔特尔",
     shirtNumber: 14,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -8113,7 +8113,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-usa-sample-player-15",
     teamId: "team-usa-sample",
-    name: "Cristian Roldan",
+    name: "克里斯蒂安·尔奥尔达恩",
     shirtNumber: 15,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -8132,7 +8132,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-usa-sample-player-16",
     teamId: "team-usa-sample",
-    name: "Alex Freeman",
+    name: "亚历克斯·弗朗伊马恩",
     shirtNumber: 16,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -8150,7 +8150,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-usa-sample-player-17",
     teamId: "team-usa-sample",
-    name: "Malik Tillman",
+    name: "马利克·特伊尔勒恩",
     shirtNumber: 17,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -8169,7 +8169,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-usa-sample-player-18",
     teamId: "team-usa-sample",
-    name: "Max Arfsten",
+    name: "马希·阿尔夫埃恩",
     shirtNumber: 18,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -8187,7 +8187,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-usa-sample-player-19",
     teamId: "team-usa-sample",
-    name: "Haji Wright",
+    name: "哈吉·尔伊格哈",
     shirtNumber: 19,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -8205,7 +8205,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-usa-sample-player-20",
     teamId: "team-usa-sample",
-    name: "Folarin Balogun",
+    name: "弗拉林·巴洛贡",
     shirtNumber: 20,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -8223,7 +8223,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-usa-sample-player-21",
     teamId: "team-usa-sample",
-    name: "Timothy Weah",
+    name: "蒂莫西·瓦亚哈",
     shirtNumber: 21,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -8241,7 +8241,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-usa-sample-player-22",
     teamId: "team-usa-sample",
-    name: "Mark McKenzie",
+    name: "马克·姆埃恩兹伊",
     shirtNumber: 22,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -8259,7 +8259,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-usa-sample-player-23",
     teamId: "team-usa-sample",
-    name: "Joe Scally",
+    name: "贾奥·斯尔勒伊",
     shirtNumber: 23,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -8277,7 +8277,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-usa-sample-player-24",
     teamId: "team-usa-sample",
-    name: "Matt Freese",
+    name: "马特·弗朗伊塞",
     shirtNumber: 24,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -8293,7 +8293,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-usa-sample-player-25",
     teamId: "team-usa-sample",
-    name: "Chris Brady",
+    name: "克里斯·布尔阿德伊",
     shirtNumber: 25,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -8309,7 +8309,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-usa-sample-player-26",
     teamId: "team-usa-sample",
-    name: "Alejandro Zendejas",
+    name: "阿莱贾阿恩德拉奥·兹埃恩德贾斯",
     shirtNumber: 26,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -8327,7 +8327,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cuw-player-1",
     teamId: "team-cuw",
-    name: "Eloy Room",
+    name: "埃勒瓦·尔乌姆",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -8343,7 +8343,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cuw-player-2",
     teamId: "team-cuw",
-    name: "Shurandy Sambo",
+    name: "希乌尔阿恩德伊·斯姆博",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -8361,7 +8361,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cuw-player-3",
     teamId: "team-cuw",
-    name: "Juriën Gaari",
+    name: "朱尔伊恩·格里",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -8379,7 +8379,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cuw-player-4",
     teamId: "team-cuw",
-    name: "Roshon van Eijma",
+    name: "尔奥斯霍恩·范伊马",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -8397,7 +8397,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cuw-player-5",
     teamId: "team-cuw",
-    name: "Sherel Floranus",
+    name: "希埃雷勒·弗勒奥拉努斯",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -8415,7 +8415,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cuw-player-6",
     teamId: "team-cuw",
-    name: "Godfried Roemeratoe",
+    name: "格奥德弗朗伊德·尔奥梅拉特奥",
     shirtNumber: 6,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -8434,7 +8434,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cuw-player-7",
     teamId: "team-cuw",
-    name: "Juninho Bacuna",
+    name: "朱恩伊恩霍·巴库纳",
     shirtNumber: 7,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -8453,7 +8453,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cuw-player-8",
     teamId: "team-cuw",
-    name: "Livano Comenencia",
+    name: "利瓦诺·科梅恩埃恩克亚",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -8472,7 +8472,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cuw-player-9",
     teamId: "team-cuw",
-    name: "Jürgen Locadia",
+    name: "贾乌尔格恩·洛卡德亚",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -8490,7 +8490,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cuw-player-10",
     teamId: "team-cuw",
-    name: "Leandro Bacuna",
+    name: "莱安德罗·巴库纳",
     shirtNumber: 10,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -8509,7 +8509,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cuw-player-11",
     teamId: "team-cuw",
-    name: "Jeremy Antonisse",
+    name: "杰里米·阿恩托恩伊斯塞",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -8527,7 +8527,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cuw-player-12",
     teamId: "team-cuw",
-    name: "Sontje Hansen",
+    name: "斯奥恩特埃·哈恩森",
     shirtNumber: 12,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -8545,7 +8545,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cuw-player-13",
     teamId: "team-cuw",
-    name: "Tyrese Noslin",
+    name: "特伊雷塞·恩奥斯利恩",
     shirtNumber: 13,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -8563,7 +8563,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cuw-player-14",
     teamId: "team-cuw",
-    name: "Kenji Gorré",
+    name: "克埃恩吉·格奥尔雷",
     shirtNumber: 14,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -8581,7 +8581,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cuw-player-15",
     teamId: "team-cuw",
-    name: "Ar'jany Martha",
+    name: "阿尔·贾恩伊·姆尔特",
     shirtNumber: 15,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -8600,7 +8600,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cuw-player-16",
     teamId: "team-cuw",
-    name: "Jearl Margaritha",
+    name: "贾亚尔勒·姆尔加尔伊特哈",
     shirtNumber: 16,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -8618,7 +8618,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cuw-player-17",
     teamId: "team-cuw",
-    name: "Brandley Kuwas",
+    name: "布尔阿恩德埃·库瓦斯",
     shirtNumber: 17,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -8636,7 +8636,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cuw-player-18",
     teamId: "team-cuw",
-    name: "Armando Obispo",
+    name: "阿尔姆恩多·奥布伊斯波",
     shirtNumber: 18,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -8654,7 +8654,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cuw-player-19",
     teamId: "team-cuw",
-    name: "Gervane Kastaneer",
+    name: "格埃尔瓦内·克斯塔恩伊尔",
     shirtNumber: 19,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -8672,7 +8672,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cuw-player-20",
     teamId: "team-cuw",
-    name: "Joshua Brenet",
+    name: "约书亚·布尔埃内特",
     shirtNumber: 20,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -8690,7 +8690,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cuw-player-21",
     teamId: "team-cuw",
-    name: "Tahith Chong",
+    name: "塔哈伊特哈·克奥恩格",
     shirtNumber: 21,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -8709,7 +8709,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cuw-player-22",
     teamId: "team-cuw",
-    name: "Kevin Felida",
+    name: "凯文·费利达",
     shirtNumber: 22,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -8728,7 +8728,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cuw-player-23",
     teamId: "team-cuw",
-    name: "Riechedly Bazoer",
+    name: "尔伊克哈埃德勒伊·布兹奥尔",
     shirtNumber: 23,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -8746,7 +8746,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cuw-player-24",
     teamId: "team-cuw",
-    name: "Deveron Fonville",
+    name: "德韦罗恩·夫奥恩夫伊尔莱",
     shirtNumber: 24,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -8764,7 +8764,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cuw-player-25",
     teamId: "team-cuw",
-    name: "Tyrick Bodak",
+    name: "特伊尔伊克克·博达克",
     shirtNumber: 25,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -8780,7 +8780,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cuw-player-26",
     teamId: "team-cuw",
-    name: "Trevor Doornbusch",
+    name: "特罗埃沃尔·德乌尔恩乌斯克",
     shirtNumber: 26,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -8796,7 +8796,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ecu-player-1",
     teamId: "team-ecu",
-    name: "Hernán Galíndez",
+    name: "哈埃尔纳恩·加勒伊恩德兹",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -8812,7 +8812,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ecu-player-2",
     teamId: "team-ecu",
-    name: "Félix Torres",
+    name: "菲利克斯·托雷斯",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -8830,7 +8830,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ecu-player-3",
     teamId: "team-ecu",
-    name: "Piero Hincapié",
+    name: "皮耶罗·因卡皮耶",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -8848,7 +8848,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ecu-player-4",
     teamId: "team-ecu",
-    name: "Joel Ordóñez",
+    name: "贾奥勒·奥尔多内兹",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -8866,7 +8866,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ecu-player-5",
     teamId: "team-ecu",
-    name: "Jordy Alcívar",
+    name: "贾奥尔德伊·阿尔西瓦尔",
     shirtNumber: 5,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -8885,7 +8885,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ecu-player-6",
     teamId: "team-ecu",
-    name: "Willian Pacho",
+    name: "瓦伊尔勒亚恩·普克霍",
     shirtNumber: 6,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -8903,7 +8903,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ecu-player-7",
     teamId: "team-ecu",
-    name: "Pervis Estupiñán",
+    name: "佩尔维斯·埃斯图皮尼安",
     shirtNumber: 7,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -8921,7 +8921,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ecu-player-8",
     teamId: "team-ecu",
-    name: "Anthony Valencia",
+    name: "安东尼·瓦伦西亚",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -8940,7 +8940,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ecu-player-9",
     teamId: "team-ecu",
-    name: "John Yeboah",
+    name: "约翰·耶布奥哈",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -8958,7 +8958,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ecu-player-10",
     teamId: "team-ecu",
-    name: "Kendry Páez",
+    name: "肯德里·帕埃斯",
     shirtNumber: 10,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -8977,7 +8977,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ecu-player-11",
     teamId: "team-ecu",
-    name: "Kevin Rodríguez",
+    name: "凯文·罗德里格斯",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -8995,7 +8995,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ecu-player-12",
     teamId: "team-ecu",
-    name: "Moisés Ramírez",
+    name: "莫伊塞斯·拉米雷兹",
     shirtNumber: 12,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -9011,7 +9011,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ecu-player-13",
     teamId: "team-ecu",
-    name: "Enner Valencia",
+    name: "恩纳·瓦伦西亚",
     shirtNumber: 13,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -9029,7 +9029,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ecu-player-14",
     teamId: "team-ecu",
-    name: "Alan Minda",
+    name: "阿兰·姆伊恩达",
     shirtNumber: 14,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -9048,7 +9048,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ecu-player-15",
     teamId: "team-ecu",
-    name: "Pedro Vite",
+    name: "佩德罗·维特",
     shirtNumber: 15,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -9067,7 +9067,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ecu-player-16",
     teamId: "team-ecu",
-    name: "Jordy Caicedo",
+    name: "贾奥尔德伊·凯塞多",
     shirtNumber: 16,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -9085,7 +9085,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ecu-player-17",
     teamId: "team-ecu",
-    name: "Ángelo Preciado",
+    name: "阿恩格洛·普罗埃克亚多",
     shirtNumber: 17,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -9103,7 +9103,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ecu-player-18",
     teamId: "team-ecu",
-    name: "Denil Castillo",
+    name: "德尼勒·克斯特伊尔洛",
     shirtNumber: 18,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -9122,7 +9122,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ecu-player-19",
     teamId: "team-ecu",
-    name: "Gonzalo Plata",
+    name: "格奥恩扎洛·普勒阿塔",
     shirtNumber: 19,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -9140,7 +9140,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ecu-player-20",
     teamId: "team-ecu",
-    name: "Nilson Angulo",
+    name: "尼勒森·阿恩格乌洛",
     shirtNumber: 20,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -9158,7 +9158,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ecu-player-21",
     teamId: "team-ecu",
-    name: "Alan Franco",
+    name: "阿兰·弗朗阿恩科",
     shirtNumber: 21,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -9177,7 +9177,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ecu-player-22",
     teamId: "team-ecu",
-    name: "Gonzalo Valle",
+    name: "格奥恩扎洛·夫阿尔莱",
     shirtNumber: 22,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -9193,7 +9193,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ecu-player-23",
     teamId: "team-ecu",
-    name: "Moisés Caicedo",
+    name: "莫伊塞斯·凯塞多",
     shirtNumber: 23,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -9212,7 +9212,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ecu-player-24",
     teamId: "team-ecu",
-    name: "Jeremy Arévalo",
+    name: "杰里米·阿雷瓦洛",
     shirtNumber: 24,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -9230,7 +9230,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ecu-player-25",
     teamId: "team-ecu",
-    name: "Jackson Porozo",
+    name: "杰克逊·波罗佐",
     shirtNumber: 25,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -9248,7 +9248,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ecu-player-26",
     teamId: "team-ecu",
-    name: "Yaimar Medina",
+    name: "伊马尔·梅迪纳",
     shirtNumber: 26,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -9266,7 +9266,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ger-player-1",
     teamId: "team-ger",
-    name: "Manuel Neuer",
+    name: "曼努埃尔·恩埃尔",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -9282,7 +9282,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ger-player-2",
     teamId: "team-ger",
-    name: "Antonio Rüdiger",
+    name: "安东尼奥·鲁迪格尔",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -9300,7 +9300,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ger-player-3",
     teamId: "team-ger",
-    name: "Waldemar Anton",
+    name: "瓦尔德马尔·阿恩托恩",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -9318,7 +9318,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ger-player-4",
     teamId: "team-ger",
-    name: "Jonathan Tah",
+    name: "乔纳森·塔哈",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -9336,7 +9336,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ger-player-5",
     teamId: "team-ger",
-    name: "Aleksandar Pavlović",
+    name: "阿勒埃克斯恩达尔·普勒奥维奇",
     shirtNumber: 5,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -9355,7 +9355,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ger-player-6",
     teamId: "team-ger",
-    name: "Joshua Kimmich",
+    name: "约书亚·克伊姆姆奇",
     shirtNumber: 6,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -9373,7 +9373,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ger-player-7",
     teamId: "team-ger",
-    name: "Kai Havertz",
+    name: "凯·哈夫埃尔特",
     shirtNumber: 7,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -9391,7 +9391,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ger-player-8",
     teamId: "team-ger",
-    name: "Leon Goretzka",
+    name: "勒埃恩·戈尔埃特兹",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -9410,7 +9410,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ger-player-9",
     teamId: "team-ger",
-    name: "Jamie Leweling",
+    name: "贾姆伊·莱韦勒伊恩格",
     shirtNumber: 9,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -9429,7 +9429,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ger-player-10",
     teamId: "team-ger",
-    name: "Jamal Musiala",
+    name: "贾马尔·穆西亚拉",
     shirtNumber: 10,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -9448,7 +9448,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ger-player-11",
     teamId: "team-ger",
-    name: "Nick Woltemade",
+    name: "恩伊克克·瓦奥尔特马德",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -9466,7 +9466,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ger-player-12",
     teamId: "team-ger",
-    name: "Oliver Baumann",
+    name: "奥利韦尔·布奥姆恩恩",
     shirtNumber: 12,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -9482,7 +9482,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ger-player-13",
     teamId: "team-ger",
-    name: "Pascal Groß",
+    name: "普斯卡勒·格拉奥",
     shirtNumber: 13,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -9501,7 +9501,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ger-player-14",
     teamId: "team-ger",
-    name: "Maximilian Beier",
+    name: "马西米勒亚恩·布伊尔",
     shirtNumber: 14,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -9519,7 +9519,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ger-player-15",
     teamId: "team-ger",
-    name: "Nico Schlotterbeck",
+    name: "尼科·希奥特特埃尔布埃克克",
     shirtNumber: 15,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -9537,7 +9537,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ger-player-16",
     teamId: "team-ger",
-    name: "Angelo Stiller",
+    name: "阿恩格洛·斯特伊尔莱尔",
     shirtNumber: 16,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -9556,7 +9556,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ger-player-17",
     teamId: "team-ger",
-    name: "Florian Wirtz",
+    name: "弗洛里安·维尔茨",
     shirtNumber: 17,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -9575,7 +9575,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ger-player-18",
     teamId: "team-ger",
-    name: "Nathaniel Brown",
+    name: "恩阿特哈恩伊勒·布尔奥恩",
     shirtNumber: 18,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -9593,7 +9593,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ger-player-19",
     teamId: "team-ger",
-    name: "Leroy Sané",
+    name: "莱尔瓦·萨内",
     shirtNumber: 19,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -9612,7 +9612,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ger-player-20",
     teamId: "team-ger",
-    name: "Nadiem Amiri",
+    name: "纳德伊姆·阿米里",
     shirtNumber: 20,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -9631,7 +9631,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ger-player-21",
     teamId: "team-ger",
-    name: "Alexander Nübel",
+    name: "亚历山大·努贝勒",
     shirtNumber: 21,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -9647,7 +9647,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ger-player-22",
     teamId: "team-ger",
-    name: "David Raum",
+    name: "大卫·尔奥姆",
     shirtNumber: 22,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -9665,7 +9665,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ger-player-23",
     teamId: "team-ger",
-    name: "Felix Nmecha",
+    name: "菲利克斯·恩埃克哈",
     shirtNumber: 23,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -9684,7 +9684,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ger-player-24",
     teamId: "team-ger",
-    name: "Malick Thiaw",
+    name: "马利克·特亚瓦",
     shirtNumber: 24,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -9702,7 +9702,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ger-player-25",
     teamId: "team-ger",
-    name: "Assan Ouédraogo",
+    name: "阿斯萨恩·韦德尔奥戈",
     shirtNumber: 25,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -9721,7 +9721,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ger-player-26",
     teamId: "team-ger",
-    name: "Deniz Undav",
+    name: "德尼兹·乌恩达夫",
     shirtNumber: 26,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -9739,7 +9739,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-civ-player-1",
     teamId: "team-civ",
-    name: "Yahia Fofana",
+    name: "亚哈亚·福法纳",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -9755,7 +9755,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-civ-player-2",
     teamId: "team-civ",
-    name: "Ousmane Diomande",
+    name: "乌斯曼·迪奥曼德",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -9773,7 +9773,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-civ-player-3",
     teamId: "team-civ",
-    name: "Ghislain Konan",
+    name: "格伊斯勒艾恩·科纳恩",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -9791,7 +9791,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-civ-player-4",
     teamId: "team-civ",
-    name: "Jean Michaël Seri",
+    name: "让·迈克尔·塞里",
     shirtNumber: 4,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -9810,7 +9810,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-civ-player-5",
     teamId: "team-civ",
-    name: "Wilfried Singo",
+    name: "瓦伊尔弗朗伊德·斯伊恩戈",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -9828,7 +9828,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-civ-player-6",
     teamId: "team-civ",
-    name: "Seko Fofana",
+    name: "塞科·福法纳",
     shirtNumber: 6,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -9847,7 +9847,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-civ-player-7",
     teamId: "team-civ",
-    name: "Odilon Kossounou",
+    name: "奥迪洛恩·克奥斯斯乌恩乌",
     shirtNumber: 7,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -9865,7 +9865,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-civ-player-8",
     teamId: "team-civ",
-    name: "Franck Kessié",
+    name: "弗朗阿恩克·克埃斯斯伊",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -9884,7 +9884,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-civ-player-9",
     teamId: "team-civ",
-    name: "Ange-Yoan Bonny",
+    name: "阿恩格·约恩·布奥恩恩伊",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -9902,7 +9902,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-civ-player-10",
     teamId: "team-civ",
-    name: "Simon Adingra",
+    name: "西蒙·阿德伊恩格拉阿",
     shirtNumber: 10,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -9920,7 +9920,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-civ-player-11",
     teamId: "team-civ",
-    name: "Yan Diomande",
+    name: "扬·迪奥曼德",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -9938,7 +9938,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-civ-player-12",
     teamId: "team-civ",
-    name: "Elye Wahi",
+    name: "埃勒伊·瓦希",
     shirtNumber: 12,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -9956,7 +9956,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-civ-player-13",
     teamId: "team-civ",
-    name: "Christopher Opéri",
+    name: "克伊斯特奥普赫尔·奥佩里",
     shirtNumber: 13,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -9974,7 +9974,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-civ-player-14",
     teamId: "team-civ",
-    name: "Oumar Diakité",
+    name: "乌马尔·德亚基特",
     shirtNumber: 14,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -9992,7 +9992,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-civ-player-15",
     teamId: "team-civ",
-    name: "Amad Diallo",
+    name: "阿马德·德亚尔洛",
     shirtNumber: 15,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -10010,7 +10010,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-civ-player-16",
     teamId: "team-civ",
-    name: "Mohamed Koné",
+    name: "穆罕默德·科内",
     shirtNumber: 16,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -10026,7 +10026,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-civ-player-17",
     teamId: "team-civ",
-    name: "Guéla Doué",
+    name: "格埃拉·杜埃",
     shirtNumber: 17,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -10044,7 +10044,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-civ-player-18",
     teamId: "team-civ",
-    name: "Ibrahim Sangaré",
+    name: "易卜拉欣·斯恩加雷",
     shirtNumber: 18,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -10063,7 +10063,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-civ-player-19",
     teamId: "team-civ",
-    name: "Nicolas Pépé",
+    name: "尼古拉斯·佩佩",
     shirtNumber: 19,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -10081,7 +10081,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-civ-player-20",
     teamId: "team-civ",
-    name: "Emmanuel Agbadou",
+    name: "埃姆马恩韦勒·阿格布德乌",
     shirtNumber: 20,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -10099,7 +10099,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-civ-player-21",
     teamId: "team-civ",
-    name: "Evan Ndicka",
+    name: "埃瓦恩·恩伊克卡",
     shirtNumber: 21,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -10117,7 +10117,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-civ-player-22",
     teamId: "team-civ",
-    name: "Evann Guessand",
+    name: "埃夫阿恩恩·格埃斯斯恩德",
     shirtNumber: 22,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -10135,7 +10135,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-civ-player-23",
     teamId: "team-civ",
-    name: "Alban Lafont",
+    name: "阿尔布恩·拉夫奥恩特",
     shirtNumber: 23,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -10151,7 +10151,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-civ-player-24",
     teamId: "team-civ",
-    name: "Bazoumana Touré",
+    name: "布兹乌马纳·图雷",
     shirtNumber: 24,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -10169,7 +10169,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-civ-player-25",
     teamId: "team-civ",
-    name: "Parfait Guiagon",
+    name: "普尔夫艾特·格亚戈恩",
     shirtNumber: 25,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -10188,7 +10188,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-civ-player-26",
     teamId: "team-civ",
-    name: "Christ Inao Oulaï",
+    name: "克伊斯特·伊恩奥·乌勒艾",
     shirtNumber: 26,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -10207,7 +10207,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jpn-sample-player-1",
     teamId: "team-jpn-sample",
-    name: "Zion Suzuki",
+    name: "铃木彩艳",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -10223,7 +10223,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jpn-sample-player-2",
     teamId: "team-jpn-sample",
-    name: "Yukinari Sugawara",
+    name: "菅原由势",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -10241,7 +10241,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jpn-sample-player-3",
     teamId: "team-jpn-sample",
-    name: "Shōgo Taniguchi",
+    name: "谷口彰悟",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -10259,7 +10259,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jpn-sample-player-4",
     teamId: "team-jpn-sample",
-    name: "Kō Itakura",
+    name: "板仓滉",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -10277,7 +10277,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jpn-sample-player-5",
     teamId: "team-jpn-sample",
-    name: "Yūto Nagatomo",
+    name: "长友佑都",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -10295,7 +10295,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jpn-sample-player-6",
     teamId: "team-jpn-sample",
-    name: "Shūto Machino",
+    name: "町野修斗",
     shirtNumber: 6,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -10313,7 +10313,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jpn-sample-player-7",
     teamId: "team-jpn-sample",
-    name: "Ao Tanaka",
+    name: "田中碧",
     shirtNumber: 7,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -10332,7 +10332,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jpn-sample-player-8",
     teamId: "team-jpn-sample",
-    name: "Takefusa Kubo",
+    name: "久保建英",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -10351,7 +10351,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jpn-sample-player-9",
     teamId: "team-jpn-sample",
-    name: "Keisuke Gotō",
+    name: "后藤启介",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -10369,7 +10369,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jpn-sample-player-10",
     teamId: "team-jpn-sample",
-    name: "Ritsu Dōan",
+    name: "堂安律",
     shirtNumber: 10,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -10388,7 +10388,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jpn-sample-player-11",
     teamId: "team-jpn-sample",
-    name: "Daizen Maeda",
+    name: "前田大然",
     shirtNumber: 11,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -10407,7 +10407,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jpn-sample-player-12",
     teamId: "team-jpn-sample",
-    name: "Keisuke Ōsako",
+    name: "大迫敬介",
     shirtNumber: 12,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -10423,7 +10423,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jpn-sample-player-13",
     teamId: "team-jpn-sample",
-    name: "Keito Nakamura",
+    name: "中村敬斗",
     shirtNumber: 13,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -10442,7 +10442,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jpn-sample-player-14",
     teamId: "team-jpn-sample",
-    name: "Junya Itō",
+    name: "伊东纯也",
     shirtNumber: 14,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -10461,7 +10461,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jpn-sample-player-15",
     teamId: "team-jpn-sample",
-    name: "Daichi Kamada",
+    name: "镰田大地",
     shirtNumber: 15,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -10480,7 +10480,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jpn-sample-player-16",
     teamId: "team-jpn-sample",
-    name: "Tsuyoshi Watanabe",
+    name: "渡边刚",
     shirtNumber: 16,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -10498,7 +10498,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jpn-sample-player-17",
     teamId: "team-jpn-sample",
-    name: "Yuito Suzuki",
+    name: "铃木唯人",
     shirtNumber: 17,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -10517,7 +10517,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jpn-sample-player-18",
     teamId: "team-jpn-sample",
-    name: "Ayase Ueda",
+    name: "上田绮世",
     shirtNumber: 18,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -10535,7 +10535,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jpn-sample-player-19",
     teamId: "team-jpn-sample",
-    name: "Kōki Ogawa",
+    name: "小川航基",
     shirtNumber: 19,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -10553,7 +10553,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jpn-sample-player-20",
     teamId: "team-jpn-sample",
-    name: "Ayumu Seko",
+    name: "濑古步梦",
     shirtNumber: 20,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -10571,7 +10571,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jpn-sample-player-21",
     teamId: "team-jpn-sample",
-    name: "Hiroki Itō",
+    name: "伊藤洋辉",
     shirtNumber: 21,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -10589,7 +10589,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jpn-sample-player-22",
     teamId: "team-jpn-sample",
-    name: "Takehiro Tomiyasu",
+    name: "富安健洋",
     shirtNumber: 22,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -10607,7 +10607,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jpn-sample-player-23",
     teamId: "team-jpn-sample",
-    name: "Tomoki Hayakawa",
+    name: "早川友基",
     shirtNumber: 23,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -10623,7 +10623,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jpn-sample-player-24",
     teamId: "team-jpn-sample",
-    name: "Kaishū Sano",
+    name: "佐野海舟",
     shirtNumber: 24,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -10642,7 +10642,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jpn-sample-player-25",
     teamId: "team-jpn-sample",
-    name: "Junnosuke Suzuki",
+    name: "铃木淳之介",
     shirtNumber: 25,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -10660,7 +10660,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jpn-sample-player-26",
     teamId: "team-jpn-sample",
-    name: "Kento Shiogai",
+    name: "盐贝健人",
     shirtNumber: 26,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -10678,7 +10678,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ned-player-1",
     teamId: "team-ned",
-    name: "Bart Verbruggen",
+    name: "布尔特·夫埃尔布尔乌格格恩",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -10694,7 +10694,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ned-player-2",
     teamId: "team-ned",
-    name: "Lutsharel Geertruida",
+    name: "勒乌特希阿雷勒·格伊尔特罗维达",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -10712,7 +10712,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ned-player-3",
     teamId: "team-ned",
-    name: "Marten de Roon",
+    name: "姆尔特恩·德尔乌恩",
     shirtNumber: 3,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -10731,7 +10731,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ned-player-4",
     teamId: "team-ned",
-    name: "Virgil van Dijk",
+    name: "维吉尔·范戴克",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -10749,7 +10749,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ned-player-5",
     teamId: "team-ned",
-    name: "Nathan Aké",
+    name: "内森·阿凯",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -10767,7 +10767,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ned-player-6",
     teamId: "team-ned",
-    name: "Jan Paul van Hecke",
+    name: "贾恩·保罗·范哈埃克凯",
     shirtNumber: 6,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -10785,7 +10785,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ned-player-7",
     teamId: "team-ned",
-    name: "Justin Kluivert",
+    name: "贾乌斯蒂恩·克勒维夫埃尔特",
     shirtNumber: 7,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -10804,7 +10804,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ned-player-8",
     teamId: "team-ned",
-    name: "Ryan Gravenberch",
+    name: "尔亚恩·格拉阿夫埃恩布埃尔克",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -10823,7 +10823,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ned-player-9",
     teamId: "team-ned",
-    name: "Wout Weghorst",
+    name: "瓦乌特·瓦埃格哈奥尔斯特",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -10841,7 +10841,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ned-player-10",
     teamId: "team-ned",
-    name: "Memphis Depay",
+    name: "姆埃姆夫伊斯·德普艾",
     shirtNumber: 10,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -10859,7 +10859,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ned-player-11",
     teamId: "team-ned",
-    name: "Cody Gakpo",
+    name: "科德伊·格克波",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -10877,7 +10877,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ned-player-12",
     teamId: "team-ned",
-    name: "Mats Wieffer",
+    name: "姆特斯·瓦伊夫费尔",
     shirtNumber: 12,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -10895,7 +10895,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ned-player-13",
     teamId: "team-ned",
-    name: "Robin Roefs",
+    name: "罗宾·尔奥夫斯",
     shirtNumber: 13,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -10911,7 +10911,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ned-player-14",
     teamId: "team-ned",
-    name: "Tijjani Reijnders",
+    name: "特伊贾尼·尔伊恩埃尔斯",
     shirtNumber: 14,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -10930,7 +10930,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ned-player-15",
     teamId: "team-ned",
-    name: "Micky van de Ven",
+    name: "姆伊克克伊·范德韦恩",
     shirtNumber: 15,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -10948,7 +10948,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ned-player-16",
     teamId: "team-ned",
-    name: "Guus Til",
+    name: "格乌斯·蒂勒",
     shirtNumber: 16,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -10967,7 +10967,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ned-player-17",
     teamId: "team-ned",
-    name: "Noa Lang",
+    name: "恩奥·勒恩格",
     shirtNumber: 17,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -10985,7 +10985,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ned-player-18",
     teamId: "team-ned",
-    name: "Donyell Malen",
+    name: "多恩伊尔勒·马莱恩",
     shirtNumber: 18,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -11003,7 +11003,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ned-player-19",
     teamId: "team-ned",
-    name: "Brian Brobbey",
+    name: "布赖恩·布尔奥布布埃",
     shirtNumber: 19,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -11021,7 +11021,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ned-player-20",
     teamId: "team-ned",
-    name: "Teun Koopmeiners",
+    name: "特欧恩·克乌普姆伊恩埃尔斯",
     shirtNumber: 20,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -11040,7 +11040,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ned-player-21",
     teamId: "team-ned",
-    name: "Frenkie de Jong",
+    name: "弗朗埃恩克伊·德贾奥恩格",
     shirtNumber: 21,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -11059,7 +11059,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ned-player-22",
     teamId: "team-ned",
-    name: "Denzel Dumfries",
+    name: "德埃恩泽勒·德乌姆弗朗伊斯",
     shirtNumber: 22,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -11077,7 +11077,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ned-player-23",
     teamId: "team-ned",
-    name: "Mark Flekken",
+    name: "马克·弗勒埃克凯恩",
     shirtNumber: 23,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -11093,7 +11093,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ned-player-24",
     teamId: "team-ned",
-    name: "Crysencio Summerville",
+    name: "克罗伊斯埃恩克约·斯乌姆姆埃尔夫伊尔莱",
     shirtNumber: 24,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -11111,7 +11111,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ned-player-25",
     teamId: "team-ned",
-    name: "Jorrel Hato",
+    name: "贾奥尔雷勒·哈托",
     shirtNumber: 25,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -11129,7 +11129,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ned-player-26",
     teamId: "team-ned",
-    name: "Quinten Timber",
+    name: "克伊恩特恩·特伊姆贝尔",
     shirtNumber: 26,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -11148,7 +11148,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-swe-player-1",
     teamId: "team-swe",
-    name: "Jacob Widell Zetterström",
+    name: "雅各布·维德埃尔勒·兹埃特特埃尔斯特奥姆",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -11164,7 +11164,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-swe-player-2",
     teamId: "team-swe",
-    name: "Gustaf Lagerbielke",
+    name: "古斯塔夫·拉格埃尔布伊尔凯",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -11182,7 +11182,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-swe-player-3",
     teamId: "team-swe",
-    name: "Victor Lindelöf",
+    name: "夫伊克托尔·勒伊恩德洛夫",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -11200,7 +11200,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-swe-player-4",
     teamId: "team-swe",
-    name: "Isak Hien",
+    name: "伊萨克·哈伊恩",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -11218,7 +11218,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-swe-player-5",
     teamId: "team-swe",
-    name: "Gabriel Gudmundsson",
+    name: "格布尔伊勒·格乌德姆乌恩德松",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -11236,7 +11236,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-swe-player-6",
     teamId: "team-swe",
-    name: "Herman Johansson",
+    name: "哈埃尔马恩·约翰松",
     shirtNumber: 6,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -11254,7 +11254,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-swe-player-7",
     teamId: "team-swe",
-    name: "Lucas Bergvall",
+    name: "卢卡斯·布埃尔格尔勒",
     shirtNumber: 7,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -11273,7 +11273,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-swe-player-8",
     teamId: "team-swe",
-    name: "Daniel Svensson",
+    name: "丹尼尔·斯埃恩松",
     shirtNumber: 8,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -11291,7 +11291,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-swe-player-9",
     teamId: "team-swe",
-    name: "Alexander Isak",
+    name: "亚历山大·伊萨克",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -11309,7 +11309,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-swe-player-10",
     teamId: "team-swe",
-    name: "Benjamin Nygren",
+    name: "本杰明·恩伊格雷恩",
     shirtNumber: 10,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -11328,7 +11328,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-swe-player-11",
     teamId: "team-swe",
-    name: "Anthony Elanga",
+    name: "安东尼·埃勒恩加",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -11346,7 +11346,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-swe-player-12",
     teamId: "team-swe",
-    name: "Viktor Johansson",
+    name: "维克托·约翰松",
     shirtNumber: 12,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -11362,7 +11362,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-swe-player-13",
     teamId: "team-swe",
-    name: "Ken Sema",
+    name: "凯恩·塞马",
     shirtNumber: 13,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -11381,7 +11381,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-swe-player-14",
     teamId: "team-swe",
-    name: "Hjalmar Ekdal",
+    name: "哈阿尔马尔·埃克达勒",
     shirtNumber: 14,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -11399,7 +11399,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-swe-player-15",
     teamId: "team-swe",
-    name: "Carl Starfelt",
+    name: "克尔勒·斯特阿尔夫埃尔特",
     shirtNumber: 15,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -11417,7 +11417,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-swe-player-16",
     teamId: "team-swe",
-    name: "Jesper Karlström",
+    name: "贾埃斯佩尔·克尔勒奥姆",
     shirtNumber: 16,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -11436,7 +11436,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-swe-player-17",
     teamId: "team-swe",
-    name: "Viktor Gyökeres",
+    name: "维克托·格约凯雷斯",
     shirtNumber: 17,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -11454,7 +11454,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-swe-player-18",
     teamId: "team-swe",
-    name: "Yasin Ayari",
+    name: "亚西恩·阿亚里",
     shirtNumber: 18,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -11473,7 +11473,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-swe-player-19",
     teamId: "team-swe",
-    name: "Mattias Svanberg",
+    name: "姆特特亚斯·斯恩布埃尔格",
     shirtNumber: 19,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -11492,7 +11492,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-swe-player-20",
     teamId: "team-swe",
-    name: "Eric Smith",
+    name: "埃里克·史密斯",
     shirtNumber: 20,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -11510,7 +11510,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-swe-player-21",
     teamId: "team-swe",
-    name: "Alexander Bernhardsson",
+    name: "亚历山大·布埃尔恩阿尔德松",
     shirtNumber: 21,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -11528,7 +11528,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-swe-player-22",
     teamId: "team-swe",
-    name: "Besfort Zeneli",
+    name: "布埃斯夫奥尔特·泽内利",
     shirtNumber: 22,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -11547,7 +11547,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-swe-player-23",
     teamId: "team-swe",
-    name: "Kristoffer Nordfeldt",
+    name: "克拉伊斯特奥夫费尔·恩奥尔德埃尔德",
     shirtNumber: 23,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -11563,7 +11563,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-swe-player-24",
     teamId: "team-swe",
-    name: "Elliot Stroud",
+    name: "埃利奥特·斯特乌德",
     shirtNumber: 24,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -11581,7 +11581,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-swe-player-25",
     teamId: "team-swe",
-    name: "Gustaf Nilsson",
+    name: "古斯塔夫·尼勒松",
     shirtNumber: 25,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -11599,7 +11599,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-swe-player-26",
     teamId: "team-swe",
-    name: "Taha Ali",
+    name: "塔哈·阿里",
     shirtNumber: 26,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -11617,7 +11617,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tun-player-1",
     teamId: "team-tun",
-    name: "Mouhib Chamakh",
+    name: "姆乌希布·克姆克哈",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -11633,7 +11633,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tun-player-2",
     teamId: "team-tun",
-    name: "Ali Abdi",
+    name: "阿里·阿布迪",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -11651,7 +11651,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tun-player-3",
     teamId: "team-tun",
-    name: "Montassar Talbi",
+    name: "姆奥恩特斯萨尔·塔勒比",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -11669,7 +11669,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tun-player-4",
     teamId: "team-tun",
-    name: "Omar Rekik",
+    name: "奥马尔·雷基克",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -11687,7 +11687,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tun-player-5",
     teamId: "team-tun",
-    name: "Adem Arous",
+    name: "阿德姆·阿尔乌斯",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -11705,7 +11705,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tun-player-6",
     teamId: "team-tun",
-    name: "Dylan Bronn",
+    name: "德伊拉恩·布尔奥恩恩",
     shirtNumber: 6,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -11723,7 +11723,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tun-player-7",
     teamId: "team-tun",
-    name: "Elias Achouri",
+    name: "埃勒亚斯·阿克哈乌里",
     shirtNumber: 7,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -11741,7 +11741,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tun-player-8",
     teamId: "team-tun",
-    name: "Elias Saad",
+    name: "埃勒亚斯·斯德",
     shirtNumber: 8,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -11759,7 +11759,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tun-player-9",
     teamId: "team-tun",
-    name: "Hazem Mastouri",
+    name: "哈泽姆·姆斯特乌里",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -11777,7 +11777,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tun-player-10",
     teamId: "team-tun",
-    name: "Hannibal Mejbri",
+    name: "哈阿恩尼布勒·姆埃布尔伊",
     shirtNumber: 10,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -11796,7 +11796,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tun-player-11",
     teamId: "team-tun",
-    name: "Ismaël Gharbi",
+    name: "伊斯梅尔·格尔布伊",
     shirtNumber: 11,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -11815,7 +11815,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tun-player-12",
     teamId: "team-tun",
-    name: "Mortadha Ben Ouanes",
+    name: "姆奥尔特德哈·本乌内斯",
     shirtNumber: 12,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -11833,7 +11833,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tun-player-13",
     teamId: "team-tun",
-    name: "Rani Khedira",
+    name: "拉尼·克埃迪拉",
     shirtNumber: 13,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -11852,7 +11852,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tun-player-14",
     teamId: "team-tun",
-    name: "Khalil Ayari",
+    name: "克利勒·阿亚里",
     shirtNumber: 14,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -11871,7 +11871,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tun-player-15",
     teamId: "team-tun",
-    name: "Hadj Mahmoud",
+    name: "哈吉·马哈茂德",
     shirtNumber: 15,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -11890,7 +11890,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tun-player-16",
     teamId: "team-tun",
-    name: "Aymen Dahmen",
+    name: "艾曼·德梅恩",
     shirtNumber: 16,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -11906,7 +11906,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tun-player-17",
     teamId: "team-tun",
-    name: "Ellyes Skhiri",
+    name: "埃尔勒伊斯·斯伊里",
     shirtNumber: 17,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -11925,7 +11925,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tun-player-18",
     teamId: "team-tun",
-    name: "Rayan Elloumi",
+    name: "拉扬·埃尔勒乌米",
     shirtNumber: 18,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -11943,7 +11943,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tun-player-19",
     teamId: "team-tun",
-    name: "Firas Chaouat",
+    name: "菲拉斯·克特",
     shirtNumber: 19,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -11961,7 +11961,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tun-player-20",
     teamId: "team-tun",
-    name: "Yan Valery",
+    name: "扬·瓦莱尔伊",
     shirtNumber: 20,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -11979,7 +11979,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tun-player-21",
     teamId: "team-tun",
-    name: "Mohamed Amine Ben Hamida",
+    name: "穆罕默德·阿明·本哈米达",
     shirtNumber: 21,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -11997,7 +11997,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tun-player-22",
     teamId: "team-tun",
-    name: "Sabri Ben Hessen",
+    name: "斯布里·本赫斯森",
     shirtNumber: 22,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -12013,7 +12013,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tun-player-23",
     teamId: "team-tun",
-    name: "Moutaz Neffati",
+    name: "姆乌塔兹·恩埃夫法蒂",
     shirtNumber: 23,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -12031,7 +12031,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tun-player-24",
     teamId: "team-tun",
-    name: "Raed Chikhaoui",
+    name: "尔阿德·克伊克哈阿",
     shirtNumber: 24,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -12049,7 +12049,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tun-player-25",
     teamId: "team-tun",
-    name: "Anis Ben Slimane",
+    name: "阿尼斯·本斯勒伊马内",
     shirtNumber: 25,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -12068,7 +12068,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-tun-player-26",
     teamId: "team-tun",
-    name: "Sebastian Tounekti",
+    name: "塞布斯特亚恩·特乌恩埃克蒂",
     shirtNumber: 26,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -12087,7 +12087,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bel-player-1",
     teamId: "team-bel",
-    name: "Thibaut Courtois",
+    name: "蒂博·库尔图瓦",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -12103,7 +12103,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bel-player-2",
     teamId: "team-bel",
-    name: "Zeno Debast",
+    name: "泽诺·德布斯特",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -12121,7 +12121,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bel-player-3",
     teamId: "team-bel",
-    name: "Arthur Theate",
+    name: "阿图尔·特亚特",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -12139,7 +12139,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bel-player-4",
     teamId: "team-bel",
-    name: "Brandon Mechele",
+    name: "布尔阿恩多恩·姆埃克赫莱",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -12157,7 +12157,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bel-player-5",
     teamId: "team-bel",
-    name: "Maxim De Cuyper",
+    name: "马西姆·德克乌佩尔",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -12175,7 +12175,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bel-player-6",
     teamId: "team-bel",
-    name: "Axel Witsel",
+    name: "阿克塞尔·瓦伊特塞勒",
     shirtNumber: 6,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -12194,7 +12194,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bel-player-7",
     teamId: "team-bel",
-    name: "Kevin De Bruyne",
+    name: "凯文·德布劳内",
     shirtNumber: 7,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -12213,7 +12213,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bel-player-8",
     teamId: "team-bel",
-    name: "Youri Tielemans",
+    name: "尤里·蒂勒曼斯",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -12232,7 +12232,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bel-player-9",
     teamId: "team-bel",
-    name: "Romelu Lukaku",
+    name: "罗梅卢·卢卡库",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -12250,7 +12250,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bel-player-10",
     teamId: "team-bel",
-    name: "Leandro Trossard",
+    name: "莱安德罗·特罗奥斯斯尔德",
     shirtNumber: 10,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -12268,7 +12268,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bel-player-11",
     teamId: "team-bel",
-    name: "Jérémy Doku",
+    name: "热雷米·多库",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -12286,7 +12286,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bel-player-12",
     teamId: "team-bel",
-    name: "Senne Lammens",
+    name: "斯埃恩内·勒姆姆埃恩斯",
     shirtNumber: 12,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -12302,7 +12302,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bel-player-13",
     teamId: "team-bel",
-    name: "Mike Penders",
+    name: "迈克·普埃恩德埃尔斯",
     shirtNumber: 13,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -12318,7 +12318,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bel-player-14",
     teamId: "team-bel",
-    name: "Dodi Lukébakio",
+    name: "多迪·卢凯布克约",
     shirtNumber: 14,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -12336,7 +12336,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bel-player-15",
     teamId: "team-bel",
-    name: "Thomas Meunier",
+    name: "托马斯·姆欧恩伊尔",
     shirtNumber: 15,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -12354,7 +12354,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bel-player-16",
     teamId: "team-bel",
-    name: "Koni De Winter",
+    name: "科尼·德瓦伊恩特尔",
     shirtNumber: 16,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -12372,7 +12372,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bel-player-17",
     teamId: "team-bel",
-    name: "Charles De Ketelaere",
+    name: "夏尔·德凯特勒雷",
     shirtNumber: 17,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -12390,7 +12390,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bel-player-18",
     teamId: "team-bel",
-    name: "Joaquin Seys",
+    name: "贾奥克伊恩·斯埃斯",
     shirtNumber: 18,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -12408,7 +12408,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bel-player-19",
     teamId: "team-bel",
-    name: "Diego Moreira",
+    name: "迭戈·莫尔伊拉",
     shirtNumber: 19,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -12427,7 +12427,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bel-player-20",
     teamId: "team-bel",
-    name: "Hans Vanaken",
+    name: "哈阿恩斯·瓦纳凯恩",
     shirtNumber: 20,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -12446,7 +12446,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bel-player-21",
     teamId: "team-bel",
-    name: "Timothy Castagne",
+    name: "蒂莫西·克斯特格内",
     shirtNumber: 21,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -12464,7 +12464,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bel-player-22",
     teamId: "team-bel",
-    name: "Alexis Saelemaekers",
+    name: "亚历克西斯·斯莱姆克埃尔斯",
     shirtNumber: 22,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -12483,7 +12483,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bel-player-23",
     teamId: "team-bel",
-    name: "Nicolas Raskin",
+    name: "尼古拉斯·尔阿斯基恩",
     shirtNumber: 23,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -12502,7 +12502,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bel-player-24",
     teamId: "team-bel",
-    name: "Amadou Onana",
+    name: "阿马德乌·奥纳纳",
     shirtNumber: 24,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -12521,7 +12521,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bel-player-25",
     teamId: "team-bel",
-    name: "Nathan Ngoy",
+    name: "内森·恩瓦",
     shirtNumber: 25,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -12539,7 +12539,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-bel-player-26",
     teamId: "team-bel",
-    name: "Matias Fernandez-Pardo",
+    name: "马蒂亚斯·费尔南德斯·普尔多",
     shirtNumber: 26,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -12557,7 +12557,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-egy-player-1",
     teamId: "team-egy",
-    name: "Mohamed El Shenawy",
+    name: "穆罕默德·希纳维",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -12573,7 +12573,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-egy-player-2",
     teamId: "team-egy",
-    name: "Yasser Ibrahim",
+    name: "亚斯塞尔·易卜拉欣",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -12591,7 +12591,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-egy-player-3",
     teamId: "team-egy",
-    name: "Mohamed Hany",
+    name: "穆罕默德·哈恩伊",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -12609,7 +12609,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-egy-player-4",
     teamId: "team-egy",
-    name: "Hossam Abdelmaguid",
+    name: "哈奥斯萨姆·阿布德埃尔马格伊德",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -12627,7 +12627,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-egy-player-5",
     teamId: "team-egy",
-    name: "Ramy Rabia",
+    name: "拉姆伊·拉布亚",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -12645,7 +12645,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-egy-player-6",
     teamId: "team-egy",
-    name: "Mohamed Abdelmonem",
+    name: "穆罕默德·阿卜杜勒莫内姆",
     shirtNumber: 6,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -12663,7 +12663,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-egy-player-7",
     teamId: "team-egy",
-    name: "Trézéguet",
+    name: "特雷泽盖",
     shirtNumber: 7,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -12681,7 +12681,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-egy-player-8",
     teamId: "team-egy",
-    name: "Emam Ashour",
+    name: "埃马姆·阿斯哈乌尔",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -12700,7 +12700,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-egy-player-9",
     teamId: "team-egy",
-    name: "Hamza Abdelkarim",
+    name: "哈阿姆扎·阿布德埃尔卡里姆",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -12718,7 +12718,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-egy-player-10",
     teamId: "team-egy",
-    name: "Mohamed Salah",
+    name: "穆罕默德·萨拉赫",
     shirtNumber: 10,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -12736,7 +12736,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-egy-player-11",
     teamId: "team-egy",
-    name: "Mostafa Ziko",
+    name: "穆斯塔法·齐科",
     shirtNumber: 11,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -12755,7 +12755,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-egy-player-12",
     teamId: "team-egy",
-    name: "Haissem Hassan",
+    name: "哈艾斯塞姆·哈桑",
     shirtNumber: 12,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -12773,7 +12773,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-egy-player-13",
     teamId: "team-egy",
-    name: "Ahmed Fatouh",
+    name: "艾哈迈德·法特乌哈",
     shirtNumber: 13,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -12791,7 +12791,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-egy-player-14",
     teamId: "team-egy",
-    name: "Hamdy Fathy",
+    name: "哈阿姆德伊·夫阿特哈伊",
     shirtNumber: 14,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -12810,7 +12810,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-egy-player-15",
     teamId: "team-egy",
-    name: "Karim Hafez",
+    name: "卡里姆·哈费兹",
     shirtNumber: 15,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -12828,7 +12828,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-egy-player-16",
     teamId: "team-egy",
-    name: "El Mahdy Soliman",
+    name: "埃尔姆德伊·索利马恩",
     shirtNumber: 16,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -12844,7 +12844,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-egy-player-17",
     teamId: "team-egy",
-    name: "Mohanad Lasheen",
+    name: "莫哈纳德·勒斯哈伊恩",
     shirtNumber: 17,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -12863,7 +12863,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-egy-player-18",
     teamId: "team-egy",
-    name: "Nabil Emad",
+    name: "纳比勒·埃马德",
     shirtNumber: 18,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -12882,7 +12882,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-egy-player-19",
     teamId: "team-egy",
-    name: "Marwan Attia",
+    name: "姆尔瓦恩·阿特特亚",
     shirtNumber: 19,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -12901,7 +12901,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-egy-player-20",
     teamId: "team-egy",
-    name: "Ibrahim Adel",
+    name: "易卜拉欣·阿德勒",
     shirtNumber: 20,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -12919,7 +12919,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-egy-player-21",
     teamId: "team-egy",
-    name: "Mahmoud Saber",
+    name: "马哈茂德·萨贝尔",
     shirtNumber: 21,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -12938,7 +12938,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-egy-player-22",
     teamId: "team-egy",
-    name: "Omar Marmoush",
+    name: "奥马尔·马尔穆什",
     shirtNumber: 22,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -12956,7 +12956,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-egy-player-23",
     teamId: "team-egy",
-    name: "Mostafa Shobeir",
+    name: "穆斯塔法·希奥布伊尔",
     shirtNumber: 23,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -12972,7 +12972,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-egy-player-24",
     teamId: "team-egy",
-    name: "Tarek Alaa",
+    name: "塔雷克·阿勒",
     shirtNumber: 24,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -12990,7 +12990,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-egy-player-25",
     teamId: "team-egy",
-    name: "Zizo",
+    name: "齐佐",
     shirtNumber: 25,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -13008,7 +13008,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-egy-player-26",
     teamId: "team-egy",
-    name: "Mohamed Alaa",
+    name: "穆罕默德·阿勒",
     shirtNumber: 26,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -13024,7 +13024,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irn-player-1",
     teamId: "team-irn",
-    name: "Alireza Beiranvand",
+    name: "阿利雷扎·布伊尔阿恩夫阿恩德",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -13040,7 +13040,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irn-player-2",
     teamId: "team-irn",
-    name: "Saleh Hardani",
+    name: "萨莱哈·哈阿尔达尼",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -13058,7 +13058,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irn-player-3",
     teamId: "team-irn",
-    name: "Ehsan Hajsafi",
+    name: "埃萨恩·哈阿萨菲",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -13076,7 +13076,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irn-player-4",
     teamId: "team-irn",
-    name: "Shojae Khalilzadeh",
+    name: "希奥贾阿·克勒伊尔扎德哈",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -13094,7 +13094,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irn-player-5",
     teamId: "team-irn",
-    name: "Milad Mohammadi",
+    name: "米拉德·莫哈阿姆马迪",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -13112,7 +13112,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irn-player-6",
     teamId: "team-irn",
-    name: "Saeid Ezatolahi",
+    name: "斯德·埃扎托拉希",
     shirtNumber: 6,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -13131,7 +13131,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irn-player-7",
     teamId: "team-irn",
-    name: "Alireza Jahanbakhsh",
+    name: "阿里雷扎·贾汉巴赫什",
     shirtNumber: 7,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -13150,7 +13150,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irn-player-8",
     teamId: "team-irn",
-    name: "Mohammad Mohebi",
+    name: "穆罕默德·莫赫布伊",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -13169,7 +13169,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irn-player-9",
     teamId: "team-irn",
-    name: "Mehdi Taremi",
+    name: "迈赫迪·塔雷米",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -13187,7 +13187,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irn-player-10",
     teamId: "team-irn",
-    name: "Mehdi Ghayedi",
+    name: "迈赫迪·格艾迪",
     shirtNumber: 10,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -13205,7 +13205,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irn-player-11",
     teamId: "team-irn",
-    name: "Ali Alipour",
+    name: "阿里·阿利普乌尔",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -13223,7 +13223,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irn-player-12",
     teamId: "team-irn",
-    name: "Payam Niazmand",
+    name: "普姆·恩亚兹姆恩德",
     shirtNumber: 12,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -13239,7 +13239,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irn-player-13",
     teamId: "team-irn",
-    name: "Hossein Kanaanizadegan",
+    name: "哈奥斯斯伊恩·卡恩阿尼扎德加恩",
     shirtNumber: 13,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -13257,7 +13257,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irn-player-14",
     teamId: "team-irn",
-    name: "Saman Ghoddos",
+    name: "萨马恩·格奥德多斯",
     shirtNumber: 14,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -13276,7 +13276,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irn-player-15",
     teamId: "team-irn",
-    name: "Rouzbeh Cheshmi",
+    name: "尔乌兹贝哈·克埃斯哈伊",
     shirtNumber: 15,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -13295,7 +13295,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irn-player-16",
     teamId: "team-irn",
-    name: "Mehdi Torabi",
+    name: "迈赫迪·托拉布伊",
     shirtNumber: 16,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -13314,7 +13314,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irn-player-17",
     teamId: "team-irn",
-    name: "Aria Yousefi",
+    name: "阿尔亚·伊塞菲",
     shirtNumber: 17,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -13332,7 +13332,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irn-player-18",
     teamId: "team-irn",
-    name: "Amirhossein Hosseinzadeh",
+    name: "阿姆伊尔哈奥斯斯伊恩·哈奥斯斯伊恩扎德哈",
     shirtNumber: 18,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -13350,7 +13350,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irn-player-19",
     teamId: "team-irn",
-    name: "Ali Nemati",
+    name: "阿里·内马蒂",
     shirtNumber: 19,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -13368,7 +13368,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irn-player-20",
     teamId: "team-irn",
-    name: "Shahriyar Moghanlou",
+    name: "希阿尔伊尔·姆奥格哈阿恩勒乌",
     shirtNumber: 20,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -13386,7 +13386,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irn-player-21",
     teamId: "team-irn",
-    name: "Mohammad Ghorbani",
+    name: "穆罕默德·格奥尔布尼",
     shirtNumber: 21,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -13405,7 +13405,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irn-player-22",
     teamId: "team-irn",
-    name: "Hossein Hosseini",
+    name: "哈奥斯斯伊恩·哈奥斯斯伊尼",
     shirtNumber: 22,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -13421,7 +13421,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irn-player-23",
     teamId: "team-irn",
-    name: "Ramin Rezaeian",
+    name: "拉明·礼萨扬",
     shirtNumber: 23,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -13439,7 +13439,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irn-player-24",
     teamId: "team-irn",
-    name: "Dennis Eckert",
+    name: "德埃恩尼斯·埃克克埃尔特",
     shirtNumber: 24,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -13457,7 +13457,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irn-player-25",
     teamId: "team-irn",
-    name: "Danial Eiri",
+    name: "达恩亚勒·伊里",
     shirtNumber: 25,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -13475,7 +13475,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irn-player-26",
     teamId: "team-irn",
-    name: "Amirmohammad Razzaghinia",
+    name: "阿姆伊尔莫哈阿姆马德·尔阿兹兹格希恩亚",
     shirtNumber: 26,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -13494,7 +13494,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nzl-player-1",
     teamId: "team-nzl",
-    name: "Max Crocombe",
+    name: "马希·克罗奥克奥姆贝",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -13510,7 +13510,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nzl-player-2",
     teamId: "team-nzl",
-    name: "Tim Payne",
+    name: "蒂姆·普艾内",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -13528,7 +13528,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nzl-player-3",
     teamId: "team-nzl",
-    name: "Francis de Vries",
+    name: "弗朗阿恩西斯·德夫伊斯",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -13546,7 +13546,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nzl-player-4",
     teamId: "team-nzl",
-    name: "Tyler Bindon",
+    name: "特伊莱尔·布伊恩多恩",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -13564,7 +13564,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nzl-player-5",
     teamId: "team-nzl",
-    name: "Michael Boxall",
+    name: "迈克尔·博希阿尔勒",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -13582,7 +13582,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nzl-player-6",
     teamId: "team-nzl",
-    name: "Joe Bell",
+    name: "贾奥·布埃尔勒",
     shirtNumber: 6,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -13601,7 +13601,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nzl-player-7",
     teamId: "team-nzl",
-    name: "Matthew Garbett",
+    name: "姆特特埃瓦·格尔布埃特特",
     shirtNumber: 7,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -13620,7 +13620,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nzl-player-8",
     teamId: "team-nzl",
-    name: "Marko Stamenić",
+    name: "马尔科·斯特阿梅恩奇",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -13639,7 +13639,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nzl-player-9",
     teamId: "team-nzl",
-    name: "Chris Wood",
+    name: "克里斯·瓦乌德",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -13657,7 +13657,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nzl-player-10",
     teamId: "team-nzl",
-    name: "Sarpreet Singh",
+    name: "斯尔普罗伊特·斯伊恩格",
     shirtNumber: 10,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -13676,7 +13676,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nzl-player-11",
     teamId: "team-nzl",
-    name: "Elijah Just",
+    name: "埃利贾哈·贾乌斯特",
     shirtNumber: 11,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -13695,7 +13695,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nzl-player-12",
     teamId: "team-nzl",
-    name: "Alex Paulsen",
+    name: "亚历克斯·保罗森",
     shirtNumber: 12,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -13711,7 +13711,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nzl-player-13",
     teamId: "team-nzl",
-    name: "Liberato Cacace",
+    name: "利贝拉托·卡卡塞",
     shirtNumber: 13,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -13729,7 +13729,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nzl-player-14",
     teamId: "team-nzl",
-    name: "Alex Rufer",
+    name: "亚历克斯·鲁费尔",
     shirtNumber: 14,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -13748,7 +13748,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nzl-player-15",
     teamId: "team-nzl",
-    name: "Nando Pijnaker",
+    name: "恩阿恩多·普伊纳凯尔",
     shirtNumber: 15,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -13766,7 +13766,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nzl-player-16",
     teamId: "team-nzl",
-    name: "Finn Surman",
+    name: "夫伊恩恩·斯乌尔马恩",
     shirtNumber: 16,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -13784,7 +13784,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nzl-player-17",
     teamId: "team-nzl",
-    name: "Kosta Barbarouses",
+    name: "克奥斯塔·布尔布尔乌塞斯",
     shirtNumber: 17,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -13802,7 +13802,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nzl-player-18",
     teamId: "team-nzl",
-    name: "Ben Waine",
+    name: "本瓦艾内",
     shirtNumber: 18,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -13820,7 +13820,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nzl-player-19",
     teamId: "team-nzl",
-    name: "Ben Old",
+    name: "本奥尔德",
     shirtNumber: 19,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -13839,7 +13839,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nzl-player-20",
     teamId: "team-nzl",
-    name: "Callum McCowatt",
+    name: "克尔卢姆·姆奥瓦特特",
     shirtNumber: 20,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -13858,7 +13858,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nzl-player-21",
     teamId: "team-nzl",
-    name: "Jesse Randall",
+    name: "贾埃斯塞·尔阿恩德尔勒",
     shirtNumber: 21,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -13876,7 +13876,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nzl-player-22",
     teamId: "team-nzl",
-    name: "Michael Woud",
+    name: "迈克尔·瓦乌德",
     shirtNumber: 22,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -13892,7 +13892,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nzl-player-23",
     teamId: "team-nzl",
-    name: "Ryan Thomas",
+    name: "尔亚恩·托马斯",
     shirtNumber: 23,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -13911,7 +13911,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nzl-player-24",
     teamId: "team-nzl",
-    name: "Callan Elliot",
+    name: "克尔拉恩·埃利奥特",
     shirtNumber: 24,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -13929,7 +13929,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nzl-player-25",
     teamId: "team-nzl",
-    name: "Lachlan Bayliss",
+    name: "勒克哈阿恩·布艾勒伊斯斯",
     shirtNumber: 25,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -13948,7 +13948,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nzl-player-26",
     teamId: "team-nzl",
-    name: "Tommy Smith",
+    name: "特奥姆姆伊·史密斯",
     shirtNumber: 26,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -13966,7 +13966,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cpv-player-1",
     teamId: "team-cpv",
-    name: "Vozinha",
+    name: "沃兹伊恩哈",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -13982,7 +13982,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cpv-player-2",
     teamId: "team-cpv",
-    name: "Stopira",
+    name: "斯特奥皮拉",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -14000,7 +14000,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cpv-player-3",
     teamId: "team-cpv",
-    name: "Diney",
+    name: "迪恩埃",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -14018,7 +14018,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cpv-player-4",
     teamId: "team-cpv",
-    name: "Roberto Lopes",
+    name: "罗伯托·洛佩斯",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -14036,7 +14036,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cpv-player-5",
     teamId: "team-cpv",
-    name: "Logan Costa",
+    name: "洛加恩·克奥斯塔",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -14054,7 +14054,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cpv-player-6",
     teamId: "team-cpv",
-    name: "Kevin Pina",
+    name: "凯文·皮纳",
     shirtNumber: 6,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -14073,7 +14073,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cpv-player-7",
     teamId: "team-cpv",
-    name: "Jovane Cabral",
+    name: "若瓦内·克布拉勒",
     shirtNumber: 7,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -14092,7 +14092,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cpv-player-8",
     teamId: "team-cpv",
-    name: "João Paulo",
+    name: "若昂·普奥洛",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -14111,7 +14111,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cpv-player-9",
     teamId: "team-cpv",
-    name: "Gilson Benchimol",
+    name: "吉勒森·本克伊莫勒",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -14129,7 +14129,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cpv-player-10",
     teamId: "team-cpv",
-    name: "Jamiro Monteiro",
+    name: "贾米罗·姆奥恩特伊罗",
     shirtNumber: 10,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -14148,7 +14148,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cpv-player-11",
     teamId: "team-cpv",
-    name: "Garry Rodrigues",
+    name: "格尔尔伊·尔奥德里格埃斯",
     shirtNumber: 11,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -14167,7 +14167,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cpv-player-12",
     teamId: "team-cpv",
-    name: "Márcio Rosa",
+    name: "姆尔克约·罗萨",
     shirtNumber: 12,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -14183,7 +14183,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cpv-player-13",
     teamId: "team-cpv",
-    name: "Sidny Lopes Cabral",
+    name: "斯伊德恩伊·洛佩斯·克布拉勒",
     shirtNumber: 13,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -14201,7 +14201,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cpv-player-14",
     teamId: "team-cpv",
-    name: "Deroy Duarte",
+    name: "德尔瓦·德乌尔特",
     shirtNumber: 14,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -14220,7 +14220,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cpv-player-15",
     teamId: "team-cpv",
-    name: "Laros Duarte",
+    name: "拉罗斯·德乌尔特",
     shirtNumber: 15,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -14239,7 +14239,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cpv-player-16",
     teamId: "team-cpv",
-    name: "Yannick Semedo",
+    name: "亚恩恩伊克克·塞梅多",
     shirtNumber: 16,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -14258,7 +14258,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cpv-player-17",
     teamId: "team-cpv",
-    name: "Willy Semedo",
+    name: "瓦伊尔勒伊·塞梅多",
     shirtNumber: 17,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -14277,7 +14277,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cpv-player-18",
     teamId: "team-cpv",
-    name: "Telmo Arcanjo",
+    name: "特埃尔莫·阿尔克恩若",
     shirtNumber: 18,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -14296,7 +14296,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cpv-player-19",
     teamId: "team-cpv",
-    name: "Dailon Livramento",
+    name: "德艾洛恩·勒伊拉姆埃恩托",
     shirtNumber: 19,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -14314,7 +14314,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cpv-player-20",
     teamId: "team-cpv",
-    name: "Ryan Mendes",
+    name: "尔亚恩·门德斯",
     shirtNumber: 20,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -14332,7 +14332,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cpv-player-21",
     teamId: "team-cpv",
-    name: "Nuno da Costa",
+    name: "努诺·达克奥斯塔",
     shirtNumber: 21,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -14351,7 +14351,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cpv-player-22",
     teamId: "team-cpv",
-    name: "Steven Moreira",
+    name: "斯特埃韦恩·莫尔伊拉",
     shirtNumber: 22,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -14369,7 +14369,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cpv-player-23",
     teamId: "team-cpv",
-    name: "CJ dos Santos",
+    name: "克·多斯桑托斯",
     shirtNumber: 23,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -14385,7 +14385,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cpv-player-24",
     teamId: "team-cpv",
-    name: "Wagner Pina",
+    name: "瓦格内尔·皮纳",
     shirtNumber: 24,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -14403,7 +14403,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cpv-player-25",
     teamId: "team-cpv",
-    name: "Kelvin Pires",
+    name: "克埃尔维恩·皮雷斯",
     shirtNumber: 25,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -14421,7 +14421,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cpv-player-26",
     teamId: "team-cpv",
-    name: "Hélio Varela",
+    name: "赫勒约·瓦雷拉",
     shirtNumber: 26,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -14440,7 +14440,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ksa-player-1",
     teamId: "team-ksa",
-    name: "Nawaf Al-Aqidi",
+    name: "纳瓦夫·阿尔阿克伊迪",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -14456,7 +14456,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ksa-player-2",
     teamId: "team-ksa",
-    name: "Ali Majrashi",
+    name: "阿里·姆尔阿斯希",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -14474,7 +14474,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ksa-player-3",
     teamId: "team-ksa",
-    name: "Ali Lajami",
+    name: "阿里·拉贾米",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -14492,7 +14492,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ksa-player-4",
     teamId: "team-ksa",
-    name: "Abdulelah Al-Amri",
+    name: "阿布杜莱拉哈·阿尔阿姆里",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -14510,7 +14510,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ksa-player-5",
     teamId: "team-ksa",
-    name: "Hassan Al-Tambakti",
+    name: "哈桑·阿尔特姆布克蒂",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -14528,7 +14528,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ksa-player-6",
     teamId: "team-ksa",
-    name: "Nasser Al-Dawsari",
+    name: "恩阿斯塞尔·阿尔德萨里",
     shirtNumber: 6,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -14547,7 +14547,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ksa-player-7",
     teamId: "team-ksa",
-    name: "Musab Al-Juwayr",
+    name: "穆萨卜·朱瓦伊尔",
     shirtNumber: 7,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -14566,7 +14566,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ksa-player-8",
     teamId: "team-ksa",
-    name: "Ayman Yahya",
+    name: "艾马恩·亚哈亚",
     shirtNumber: 8,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -14584,7 +14584,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ksa-player-9",
     teamId: "team-ksa",
-    name: "Firas Al-Buraikan",
+    name: "菲拉斯·布赖坎",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -14602,7 +14602,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ksa-player-10",
     teamId: "team-ksa",
-    name: "Salem Al-Dawsari",
+    name: "萨勒姆·达瓦萨里",
     shirtNumber: 10,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -14620,7 +14620,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ksa-player-11",
     teamId: "team-ksa",
-    name: "Saleh Al-Shehri",
+    name: "萨莱哈·阿尔希埃里",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -14638,7 +14638,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ksa-player-12",
     teamId: "team-ksa",
-    name: "Saud Abdulhamid",
+    name: "斯奥德·阿布德乌尔哈米德",
     shirtNumber: 12,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -14656,7 +14656,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ksa-player-13",
     teamId: "team-ksa",
-    name: "Nawaf Boushal",
+    name: "纳瓦夫·布乌斯哈勒",
     shirtNumber: 13,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -14674,7 +14674,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ksa-player-14",
     teamId: "team-ksa",
-    name: "Hassan Kadesh",
+    name: "哈桑·卡德埃斯哈",
     shirtNumber: 14,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -14692,7 +14692,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ksa-player-15",
     teamId: "team-ksa",
-    name: "Abdullah Al-Khaibari",
+    name: "阿布德乌尔拉哈·阿尔克艾布里",
     shirtNumber: 15,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -14711,7 +14711,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ksa-player-16",
     teamId: "team-ksa",
-    name: "Ziyad Al-Johani",
+    name: "兹伊德·阿尔若哈尼",
     shirtNumber: 16,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -14730,7 +14730,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ksa-player-17",
     teamId: "team-ksa",
-    name: "Khalid Al-Ghannam",
+    name: "克利德·阿尔格恩纳姆",
     shirtNumber: 17,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -14748,7 +14748,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ksa-player-18",
     teamId: "team-ksa",
-    name: "Alaa Al-Hejji",
+    name: "阿勒·阿尔哈埃吉",
     shirtNumber: 18,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -14767,7 +14767,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ksa-player-19",
     teamId: "team-ksa",
-    name: "Abdullah Al-Hamdan",
+    name: "阿布德乌尔拉哈·阿尔哈阿姆达恩",
     shirtNumber: 19,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -14785,7 +14785,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ksa-player-20",
     teamId: "team-ksa",
-    name: "Sultan Mandash",
+    name: "斯乌尔塔恩·姆恩德斯哈",
     shirtNumber: 20,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -14803,7 +14803,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ksa-player-21",
     teamId: "team-ksa",
-    name: "Mohammed Al-Owais",
+    name: "穆罕默德·阿尔奥瓦艾斯",
     shirtNumber: 21,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -14819,7 +14819,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ksa-player-22",
     teamId: "team-ksa",
-    name: "Ahmed Al-Kassar",
+    name: "艾哈迈德·阿尔克斯萨尔",
     shirtNumber: 22,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -14835,7 +14835,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ksa-player-23",
     teamId: "team-ksa",
-    name: "Mohamed Kanno",
+    name: "穆罕默德·克恩诺",
     shirtNumber: 23,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -14854,7 +14854,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ksa-player-24",
     teamId: "team-ksa",
-    name: "Moteb Al-Harbi",
+    name: "莫特布·阿尔哈阿尔布伊",
     shirtNumber: 24,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -14872,7 +14872,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ksa-player-25",
     teamId: "team-ksa",
-    name: "Jehad Thakri",
+    name: "杰哈德·特克里",
     shirtNumber: 25,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -14890,7 +14890,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-ksa-player-26",
     teamId: "team-ksa",
-    name: "Mohammed Abu Al-Shamat",
+    name: "穆罕默德·阿布·阿尔希阿马特",
     shirtNumber: 26,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -14908,7 +14908,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-esp-player-1",
     teamId: "team-esp",
-    name: "David Raya",
+    name: "大卫·拉亚",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -14924,7 +14924,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-esp-player-2",
     teamId: "team-esp",
-    name: "Marc Pubill",
+    name: "马克·普维尔",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -14942,7 +14942,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-esp-player-3",
     teamId: "team-esp",
-    name: "Álex Grimaldo",
+    name: "阿莱士·格里马尔多",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -14960,7 +14960,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-esp-player-4",
     teamId: "team-esp",
-    name: "Eric García",
+    name: "埃里克·加西亚",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -14978,7 +14978,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-esp-player-5",
     teamId: "team-esp",
-    name: "Marcos Llorente",
+    name: "马科斯·略伦特",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -14996,7 +14996,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-esp-player-6",
     teamId: "team-esp",
-    name: "Mikel Merino",
+    name: "米克尔·梅里诺",
     shirtNumber: 6,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -15015,7 +15015,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-esp-player-7",
     teamId: "team-esp",
-    name: "Ferran Torres",
+    name: "费兰·托雷斯",
     shirtNumber: 7,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -15033,7 +15033,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-esp-player-8",
     teamId: "team-esp",
-    name: "Fabián Ruiz",
+    name: "法比安·鲁伊斯",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -15052,7 +15052,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-esp-player-9",
     teamId: "team-esp",
-    name: "Gavi",
+    name: "加维",
     shirtNumber: 9,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -15071,7 +15071,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-esp-player-10",
     teamId: "team-esp",
-    name: "Dani Olmo",
+    name: "达尼·奥尔莫",
     shirtNumber: 10,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -15089,7 +15089,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-esp-player-11",
     teamId: "team-esp",
-    name: "Yéremy Pino",
+    name: "耶雷米·皮诺",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -15107,7 +15107,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-esp-player-12",
     teamId: "team-esp",
-    name: "Pedro Porro",
+    name: "佩德罗·波罗",
     shirtNumber: 12,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -15125,7 +15125,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-esp-player-13",
     teamId: "team-esp",
-    name: "Joan Garcia",
+    name: "霍安·加西亚",
     shirtNumber: 13,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -15141,7 +15141,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-esp-player-14",
     teamId: "team-esp",
-    name: "Aymeric Laporte",
+    name: "艾梅里克·拉波尔特",
     shirtNumber: 14,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -15159,7 +15159,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-esp-player-15",
     teamId: "team-esp",
-    name: "Álex Baena",
+    name: "阿莱士·巴埃纳",
     shirtNumber: 15,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -15178,7 +15178,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-esp-player-16",
     teamId: "team-esp",
-    name: "Rodri",
+    name: "罗德里",
     shirtNumber: 16,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -15197,7 +15197,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-esp-player-17",
     teamId: "team-esp",
-    name: "Nico Williams",
+    name: "尼科·威廉斯",
     shirtNumber: 17,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -15215,7 +15215,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-esp-player-18",
     teamId: "team-esp",
-    name: "Martín Zubimendi",
+    name: "马丁·苏比门迪",
     shirtNumber: 18,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -15234,7 +15234,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-esp-player-19",
     teamId: "team-esp",
-    name: "Lamine Yamal",
+    name: "拉明·亚马尔",
     shirtNumber: 19,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -15252,7 +15252,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-esp-player-20",
     teamId: "team-esp",
-    name: "Pedri",
+    name: "佩德里",
     shirtNumber: 20,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -15271,7 +15271,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-esp-player-21",
     teamId: "team-esp",
-    name: "Mikel Oyarzabal",
+    name: "米克尔·奥亚萨瓦尔",
     shirtNumber: 21,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -15289,7 +15289,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-esp-player-22",
     teamId: "team-esp",
-    name: "Pau Cubarsí",
+    name: "保·库巴西",
     shirtNumber: 22,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -15307,7 +15307,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-esp-player-23",
     teamId: "team-esp",
-    name: "Unai Simón",
+    name: "乌奈·西蒙",
     shirtNumber: 23,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -15323,7 +15323,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-esp-player-24",
     teamId: "team-esp",
-    name: "Marc Cucurella",
+    name: "马克·库库雷利亚",
     shirtNumber: 24,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -15341,7 +15341,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-esp-player-25",
     teamId: "team-esp",
-    name: "Víctor Muñoz",
+    name: "比克托·穆尼奥斯",
     shirtNumber: 25,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -15359,7 +15359,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-esp-player-26",
     teamId: "team-esp",
-    name: "Borja Iglesias",
+    name: "博尔哈·伊格莱西亚斯",
     shirtNumber: 26,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -15377,7 +15377,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uru-player-1",
     teamId: "team-uru",
-    name: "Sergio Rochet",
+    name: "斯埃尔格约·尔奥克赫特",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -15393,7 +15393,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uru-player-2",
     teamId: "team-uru",
-    name: "José María Giménez",
+    name: "何塞·玛丽亚·希门尼斯",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -15411,7 +15411,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uru-player-3",
     teamId: "team-uru",
-    name: "Sebastián Cáceres",
+    name: "塞布斯特亚恩·卡塞雷斯",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -15429,7 +15429,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uru-player-4",
     teamId: "team-uru",
-    name: "Ronald Araújo",
+    name: "罗纳德·阿劳霍",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -15447,7 +15447,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uru-player-5",
     teamId: "team-uru",
-    name: "Manuel Ugarte",
+    name: "曼努埃尔·乌加特",
     shirtNumber: 5,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -15466,7 +15466,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uru-player-6",
     teamId: "team-uru",
-    name: "Rodrigo Bentancur",
+    name: "罗德里戈·本坦库尔",
     shirtNumber: 6,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -15485,7 +15485,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uru-player-7",
     teamId: "team-uru",
-    name: "Nicolás de la Cruz",
+    name: "尼古拉斯·德拉克罗乌兹",
     shirtNumber: 7,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -15504,7 +15504,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uru-player-8",
     teamId: "team-uru",
-    name: "Federico Valverde",
+    name: "费德里科·巴尔韦德",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -15523,7 +15523,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uru-player-9",
     teamId: "team-uru",
-    name: "Darwin Núñez",
+    name: "达尔文·努涅斯",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -15541,7 +15541,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uru-player-10",
     teamId: "team-uru",
-    name: "Giorgian de Arrascaeta",
+    name: "格约尔格亚恩·德阿尔尔阿斯克塔",
     shirtNumber: 10,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -15560,7 +15560,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uru-player-11",
     teamId: "team-uru",
-    name: "Facundo Pellistri",
+    name: "法克乌恩多·普埃尔勒伊斯特罗伊",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -15578,7 +15578,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uru-player-12",
     teamId: "team-uru",
-    name: "Santiago Mele",
+    name: "圣地亚哥·梅莱",
     shirtNumber: 12,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -15594,7 +15594,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uru-player-13",
     teamId: "team-uru",
-    name: "Guillermo Varela",
+    name: "吉列尔莫·瓦雷拉",
     shirtNumber: 13,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -15612,7 +15612,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uru-player-14",
     teamId: "team-uru",
-    name: "Agustín Canobbio",
+    name: "阿格乌斯蒂恩·卡恩奥布布约",
     shirtNumber: 14,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -15631,7 +15631,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uru-player-15",
     teamId: "team-uru",
-    name: "Emiliano Martínez",
+    name: "埃米利亚诺·马丁内斯",
     shirtNumber: 15,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -15650,7 +15650,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uru-player-16",
     teamId: "team-uru",
-    name: "Mathías Olivera",
+    name: "姆特哈亚斯·奥利韦拉",
     shirtNumber: 16,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -15668,7 +15668,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uru-player-17",
     teamId: "team-uru",
-    name: "Matías Viña",
+    name: "马蒂亚斯·维纳",
     shirtNumber: 17,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -15686,7 +15686,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uru-player-18",
     teamId: "team-uru",
-    name: "Brian Rodríguez",
+    name: "布赖恩·罗德里格斯",
     shirtNumber: 18,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -15704,7 +15704,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uru-player-19",
     teamId: "team-uru",
-    name: "Rodrigo Aguirre",
+    name: "罗德里戈·阿格伊尔雷",
     shirtNumber: 19,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -15722,7 +15722,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uru-player-20",
     teamId: "team-uru",
-    name: "Maximiliano Araújo",
+    name: "马西米勒亚诺·阿劳霍",
     shirtNumber: 20,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -15741,7 +15741,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uru-player-21",
     teamId: "team-uru",
-    name: "Federico Viñas",
+    name: "费德里科·维纳斯",
     shirtNumber: 21,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -15759,7 +15759,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uru-player-22",
     teamId: "team-uru",
-    name: "Joaquín Piquerez",
+    name: "贾奥克伊恩·皮克埃雷兹",
     shirtNumber: 22,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -15778,7 +15778,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uru-player-23",
     teamId: "team-uru",
-    name: "Fernando Muslera",
+    name: "夫埃尔恩阿恩多·姆乌斯莱拉",
     shirtNumber: 23,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -15794,7 +15794,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uru-player-24",
     teamId: "team-uru",
-    name: "Santiago Bueno",
+    name: "圣地亚哥·布韦诺",
     shirtNumber: 24,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -15812,7 +15812,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uru-player-25",
     teamId: "team-uru",
-    name: "Juan Manuel Sanabria",
+    name: "贾乌恩·曼努埃尔·萨纳夫里亚",
     shirtNumber: 25,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -15831,7 +15831,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uru-player-26",
     teamId: "team-uru",
-    name: "Rodrigo Zalazar",
+    name: "罗德里戈·扎拉扎尔",
     shirtNumber: 26,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -15850,7 +15850,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-fra-player-1",
     teamId: "team-fra",
-    name: "Brice Samba",
+    name: "布里斯·桑巴",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -15866,7 +15866,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-fra-player-2",
     teamId: "team-fra",
-    name: "Malo Gusto",
+    name: "马洛·古斯托",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -15884,7 +15884,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-fra-player-3",
     teamId: "team-fra",
-    name: "Lucas Digne",
+    name: "卢卡斯·德伊格内",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -15902,7 +15902,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-fra-player-4",
     teamId: "team-fra",
-    name: "Dayot Upamecano",
+    name: "达约·于帕梅卡诺",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -15920,7 +15920,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-fra-player-5",
     teamId: "team-fra",
-    name: "Jules Koundé",
+    name: "儒勒·孔德",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -15938,7 +15938,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-fra-player-6",
     teamId: "team-fra",
-    name: "Manu Koné",
+    name: "马努·科内",
     shirtNumber: 6,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -15957,7 +15957,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-fra-player-7",
     teamId: "team-fra",
-    name: "Ousmane Dembélé",
+    name: "奥斯曼·登贝莱",
     shirtNumber: 7,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -15975,7 +15975,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-fra-player-8",
     teamId: "team-fra",
-    name: "Aurélien Tchouaméni",
+    name: "奥雷利安·楚阿梅尼",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -15994,7 +15994,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-fra-player-9",
     teamId: "team-fra",
-    name: "Marcus Thuram",
+    name: "马库斯·图拉姆",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -16012,7 +16012,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-fra-player-10",
     teamId: "team-fra",
-    name: "Kylian Mbappé",
+    name: "基利安·姆巴佩",
     shirtNumber: 10,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -16030,7 +16030,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-fra-player-11",
     teamId: "team-fra",
-    name: "Michael Olise",
+    name: "迈克尔·奥利塞",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -16048,7 +16048,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-fra-player-12",
     teamId: "team-fra",
-    name: "Bradley Barcola",
+    name: "布拉德利·巴尔科拉",
     shirtNumber: 12,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -16066,7 +16066,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-fra-player-13",
     teamId: "team-fra",
-    name: "N'Golo Kanté",
+    name: "恩戈洛·坎特",
     shirtNumber: 13,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -16085,7 +16085,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-fra-player-14",
     teamId: "team-fra",
-    name: "Adrien Rabiot",
+    name: "阿德里安·拉比奥",
     shirtNumber: 14,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -16104,7 +16104,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-fra-player-15",
     teamId: "team-fra",
-    name: "Ibrahima Konaté",
+    name: "易卜拉希马·科纳特",
     shirtNumber: 15,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -16122,7 +16122,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-fra-player-16",
     teamId: "team-fra",
-    name: "Mike Maignan",
+    name: "迈克·迈尼昂",
     shirtNumber: 16,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -16138,7 +16138,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-fra-player-17",
     teamId: "team-fra",
-    name: "William Saliba",
+    name: "威廉·萨利巴",
     shirtNumber: 17,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -16156,7 +16156,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-fra-player-18",
     teamId: "team-fra",
-    name: "Warren Zaïre-Emery",
+    name: "沃伦·扎伊尔-埃梅里",
     shirtNumber: 18,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -16175,7 +16175,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-fra-player-19",
     teamId: "team-fra",
-    name: "Théo Hernandez",
+    name: "特奥·埃尔南德斯",
     shirtNumber: 19,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -16193,7 +16193,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-fra-player-20",
     teamId: "team-fra",
-    name: "Désiré Doué",
+    name: "德西雷·杜埃",
     shirtNumber: 20,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -16211,7 +16211,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-fra-player-21",
     teamId: "team-fra",
-    name: "Lucas Hernandez",
+    name: "卢卡斯·埃尔南德斯",
     shirtNumber: 21,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -16229,7 +16229,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-fra-player-22",
     teamId: "team-fra",
-    name: "Jean-Philippe Mateta",
+    name: "让-菲利普·马特塔",
     shirtNumber: 22,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -16247,7 +16247,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-fra-player-23",
     teamId: "team-fra",
-    name: "Robin Risser",
+    name: "罗宾·尔伊斯塞尔",
     shirtNumber: 23,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -16263,7 +16263,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-fra-player-24",
     teamId: "team-fra",
-    name: "Rayan Cherki",
+    name: "拉扬·切尔基",
     shirtNumber: 24,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -16282,7 +16282,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-fra-player-25",
     teamId: "team-fra",
-    name: "Maghnes Akliouche",
+    name: "姆格哈埃斯·阿克利乌什",
     shirtNumber: 25,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -16301,7 +16301,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-fra-player-26",
     teamId: "team-fra",
-    name: "Maxence Lacroix",
+    name: "马希埃恩塞·拉克鲁瓦",
     shirtNumber: 26,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -16319,7 +16319,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irq-player-1",
     teamId: "team-irq",
-    name: "Fahad Talib",
+    name: "法哈德·塔利布",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -16335,7 +16335,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irq-player-2",
     teamId: "team-irq",
-    name: "Rebin Sulaka",
+    name: "雷布伊恩·苏拉卡",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -16353,7 +16353,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irq-player-3",
     teamId: "team-irq",
-    name: "Hussein Ali",
+    name: "哈乌斯斯伊恩·阿里",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -16371,7 +16371,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irq-player-4",
     teamId: "team-irq",
-    name: "Zaid Tahseen",
+    name: "兹艾德·特斯伊恩",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -16389,7 +16389,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irq-player-5",
     teamId: "team-irq",
-    name: "Akam Hashim",
+    name: "阿卡姆·哈阿斯希姆",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -16407,7 +16407,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irq-player-6",
     teamId: "team-irq",
-    name: "Manaf Younis",
+    name: "马纳夫·伊尼斯",
     shirtNumber: 6,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -16425,7 +16425,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irq-player-7",
     teamId: "team-irq",
-    name: "Youssef Amyn",
+    name: "优素福·阿姆伊恩",
     shirtNumber: 7,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -16444,7 +16444,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irq-player-8",
     teamId: "team-irq",
-    name: "Ibrahim Bayesh",
+    name: "易卜拉欣·布艾斯哈",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -16463,7 +16463,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irq-player-9",
     teamId: "team-irq",
-    name: "Ali Al-Hamadi",
+    name: "阿里·阿尔哈马迪",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -16481,7 +16481,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irq-player-10",
     teamId: "team-irq",
-    name: "Mohanad Ali",
+    name: "莫哈纳德·阿里",
     shirtNumber: 10,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -16499,7 +16499,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irq-player-11",
     teamId: "team-irq",
-    name: "Ahmed Qasem",
+    name: "艾哈迈德·克塞姆",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -16517,7 +16517,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irq-player-12",
     teamId: "team-irq",
-    name: "Jalal Hassan",
+    name: "贾拉勒·哈桑",
     shirtNumber: 12,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -16533,7 +16533,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irq-player-13",
     teamId: "team-irq",
-    name: "Ali Yousif",
+    name: "阿里·伊西夫",
     shirtNumber: 13,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -16551,7 +16551,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irq-player-14",
     teamId: "team-irq",
-    name: "Zidane Iqbal",
+    name: "齐达内·伊布勒",
     shirtNumber: 14,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -16570,7 +16570,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irq-player-15",
     teamId: "team-irq",
-    name: "Ahmed Maknzi",
+    name: "艾哈迈德·姆克恩伊",
     shirtNumber: 15,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -16588,7 +16588,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irq-player-16",
     teamId: "team-irq",
-    name: "Amir Al-Ammari",
+    name: "阿米尔·阿尔阿姆马里",
     shirtNumber: 16,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -16607,7 +16607,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irq-player-17",
     teamId: "team-irq",
-    name: "Ali Jasim",
+    name: "阿里·贾西姆",
     shirtNumber: 17,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -16625,7 +16625,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irq-player-18",
     teamId: "team-irq",
-    name: "Aymen Hussein",
+    name: "艾曼·哈乌斯斯伊恩",
     shirtNumber: 18,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -16643,7 +16643,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irq-player-19",
     teamId: "team-irq",
-    name: "Kevin Yakob",
+    name: "凯文·亚科布",
     shirtNumber: 19,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -16662,7 +16662,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irq-player-20",
     teamId: "team-irq",
-    name: "Aimar Sher",
+    name: "艾马尔·希埃尔",
     shirtNumber: 20,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -16681,7 +16681,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irq-player-21",
     teamId: "team-irq",
-    name: "Marko Farji",
+    name: "马尔科·夫阿尔吉",
     shirtNumber: 21,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -16699,7 +16699,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irq-player-22",
     teamId: "team-irq",
-    name: "Ahmed Basil",
+    name: "艾哈迈德·布西勒",
     shirtNumber: 22,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -16715,7 +16715,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irq-player-23",
     teamId: "team-irq",
-    name: "Merchas Doski",
+    name: "姆埃尔克斯·多斯基",
     shirtNumber: 23,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -16733,7 +16733,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irq-player-24",
     teamId: "team-irq",
-    name: "Zaid Ismail",
+    name: "兹艾德·伊斯姆艾勒",
     shirtNumber: 24,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -16752,7 +16752,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irq-player-25",
     teamId: "team-irq",
-    name: "Mustafa Saadoon",
+    name: "姆乌斯塔法·斯德乌恩",
     shirtNumber: 25,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -16770,7 +16770,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-irq-player-26",
     teamId: "team-irq",
-    name: "Frans Putros",
+    name: "弗朗阿恩斯·普乌特罗斯",
     shirtNumber: 26,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -16788,7 +16788,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nor-player-1",
     teamId: "team-nor",
-    name: "Ørjan Nyland",
+    name: "尔阿恩·恩伊勒恩德",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -16804,7 +16804,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nor-player-2",
     teamId: "team-nor",
-    name: "Morten Thorsby",
+    name: "姆奥尔特恩·特奥尔斯伊",
     shirtNumber: 2,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -16823,7 +16823,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nor-player-3",
     teamId: "team-nor",
-    name: "Kristoffer Ajer",
+    name: "克拉伊斯特奥夫费尔·阿杰尔",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -16841,7 +16841,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nor-player-4",
     teamId: "team-nor",
-    name: "Leo Østigård",
+    name: "勒埃·斯特伊格尔德",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -16859,7 +16859,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nor-player-5",
     teamId: "team-nor",
-    name: "David Møller Wolfe",
+    name: "大卫·姆·勒埃尔·瓦奥尔费",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -16877,7 +16877,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nor-player-6",
     teamId: "team-nor",
-    name: "Patrick Berg",
+    name: "普特尔伊克克·布埃尔格",
     shirtNumber: 6,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -16896,7 +16896,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nor-player-7",
     teamId: "team-nor",
-    name: "Alexander Sørloth",
+    name: "亚历山大·瑟洛特",
     shirtNumber: 7,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -16914,7 +16914,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nor-player-8",
     teamId: "team-nor",
-    name: "Sander Berge",
+    name: "斯恩德尔·布埃尔格",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -16933,7 +16933,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nor-player-9",
     teamId: "team-nor",
-    name: "Erling Haaland",
+    name: "埃尔林·哈兰德",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -16951,7 +16951,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nor-player-10",
     teamId: "team-nor",
-    name: "Martin Ødegaard",
+    name: "马丁·厄德高",
     shirtNumber: 10,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -16970,7 +16970,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nor-player-11",
     teamId: "team-nor",
-    name: "Jørgen Strand Larsen",
+    name: "贾·尔埃恩·斯特阿恩德·拉尔森",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -16988,7 +16988,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nor-player-12",
     teamId: "team-nor",
-    name: "Sander Tangvik",
+    name: "斯恩德尔·特恩格伊克",
     shirtNumber: 12,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -17004,7 +17004,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nor-player-13",
     teamId: "team-nor",
-    name: "Egil Selvik",
+    name: "埃吉勒·斯埃尔维克",
     shirtNumber: 13,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -17020,7 +17020,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nor-player-14",
     teamId: "team-nor",
-    name: "Fredrik Aursnes",
+    name: "弗朗埃德里克·奥尔斯内埃斯",
     shirtNumber: 14,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -17039,7 +17039,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nor-player-15",
     teamId: "team-nor",
-    name: "Fredrik André Bjørkan",
+    name: "弗朗埃德里克·阿恩德拉埃·布·尔阿恩",
     shirtNumber: 15,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -17057,7 +17057,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nor-player-16",
     teamId: "team-nor",
-    name: "Marcus Holmgren Pedersen",
+    name: "马库斯·哈奥尔姆埃恩·佩德尔森",
     shirtNumber: 16,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -17075,7 +17075,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nor-player-17",
     teamId: "team-nor",
-    name: "Torbjørn Heggem",
+    name: "特奥尔布·尔·哈埃格格姆",
     shirtNumber: 17,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -17093,7 +17093,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nor-player-18",
     teamId: "team-nor",
-    name: "Kristian Thorstvedt",
+    name: "克拉伊斯特亚恩·特奥尔斯埃德特",
     shirtNumber: 18,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -17112,7 +17112,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nor-player-19",
     teamId: "team-nor",
-    name: "Thelo Aasgaard",
+    name: "特埃洛·阿斯格尔德",
     shirtNumber: 19,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -17131,7 +17131,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nor-player-20",
     teamId: "team-nor",
-    name: "Antonio Nusa",
+    name: "安东尼奥·努萨",
     shirtNumber: 20,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -17150,7 +17150,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nor-player-21",
     teamId: "team-nor",
-    name: "Andreas Schjelderup",
+    name: "阿恩德拉亚斯·希埃尔德鲁普",
     shirtNumber: 21,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -17169,7 +17169,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nor-player-22",
     teamId: "team-nor",
-    name: "Oscar Bobb",
+    name: "奥斯卡尔·布奥布布",
     shirtNumber: 22,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -17188,7 +17188,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nor-player-23",
     teamId: "team-nor",
-    name: "Jens Petter Hauge",
+    name: "延斯·普埃特特尔·哈奥格",
     shirtNumber: 23,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -17207,7 +17207,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nor-player-24",
     teamId: "team-nor",
-    name: "Sondre Langås",
+    name: "斯奥恩德拉埃·勒恩加斯",
     shirtNumber: 24,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -17225,7 +17225,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nor-player-25",
     teamId: "team-nor",
-    name: "Henrik Falchener",
+    name: "哈埃恩里克·夫阿尔克埃内尔",
     shirtNumber: 25,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -17243,7 +17243,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-nor-player-26",
     teamId: "team-nor",
-    name: "Julian Ryerson",
+    name: "胡利安·尔伊尔森",
     shirtNumber: 26,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -17261,7 +17261,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sen-sample-player-1",
     teamId: "team-sen-sample",
-    name: "Yehvann Diouf",
+    name: "伊夫阿恩恩·德伊夫",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -17277,7 +17277,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sen-sample-player-2",
     teamId: "team-sen-sample",
-    name: "Mamadou Sarr",
+    name: "马马德乌·斯尔尔",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -17295,7 +17295,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sen-sample-player-3",
     teamId: "team-sen-sample",
-    name: "Kalidou Koulibaly",
+    name: "卡利德乌·克乌利布勒伊",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -17313,7 +17313,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sen-sample-player-4",
     teamId: "team-sen-sample",
-    name: "Abdoulaye Seck",
+    name: "阿布德乌勒艾·斯埃克克",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -17331,7 +17331,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sen-sample-player-5",
     teamId: "team-sen-sample",
-    name: "Idrissa Gueye",
+    name: "伊德尔伊斯萨·格埃",
     shirtNumber: 5,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -17350,7 +17350,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sen-sample-player-6",
     teamId: "team-sen-sample",
-    name: "Pathé Ciss",
+    name: "普特赫·克伊斯斯",
     shirtNumber: 6,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -17369,7 +17369,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sen-sample-player-7",
     teamId: "team-sen-sample",
-    name: "Assane Diao",
+    name: "阿斯萨内·德伊",
     shirtNumber: 7,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -17387,7 +17387,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sen-sample-player-8",
     teamId: "team-sen-sample",
-    name: "Lamine Camara",
+    name: "拉米内·卡马拉",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -17406,7 +17406,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sen-sample-player-9",
     teamId: "team-sen-sample",
-    name: "Bamba Dieng",
+    name: "布姆布·德伊恩格",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -17424,7 +17424,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sen-sample-player-10",
     teamId: "team-sen-sample",
-    name: "Sadio Mané",
+    name: "萨德约·马内",
     shirtNumber: 10,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -17442,7 +17442,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sen-sample-player-11",
     teamId: "team-sen-sample",
-    name: "Nicolas Jackson",
+    name: "尼古拉斯·杰克逊",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -17460,7 +17460,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sen-sample-player-12",
     teamId: "team-sen-sample",
-    name: "Cherif Ndiaye",
+    name: "克埃里夫·恩伊",
     shirtNumber: 12,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -17478,7 +17478,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sen-sample-player-13",
     teamId: "team-sen-sample",
-    name: "Iliman Ndiaye",
+    name: "伊利马恩·恩伊",
     shirtNumber: 13,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -17496,7 +17496,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sen-sample-player-14",
     teamId: "team-sen-sample",
-    name: "Ismail Jakobs",
+    name: "伊斯姆艾勒·贾克奥布斯",
     shirtNumber: 14,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -17514,7 +17514,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sen-sample-player-15",
     teamId: "team-sen-sample",
-    name: "Krépin Diatta",
+    name: "克拉埃皮恩·德亚特塔",
     shirtNumber: 15,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -17532,7 +17532,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sen-sample-player-16",
     teamId: "team-sen-sample",
-    name: "Édouard Mendy",
+    name: "埃德乌尔德·姆埃恩德伊",
     shirtNumber: 16,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -17548,7 +17548,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sen-sample-player-17",
     teamId: "team-sen-sample",
-    name: "Pape Matar Sarr",
+    name: "帕佩·马塔尔·斯尔尔",
     shirtNumber: 17,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -17567,7 +17567,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sen-sample-player-18",
     teamId: "team-sen-sample",
-    name: "Ismaïla Sarr",
+    name: "伊斯姆艾拉·斯尔尔",
     shirtNumber: 18,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -17585,7 +17585,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sen-sample-player-19",
     teamId: "team-sen-sample",
-    name: "Moussa Niakhaté",
+    name: "姆乌斯萨·恩亚克哈特",
     shirtNumber: 19,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -17603,7 +17603,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sen-sample-player-20",
     teamId: "team-sen-sample",
-    name: "Ibrahim Mbaye",
+    name: "易卜拉欣·姆艾",
     shirtNumber: 20,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -17621,7 +17621,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sen-sample-player-21",
     teamId: "team-sen-sample",
-    name: "Habib Diarra",
+    name: "哈布伊布·德亚尔拉",
     shirtNumber: 21,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -17640,7 +17640,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sen-sample-player-22",
     teamId: "team-sen-sample",
-    name: "Bara Sapoko Ndiaye",
+    name: "布拉·萨波科·恩伊",
     shirtNumber: 22,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -17659,7 +17659,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sen-sample-player-23",
     teamId: "team-sen-sample",
-    name: "Mory Diaw",
+    name: "莫尔伊·德亚瓦",
     shirtNumber: 23,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -17675,7 +17675,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sen-sample-player-24",
     teamId: "team-sen-sample",
-    name: "Antoine Mendy",
+    name: "阿恩特瓦内·姆埃恩德伊",
     shirtNumber: 24,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -17693,7 +17693,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sen-sample-player-25",
     teamId: "team-sen-sample",
-    name: "El Hadji Malick Diouf",
+    name: "埃尔哈阿德吉·马利克·德伊夫",
     shirtNumber: 25,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -17711,7 +17711,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-sen-sample-player-26",
     teamId: "team-sen-sample",
-    name: "Pape Gueye",
+    name: "帕佩·格埃",
     shirtNumber: 26,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -17730,7 +17730,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-alg-player-1",
     teamId: "team-alg",
-    name: "Melvin Mastil",
+    name: "姆埃尔维恩·姆斯蒂勒",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -17746,7 +17746,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-alg-player-2",
     teamId: "team-alg",
-    name: "Aïssa Mandi",
+    name: "艾斯萨·姆恩迪",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -17764,7 +17764,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-alg-player-3",
     teamId: "team-alg",
-    name: "Achref Abada",
+    name: "阿克哈埃夫·阿布达",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -17782,7 +17782,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-alg-player-4",
     teamId: "team-alg",
-    name: "Mohamed Amine Tougai",
+    name: "穆罕默德·阿明·特乌格艾",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -17800,7 +17800,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-alg-player-5",
     teamId: "team-alg",
-    name: "Zineddine Belaïd",
+    name: "齐恩埃德迪内·贝勒艾德",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -17818,7 +17818,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-alg-player-6",
     teamId: "team-alg",
-    name: "Ramiz Zerrouki",
+    name: "拉米兹·兹埃尔尔乌基",
     shirtNumber: 6,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -17837,7 +17837,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-alg-player-7",
     teamId: "team-alg",
-    name: "Riyad Mahrez",
+    name: "尔伊德·姆雷兹",
     shirtNumber: 7,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -17855,7 +17855,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-alg-player-8",
     teamId: "team-alg",
-    name: "Houssem Aouar",
+    name: "哈乌斯塞姆·阿尔",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -17874,7 +17874,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-alg-player-9",
     teamId: "team-alg",
-    name: "Amine Gouiri",
+    name: "阿明·古伊里",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -17892,7 +17892,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-alg-player-10",
     teamId: "team-alg",
-    name: "Farès Chaïbi",
+    name: "法雷斯·克艾布伊",
     shirtNumber: 10,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -17911,7 +17911,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-alg-player-11",
     teamId: "team-alg",
-    name: "Anis Hadj Moussa",
+    name: "阿尼斯·哈吉·姆乌斯萨",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -17929,7 +17929,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-alg-player-12",
     teamId: "team-alg",
-    name: "Nadhir Benbouali",
+    name: "恩阿德希尔·本布乌利",
     shirtNumber: 12,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -17947,7 +17947,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-alg-player-13",
     teamId: "team-alg",
-    name: "Jaouen Hadjam",
+    name: "贾阿恩·哈阿德贾姆",
     shirtNumber: 13,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -17965,7 +17965,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-alg-player-14",
     teamId: "team-alg",
-    name: "Hicham Boudaoui",
+    name: "哈伊克哈姆·布乌德",
     shirtNumber: 14,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -17984,7 +17984,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-alg-player-15",
     teamId: "team-alg",
-    name: "Rayan Aït-Nouri",
+    name: "拉扬·艾特·恩乌里",
     shirtNumber: 15,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -18002,7 +18002,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-alg-player-16",
     teamId: "team-alg",
-    name: "Oussama Benbot",
+    name: "乌斯萨马·本博特",
     shirtNumber: 16,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -18018,7 +18018,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-alg-player-17",
     teamId: "team-alg",
-    name: "Rafik Belghali",
+    name: "拉菲克·布埃尔格利",
     shirtNumber: 17,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -18036,7 +18036,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-alg-player-18",
     teamId: "team-alg",
-    name: "Mohamed Amoura",
+    name: "穆罕默德·阿姆乌拉",
     shirtNumber: 18,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -18054,7 +18054,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-alg-player-19",
     teamId: "team-alg",
-    name: "Nabil Bentaleb",
+    name: "纳比勒·本塔莱布",
     shirtNumber: 19,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -18073,7 +18073,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-alg-player-20",
     teamId: "team-alg",
-    name: "Adil Boulbina",
+    name: "阿迪勒·布乌尔布伊纳",
     shirtNumber: 20,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -18091,7 +18091,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-alg-player-21",
     teamId: "team-alg",
-    name: "Ramy Bensebaini",
+    name: "拉姆伊·本塞布艾尼",
     shirtNumber: 21,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -18109,7 +18109,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-alg-player-22",
     teamId: "team-alg",
-    name: "Ibrahim Maza",
+    name: "易卜拉欣·马扎",
     shirtNumber: 22,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -18128,7 +18128,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-alg-player-23",
     teamId: "team-alg",
-    name: "Luca Zidane",
+    name: "卢卡·齐达内",
     shirtNumber: 23,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -18144,7 +18144,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-alg-player-24",
     teamId: "team-alg",
-    name: "Yacine Titraoui",
+    name: "亚西内·特伊特尔阿",
     shirtNumber: 24,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -18163,7 +18163,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-alg-player-25",
     teamId: "team-alg",
-    name: "Farès Ghedjemis",
+    name: "法雷斯·格埃德杰米斯",
     shirtNumber: 25,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -18181,7 +18181,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-alg-player-26",
     teamId: "team-alg",
-    name: "Samir Chergui",
+    name: "萨米尔·克埃尔格伊",
     shirtNumber: 26,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -18199,7 +18199,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-arg-sample-player-1",
     teamId: "team-arg-sample",
-    name: "Juan Musso",
+    name: "胡安·穆索",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -18215,7 +18215,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-arg-sample-player-2",
     teamId: "team-arg-sample",
-    name: "Marcos Senesi",
+    name: "马科斯·塞内西",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -18233,7 +18233,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-arg-sample-player-3",
     teamId: "team-arg-sample",
-    name: "Nicolás Tagliafico",
+    name: "尼古拉斯·塔利亚菲科",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -18251,7 +18251,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-arg-sample-player-4",
     teamId: "team-arg-sample",
-    name: "Gonzalo Montiel",
+    name: "冈萨洛·蒙铁尔",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -18269,7 +18269,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-arg-sample-player-5",
     teamId: "team-arg-sample",
-    name: "Leandro Paredes",
+    name: "莱安德罗·帕雷德斯",
     shirtNumber: 5,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -18288,7 +18288,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-arg-sample-player-6",
     teamId: "team-arg-sample",
-    name: "Lisandro Martínez",
+    name: "利桑德罗·马丁内斯",
     shirtNumber: 6,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -18306,7 +18306,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-arg-sample-player-7",
     teamId: "team-arg-sample",
-    name: "Rodrigo De Paul",
+    name: "罗德里戈·德保罗",
     shirtNumber: 7,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -18325,7 +18325,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-arg-sample-player-8",
     teamId: "team-arg-sample",
-    name: "Valentín Barco",
+    name: "瓦伦丁·巴尔科",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -18344,7 +18344,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-arg-sample-player-9",
     teamId: "team-arg-sample",
-    name: "Julián Alvarez",
+    name: "胡利安·阿尔瓦雷斯",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -18362,7 +18362,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-arg-sample-player-10",
     teamId: "team-arg-sample",
-    name: "Lionel Messi",
+    name: "利昂内尔·梅西",
     shirtNumber: 10,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -18380,7 +18380,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-arg-sample-player-11",
     teamId: "team-arg-sample",
-    name: "Giovani Lo Celso",
+    name: "乔瓦尼·洛塞尔索",
     shirtNumber: 11,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -18399,7 +18399,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-arg-sample-player-12",
     teamId: "team-arg-sample",
-    name: "Gerónimo Rulli",
+    name: "赫罗尼莫·鲁利",
     shirtNumber: 12,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -18415,7 +18415,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-arg-sample-player-13",
     teamId: "team-arg-sample",
-    name: "Cristian Romero",
+    name: "克里斯蒂安·罗梅罗",
     shirtNumber: 13,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -18433,7 +18433,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-arg-sample-player-14",
     teamId: "team-arg-sample",
-    name: "Exequiel Palacios",
+    name: "埃塞基耶尔·帕拉西奥斯",
     shirtNumber: 14,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -18452,7 +18452,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-arg-sample-player-15",
     teamId: "team-arg-sample",
-    name: "Nicolás González",
+    name: "尼古拉斯·冈萨雷斯",
     shirtNumber: 15,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -18471,7 +18471,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-arg-sample-player-16",
     teamId: "team-arg-sample",
-    name: "Thiago Almada",
+    name: "蒂亚戈·阿尔马达",
     shirtNumber: 16,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -18489,7 +18489,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-arg-sample-player-17",
     teamId: "team-arg-sample",
-    name: "Giuliano Simeone",
+    name: "朱利亚诺·西蒙尼",
     shirtNumber: 17,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -18507,7 +18507,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-arg-sample-player-18",
     teamId: "team-arg-sample",
-    name: "Nico Paz",
+    name: "尼科·帕斯",
     shirtNumber: 18,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -18525,7 +18525,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-arg-sample-player-19",
     teamId: "team-arg-sample",
-    name: "Nicolás Otamendi",
+    name: "尼古拉斯·奥塔门迪",
     shirtNumber: 19,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -18543,7 +18543,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-arg-sample-player-20",
     teamId: "team-arg-sample",
-    name: "Alexis Mac Allister",
+    name: "亚历克西斯·麦卡利斯特",
     shirtNumber: 20,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -18562,7 +18562,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-arg-sample-player-21",
     teamId: "team-arg-sample",
-    name: "José Manuel López",
+    name: "何塞·曼努埃尔·洛佩斯",
     shirtNumber: 21,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -18580,7 +18580,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-arg-sample-player-22",
     teamId: "team-arg-sample",
-    name: "Lautaro Martínez",
+    name: "劳塔罗·马丁内斯",
     shirtNumber: 22,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -18598,7 +18598,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-arg-sample-player-23",
     teamId: "team-arg-sample",
-    name: "Emiliano Martínez",
+    name: "埃米利亚诺·马丁内斯",
     shirtNumber: 23,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -18614,7 +18614,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-arg-sample-player-24",
     teamId: "team-arg-sample",
-    name: "Enzo Fernández",
+    name: "恩佐·费尔南德斯",
     shirtNumber: 24,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -18633,7 +18633,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-arg-sample-player-25",
     teamId: "team-arg-sample",
-    name: "Facundo Medina",
+    name: "法昆多·梅迪纳",
     shirtNumber: 25,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -18651,7 +18651,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-arg-sample-player-26",
     teamId: "team-arg-sample",
-    name: "Nahuel Molina",
+    name: "纳韦尔·莫利纳",
     shirtNumber: 26,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -18669,7 +18669,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aut-player-1",
     teamId: "team-aut",
-    name: "Alexander Schlager",
+    name: "亚历山大·希阿格尔",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -18685,7 +18685,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aut-player-2",
     teamId: "team-aut",
-    name: "David Affengruber",
+    name: "大卫·阿夫夫埃恩格拉乌贝尔",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -18703,7 +18703,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aut-player-3",
     teamId: "team-aut",
-    name: "Kevin Danso",
+    name: "凯文·德恩索",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -18721,7 +18721,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aut-player-4",
     teamId: "team-aut",
-    name: "Xaver Schlager",
+    name: "哈韦尔·希阿格尔",
     shirtNumber: 4,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -18740,7 +18740,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aut-player-5",
     teamId: "team-aut",
-    name: "Stefan Posch",
+    name: "斯特埃法恩·普奥斯克",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -18758,7 +18758,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aut-player-6",
     teamId: "team-aut",
-    name: "Nicolas Seiwald",
+    name: "尼古拉斯·斯伊瓦尔德",
     shirtNumber: 6,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -18777,7 +18777,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aut-player-7",
     teamId: "team-aut",
-    name: "Marko Arnautović",
+    name: "马尔科·阿尔恩奥特奥维奇",
     shirtNumber: 7,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -18795,7 +18795,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aut-player-8",
     teamId: "team-aut",
-    name: "David Alaba",
+    name: "大卫·阿拉布",
     shirtNumber: 8,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -18813,7 +18813,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aut-player-9",
     teamId: "team-aut",
-    name: "Marcel Sabitzer",
+    name: "姆尔塞勒·萨布伊特泽尔",
     shirtNumber: 9,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -18832,7 +18832,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aut-player-10",
     teamId: "team-aut",
-    name: "Florian Grillitsch",
+    name: "弗洛里安·格拉伊尔勒伊特希",
     shirtNumber: 10,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -18851,7 +18851,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aut-player-11",
     teamId: "team-aut",
-    name: "Michael Gregoritsch",
+    name: "迈克尔·格拉埃戈尔伊特希",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -18869,7 +18869,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aut-player-12",
     teamId: "team-aut",
-    name: "Florian Wiegele",
+    name: "弗洛里安·瓦伊格莱",
     shirtNumber: 12,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -18885,7 +18885,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aut-player-13",
     teamId: "team-aut",
-    name: "Patrick Pentz",
+    name: "普特尔伊克克·普埃恩特",
     shirtNumber: 13,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -18901,7 +18901,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aut-player-14",
     teamId: "team-aut",
-    name: "Saša Kalajdžić",
+    name: "萨萨·卡勒德奇",
     shirtNumber: 14,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -18919,7 +18919,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aut-player-15",
     teamId: "team-aut",
-    name: "Philipp Lienhart",
+    name: "夫伊勒伊普普·勒伊恩哈阿尔特",
     shirtNumber: 15,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -18937,7 +18937,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aut-player-16",
     teamId: "team-aut",
-    name: "Phillipp Mwene",
+    name: "夫伊尔勒伊普普·姆埃内",
     shirtNumber: 16,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -18955,7 +18955,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aut-player-17",
     teamId: "team-aut",
-    name: "Carney Chukwuemeka",
+    name: "克尔恩埃·克瓦韦梅卡",
     shirtNumber: 17,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -18974,7 +18974,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aut-player-18",
     teamId: "team-aut",
-    name: "Romano Schmid",
+    name: "罗马诺·希伊德",
     shirtNumber: 18,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -18993,7 +18993,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aut-player-19",
     teamId: "team-aut",
-    name: "Dejan Ljubičić",
+    name: "德贾恩·勒乌布奇奇",
     shirtNumber: 19,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -19012,7 +19012,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aut-player-20",
     teamId: "team-aut",
-    name: "Konrad Laimer",
+    name: "克奥恩拉德·勒艾梅尔",
     shirtNumber: 20,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -19031,7 +19031,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aut-player-21",
     teamId: "team-aut",
-    name: "Patrick Wimmer",
+    name: "普特尔伊克克·瓦伊姆梅尔",
     shirtNumber: 21,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -19049,7 +19049,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aut-player-22",
     teamId: "team-aut",
-    name: "Alexander Prass",
+    name: "亚历山大·普罗阿斯斯",
     shirtNumber: 22,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -19068,7 +19068,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aut-player-23",
     teamId: "team-aut",
-    name: "Marco Friedl",
+    name: "姆尔科·弗朗伊德勒",
     shirtNumber: 23,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -19086,7 +19086,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aut-player-24",
     teamId: "team-aut",
-    name: "Paul Wanner",
+    name: "保罗·瓦恩内尔",
     shirtNumber: 24,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -19105,7 +19105,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aut-player-25",
     teamId: "team-aut",
-    name: "Michael Svoboda",
+    name: "迈克尔·斯奥博达",
     shirtNumber: 25,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -19123,7 +19123,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-aut-player-26",
     teamId: "team-aut",
-    name: "Alessandro Schöpf",
+    name: "亚历山德罗·希奥普夫",
     shirtNumber: 26,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -19142,7 +19142,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jor-player-1",
     teamId: "team-jor",
-    name: "Yazeed Abulaila",
+    name: "亚兹伊德·阿布乌勒艾拉",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -19158,7 +19158,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jor-player-2",
     teamId: "team-jor",
-    name: "Mohammad Abu Hashish",
+    name: "穆罕默德·阿布·哈阿斯哈伊斯哈",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -19176,7 +19176,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jor-player-3",
     teamId: "team-jor",
-    name: "Abdallah Nasib",
+    name: "阿布德尔拉哈·纳西布",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -19194,7 +19194,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jor-player-4",
     teamId: "team-jor",
-    name: "Husam Abu Dahab",
+    name: "胡萨姆·阿布·达哈布",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -19212,7 +19212,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jor-player-5",
     teamId: "team-jor",
-    name: "Yazan Al-Arab",
+    name: "亚扎恩·阿尔阿拉布",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -19230,7 +19230,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jor-player-6",
     teamId: "team-jor",
-    name: "Amer Jamous",
+    name: "阿梅尔·贾姆乌斯",
     shirtNumber: 6,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -19249,7 +19249,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jor-player-7",
     teamId: "team-jor",
-    name: "Mohammad Abu Zrayq",
+    name: "穆罕默德·阿布·兹艾克",
     shirtNumber: 7,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -19267,7 +19267,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jor-player-8",
     teamId: "team-jor",
-    name: "Noor Al-Rawabdeh",
+    name: "恩乌尔·阿尔拉瓦布德哈",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -19286,7 +19286,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jor-player-9",
     teamId: "team-jor",
-    name: "Ali Olwan",
+    name: "阿里·奥尔瓦恩",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -19304,7 +19304,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jor-player-10",
     teamId: "team-jor",
-    name: "Musa Al-Taamari",
+    name: "穆萨·阿尔特马里",
     shirtNumber: 10,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -19322,7 +19322,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jor-player-11",
     teamId: "team-jor",
-    name: "Odeh Al-Fakhouri",
+    name: "奥德哈·阿尔夫阿克哈乌里",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -19340,7 +19340,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jor-player-12",
     teamId: "team-jor",
-    name: "Nour Bani Attiah",
+    name: "恩乌尔·布尼·阿特特亚哈",
     shirtNumber: 12,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -19356,7 +19356,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jor-player-13",
     teamId: "team-jor",
-    name: "Mahmoud Al-Mardi",
+    name: "马哈茂德·阿尔姆尔迪",
     shirtNumber: 13,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -19374,7 +19374,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jor-player-14",
     teamId: "team-jor",
-    name: "Rajaei Ayed",
+    name: "拉贾阿·艾德",
     shirtNumber: 14,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -19393,7 +19393,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jor-player-15",
     teamId: "team-jor",
-    name: "Ibrahim Sadeh",
+    name: "易卜拉欣·萨德哈",
     shirtNumber: 15,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -19412,7 +19412,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jor-player-16",
     teamId: "team-jor",
-    name: "Mo Abualnadi",
+    name: "莫·阿布乌尔纳迪",
     shirtNumber: 16,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -19430,7 +19430,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jor-player-17",
     teamId: "team-jor",
-    name: "Salim Obaid",
+    name: "萨利姆·奥布艾德",
     shirtNumber: 17,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -19448,7 +19448,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jor-player-18",
     teamId: "team-jor",
-    name: "Mohammad Taha",
+    name: "穆罕默德·塔哈",
     shirtNumber: 18,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -19467,7 +19467,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jor-player-19",
     teamId: "team-jor",
-    name: "Saed Al-Rosan",
+    name: "斯德·阿尔罗萨恩",
     shirtNumber: 19,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -19485,7 +19485,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jor-player-20",
     teamId: "team-jor",
-    name: "Mohannad Abu Taha",
+    name: "莫哈阿恩纳德·阿布·塔哈",
     shirtNumber: 20,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -19504,7 +19504,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jor-player-21",
     teamId: "team-jor",
-    name: "Nizar Al-Rashdan",
+    name: "尼扎尔·阿尔尔阿斯哈阿恩",
     shirtNumber: 21,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -19523,7 +19523,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jor-player-22",
     teamId: "team-jor",
-    name: "Abdallah Al-Fakhouri",
+    name: "阿布德尔拉哈·阿尔夫阿克哈乌里",
     shirtNumber: 22,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -19539,7 +19539,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jor-player-23",
     teamId: "team-jor",
-    name: "Ihsan Haddad",
+    name: "伊萨恩·哈阿德达德",
     shirtNumber: 23,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -19557,7 +19557,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jor-player-24",
     teamId: "team-jor",
-    name: "Ali Azaizeh",
+    name: "阿里·阿兹艾泽哈",
     shirtNumber: 24,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -19575,7 +19575,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jor-player-25",
     teamId: "team-jor",
-    name: "Mohammad Al-Dawoud",
+    name: "穆罕默德·阿尔达瓦乌德",
     shirtNumber: 25,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -19594,7 +19594,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-jor-player-26",
     teamId: "team-jor",
-    name: "Anas Badawi",
+    name: "阿纳斯·布达维",
     shirtNumber: 26,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -19612,7 +19612,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-col-player-1",
     teamId: "team-col",
-    name: "David Ospina",
+    name: "大卫·奥斯皮纳",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -19628,7 +19628,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-col-player-2",
     teamId: "team-col",
-    name: "Daniel Muñoz",
+    name: "丹尼尔·穆诺兹",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -19646,7 +19646,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-col-player-3",
     teamId: "team-col",
-    name: "Jhon Lucumí",
+    name: "贾奥恩·卢克乌米",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -19664,7 +19664,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-col-player-4",
     teamId: "team-col",
-    name: "Santiago Arias",
+    name: "圣地亚哥·阿尔亚斯",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -19682,7 +19682,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-col-player-5",
     teamId: "team-col",
-    name: "Kevin Castaño",
+    name: "凯文·克斯塔诺",
     shirtNumber: 5,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -19701,7 +19701,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-col-player-6",
     teamId: "team-col",
-    name: "Richard Ríos",
+    name: "理查德·里奥斯",
     shirtNumber: 6,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -19720,7 +19720,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-col-player-7",
     teamId: "team-col",
-    name: "Luis Díaz",
+    name: "路易斯·迪亚斯",
     shirtNumber: 7,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -19738,7 +19738,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-col-player-8",
     teamId: "team-col",
-    name: "Jorge Carrascal",
+    name: "豪尔赫·克尔尔阿斯卡勒",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -19757,7 +19757,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-col-player-9",
     teamId: "team-col",
-    name: "Jhon Córdoba",
+    name: "贾奥恩·克奥尔多布",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -19775,7 +19775,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-col-player-10",
     teamId: "team-col",
-    name: "James Rodríguez",
+    name: "哈梅斯·罗德里格斯",
     shirtNumber: 10,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -19794,7 +19794,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-col-player-11",
     teamId: "team-col",
-    name: "Jhon Arias",
+    name: "约翰·阿里亚斯",
     shirtNumber: 11,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -19813,7 +19813,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-col-player-12",
     teamId: "team-col",
-    name: "Camilo Vargas",
+    name: "卡米洛·巴尔加斯",
     shirtNumber: 12,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -19829,7 +19829,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-col-player-13",
     teamId: "team-col",
-    name: "Yerry Mina",
+    name: "伊尔尔伊·米纳",
     shirtNumber: 13,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -19847,7 +19847,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-col-player-14",
     teamId: "team-col",
-    name: "Gustavo Puerta",
+    name: "古斯塔沃·普韦尔塔",
     shirtNumber: 14,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -19865,7 +19865,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-col-player-15",
     teamId: "team-col",
-    name: "Juan Portilla",
+    name: "贾乌恩·普奥尔特伊尔拉",
     shirtNumber: 15,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -19884,7 +19884,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-col-player-16",
     teamId: "team-col",
-    name: "Jefferson Lerma",
+    name: "贾埃夫费尔森·勒埃尔马",
     shirtNumber: 16,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -19903,7 +19903,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-col-player-17",
     teamId: "team-col",
-    name: "Johan Mojica",
+    name: "约翰·莫吉卡",
     shirtNumber: 17,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -19921,7 +19921,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-col-player-18",
     teamId: "team-col",
-    name: "Willer Ditta",
+    name: "瓦伊尔莱尔·德伊特塔",
     shirtNumber: 18,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -19939,7 +19939,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-col-player-19",
     teamId: "team-col",
-    name: "Cucho Hernández",
+    name: "克乌克霍·哈埃尔恩阿恩德兹",
     shirtNumber: 19,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -19957,7 +19957,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-col-player-20",
     teamId: "team-col",
-    name: "Juan Fernando Quintero",
+    name: "贾乌恩·夫埃尔恩阿恩多·克伊恩特罗",
     shirtNumber: 20,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -19976,7 +19976,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-col-player-21",
     teamId: "team-col",
-    name: "Jaminton Campaz",
+    name: "贾姆伊恩托恩·克姆帕兹",
     shirtNumber: 21,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -19994,7 +19994,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-col-player-22",
     teamId: "team-col",
-    name: "Deiver Machado",
+    name: "德伊韦尔·姆克哈多",
     shirtNumber: 22,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -20012,7 +20012,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-col-player-23",
     teamId: "team-col",
-    name: "Davinson Sánchez",
+    name: "达维恩森·桑切斯",
     shirtNumber: 23,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -20030,7 +20030,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-col-player-24",
     teamId: "team-col",
-    name: "Álvaro Montero",
+    name: "阿尔瓦罗·姆奥恩特罗",
     shirtNumber: 24,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -20046,7 +20046,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-col-player-25",
     teamId: "team-col",
-    name: "Luis Suárez",
+    name: "路易斯·斯乌雷兹",
     shirtNumber: 25,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -20064,7 +20064,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-col-player-26",
     teamId: "team-col",
-    name: "Andrés Gómez",
+    name: "安德烈斯·戈麦斯",
     shirtNumber: 26,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -20082,7 +20082,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cod-player-1",
     teamId: "team-cod",
-    name: "Lionel Mpasi",
+    name: "勒约内勒·姆西",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -20098,7 +20098,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cod-player-2",
     teamId: "team-cod",
-    name: "Aaron Wan-Bissaka",
+    name: "阿罗恩·瓦恩·布伊斯萨卡",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -20116,7 +20116,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cod-player-3",
     teamId: "team-cod",
-    name: "Steve Kapuadi",
+    name: "斯特埃韦·卡普乌迪",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -20134,7 +20134,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cod-player-4",
     teamId: "team-cod",
-    name: "Axel Tuanzebe",
+    name: "阿克塞尔·特乌恩泽贝",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -20152,7 +20152,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cod-player-5",
     teamId: "team-cod",
-    name: "Dylan Batubinsika",
+    name: "德伊拉恩·布图布伊恩西卡",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -20170,7 +20170,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cod-player-6",
     teamId: "team-cod",
-    name: "Ngal'ayel Mukau",
+    name: "恩阿勒·艾勒·穆克奥",
     shirtNumber: 6,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -20189,7 +20189,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cod-player-7",
     teamId: "team-cod",
-    name: "Nathanaël Mbuku",
+    name: "恩阿特哈恩阿勒·姆乌库",
     shirtNumber: 7,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -20208,7 +20208,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cod-player-8",
     teamId: "team-cod",
-    name: "Samuel Moutoussamy",
+    name: "萨姆韦勒·姆乌特乌斯萨姆伊",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -20227,7 +20227,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cod-player-9",
     teamId: "team-cod",
-    name: "Brian Cipenga",
+    name: "布赖恩·西普埃恩加",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -20245,7 +20245,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cod-player-10",
     teamId: "team-cod",
-    name: "Théo Bongonda",
+    name: "特埃·布奥恩格奥恩达",
     shirtNumber: 10,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -20264,7 +20264,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cod-player-11",
     teamId: "team-cod",
-    name: "Gaël Kakuta",
+    name: "格勒·卡库塔",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -20282,7 +20282,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cod-player-12",
     teamId: "team-cod",
-    name: "Joris Kayembe",
+    name: "若里斯·克艾姆贝",
     shirtNumber: 12,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -20300,7 +20300,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cod-player-13",
     teamId: "team-cod",
-    name: "Meschak Elia",
+    name: "姆埃斯克克·埃勒亚",
     shirtNumber: 13,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -20318,7 +20318,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cod-player-14",
     teamId: "team-cod",
-    name: "Noah Sadiki",
+    name: "诺亚·萨迪基",
     shirtNumber: 14,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -20337,7 +20337,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cod-player-15",
     teamId: "team-cod",
-    name: "Aaron Tshibola",
+    name: "阿罗恩·特伊博拉",
     shirtNumber: 15,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -20356,7 +20356,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cod-player-16",
     teamId: "team-cod",
-    name: "Timothy Fayulu",
+    name: "蒂莫西·夫阿卢",
     shirtNumber: 16,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -20372,7 +20372,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cod-player-17",
     teamId: "team-cod",
-    name: "Cédric Bakambu",
+    name: "克埃德尔奇·布克姆布乌",
     shirtNumber: 17,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -20390,7 +20390,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cod-player-18",
     teamId: "team-cod",
-    name: "Charles Pickel",
+    name: "夏尔·普伊克凯勒",
     shirtNumber: 18,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -20409,7 +20409,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cod-player-19",
     teamId: "team-cod",
-    name: "Fiston Mayele",
+    name: "夫伊斯托恩·姆艾莱",
     shirtNumber: 19,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -20427,7 +20427,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cod-player-20",
     teamId: "team-cod",
-    name: "Yoane Wissa",
+    name: "约内·瓦伊斯萨",
     shirtNumber: 20,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -20445,7 +20445,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cod-player-21",
     teamId: "team-cod",
-    name: "Matthieu Epolo",
+    name: "姆特特伊·埃波洛",
     shirtNumber: 21,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -20461,7 +20461,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cod-player-22",
     teamId: "team-cod",
-    name: "Chancel Mbemba",
+    name: "克恩塞勒·姆埃姆布",
     shirtNumber: 22,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -20479,7 +20479,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cod-player-23",
     teamId: "team-cod",
-    name: "Simon Banza",
+    name: "西蒙·布恩扎",
     shirtNumber: 23,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -20497,7 +20497,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cod-player-24",
     teamId: "team-cod",
-    name: "Gédéon Kalulu",
+    name: "格德埃恩·卡卢卢",
     shirtNumber: 24,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -20515,7 +20515,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cod-player-25",
     teamId: "team-cod",
-    name: "Edo Kayembe",
+    name: "埃多·克艾姆贝",
     shirtNumber: 25,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -20534,7 +20534,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cod-player-26",
     teamId: "team-cod",
-    name: "Arthur Masuaku",
+    name: "阿图尔·马斯乌库",
     shirtNumber: 26,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -20552,7 +20552,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-por-player-1",
     teamId: "team-por",
-    name: "Diogo Costa",
+    name: "迪奥戈·科斯塔",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -20568,7 +20568,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-por-player-2",
     teamId: "team-por",
-    name: "Nélson Semedo",
+    name: "内勒森·塞梅多",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -20586,7 +20586,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-por-player-3",
     teamId: "team-por",
-    name: "Rúben Dias",
+    name: "鲁本·迪亚斯",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -20604,7 +20604,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-por-player-4",
     teamId: "team-por",
-    name: "Tomás Araújo",
+    name: "托马什·阿劳霍",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -20622,7 +20622,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-por-player-5",
     teamId: "team-por",
-    name: "Diogo Dalot",
+    name: "迪奥戈·达洛特",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -20640,7 +20640,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-por-player-6",
     teamId: "team-por",
-    name: "Matheus Nunes",
+    name: "马特乌斯·努内斯",
     shirtNumber: 6,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -20659,7 +20659,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-por-player-7",
     teamId: "team-por",
-    name: "Cristiano Ronaldo",
+    name: "克里斯蒂亚诺·罗纳尔多",
     shirtNumber: 7,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -20677,7 +20677,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-por-player-8",
     teamId: "team-por",
-    name: "Bruno Fernandes",
+    name: "布鲁诺·费尔南德斯",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -20696,7 +20696,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-por-player-9",
     teamId: "team-por",
-    name: "Gonçalo Ramos",
+    name: "贡萨洛·拉莫斯",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -20714,7 +20714,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-por-player-10",
     teamId: "team-por",
-    name: "Bernardo Silva",
+    name: "贝尔纳多·席尔瓦",
     shirtNumber: 10,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -20733,7 +20733,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-por-player-11",
     teamId: "team-por",
-    name: "João Félix",
+    name: "若昂·菲利克斯",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -20751,7 +20751,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-por-player-12",
     teamId: "team-por",
-    name: "José Sá",
+    name: "何塞·萨",
     shirtNumber: 12,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -20767,7 +20767,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-por-player-13",
     teamId: "team-por",
-    name: "Renato Veiga",
+    name: "雷纳托·韦加",
     shirtNumber: 13,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -20785,7 +20785,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-por-player-14",
     teamId: "team-por",
-    name: "Gonçalo Inácio",
+    name: "贡萨洛·伊纳西奥",
     shirtNumber: 14,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -20803,7 +20803,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-por-player-15",
     teamId: "team-por",
-    name: "João Neves",
+    name: "若昂·内维斯",
     shirtNumber: 15,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -20822,7 +20822,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-por-player-16",
     teamId: "team-por",
-    name: "Francisco Trincão",
+    name: "弗朗阿恩克伊斯科·特罗伊恩克奥",
     shirtNumber: 16,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -20840,7 +20840,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-por-player-17",
     teamId: "team-por",
-    name: "Rafael Leão",
+    name: "拉斐尔·莱奥",
     shirtNumber: 17,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -20858,7 +20858,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-por-player-18",
     teamId: "team-por",
-    name: "Pedro Neto",
+    name: "佩德罗·内托",
     shirtNumber: 18,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -20876,7 +20876,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-por-player-19",
     teamId: "team-por",
-    name: "Gonçalo Guedes",
+    name: "贡萨洛·格埃德斯",
     shirtNumber: 19,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -20894,7 +20894,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-por-player-20",
     teamId: "team-por",
-    name: "João Cancelo",
+    name: "若昂·坎塞洛",
     shirtNumber: 20,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -20912,7 +20912,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-por-player-21",
     teamId: "team-por",
-    name: "Rúben Neves",
+    name: "鲁本·内维斯",
     shirtNumber: 21,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -20931,7 +20931,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-por-player-22",
     teamId: "team-por",
-    name: "Rui Silva",
+    name: "尔维·席尔瓦",
     shirtNumber: 22,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -20947,7 +20947,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-por-player-23",
     teamId: "team-por",
-    name: "Vitinha",
+    name: "维蒂尼亚",
     shirtNumber: 23,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -20966,7 +20966,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-por-player-24",
     teamId: "team-por",
-    name: "Samú Costa",
+    name: "萨穆·克奥斯塔",
     shirtNumber: 24,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -20984,7 +20984,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-por-player-25",
     teamId: "team-por",
-    name: "Nuno Mendes",
+    name: "努诺·门德斯",
     shirtNumber: 25,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -21002,7 +21002,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-por-player-26",
     teamId: "team-por",
-    name: "Francisco Conceição",
+    name: "弗朗西斯科·孔塞桑",
     shirtNumber: 26,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -21020,7 +21020,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uzb-player-1",
     teamId: "team-uzb",
-    name: "Utkir Yusupov",
+    name: "乌特基尔·尤苏波夫",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -21036,7 +21036,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uzb-player-2",
     teamId: "team-uzb",
-    name: "Abdukodir Khusanov",
+    name: "阿布杜科迪尔·克乌萨诺夫",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -21054,7 +21054,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uzb-player-3",
     teamId: "team-uzb",
-    name: "Khojiakbar Alijonov",
+    name: "克奥贾亚克布尔·阿利若诺夫",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -21072,7 +21072,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uzb-player-4",
     teamId: "team-uzb",
-    name: "Farrukh Sayfiev",
+    name: "夫阿尔尔乌克哈·斯艾夫伊夫",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -21090,7 +21090,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uzb-player-5",
     teamId: "team-uzb",
-    name: "Rustam Ashurmatov",
+    name: "尔乌斯塔姆·阿斯哈乌尔马托夫",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -21108,7 +21108,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uzb-player-6",
     teamId: "team-uzb",
-    name: "Akmal Mozgovoy",
+    name: "阿克马勒·姆奥兹戈夫瓦",
     shirtNumber: 6,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -21127,7 +21127,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uzb-player-7",
     teamId: "team-uzb",
-    name: "Otabek Shukurov",
+    name: "奥塔贝克·希乌库罗夫",
     shirtNumber: 7,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -21146,7 +21146,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uzb-player-8",
     teamId: "team-uzb",
-    name: "Jamshid Iskanderov",
+    name: "贾阿姆希伊德·伊斯克恩德罗夫",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -21165,7 +21165,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uzb-player-9",
     teamId: "team-uzb",
-    name: "Odiljon Hamrobekov",
+    name: "奥德伊尔若恩·哈阿姆罗贝科夫",
     shirtNumber: 9,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -21184,7 +21184,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uzb-player-10",
     teamId: "team-uzb",
-    name: "Jaloliddin Masharipov",
+    name: "贾洛勒伊德迪恩·姆斯哈里波夫",
     shirtNumber: 10,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -21203,7 +21203,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uzb-player-11",
     teamId: "team-uzb",
-    name: "Oston Urunov",
+    name: "奥斯托恩·乌鲁诺夫",
     shirtNumber: 11,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -21222,7 +21222,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uzb-player-12",
     teamId: "team-uzb",
-    name: "Abduvohid Nematov",
+    name: "阿布杜沃希德·内马托夫",
     shirtNumber: 12,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -21238,7 +21238,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uzb-player-13",
     teamId: "team-uzb",
-    name: "Sherzod Nasrullaev",
+    name: "希埃尔佐德·恩阿斯尔乌尔勒夫",
     shirtNumber: 13,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -21256,7 +21256,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uzb-player-14",
     teamId: "team-uzb",
-    name: "Eldor Shomurodov",
+    name: "埃尔多尔·希奥穆罗多夫",
     shirtNumber: 14,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -21274,7 +21274,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uzb-player-15",
     teamId: "team-uzb",
-    name: "Umar Eshmurodov",
+    name: "乌马尔·埃斯哈乌罗多夫",
     shirtNumber: 15,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -21292,7 +21292,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uzb-player-16",
     teamId: "team-uzb",
-    name: "Botirali Ergashev",
+    name: "博蒂拉利·尔格斯赫夫",
     shirtNumber: 16,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -21308,7 +21308,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uzb-player-17",
     teamId: "team-uzb",
-    name: "Dostonbek Khamdamov",
+    name: "德奥斯特奥恩贝克·克姆达莫夫",
     shirtNumber: 17,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -21327,7 +21327,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uzb-player-18",
     teamId: "team-uzb",
-    name: "Abdulla Abdullaev",
+    name: "阿布德乌尔拉·阿布德乌尔勒夫",
     shirtNumber: 18,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -21345,7 +21345,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uzb-player-19",
     teamId: "team-uzb",
-    name: "Azizjon Ganiev",
+    name: "阿兹伊兹若恩·加恩伊夫",
     shirtNumber: 19,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -21364,7 +21364,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uzb-player-20",
     teamId: "team-uzb",
-    name: "Azizbek Amonov",
+    name: "阿兹伊兹贝克·阿莫诺夫",
     shirtNumber: 20,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -21382,7 +21382,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uzb-player-21",
     teamId: "team-uzb",
-    name: "Igor Sergeev",
+    name: "伊戈尔·斯埃尔格伊夫",
     shirtNumber: 21,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -21400,7 +21400,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uzb-player-22",
     teamId: "team-uzb",
-    name: "Abbosbek Fayzullaev",
+    name: "阿布布奥斯贝克·夫艾兹乌尔勒夫",
     shirtNumber: 22,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -21419,7 +21419,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uzb-player-23",
     teamId: "team-uzb",
-    name: "Sherzod Esanov",
+    name: "希埃尔佐德·埃萨诺夫",
     shirtNumber: 23,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -21438,7 +21438,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uzb-player-24",
     teamId: "team-uzb",
-    name: "Bekhruz Karimov",
+    name: "布埃克哈乌兹·卡里莫夫",
     shirtNumber: 24,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -21456,7 +21456,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uzb-player-25",
     teamId: "team-uzb",
-    name: "Avazbek Ulmasaliev",
+    name: "阿夫阿兹贝克·乌尔马萨勒伊夫",
     shirtNumber: 25,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -21474,7 +21474,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-uzb-player-26",
     teamId: "team-uzb",
-    name: "Jakhongir Urozov",
+    name: "贾阿克哈奥恩吉尔·乌罗佐夫",
     shirtNumber: 26,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -21492,7 +21492,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cro-player-1",
     teamId: "team-cro",
-    name: "Dominik Livaković",
+    name: "多米尼克·利瓦科维奇",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -21508,7 +21508,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cro-player-2",
     teamId: "team-cro",
-    name: "Josip Stanišić",
+    name: "若西普·斯特阿尼斯奇",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -21526,7 +21526,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cro-player-3",
     teamId: "team-cro",
-    name: "Marin Pongračić",
+    name: "马里恩·普奥恩格拉阿克奇",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -21544,7 +21544,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cro-player-4",
     teamId: "team-cro",
-    name: "Joško Gvardiol",
+    name: "约什科·格瓦迪奥尔",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -21562,7 +21562,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cro-player-5",
     teamId: "team-cro",
-    name: "Duje Ćaleta-Car",
+    name: "杜杰·卡莱塔·卡尔",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -21580,7 +21580,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cro-player-6",
     teamId: "team-cro",
-    name: "Josip Šutalo",
+    name: "若西普·苏塔洛",
     shirtNumber: 6,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -21598,7 +21598,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cro-player-7",
     teamId: "team-cro",
-    name: "Nikola Moro",
+    name: "尼科拉·莫罗",
     shirtNumber: 7,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -21617,7 +21617,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cro-player-8",
     teamId: "team-cro",
-    name: "Mateo Kovačić",
+    name: "马特奥·科瓦契奇",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -21636,7 +21636,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cro-player-9",
     teamId: "team-cro",
-    name: "Andrej Kramarić",
+    name: "阿恩德拉埃贾·克拉阿马尔奇",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -21654,7 +21654,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cro-player-10",
     teamId: "team-cro",
-    name: "Luka Modrić",
+    name: "卢卡·莫德里奇",
     shirtNumber: 10,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -21673,7 +21673,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cro-player-11",
     teamId: "team-cro",
-    name: "Ante Budimir",
+    name: "阿恩特·布乌迪米尔",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -21691,7 +21691,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cro-player-12",
     teamId: "team-cro",
-    name: "Ivor Pandur",
+    name: "伊沃尔·普恩杜尔",
     shirtNumber: 12,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -21707,7 +21707,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cro-player-13",
     teamId: "team-cro",
-    name: "Nikola Vlašić",
+    name: "尼科拉·夫阿斯奇",
     shirtNumber: 13,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -21726,7 +21726,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cro-player-14",
     teamId: "team-cro",
-    name: "Ivan Perišić",
+    name: "伊万·佩里斯奇",
     shirtNumber: 14,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -21744,7 +21744,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cro-player-15",
     teamId: "team-cro",
-    name: "Mario Pašalić",
+    name: "马尔约·帕萨勒奇",
     shirtNumber: 15,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -21763,7 +21763,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cro-player-16",
     teamId: "team-cro",
-    name: "Martin Baturina",
+    name: "马丁·布图里纳",
     shirtNumber: 16,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -21782,7 +21782,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cro-player-17",
     teamId: "team-cro",
-    name: "Petar Sučić",
+    name: "佩塔尔·苏克奇",
     shirtNumber: 17,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -21801,7 +21801,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cro-player-18",
     teamId: "team-cro",
-    name: "Kristijan Jakić",
+    name: "克拉伊斯蒂贾恩·贾克奇",
     shirtNumber: 18,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -21819,7 +21819,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cro-player-19",
     teamId: "team-cro",
-    name: "Toni Fruk",
+    name: "托尼·弗朗乌克",
     shirtNumber: 19,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -21838,7 +21838,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cro-player-20",
     teamId: "team-cro",
-    name: "Igor Matanović",
+    name: "伊戈尔·马塔恩奥维奇",
     shirtNumber: 20,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -21856,7 +21856,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cro-player-21",
     teamId: "team-cro",
-    name: "Luka Sučić",
+    name: "卢卡·苏克奇",
     shirtNumber: 21,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -21875,7 +21875,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cro-player-22",
     teamId: "team-cro",
-    name: "Luka Vušković",
+    name: "卢卡·夫乌斯克奥维奇",
     shirtNumber: 22,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -21893,7 +21893,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cro-player-23",
     teamId: "team-cro",
-    name: "Dominik Kotarski",
+    name: "多米尼克·科塔尔斯基",
     shirtNumber: 23,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -21909,7 +21909,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cro-player-24",
     teamId: "team-cro",
-    name: "Marco Pašalić",
+    name: "姆尔科·帕萨勒奇",
     shirtNumber: 24,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -21927,7 +21927,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cro-player-25",
     teamId: "team-cro",
-    name: "Martin Erlić",
+    name: "马丁·尔勒奇",
     shirtNumber: 25,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -21945,7 +21945,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-cro-player-26",
     teamId: "team-cro",
-    name: "Petar Musa",
+    name: "佩塔尔·穆萨",
     shirtNumber: 26,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -21963,7 +21963,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-eng-player-1",
     teamId: "team-eng",
-    name: "Jordan Pickford",
+    name: "乔丹·皮克福德",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -21979,7 +21979,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-eng-player-2",
     teamId: "team-eng",
-    name: "Ezri Konsa",
+    name: "埃兹里·克奥恩萨",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -21997,7 +21997,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-eng-player-3",
     teamId: "team-eng",
-    name: "Nico O'Reilly",
+    name: "尼科·奥尔伊尔勒伊",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -22015,7 +22015,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-eng-player-4",
     teamId: "team-eng",
-    name: "Declan Rice",
+    name: "德克兰·赖斯",
     shirtNumber: 4,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -22034,7 +22034,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-eng-player-5",
     teamId: "team-eng",
-    name: "John Stones",
+    name: "约翰·斯通斯",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -22052,7 +22052,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-eng-player-6",
     teamId: "team-eng",
-    name: "Marc Guéhi",
+    name: "马克·格埃希",
     shirtNumber: 6,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -22070,7 +22070,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-eng-player-7",
     teamId: "team-eng",
-    name: "Bukayo Saka",
+    name: "布卡约·萨卡",
     shirtNumber: 7,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -22088,7 +22088,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-eng-player-8",
     teamId: "team-eng",
-    name: "Elliot Anderson",
+    name: "埃利奥特·阿恩德尔森",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -22107,7 +22107,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-eng-player-9",
     teamId: "team-eng",
-    name: "Harry Kane",
+    name: "哈里·凯恩",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -22125,7 +22125,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-eng-player-10",
     teamId: "team-eng",
-    name: "Jude Bellingham",
+    name: "裘德·贝林厄姆",
     shirtNumber: 10,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -22144,7 +22144,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-eng-player-11",
     teamId: "team-eng",
-    name: "Marcus Rashford",
+    name: "马库斯·拉什福德",
     shirtNumber: 11,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -22162,7 +22162,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-eng-player-12",
     teamId: "team-eng",
-    name: "Tino Livramento",
+    name: "蒂诺·勒伊拉姆埃恩托",
     shirtNumber: 12,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -22180,7 +22180,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-eng-player-13",
     teamId: "team-eng",
-    name: "Dean Henderson",
+    name: "迪恩·亨德森",
     shirtNumber: 13,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -22196,7 +22196,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-eng-player-14",
     teamId: "team-eng",
-    name: "Jordan Henderson",
+    name: "乔丹·亨德森",
     shirtNumber: 14,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -22215,7 +22215,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-eng-player-15",
     teamId: "team-eng",
-    name: "Dan Burn",
+    name: "达恩·布乌尔恩",
     shirtNumber: 15,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -22233,7 +22233,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-eng-player-16",
     teamId: "team-eng",
-    name: "Kobbie Mainoo",
+    name: "克奥布布伊·姆艾恩乌",
     shirtNumber: 16,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -22252,7 +22252,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-eng-player-17",
     teamId: "team-eng",
-    name: "Morgan Rogers",
+    name: "姆奥尔加恩·罗格埃尔斯",
     shirtNumber: 17,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -22271,7 +22271,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-eng-player-18",
     teamId: "team-eng",
-    name: "Anthony Gordon",
+    name: "安东尼·戈登",
     shirtNumber: 18,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -22289,7 +22289,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-eng-player-19",
     teamId: "team-eng",
-    name: "Ollie Watkins",
+    name: "奥利·沃特金斯",
     shirtNumber: 19,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -22307,7 +22307,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-eng-player-20",
     teamId: "team-eng",
-    name: "Noni Madueke",
+    name: "诺尼·马杜埃凯",
     shirtNumber: 20,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -22325,7 +22325,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-eng-player-21",
     teamId: "team-eng",
-    name: "Eberechi Eze",
+    name: "埃贝雷奇·埃泽",
     shirtNumber: 21,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -22344,7 +22344,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-eng-player-22",
     teamId: "team-eng",
-    name: "Ivan Toney",
+    name: "伊万·托尼",
     shirtNumber: 22,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -22362,7 +22362,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-eng-player-23",
     teamId: "team-eng",
-    name: "James Trafford",
+    name: "詹姆斯·特罗阿夫夫奥尔德",
     shirtNumber: 23,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -22378,7 +22378,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-eng-player-24",
     teamId: "team-eng",
-    name: "Reece James",
+    name: "里斯·詹姆斯",
     shirtNumber: 24,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -22396,7 +22396,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-eng-player-25",
     teamId: "team-eng",
-    name: "Djed Spence",
+    name: "德埃德·斯普埃恩塞",
     shirtNumber: 25,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -22414,7 +22414,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-eng-player-26",
     teamId: "team-eng",
-    name: "Jarell Quansah",
+    name: "贾雷尔·宽萨",
     shirtNumber: 26,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -22432,7 +22432,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-gha-player-1",
     teamId: "team-gha",
-    name: "Lawrence Ati-Zigi",
+    name: "劳伦斯·阿蒂·齐吉",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -22448,7 +22448,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-gha-player-2",
     teamId: "team-gha",
-    name: "Alidu Seidu",
+    name: "阿利杜·斯伊杜",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -22466,7 +22466,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-gha-player-3",
     teamId: "team-gha",
-    name: "Caleb Yirenkyi",
+    name: "卡莱布·伊尔埃恩克伊",
     shirtNumber: 3,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -22485,7 +22485,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-gha-player-4",
     teamId: "team-gha",
-    name: "Jonas Adjetey",
+    name: "若纳斯·阿德杰特埃",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -22503,7 +22503,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-gha-player-5",
     teamId: "team-gha",
-    name: "Thomas Partey",
+    name: "托马斯·帕尔特伊",
     shirtNumber: 5,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -22522,7 +22522,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-gha-player-6",
     teamId: "team-gha",
-    name: "Abdul Mumin",
+    name: "阿卜杜勒·穆米恩",
     shirtNumber: 6,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -22540,7 +22540,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-gha-player-7",
     teamId: "team-gha",
-    name: "Abdul Fatawu",
+    name: "阿卜杜勒·法塔瓦乌",
     shirtNumber: 7,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -22558,7 +22558,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-gha-player-8",
     teamId: "team-gha",
-    name: "Kwasi Sibo",
+    name: "克西·西博",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -22577,7 +22577,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-gha-player-9",
     teamId: "team-gha",
-    name: "Jordan Ayew",
+    name: "乔丹·艾瓦",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -22595,7 +22595,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-gha-player-10",
     teamId: "team-gha",
-    name: "Brandon Thomas-Asante",
+    name: "布尔阿恩多恩·托马斯·阿斯恩特",
     shirtNumber: 10,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -22613,7 +22613,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-gha-player-11",
     teamId: "team-gha",
-    name: "Antoine Semenyo",
+    name: "阿恩特瓦内·塞梅恩约",
     shirtNumber: 11,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -22632,7 +22632,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-gha-player-12",
     teamId: "team-gha",
-    name: "Joseph Anang",
+    name: "约瑟夫·阿恩阿恩格",
     shirtNumber: 12,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -22648,7 +22648,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-gha-player-13",
     teamId: "team-gha",
-    name: "Christopher Bonsu Baah",
+    name: "克伊斯特奥普赫尔·布奥恩苏·布哈",
     shirtNumber: 13,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -22666,7 +22666,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-gha-player-14",
     teamId: "team-gha",
-    name: "Gideon Mensah",
+    name: "吉德埃恩·姆埃恩萨哈",
     shirtNumber: 14,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -22684,7 +22684,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-gha-player-15",
     teamId: "team-gha",
-    name: "Elisha Owusu",
+    name: "埃勒伊斯哈·奥瓦乌苏",
     shirtNumber: 15,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -22703,7 +22703,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-gha-player-16",
     teamId: "team-gha",
-    name: "Benjamin Asare",
+    name: "本杰明·阿萨雷",
     shirtNumber: 16,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -22719,7 +22719,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-gha-player-17",
     teamId: "team-gha",
-    name: "Abdul Rahman Baba",
+    name: "阿卜杜勒·尔阿马恩·布布",
     shirtNumber: 17,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -22737,7 +22737,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-gha-player-18",
     teamId: "team-gha",
-    name: "Jerome Opoku",
+    name: "杰罗梅·奥波库",
     shirtNumber: 18,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -22755,7 +22755,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-gha-player-19",
     teamId: "team-gha",
-    name: "Iñaki Williams",
+    name: "伊纳基·威廉斯",
     shirtNumber: 19,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -22773,7 +22773,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-gha-player-20",
     teamId: "team-gha",
-    name: "Augustine Boakye",
+    name: "奥格乌斯蒂内·布奥克伊",
     shirtNumber: 20,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -22792,7 +22792,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-gha-player-21",
     teamId: "team-gha",
-    name: "Kojo Peprah Oppong",
+    name: "科若·普埃普拉哈·奥普普奥恩格",
     shirtNumber: 21,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -22810,7 +22810,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-gha-player-22",
     teamId: "team-gha",
-    name: "Kamaldeen Sulemana",
+    name: "卡姆尔德伊恩·苏莱马纳",
     shirtNumber: 22,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -22828,7 +22828,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-gha-player-23",
     teamId: "team-gha",
-    name: "Derrick Luckassen",
+    name: "德埃尔尔伊克克·勒乌克卡斯森",
     shirtNumber: 23,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -22846,7 +22846,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-gha-player-24",
     teamId: "team-gha",
-    name: "Ernest Nuamah",
+    name: "尔恩埃斯特·恩乌马哈",
     shirtNumber: 24,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -22864,7 +22864,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-gha-player-25",
     teamId: "team-gha",
-    name: "Prince Kwabena Adu",
+    name: "普罗伊恩塞·克贝纳·阿杜",
     shirtNumber: 25,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -22882,7 +22882,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-gha-player-26",
     teamId: "team-gha",
-    name: "Marvin Senaya",
+    name: "姆尔维恩·塞恩阿",
     shirtNumber: 26,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -22900,7 +22900,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-pan-player-1",
     teamId: "team-pan",
-    name: "Luis Mejía",
+    name: "路易斯·梅贾亚",
     shirtNumber: 1,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -22916,7 +22916,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-pan-player-2",
     teamId: "team-pan",
-    name: "César Blackman",
+    name: "塞萨尔·布尔阿克克恩",
     shirtNumber: 2,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -22934,7 +22934,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-pan-player-3",
     teamId: "team-pan",
-    name: "José Córdoba",
+    name: "何塞·克奥尔多布",
     shirtNumber: 3,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -22952,7 +22952,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-pan-player-4",
     teamId: "team-pan",
-    name: "Fidel Escobar",
+    name: "菲德勒·埃斯科布尔",
     shirtNumber: 4,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -22970,7 +22970,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-pan-player-5",
     teamId: "team-pan",
-    name: "Edgardo Fariña",
+    name: "埃德格尔多·法里纳",
     shirtNumber: 5,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -22988,7 +22988,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-pan-player-6",
     teamId: "team-pan",
-    name: "Cristian Martínez",
+    name: "克里斯蒂安·马丁内斯",
     shirtNumber: 6,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -23007,7 +23007,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-pan-player-7",
     teamId: "team-pan",
-    name: "José Luis Rodríguez",
+    name: "何塞·路易斯·罗德里格斯",
     shirtNumber: 7,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -23026,7 +23026,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-pan-player-8",
     teamId: "team-pan",
-    name: "Adalberto Carrasquilla",
+    name: "阿德尔布埃尔托·克尔尔阿斯克伊尔拉",
     shirtNumber: 8,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -23045,7 +23045,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-pan-player-9",
     teamId: "team-pan",
-    name: "Tomás Rodríguez",
+    name: "托马什·罗德里格斯",
     shirtNumber: 9,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -23063,7 +23063,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-pan-player-10",
     teamId: "team-pan",
-    name: "Ismael Díaz",
+    name: "伊斯梅尔·迪亚斯",
     shirtNumber: 10,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -23082,7 +23082,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-pan-player-11",
     teamId: "team-pan",
-    name: "Yoel Bárcenas",
+    name: "伊勒·布尔塞纳斯",
     shirtNumber: 11,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -23101,7 +23101,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-pan-player-12",
     teamId: "team-pan",
-    name: "César Samudio",
+    name: "塞萨尔·萨穆德约",
     shirtNumber: 12,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -23117,7 +23117,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-pan-player-13",
     teamId: "team-pan",
-    name: "Jiovany Ramos",
+    name: "贾约瓦恩伊·拉莫斯",
     shirtNumber: 13,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -23135,7 +23135,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-pan-player-14",
     teamId: "team-pan",
-    name: "Carlos Harvey",
+    name: "卡洛斯·哈阿尔夫埃",
     shirtNumber: 14,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -23153,7 +23153,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-pan-player-15",
     teamId: "team-pan",
-    name: "Eric Davis",
+    name: "埃里克·达维斯",
     shirtNumber: 15,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -23171,7 +23171,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-pan-player-16",
     teamId: "team-pan",
-    name: "Andrés Andrade",
+    name: "安德烈斯·阿恩德拉阿德",
     shirtNumber: 16,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -23189,7 +23189,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-pan-player-17",
     teamId: "team-pan",
-    name: "José Fajardo",
+    name: "何塞·法贾阿尔多",
     shirtNumber: 17,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -23207,7 +23207,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-pan-player-18",
     teamId: "team-pan",
-    name: "Cecilio Waterman",
+    name: "塞西勒约·沃特曼",
     shirtNumber: 18,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -23225,7 +23225,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-pan-player-19",
     teamId: "team-pan",
-    name: "Alberto Quintero",
+    name: "阿尔布埃尔托·克伊恩特罗",
     shirtNumber: 19,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -23244,7 +23244,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-pan-player-20",
     teamId: "team-pan",
-    name: "Aníbal Godoy",
+    name: "阿尼布勒·戈德瓦",
     shirtNumber: 20,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -23263,7 +23263,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-pan-player-21",
     teamId: "team-pan",
-    name: "César Yanis",
+    name: "塞萨尔·亚尼斯",
     shirtNumber: 21,
     primaryPosition: "MF",
     secondaryPositions: [
@@ -23282,7 +23282,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-pan-player-22",
     teamId: "team-pan",
-    name: "Orlando Mosquera",
+    name: "奥尔勒恩多·姆奥斯克埃拉",
     shirtNumber: 22,
     primaryPosition: "GK",
     secondaryPositions: [],
@@ -23298,7 +23298,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-pan-player-23",
     teamId: "team-pan",
-    name: "Michael Amir Murillo",
+    name: "迈克尔·阿米尔·穆尔伊尔洛",
     shirtNumber: 23,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -23316,7 +23316,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-pan-player-24",
     teamId: "team-pan",
-    name: "Azarias Londoño",
+    name: "阿扎尔亚斯·勒奥恩多诺",
     shirtNumber: 24,
     primaryPosition: "FW",
     secondaryPositions: [
@@ -23334,7 +23334,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-pan-player-25",
     teamId: "team-pan",
-    name: "Roderick Miller",
+    name: "罗德尔伊克克·姆伊尔莱尔",
     shirtNumber: 25,
     primaryPosition: "DF",
     secondaryPositions: [
@@ -23352,7 +23352,7 @@ export const worldCupPlayers: Player[] = [
   {
     id: "team-pan-player-26",
     teamId: "team-pan",
-    name: "Jorge Gutiérrez",
+    name: "豪尔赫·格乌特伊尔雷兹",
     shirtNumber: 26,
     primaryPosition: "DF",
     secondaryPositions: [
