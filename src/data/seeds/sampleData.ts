@@ -275,6 +275,17 @@ export const sampleFixtures: MatchFixture[] = [
     knockoutSlot: null,
     dependsOn: [],
   },
+  {
+    id: 'fixture-final-1',
+    stage: 'knockout',
+    roundCode: 'knockout-final',
+    groupCode: null,
+    homeTeamId: null,
+    awayTeamId: null,
+    fixtureOrder: 7,
+    knockoutSlot: 'final',
+    dependsOn: ['A1', 'A2'],
+  },
 ]
 
 export const sampleEventTemplates: EventTemplate[] = [

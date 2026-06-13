@@ -10,6 +10,7 @@ import type {
 } from '../../types/entities'
 import { buildDefaultMatchSetup } from './buildDefaultMatchSetup'
 import { validateMatchSetup } from './validateMatchSetup'
+import { resolveKnockoutFixtures } from '../tournament/resolveKnockoutFixtures'
 
 export function loadMatchSetupOverview(
   client: SQLiteDatabaseClient,
@@ -30,12 +31,14 @@ export function loadMatchSetupOverview(
     throw new Error(`Selected team was not found for save slot: ${saveSlotId}`)
   }
 
-  const fixture = tournamentRepository
-    .getFixturesByRoundCode(saveSlot.currentRoundCode)
-    .find(
-      (currentFixture) =>
-        currentFixture.homeTeamId === team.id || currentFixture.awayTeamId === team.id,
-    )
+  const fixtures =
+    saveSlot.currentStage === 'knockout'
+      ? resolveKnockoutFixtures(client, saveSlot.id, saveSlot.currentRoundCode)
+      : tournamentRepository.getFixturesByRoundCode(saveSlot.currentRoundCode)
+  const fixture = fixtures.find(
+    (currentFixture) =>
+      currentFixture.homeTeamId === team.id || currentFixture.awayTeamId === team.id,
+  )
 
   if (!fixture) {
     throw new Error(`No current fixture was found for team ${team.id}`)

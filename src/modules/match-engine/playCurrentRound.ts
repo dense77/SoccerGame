@@ -15,6 +15,7 @@ import type {
 } from '../../types/entities'
 import { loadMatchSetupOverview } from '../team-management/loadMatchSetupOverview'
 import { resolveGroupAdvancement } from '../tournament/resolveGroupAdvancement'
+import { resolveKnockoutFixtures } from '../tournament/resolveKnockoutFixtures'
 import { buildPostMatchReport } from './buildPostMatchReport'
 import { simulateMatch } from './simulateMatch'
 
@@ -89,6 +90,21 @@ function buildTeamMetrics(
   }
 }
 
+function resolveKnockoutWinner(
+  fixture: MatchSnapshot,
+  selectedTeamId: string,
+): 'selected' | 'opponent' {
+  const selectedTeamIsHome = fixture.homeTeamId === selectedTeamId
+  const selectedScore = selectedTeamIsHome ? fixture.homeScore : fixture.awayScore
+  const opponentScore = selectedTeamIsHome ? fixture.awayScore : fixture.homeScore
+
+  if (selectedScore >= opponentScore) {
+    return 'selected'
+  }
+
+  return 'opponent'
+}
+
 function updateSelectedTeamPlayerStates(
   players: ManagedPlayer[],
   goalDifference: number,
@@ -129,7 +145,10 @@ export function playCurrentRound(
     throw new Error(`Selected team was not found for save slot: ${saveSlotId}`)
   }
 
-  const fixtures = tournamentRepository.getFixturesByRoundCode(saveSlot.currentRoundCode)
+  const fixtures =
+    saveSlot.currentStage === 'knockout'
+      ? resolveKnockoutFixtures(client, saveSlot.id, saveSlot.currentRoundCode)
+      : tournamentRepository.getFixturesByRoundCode(saveSlot.currentRoundCode)
   const teamStates = new Map(
     saveRepository
       .getTeamStatesBySaveSlotId(saveSlot.id)
@@ -335,10 +354,12 @@ export function playCurrentRound(
       throw new Error(`Fixture ${fixture.id} is missing team tournament state.`)
     }
 
-    const nextHomeMetrics = buildTeamMetrics(homeState, result.homeScore, result.awayScore)
-    const nextAwayMetrics = buildTeamMetrics(awayState, result.awayScore, result.homeScore)
-    saveRepository.updateTeamStateMetrics(saveSlot.id, homeTeam.id, nextHomeMetrics)
-    saveRepository.updateTeamStateMetrics(saveSlot.id, awayTeam.id, nextAwayMetrics)
+    if (fixture.stage === 'group') {
+      const nextHomeMetrics = buildTeamMetrics(homeState, result.homeScore, result.awayScore)
+      const nextAwayMetrics = buildTeamMetrics(awayState, result.awayScore, result.homeScore)
+      saveRepository.updateTeamStateMetrics(saveSlot.id, homeTeam.id, nextHomeMetrics)
+      saveRepository.updateTeamStateMetrics(saveSlot.id, awayTeam.id, nextAwayMetrics)
+    }
 
     if (selectedTeamIsHome && selectedTeamNextStates) {
       selectedTeamNextStates.forEach((nextState) => {
@@ -362,10 +383,29 @@ export function playCurrentRound(
   if (nextRoundCode) {
     saveRepository.updateSaveSlotProgress(saveSlot.id, saveSlot.currentStage, nextRoundCode, 'active')
   } else {
-    const advancement = resolveGroupAdvancement(client, saveSlot.id)
-    const nextStatus = advancement.selectedTeamOutcome === 'qualified' ? 'qualified' : 'eliminated'
+    if (saveSlot.currentStage === 'group') {
+      const advancement = resolveGroupAdvancement(client, saveSlot.id)
 
-    saveRepository.updateSaveSlotProgress(saveSlot.id, 'group', 'group-complete', nextStatus)
+      if (advancement.selectedTeamOutcome === 'qualified') {
+        saveRepository.updateSaveSlotProgress(saveSlot.id, 'knockout', 'knockout-final', 'active')
+      } else {
+        saveRepository.updateSaveSlotProgress(saveSlot.id, 'group', 'group-complete', 'eliminated')
+      }
+    } else {
+      const finalSnapshot = snapshots[snapshots.length - 1]
+
+      if (!finalSnapshot) {
+        throw new Error('Knockout resolution expected a final snapshot.')
+      }
+
+      const winner = resolveKnockoutWinner(finalSnapshot, saveSlot.selectedTeamId)
+      saveRepository.updateSaveSlotProgress(
+        saveSlot.id,
+        'knockout',
+        'tournament-complete',
+        winner === 'selected' ? 'champion' : 'eliminated',
+      )
+    }
   }
 
   return snapshots

@@ -17,7 +17,9 @@ export function loadGameDataSummary(client: SQLiteDatabaseClient): DatabaseSumma
     formationCount: client.query<{ total: number }>('SELECT COUNT(*) as total FROM formations')[0].total,
     tacticProfileCount:
       client.query<{ total: number }>('SELECT COUNT(*) as total FROM tactic_profiles')[0].total,
-    fixtureCount: tournamentRepository.getFixturesByStage('group').length,
+    fixtureCount:
+      tournamentRepository.getFixturesByStage('group').length +
+      tournamentRepository.getFixturesByStage('knockout').length,
     eventTemplateCount: eventRepository.getAllTemplates().length,
   }
 }

@@ -4,6 +4,7 @@ import { TournamentRepository } from '../../data/repositories/TournamentReposito
 import type { SQLiteDatabaseClient } from '../../data/db/sqlite'
 import type { PostMatchReport, SaveOverview } from '../../types/entities'
 import { buildGroupStandings } from '../tournament/buildGroupStandings'
+import { resolveKnockoutFixtures } from '../tournament/resolveKnockoutFixtures'
 
 function extractLatestPostMatchReport(saveOverviewMatches: SaveOverview['completedMatches']): PostMatchReport | null {
   const latestSnapshot = [...saveOverviewMatches]
@@ -64,13 +65,16 @@ export function loadSaveOverview(
   const groupTeams = teamRepository.getTeamsByGroupCode(selectedTeam.groupCode)
   const teamStates = saveRepository.getTeamStatesBySaveSlotId(saveSlot.id)
   const playerStates = saveRepository.getPlayerStatesBySaveSlotId(saveSlot.id)
-  const currentFixtures = tournamentRepository.getFixturesByRoundCode(saveSlot.currentRoundCode)
   const completedMatches = saveRepository.getMatchSnapshotsBySaveSlotId(saveSlot.id)
   const groupFixtures = tournamentRepository.getFixturesByStage('group')
   const groupStageResolved = completedMatches.filter((snapshot) => snapshot.stage === 'group').length >= groupFixtures.length
   const groupStandings = buildGroupStandings(groupTeams, teamStates, saveSlot.selectedTeamId, {
     markQualified: groupStageResolved,
   })
+  const currentFixtures =
+    saveSlot.currentStage === 'knockout'
+      ? resolveKnockoutFixtures(client, saveSlot.id, saveSlot.currentRoundCode)
+      : tournamentRepository.getFixturesByRoundCode(saveSlot.currentRoundCode)
 
   return {
     saveSlot,
@@ -85,6 +89,16 @@ export function loadSaveOverview(
       completedMatches,
       groupFixtures.length,
     ),
+    tournamentOutcome:
+      saveSlot.status === 'champion'
+        ? 'champion'
+        : saveSlot.status === 'eliminated'
+          ? 'eliminated'
+          : saveSlot.currentStage === 'knockout' && saveSlot.status === 'active'
+            ? 'qualified'
+            : saveSlot.status === 'qualified'
+              ? 'qualified'
+            : 'in_progress',
     rosterSize: playerStates.filter((playerState) =>
       playerState.playerId.startsWith(`${saveSlot.selectedTeamId}-player-`),
     ).length,

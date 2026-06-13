@@ -137,7 +137,14 @@ export function simulateMatch(input: MatchSimulationInput): MatchSimulationOutpu
   const volatility = seededValue(
     `${input.saveSlotId}:${input.fixture.id}:${input.home.team.id}:${input.away.team.id}`,
   )
-  const [homeScore, awayScore] = deriveScoreline(delta, volatility)
+  const [rawHomeScore, rawAwayScore] = deriveScoreline(delta, volatility)
+  const isKnockoutMatch = input.fixture.stage === 'knockout'
+  const [homeScore, awayScore] =
+    isKnockoutMatch && rawHomeScore === rawAwayScore
+      ? delta >= 0
+        ? [rawHomeScore + 1, rawAwayScore]
+        : [rawHomeScore, rawAwayScore + 1]
+      : [rawHomeScore, rawAwayScore]
 
   return {
     fixtureId: input.fixture.id,

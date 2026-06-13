@@ -163,6 +163,7 @@ export interface SaveOverview {
   completedMatches: MatchSnapshot[]
   latestPostMatchReport: PostMatchReport | null
   advancement: GroupAdvancementSummary | null
+  tournamentOutcome: 'in_progress' | 'qualified' | 'eliminated' | 'champion'
   rosterSize: number
 }
 

@@ -64,4 +64,39 @@ describe('simulateMatch', () => {
     expect(result.homeScore).toBeGreaterThanOrEqual(result.awayScore)
     expect(result.appliedModifiers.delta).toBeGreaterThan(0)
   })
+
+  it('forces a knockout fixture to produce a winner', () => {
+    const input: MatchSimulationInput = {
+      saveSlotId: 'save-test',
+      fixture: {
+        ...sampleFixtures[0],
+        id: 'fixture-final-1',
+        stage: 'knockout',
+        roundCode: 'knockout-final',
+        homeTeamId: sampleTeams[1].id,
+        awayTeamId: sampleTeams[2].id,
+        groupCode: null,
+        knockoutSlot: 'final',
+        dependsOn: ['A1', 'A2'],
+      },
+      home: {
+        team: sampleTeams[1],
+        formation: sampleFormations[0],
+        tactic: sampleTacticProfiles[0],
+        starters: createManagedPlayers('home', 80),
+        bench: [],
+      },
+      away: {
+        team: sampleTeams[2],
+        formation: sampleFormations[1],
+        tactic: sampleTacticProfiles[0],
+        starters: createManagedPlayers('away', 80),
+        bench: [],
+      },
+    }
+
+    const result = simulateMatch(input)
+
+    expect(result.homeScore).not.toBe(result.awayScore)
+  })
 })

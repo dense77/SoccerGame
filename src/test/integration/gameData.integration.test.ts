@@ -15,14 +15,16 @@ describe('game data integration', () => {
 
     const teams = teamRepository.getAllTeams()
     const groups = tournamentRepository.getGroups()
-    const fixtures = tournamentRepository.getFixturesByStage('group')
+    const groupFixtures = tournamentRepository.getFixturesByStage('group')
+    const knockoutFixtures = tournamentRepository.getFixturesByStage('knockout')
     const events = eventRepository.getAllTemplates()
     const options = eventRepository.getOptionsByTemplateId(events[0].id)
 
     expect(teams).toHaveLength(4)
     expect(groups).toHaveLength(1)
     expect(groups[0].teamIds).toHaveLength(4)
-    expect(fixtures).toHaveLength(6)
+    expect(groupFixtures).toHaveLength(6)
+    expect(knockoutFixtures).toHaveLength(1)
     expect(events).toHaveLength(4)
     expect(options.length).toBeGreaterThan(0)
   })
@@ -35,7 +37,7 @@ describe('game data integration', () => {
       playerCount: 104,
       formationCount: 2,
       tacticProfileCount: 3,
-      fixtureCount: 6,
+      fixtureCount: 7,
       eventTemplateCount: 4,
     })
   })

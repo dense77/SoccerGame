@@ -35,10 +35,33 @@ describe('round simulation integration', () => {
     const refreshedSave = saveRepository.getSaveSlotById(saveSlot.id)
     const overview = loadSaveOverview(client, saveSlot.id)
 
-    expect(refreshedSave?.currentRoundCode).toBe('group-complete')
-    expect(['qualified', 'eliminated']).toContain(refreshedSave?.status)
+    expect(refreshedSave?.currentStage).toBe('knockout')
+    expect(refreshedSave?.currentRoundCode).toBe('knockout-final')
+    expect(refreshedSave?.status).toBe('active')
     expect(overview.advancement).not.toBeNull()
+    expect(overview.tournamentOutcome).toBe('qualified')
+    expect(overview.currentFixtures).toHaveLength(1)
     expect(overview.groupStandings.filter((entry) => entry.isQualified)).toHaveLength(2)
     expect(overview.groupStandings.filter((entry) => entry.isEliminated)).toHaveLength(2)
+  })
+
+  it('settles the tournament after the knockout final', async () => {
+    const client = await createTestDatabase()
+    const saveSlot = createCareerSave(client, 'team-arg-sample')
+
+    playCurrentRound(client, saveSlot.id)
+    playCurrentRound(client, saveSlot.id)
+    playCurrentRound(client, saveSlot.id)
+    const finalSnapshots = playCurrentRound(client, saveSlot.id)
+
+    const saveRepository = new SaveRepository(client)
+    const refreshedSave = saveRepository.getSaveSlotById(saveSlot.id)
+    const overview = loadSaveOverview(client, saveSlot.id)
+
+    expect(finalSnapshots).toHaveLength(1)
+    expect(refreshedSave?.currentRoundCode).toBe('tournament-complete')
+    expect(['champion', 'eliminated']).toContain(refreshedSave?.status)
+    expect(['champion', 'eliminated']).toContain(overview.tournamentOutcome)
+    expect(overview.completedMatches).toHaveLength(7)
   })
 })

@@ -15,6 +15,7 @@ describe('save flow integration', () => {
     expect(overview.groupStandings).toHaveLength(4)
     expect(overview.currentFixtures).toHaveLength(2)
     expect(overview.latestPostMatchReport).toBeNull()
+    expect(overview.tournamentOutcome).toBe('in_progress')
     expect(overview.rosterSize).toBe(26)
   })
 })

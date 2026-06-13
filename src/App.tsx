@@ -284,9 +284,13 @@ function App() {
       activeEventSelection: refreshedEventSelection,
       message:
         !isSavePlayable(refreshedSave.saveSlot.status)
-          ? refreshedSave.advancement?.selectedTeamOutcome === 'qualified'
-            ? `Group stage complete. ${refreshedSave.selectedTeam.shortName} advanced from Group ${refreshedSave.selectedTeam.groupCode}.`
-            : `Group stage complete. ${refreshedSave.selectedTeam.shortName} has been eliminated.`
+          ? refreshedSave.saveSlot.status === 'champion'
+            ? `${refreshedSave.selectedTeam.shortName} won the World Cup.`
+            : refreshedSave.advancement?.selectedTeamOutcome === 'qualified'
+              ? `${refreshedSave.selectedTeam.shortName} reached the knockout stage, but the tournament is already settled.`
+              : `Tournament complete. ${refreshedSave.selectedTeam.shortName} has been eliminated.`
+          : refreshedSave.saveSlot.currentStage === 'knockout'
+            ? `Knockout final ready. ${refreshedSave.selectedTeam.shortName} will play for the title.`
           : `Round complete. ${snapshots.length} matches recorded. Next up: ${refreshedSave.saveSlot.currentRoundCode}.`,
     }))
   }
@@ -351,6 +355,7 @@ function App() {
               {bootstrapState.activeSave.saveSlot.currentRoundCode}
             </p>
             <p>Status: {bootstrapState.activeSave.saveSlot.status}</p>
+            <p>Tournament outcome: {bootstrapState.activeSave.tournamentOutcome}</p>
             <p>Roster initialized: {bootstrapState.activeSave.rosterSize} players.</p>
             {activeMatchSetup?.validation.isValid && (
               <button type="button" className="btn btn-compact" onClick={handlePlayCurrentRound}>
@@ -579,7 +584,7 @@ function App() {
           <div className="modal" onClick={(e) => e.stopPropagation()}>
             <h2>当前实现进度</h2>
             <p>已完成浏览器 SQLite、选队开局、存档初始化、赛前阵容管理、战术配置和基础比赛结算。</p>
-            <p>当前阶段已经接入关键事件选择，下一步会继续丰富事件池和事件链。</p>
+            <p>当前阶段已经接入关键事件选择、小组赛晋级判断和最小淘汰赛骨架，下一步会继续扩展完整淘汰赛树。</p>
             <button className="btn btn-close" onClick={() => setShowModal(false)}>
               关闭
             </button>
